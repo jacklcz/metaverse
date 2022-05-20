@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package game;
+
+import "google/protobuf/any.proto";
+
+message LoginRequest {
+  string nickname = 1;
+}
+
+message LoginResponse {
+  string id = 1;
+  string nickname = 2;
+  string token = 3;
+}
+
+message Placeable {
+  string id = 1;
+  sint64 x = 2;
+  sint64 y = 3;
+  sint64 z = 4;
+}
+
+message Placeables {
+  repeated Placeable result = 1;
+}
+
+message Message {
+  string id = 1;
+  string data = 2;
+}
+
+message Messages {
+  repeated Message result = 1;
+}
+
+message Response {
+  uint32 code = 1;
+  string message = 2;
+  google.protobuf.Any data = 3;
+}

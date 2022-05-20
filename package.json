@@ -1,0 +1,20 @@
+{
+  "creator": {
+    "version": "3.5.0"
+  },
+  "dependencies": {
+    "phoenix": "^1.6.8",
+    "protobufjs": "^6.11.2",
+    "web3": "^1.7.3"
+  },
+  "devDependencies": {
+    "fairygui-cc": "^1.1.1"
+  },
+  "name": "IVSMetaverse",
+  "scripts": {
+    "build-proto:pbjs": "pbjs --dependency protobufjs/minimal.js --target static-module --wrap commonjs --out ./assets/script/network/proto/proto.js ./proto/*.proto",
+    "build-proto:pbts": "pbts --main --out ./assets/script/network/proto/proto.d.ts ./assets/script/network/proto/*.js"
+  },
+  "uuid": "b99c6430-8aed-4194-90b9-167126ba8d3e",
+  "version": "3.5.0"
+}
