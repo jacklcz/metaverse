@@ -1,7 +1,6 @@
 import GameEvent from "../base/GameEvent";
 import Connection from "./Connection";
 import {encode, decode} from "../base/base64/Base64";
-import protobufjs from 'protobufjs';
 import proto from "./proto/proto.js"
 
 export default class PeerConnection extends Connection {
@@ -64,31 +63,6 @@ export default class PeerConnection extends Connection {
 		let placeables = Placeables.decode(decode(data));
       	console.log(placeables)
 	}
-
-	private msgResultMsg(buffer: any): void {
-		//var thisMsg: resultMsg = new resultMsg();
-		//if (thisMsg.fromBinaryBuffer(buffer)) {
-		//	try{
-		//		let command = thisMsg._resultCmd
-		//		if(command in this._resultEntry) {	
-		//			let entry = this._resultEntry[command];					
-		//			let resultFunction: Function = entry[1];
-		//			resultFunction.call(entry[0], thisMsg);
-		//		}
-		//		else console.log("Message result command = " + command.toString(16) + " not entry function!");
-		//	}catch(error) {
-		//	}
-		//}
-		//else console.log("Error reading ResultMsg message data!");
-	}
-
-	private msgLoginScene(buffer: any): void {
-		//var thisMsg: loginScene = new loginScene();
-		//if(thisMsg.fromBinaryBuffer(buffer)){
-		//	GameEvent.emit(GameEvent.LOGIN_ROLE_SCENE, thisMsg);
-		//}
-		//else console.log("Error reading LoginScene message data!");
-	}	
 }
 
 var _peerConnection = new PeerConnection();
