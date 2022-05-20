@@ -1,0 +1,141 @@
+{
+  "gizmos-infos": {
+    "is2D": false,
+    "is3DIcon": false,
+    "iconSize": 2,
+    "gridVisible": true,
+    "gridColor": [
+      150,
+      150,
+      150,
+      255
+    ],
+    "isIconGizmo3D": false,
+    "iconGizmoSize": 2,
+    "isGridVisible": true
+  },
+  "camera": {
+    "fov": 45,
+    "far": 10000,
+    "near": 0.01,
+    "color": [
+      48,
+      48,
+      48,
+      255
+    ],
+    "wheelSpeed": 0.01,
+    "wanderSpeed": 10,
+    "enableAcceleration": true,
+    "far2D": 10000,
+    "near2D": 1,
+    "wheelSpeed2D": 6
+  },
+  "camera-infos": {
+    "f46876e4-e81b-4931-b493-6d367be385e7": {
+      "position": {
+        "x": 113.21370854356172,
+        "y": 113.2137085435617,
+        "z": 113.21370854356171
+      },
+      "rotation": {
+        "x": -0.27984814233312133,
+        "y": 0.3647051996310009,
+        "z": 0.11591689595929514,
+        "w": 0.8804762392171493
+      },
+      "viewCenter": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    "05f953bf-92b1-4173-a5f4-856c9b6142fa": {
+      "position": {
+        "x": 673.2484819686096,
+        "y": 40.88817874867371,
+        "z": 740.6327134318512
+      },
+      "rotation": {
+        "x": -0.30580983091207514,
+        "y": -0.014509058727215458,
+        "z": -0.004660871440515958,
+        "w": 0.9519706459811633
+      },
+      "viewCenter": {
+        "x": 706.1307933808166,
+        "y": -732.1074891011078,
+        "z": -337.8564028452938
+      }
+    },
+    "ce0cdef9-0155-4399-a84b-b1afe09187d5": {
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 1084.6075123120793
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "w": 1
+      },
+      "viewCenter": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    }
+  },
+  "camera-uuids": [
+    "05f953bf-92b1-4173-a5f4-856c9b6142fa"
+  ],
+  "float-window": {
+    "position": {
+      "cc": {
+        "Camera": {
+          "dock": false,
+          "top": null,
+          "bottom": 10,
+          "left": null,
+          "right": 10
+        },
+        "Terrain": {
+          "dock": false,
+          "top": null,
+          "bottom": 5,
+          "left": null,
+          "right": 10
+        }
+      }
+    }
+  },
+  "09mFMcvk5H7aXoh5KhUqVs": {
+    "layer": 0,
+    "sculpt_brush": "",
+    "paint_brush": "",
+    "sculpt": {
+      "radius": 5,
+      "strength": 5
+    },
+    "paint": {
+      "radius": 5,
+      "strength": 5
+    }
+  },
+  "__version__": "1.0.0",
+  "e13yrkmMxMWYdNccxlaH2K": {
+    "sculpt_brush": "",
+    "paint_brush": "",
+    "sculpt": {
+      "radius": 5,
+      "strength": 5,
+      "_setHeight": 0
+    },
+    "paint": {
+      "radius": 1,
+      "strength": 5
+    },
+    "layer": 0
+  }
+}
