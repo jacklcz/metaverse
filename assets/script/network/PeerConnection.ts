@@ -20,6 +20,7 @@ export default class PeerConnection extends Connection {
 
 	public onRegisterEntry(channel: any): void {
 		this.registerCommandEntry(channel, "placeables", this, this.msgPosition);		
+		this.registerCommandEntry(channel, "messages", this, this.msgChat);
 	}
 
 	protected registerCommandEntry(channel: any, command: string, caller: any, listener: Function): void {
@@ -54,6 +55,23 @@ export default class PeerConnection extends Connection {
 		});
 	}	
 
+	public sendChat(text: string): void {
+
+		if(this.channel){
+			let Message = proto.game.Message;
+			let message = Message.create({
+				id: "1",
+				nickname: "111",
+				data: text
+			});
+			
+			let msg = Message.encode(message).finish();
+			this.channel.push("talk", {payload: encode(msg)})
+				.receive("ok", () => console.log("push chat message ok!"))
+				.receive("error", (reasons) => console.log("push chat message failed:%s", reasons) );
+		}
+	}
+
 	private msgKeepAlive(buffer: any): void {
 		console.log("keep alive " + new Date(Date.now()).toLocaleTimeString());
 	}
@@ -61,7 +79,18 @@ export default class PeerConnection extends Connection {
 	private msgPosition(data: any): void {
 		let Placeables = proto.game.Placeables;
 		let placeables = Placeables.decode(decode(data));
-      	console.log(placeables)
+      	console.log(placeables);
+	}
+
+	private msgChat(data: any): void {
+		let Messages = proto.game.Messages;
+		let messages = Messages.decode(decode(data));
+		let result = messages.result;
+		let length = result.length;
+		for(var i = 0; i < length; i ++){
+			let thisMsg = result[i];
+			GameEvent.emit(GameEvent.ON_CHAT_MESSAGE, thisMsg.nickname, thisMsg.data);
+		}
 	}
 }
 

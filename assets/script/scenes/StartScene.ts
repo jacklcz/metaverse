@@ -39,6 +39,8 @@ export class StartScene extends Component {
         console.log("StartScene onStart!");
 
         this._mainView.getChild<fgui.GButton>("startBtn").enabled = false;
+        //this.onLoginResult(Define.ERR_SUCCESS);
+        //return;
 
         let metaMask = new MetaMask();
         metaMask.connectMetaMask(this, function(result, response): void {
@@ -61,16 +63,16 @@ export class StartScene extends Component {
                 let peerConnection = PeerConnection.instance();
                 peerConnection.login(TheConfig.httpUrl, TheConfig.wsUrl, response);
             }
-            else console.error("connect MetaMask failed for: %s", response);
-
-            //GameEvent.emit(GameEvent.OPEN_MAIN_SCENE);
+            else console.error("connect MetaMask failed for: %s", response);            
         });
     }
 
-    private onLoginResult(result: number, msg: any): void {
+    private onLoginResult(result: number, msg?: any): void {
         if(result == Define.ERR_SUCCESS) {
             console.log("StartScene --> 登录成功!");
-            GameEvent.emit(GameEvent.OPEN_MAIN_SCENE);
+            GameEvent.emit(GameEvent.OPEN_MAIN_SCENE, this, function(step: any): void {
+                console.log("loading main scene %d", step * 100);
+            });
         }
         else {
             this._mainView.getChild<fgui.GButton>("startBtn").enabled = true;

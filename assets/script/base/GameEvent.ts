@@ -6,6 +6,7 @@ class MyEvent extends EventTarget{
 
     //system event define
     public ON_OWNER_LOCATION = "on_owner_location";
+    public ON_CHAT_MESSAGE = "on_chat_message";
 
     //network event define
     public CONNECTION_ERROR = "net_connection_error";
@@ -16,9 +17,7 @@ class MyEvent extends EventTarget{
 
     //message event define
     public LOGIN_RESULT = "login_result";
-    public Get_ROLE_RESULT = "get_role_result";
-    public CREATE_ROLE_RESULT = "create_role_result";
-    public LOGIN_ROLE_RESULT = "login_role_result";
+    public GET_ROLE_RESULT = "get_role_result";
     public LOGIN_ROLE_SCENE = "login_role_scene";
 
     //message role define

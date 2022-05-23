@@ -25,6 +25,7 @@ $root.game = (function() {
          * @memberof game
          * @interface ILoginRequest
          * @property {string|null} [nickname] LoginRequest nickname
+         * @property {string|null} [character] LoginRequest character
          */
 
         /**
@@ -49,6 +50,14 @@ $root.game = (function() {
          * @instance
          */
         LoginRequest.prototype.nickname = "";
+
+        /**
+         * LoginRequest character.
+         * @member {string} character
+         * @memberof game.LoginRequest
+         * @instance
+         */
+        LoginRequest.prototype.character = "";
 
         /**
          * Creates a new LoginRequest instance using the specified properties.
@@ -76,6 +85,8 @@ $root.game = (function() {
                 writer = $Writer.create();
             if (message.nickname != null && Object.hasOwnProperty.call(message, "nickname"))
                 writer.uint32(/* id 1, wireType 2 =*/10).string(message.nickname);
+            if (message.character != null && Object.hasOwnProperty.call(message, "character"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.character);
             return writer;
         };
 
@@ -112,6 +123,9 @@ $root.game = (function() {
                 switch (tag >>> 3) {
                 case 1:
                     message.nickname = reader.string();
+                    break;
+                case 2:
+                    message.character = reader.string();
                     break;
                 default:
                     reader.skipType(tag & 7);
@@ -151,6 +165,9 @@ $root.game = (function() {
             if (message.nickname != null && message.hasOwnProperty("nickname"))
                 if (!$util.isString(message.nickname))
                     return "nickname: string expected";
+            if (message.character != null && message.hasOwnProperty("character"))
+                if (!$util.isString(message.character))
+                    return "character: string expected";
             return null;
         };
 
@@ -168,6 +185,8 @@ $root.game = (function() {
             var message = new $root.game.LoginRequest();
             if (object.nickname != null)
                 message.nickname = String(object.nickname);
+            if (object.character != null)
+                message.character = String(object.character);
             return message;
         };
 
@@ -184,10 +203,14 @@ $root.game = (function() {
             if (!options)
                 options = {};
             var object = {};
-            if (options.defaults)
+            if (options.defaults) {
                 object.nickname = "";
+                object.character = "";
+            }
             if (message.nickname != null && message.hasOwnProperty("nickname"))
                 object.nickname = message.nickname;
+            if (message.character != null && message.hasOwnProperty("character"))
+                object.character = message.character;
             return object;
         };
 
@@ -213,6 +236,7 @@ $root.game = (function() {
          * @interface ILoginResponse
          * @property {string|null} [id] LoginResponse id
          * @property {string|null} [nickname] LoginResponse nickname
+         * @property {string|null} [character] LoginResponse character
          * @property {string|null} [token] LoginResponse token
          */
 
@@ -246,6 +270,14 @@ $root.game = (function() {
          * @instance
          */
         LoginResponse.prototype.nickname = "";
+
+        /**
+         * LoginResponse character.
+         * @member {string} character
+         * @memberof game.LoginResponse
+         * @instance
+         */
+        LoginResponse.prototype.character = "";
 
         /**
          * LoginResponse token.
@@ -283,8 +315,10 @@ $root.game = (function() {
                 writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
             if (message.nickname != null && Object.hasOwnProperty.call(message, "nickname"))
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.nickname);
+            if (message.character != null && Object.hasOwnProperty.call(message, "character"))
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.character);
             if (message.token != null && Object.hasOwnProperty.call(message, "token"))
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.token);
+                writer.uint32(/* id 4, wireType 2 =*/34).string(message.token);
             return writer;
         };
 
@@ -326,6 +360,9 @@ $root.game = (function() {
                     message.nickname = reader.string();
                     break;
                 case 3:
+                    message.character = reader.string();
+                    break;
+                case 4:
                     message.token = reader.string();
                     break;
                 default:
@@ -369,6 +406,9 @@ $root.game = (function() {
             if (message.nickname != null && message.hasOwnProperty("nickname"))
                 if (!$util.isString(message.nickname))
                     return "nickname: string expected";
+            if (message.character != null && message.hasOwnProperty("character"))
+                if (!$util.isString(message.character))
+                    return "character: string expected";
             if (message.token != null && message.hasOwnProperty("token"))
                 if (!$util.isString(message.token))
                     return "token: string expected";
@@ -391,6 +431,8 @@ $root.game = (function() {
                 message.id = String(object.id);
             if (object.nickname != null)
                 message.nickname = String(object.nickname);
+            if (object.character != null)
+                message.character = String(object.character);
             if (object.token != null)
                 message.token = String(object.token);
             return message;
@@ -412,12 +454,15 @@ $root.game = (function() {
             if (options.defaults) {
                 object.id = "";
                 object.nickname = "";
+                object.character = "";
                 object.token = "";
             }
             if (message.id != null && message.hasOwnProperty("id"))
                 object.id = message.id;
             if (message.nickname != null && message.hasOwnProperty("nickname"))
                 object.nickname = message.nickname;
+            if (message.character != null && message.hasOwnProperty("character"))
+                object.character = message.character;
             if (message.token != null && message.hasOwnProperty("token"))
                 object.token = message.token;
             return object;
@@ -948,6 +993,7 @@ $root.game = (function() {
          * @memberof game
          * @interface IMessage
          * @property {string|null} [id] Message id
+         * @property {string|null} [nickname] Message nickname
          * @property {string|null} [data] Message data
          */
 
@@ -973,6 +1019,14 @@ $root.game = (function() {
          * @instance
          */
         Message.prototype.id = "";
+
+        /**
+         * Message nickname.
+         * @member {string} nickname
+         * @memberof game.Message
+         * @instance
+         */
+        Message.prototype.nickname = "";
 
         /**
          * Message data.
@@ -1008,8 +1062,10 @@ $root.game = (function() {
                 writer = $Writer.create();
             if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                 writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+            if (message.nickname != null && Object.hasOwnProperty.call(message, "nickname"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.nickname);
             if (message.data != null && Object.hasOwnProperty.call(message, "data"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.data);
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.data);
             return writer;
         };
 
@@ -1048,6 +1104,9 @@ $root.game = (function() {
                     message.id = reader.string();
                     break;
                 case 2:
+                    message.nickname = reader.string();
+                    break;
+                case 3:
                     message.data = reader.string();
                     break;
                 default:
@@ -1088,6 +1147,9 @@ $root.game = (function() {
             if (message.id != null && message.hasOwnProperty("id"))
                 if (!$util.isString(message.id))
                     return "id: string expected";
+            if (message.nickname != null && message.hasOwnProperty("nickname"))
+                if (!$util.isString(message.nickname))
+                    return "nickname: string expected";
             if (message.data != null && message.hasOwnProperty("data"))
                 if (!$util.isString(message.data))
                     return "data: string expected";
@@ -1108,6 +1170,8 @@ $root.game = (function() {
             var message = new $root.game.Message();
             if (object.id != null)
                 message.id = String(object.id);
+            if (object.nickname != null)
+                message.nickname = String(object.nickname);
             if (object.data != null)
                 message.data = String(object.data);
             return message;
@@ -1128,10 +1192,13 @@ $root.game = (function() {
             var object = {};
             if (options.defaults) {
                 object.id = "";
+                object.nickname = "";
                 object.data = "";
             }
             if (message.id != null && message.hasOwnProperty("id"))
                 object.id = message.id;
+            if (message.nickname != null && message.hasOwnProperty("nickname"))
+                object.nickname = message.nickname;
             if (message.data != null && message.hasOwnProperty("data"))
                 object.data = message.data;
             return object;

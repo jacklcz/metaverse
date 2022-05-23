@@ -29,11 +29,9 @@ class GameConfig {
 export default class TheConfig {
 
     static httpUrl: string = "http://13.231.210.240:4000/login";
-    static wsUrl: string = "ws://13.231.210.240:4000/socket";
-    static account: string = "hugo";
-    static passwd: string = "123456";
+    static wsUrl: string = "ws://13.231.210.240:4000/socket";    
 
-    static createCfg: GameConfig = new GameConfig();
+    static selectCfg: GameConfig = new GameConfig();
     static mainCfg: GameConfig = new GameConfig();
 
     constructor() {
@@ -49,7 +47,13 @@ export default class TheConfig {
 
     static sceneCfg(): string {
         return "gameCfg/main/sceneCfg";
-    }    
+    }
+
+    static selectResList(): string[] {
+        let resList: string[] = [            
+        ];
+        return resList;
+    }
 
     static mainResList(): string[] {
         let resList: string[] = [

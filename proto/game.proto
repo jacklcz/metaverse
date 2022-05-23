@@ -6,12 +6,14 @@ import "google/protobuf/any.proto";
 
 message LoginRequest {
   string nickname = 1;
+  string character = 2;
 }
 
 message LoginResponse {
   string id = 1;
   string nickname = 2;
-  string token = 3;
+  string character = 3;
+  string token = 4;
 }
 
 message Placeable {
@@ -27,7 +29,8 @@ message Placeables {
 
 message Message {
   string id = 1;
-  string data = 2;
+  string nickname = 2;
+  string data = 3;
 }
 
 message Messages {

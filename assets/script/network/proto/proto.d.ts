@@ -8,6 +8,9 @@ export namespace game {
 
         /** LoginRequest nickname */
         nickname?: (string|null);
+
+        /** LoginRequest character */
+        character?: (string|null);
     }
 
     /** Represents a LoginRequest. */
@@ -21,6 +24,9 @@ export namespace game {
 
         /** LoginRequest nickname. */
         public nickname: string;
+
+        /** LoginRequest character. */
+        public character: string;
 
         /**
          * Creates a new LoginRequest instance using the specified properties.
@@ -102,6 +108,9 @@ export namespace game {
         /** LoginResponse nickname */
         nickname?: (string|null);
 
+        /** LoginResponse character */
+        character?: (string|null);
+
         /** LoginResponse token */
         token?: (string|null);
     }
@@ -120,6 +129,9 @@ export namespace game {
 
         /** LoginResponse nickname. */
         public nickname: string;
+
+        /** LoginResponse character. */
+        public character: string;
 
         /** LoginResponse token. */
         public token: string;
@@ -399,6 +411,9 @@ export namespace game {
         /** Message id */
         id?: (string|null);
 
+        /** Message nickname */
+        nickname?: (string|null);
+
         /** Message data */
         data?: (string|null);
     }
@@ -414,6 +429,9 @@ export namespace game {
 
         /** Message id. */
         public id: string;
+
+        /** Message nickname. */
+        public nickname: string;
 
         /** Message data. */
         public data: string;

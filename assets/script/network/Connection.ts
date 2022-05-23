@@ -24,6 +24,10 @@ export default abstract class Connection {
 
 	abstract onRegisterEntry(channel: any);
 
+	public get channel(): any {
+		return this._channel;
+	}
+
 	protected httpConnect(httpUrl: string, acount: string, caller: any, listener: Function): void{
 		
 		let thisSelf = this;
@@ -118,16 +122,7 @@ export default abstract class Connection {
 		this._onConnected = onConnectedCb;
 		this._onSocketClose = onCloseCb;
 		this._onSocketError = onErrorCb;
-	}
-
-	protected sendData(byteBuffer: protobufjs.Buffer): Boolean {
-
-		if(this._socket != null) {
-			this._socket.send(byteBuffer.buffer);			
-		}
-		else return false;
-		return true;
-	}
+	}	
 	
 	private onMessage(event: any): void {		
 		//this._recBuffer.writeArrayBuffer(event.data);
@@ -177,7 +172,7 @@ export default abstract class Connection {
 			z: 200
 		  })
 	  
-		  let msg = Placeable.encode(message).finish()
+		  let msg = Placeable.encode(message).finish();
 		  this._channel.push("placeable", {payload: encode(msg)})
 			.receive("ok", () => console.log("push placeable message ok!"))
 			.receive("error", (reasons) => console.log("push placeable message failed:%s", reasons) );

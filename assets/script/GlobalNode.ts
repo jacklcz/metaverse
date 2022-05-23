@@ -1,6 +1,8 @@
 import { _decorator, Component } from 'cc';
 const { ccclass, property } = _decorator;
 
+import GameEvent from './base/GameEvent';
+
 @ccclass
 export default class GlobalNode extends Component {
 
