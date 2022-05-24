@@ -1,4 +1,4 @@
-import { _decorator, director, resources, Component, game, assetManager} from 'cc';
+import { _decorator, director, setDisplayStats, Component, game, assetManager} from 'cc';
 const {ccclass, property} = _decorator;
 
 import GameEvent from "./base/GameEvent";
@@ -12,7 +12,8 @@ export default class AppMain extends Component {
 
     onLoad() {
         game.addPersistRootNode(this.node);
-        
+        setDisplayStats(false);
+
         GameEvent.on(GameEvent.OPEN_MAIN_SCENE, this.openMainScene, this);
         GameEvent.on(GameEvent.LOGIN_ROLE_SCENE, this.selectRoleScene, this);
         console.log("AppMain onLoad!");
@@ -57,5 +58,5 @@ export default class AppMain extends Component {
                 thisSelf.loadSubpack(sceneName, index + 1, packs, caller, listener);
             });
         }
-    } 
+    }
 }

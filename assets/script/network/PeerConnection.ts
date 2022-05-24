@@ -2,6 +2,7 @@ import GameEvent from "../base/GameEvent";
 import Connection from "./Connection";
 import {encode, decode} from "../base/base64/Base64";
 import proto from "./proto/proto.js"
+import UserInfo from '../base/UserInfo';
 
 export default class PeerConnection extends Connection {
 
@@ -50,6 +51,9 @@ export default class PeerConnection extends Connection {
 			console.log("http login result=%d, token&msg=%s", result, token);
 			
 			if(result == 1){
+				UserInfo.account = account; //save the account;
+				UserInfo.token = token; //save the account;
+
 				thisSelf.connect(wsUrl, token); 
 			}
 		});
@@ -61,7 +65,7 @@ export default class PeerConnection extends Connection {
 			let Message = proto.game.Message;
 			let message = Message.create({
 				id: "1",
-				nickname: "111",
+				nickname: UserInfo.account,
 				data: text
 			});
 			

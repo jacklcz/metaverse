@@ -1,7 +1,8 @@
-import { _decorator, Input, EventHandler, Node} from 'cc';
+import { _decorator, Node, EventHandler} from 'cc';
 const { ccclass, property } = _decorator;
 
 import * as fgui from "fairygui-cc";
+import GlobalNode from '../GlobalNode';
 import GameEvent from '../base/GameEvent';
 import PeerConnection from '../network/PeerConnection';
 
@@ -19,15 +20,21 @@ export class ChatFrame extends Node {
 
     protected onInitilize(): void {
         
-        //let handler: EventHandler = new EventHandler();
-        //handler.handler = "onChatChanged";
-        //handler.target = GlobalNode.instance().node;
-        //handler.component = "GlobalNode";
+        let handler: EventHandler = new EventHandler();
+        handler.handler = "onChatEnded";
+        handler.target = GlobalNode.instance().node;
+        handler.component = "GlobalNode";        
+        let thisInput = this._com.getChild<fgui.GTextInput>("input"); 
+        thisInput._editBox.editingDidEnded.push(handler);
+
+        this._com.getChild<fgui.GTextField>("msgList").text = "";
 
         let sendBtn = this._com.getChild<fgui.GButton>("sendBtn"); 
         sendBtn.onClick(this.onSendChat, this);
-        GameEvent.on(GameEvent.ON_CHAT_MESSAGE, this.onChatMessage, this);        
-    }
+
+        GameEvent.on(GameEvent.ON_SEND_CHAT_MSG, this.onSendChat, this);
+        GameEvent.on(GameEvent.ON_CHAT_MESSAGE, this.onChatMessage, this);
+    }    
 
     protected onSendChat(): void {
 
@@ -38,10 +45,12 @@ export class ChatFrame extends Node {
         
         PeerConnection.instance().sendChat(text);
         thisInput.text = "";
+        thisInput.requestFocus();
     }
 
-    protected onChatMessage(nickname: string, msg: string): void {
-        let thisText = nickname + ": " + msg;
+    protected onChatMessage(nickName: string, msg: string): void {        
+        nickName = this.formatString(nickName);
+        let thisText = `[${nickName}]: [COLOR=#FFFF00]${msg}[/COLOR]`;
         this._messages.push(thisText);
         if(this._messages.length > 50){
             this._messages.shift();
@@ -52,12 +61,23 @@ export class ChatFrame extends Node {
     protected updateMessage(): void {        
         let text: string = "";
         let length = this._messages.length;
-        for(var i = 0; i < length; i ++){
-            text += this._messages[i] + "\n";
+        if(length > 0){
+            let count = length - 1;
+            for(var i = 0; i < count; i ++){
+                text += this._messages[i] + "\n";
+            }
+            text += this._messages[count];
         }
         
         let msgList = this._com.getChild<fgui.GTextField>("msgList");
         msgList.text = text;
+    }
+
+    protected formatString(text: string, max: number = 6): string {
+        if(text.length > 6){
+            text = text.slice(0, 3) + ".." + text[text.length - 1];
+        }
+        return text;
     }
 }
 

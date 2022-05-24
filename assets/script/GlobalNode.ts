@@ -13,6 +13,10 @@ export default class GlobalNode extends Component {
     }
 
     onLoad () {
-        GlobalNode._thisNode = this;
+        GlobalNode._thisNode = this;        
+    }
+
+    public onChatEnded(): void {
+        GameEvent.emit(GameEvent.ON_SEND_CHAT_MSG);
     }
 }

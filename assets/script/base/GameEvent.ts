@@ -6,6 +6,7 @@ class MyEvent extends EventTarget{
 
     //system event define
     public ON_OWNER_LOCATION = "on_owner_location";
+    public ON_SEND_CHAT_MSG = "on_send_chat_msg";
     public ON_CHAT_MESSAGE = "on_chat_message";
 
     //network event define
