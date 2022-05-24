@@ -2,5 +2,79 @@
   "log": {
     "level": 4
   },
-  "__version__": "1.3.2"
+  "__version__": "1.3.2",
+  "common": {
+    "startScene": "ce0cdef9-0155-4399-a84b-b1afe09187d5",
+    "scenes": [
+      {
+        "url": "db://assets/scenes/MainScene.scene",
+        "uuid": "05f953bf-92b1-4173-a5f4-856c9b6142fa",
+        "inBundle": false
+      },
+      {
+        "url": "db://assets/scenes/StartScene.scene",
+        "uuid": "ce0cdef9-0155-4399-a84b-b1afe09187d5",
+        "inBundle": false
+      }
+    ],
+    "debug": true
+  },
+  "BuildTaskManager": {
+    "taskMap": {
+      "1653371296558": {
+        "id": "1653371296558",
+        "progress": 1,
+        "state": "success",
+        "message": "2022-5-24 13:49 Build success in 98176 ms!",
+        "options": {
+          "name": "IVSMetaverse",
+          "platform": "web-desktop",
+          "buildPath": "project://build",
+          "debug": true,
+          "md5Cache": false,
+          "skipCompressTexture": false,
+          "sourceMaps": false,
+          "replaceSplashScreen": false,
+          "mainBundleCompressionType": "merge_dep",
+          "mainBundleIsRemote": false,
+          "mergeStartScene": false,
+          "experimentalEraseModules": false,
+          "compressTexture": true,
+          "packAutoAtlas": true,
+          "startScene": "ce0cdef9-0155-4399-a84b-b1afe09187d5",
+          "scenes": [
+            {
+              "url": "db://assets/scenes/MainScene.scene",
+              "uuid": "05f953bf-92b1-4173-a5f4-856c9b6142fa",
+              "inBundle": false
+            },
+            {
+              "url": "db://assets/scenes/StartScene.scene",
+              "uuid": "ce0cdef9-0155-4399-a84b-b1afe09187d5",
+              "inBundle": false
+            }
+          ],
+          "outputName": "web-desktop",
+          "packages": {
+            "web-desktop": {
+              "resolution": {
+                "designWidth": 1280,
+                "designHeight": 960
+              },
+              "polyfills": {
+                "asyncFunctions": true
+              },
+              "remoteServerAddress": "http://metaverse.chainfn.com"
+            },
+            "cocos-service": {
+              "configID": "88b712",
+              "services": []
+            }
+          }
+        },
+        "time": "2022-5-24 13:48",
+        "dirty": false
+      }
+    }
+  }
 }

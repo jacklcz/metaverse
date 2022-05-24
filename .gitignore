@@ -6,7 +6,6 @@ library/
 assets/design/
 temp/
 local/
-build/
 native
 #//////////////////////////
 # NPM

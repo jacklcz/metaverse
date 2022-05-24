@@ -1,0 +1,41 @@
+{
+    "importBase": "import",
+    "nativeBase": "native",
+    "name": "resources",
+    "deps": [],
+    "uuids": [
+        "21332e2e-9abc-45ee-bd69-78e36de14972",
+        "5bad4612-7049-43af-bf8d-d045c33ec88e",
+        "5bad4612-7049-43af-bf8d-d045c33ec88e@6c48a",
+        "5bad4612-7049-43af-bf8d-d045c33ec88e@f9941"
+    ],
+    "paths": {
+        "21332e2e-9abc-45ee-bd69-78e36de14972": [
+            "ui/login",
+            "cc.BufferAsset"
+        ],
+        "5bad4612-7049-43af-bf8d-d045c33ec88e": [
+            "ui/login_atlas0",
+            "cc.ImageAsset"
+        ],
+        "5bad4612-7049-43af-bf8d-d045c33ec88e@6c48a": [
+            "ui/login_atlas0/texture",
+            "cc.Texture2D",
+            1
+        ],
+        "5bad4612-7049-43af-bf8d-d045c33ec88e@f9941": [
+            "ui/login_atlas0/spriteFrame",
+            "cc.SpriteFrame",
+            1
+        ]
+    },
+    "scenes": {},
+    "packs": {},
+    "versions": {
+        "import": [],
+        "native": []
+    },
+    "redirect": [],
+    "debug": true,
+    "extensionMap": {}
+}
