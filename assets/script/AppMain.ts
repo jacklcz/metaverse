@@ -25,8 +25,8 @@ export default class AppMain extends Component {
         });
     }  
 
-    private openMainScene(caller: any, listener: Function): void {
-        this.loadSubpack("MainScene", 0, this._mainPacks, caller, listener);
+    private openMainScene(): void {
+        this.loadSubpack("MainScene", 0, this._mainPacks);
     }
 
     private selectRoleScene(msg: any): void {
@@ -43,19 +43,19 @@ export default class AppMain extends Component {
         //});
     }
 
-    private loadSubpack(sceneName: string, index: number, packs: string[], caller: any, listener: Function): void {
+    private loadSubpack(sceneName: string, index: number, packs: string[]): void {
 
         let length = packs.length;
+        let step = index / length;
+        GameEvent.emit(GameEvent.ON_LOADING_PROCESS, step);
+
         if(index >= length){
             this.loadScene(sceneName);
         }
         else {
             let thisSelf = this;
             assetManager.loadBundle(packs[index], function(err): void {
-                let step = index / length;
-                listener.call(caller, step);
-
-                thisSelf.loadSubpack(sceneName, index + 1, packs, caller, listener);
+                thisSelf.loadSubpack(sceneName, index + 1, packs);
             });
         }
     }

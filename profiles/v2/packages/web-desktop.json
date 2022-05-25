@@ -2,7 +2,10 @@
   "__version__": "1.0.0",
   "options": {
     "web-desktop": {
-      "remoteServerAddress": "http://metaverse.chainfn.com"
+      "remoteServerAddress": "http://metaverse.chainfn.com",
+      "resolution": {
+        "designHeight": 590
+      }
     }
   }
 }

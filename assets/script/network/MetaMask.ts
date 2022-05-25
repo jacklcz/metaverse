@@ -13,16 +13,23 @@ export default class MetaMask {
     
     public connectMetaMask(caller: any, listener: Function): void {
 
-        if(MetaMask.isInstalled()){                               
-            window.ethereum.request({ method: 'eth_requestAccounts' })
-                .then(accounts => {
-                    const account = accounts[0];
-                    listener.call(caller, 1, account);
-                })
-                .catch(function(error) {
-                    listener.call(caller, 0, error);                    
-                }
-            );            
+        if(MetaMask.isInstalled()){
+            let ethereum = window.ethereum;
+            if(ethereum._state.initialized != true){
+                let erro = new Error("MetaMask is not initialized!\n请刷新页面再试!");
+                listener.call(caller, 0, erro);
+            }
+            else{
+                ethereum.request({ method: 'eth_requestAccounts' })
+                    .then(accounts => {
+                        const account = accounts[0];
+                        listener.call(caller, 1, account);
+                    })
+                    .catch(function(error) {
+                        listener.call(caller, 0, error);                    
+                    }
+                );
+            }         
         }
         else listener.call(caller, 0, "MetaMask is not installed!");
     }    

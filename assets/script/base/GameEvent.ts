@@ -11,7 +11,9 @@ class MyEvent extends EventTarget{
 
     //network event define
     public CONNECTION_ERROR = "net_connection_error";
-    public CONNECTION_CLOSED = "net_connection_closed";    
+    public CONNECTION_CLOSED = "net_connection_closed";
+    
+    public ON_LOADING_PROCESS = "on_loading_process";
 
     //switch event define
     public OPEN_MAIN_SCENE = "open_main_scene";

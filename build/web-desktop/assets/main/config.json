@@ -4,6 +4,7 @@
     "name": "main",
     "deps": [],
     "uuids": [
+        "02c0c5dae",
         "05c97390f",
         "05f953bf-92b1-4173-a5f4-856c9b6142fa",
         "0b31a646a",
@@ -51,6 +52,7 @@
         "85ef4b4c-bf42-4fe8-8aa2-54b6f4603df4@e5f17",
         "85ef4b4c-bf42-4fe8-8aa2-54b6f4603df4@f7b19",
         "85ef4b4c-bf42-4fe8-8aa2-54b6f4603df4@fe3c5",
+        "9e91cb7a-e873-4609-9f6a-a7beb6e2a9d8",
         "c0a8668b-a3f2-4574-80c6-b4016715e5d6@0089c",
         "c0a8668b-a3f2-4574-80c6-b4016715e5d6@03902",
         "c0a8668b-a3f2-4574-80c6-b4016715e5d6@05f9b",
@@ -102,6 +104,7 @@
     },
     "scenes": {
         "db://assets/scenes/MainScene.scene": "05f953bf-92b1-4173-a5f4-856c9b6142fa",
+        "db://assets/scenes/SelectScene.scene": "9e91cb7a-e873-4609-9f6a-a7beb6e2a9d8",
         "db://assets/scenes/StartScene.scene": "ce0cdef9-0155-4399-a84b-b1afe09187d5"
     },
     "packs": {
@@ -167,6 +170,23 @@
             "c0a8668b-a3f2-4574-80c6-b4016715e5d6@e27e3",
             "c0a8668b-a3f2-4574-80c6-b4016715e5d6@e5f17",
             "c0a8668b-a3f2-4574-80c6-b4016715e5d6@fe3c5",
+            "d032ac98-05e1-4090-88bb-eb640dcb5fc1@b47c0",
+            "d032ac98-05e1-4090-88bb-eb640dcb5fc1@b47c0@40c10",
+            "d032ac98-05e1-4090-88bb-eb640dcb5fc1@b47c0@74afd",
+            "d032ac98-05e1-4090-88bb-eb640dcb5fc1@b47c0@7d38f",
+            "d032ac98-05e1-4090-88bb-eb640dcb5fc1@b47c0@8fd34",
+            "d032ac98-05e1-4090-88bb-eb640dcb5fc1@b47c0@bb97f",
+            "d032ac98-05e1-4090-88bb-eb640dcb5fc1@b47c0@e9a6d"
+        ],
+        "02c0c5dae": [
+            "6f01cf7f-81bf-4a7e-bd5d-0afc19696480@b47c0",
+            "6f01cf7f-81bf-4a7e-bd5d-0afc19696480@b47c0@40c10",
+            "6f01cf7f-81bf-4a7e-bd5d-0afc19696480@b47c0@74afd",
+            "6f01cf7f-81bf-4a7e-bd5d-0afc19696480@b47c0@7d38f",
+            "6f01cf7f-81bf-4a7e-bd5d-0afc19696480@b47c0@8fd34",
+            "6f01cf7f-81bf-4a7e-bd5d-0afc19696480@b47c0@bb97f",
+            "6f01cf7f-81bf-4a7e-bd5d-0afc19696480@b47c0@e9a6d",
+            "9e91cb7a-e873-4609-9f6a-a7beb6e2a9d8",
             "d032ac98-05e1-4090-88bb-eb640dcb5fc1@b47c0",
             "d032ac98-05e1-4090-88bb-eb640dcb5fc1@b47c0@40c10",
             "d032ac98-05e1-4090-88bb-eb640dcb5fc1@b47c0@74afd",

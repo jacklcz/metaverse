@@ -58,8 +58,8 @@ System.register("chunks:///_virtual/AppMain.ts", ['./rollupPluginModLoBabelHelpe
           });
         };
 
-        _proto.openMainScene = function openMainScene(caller, listener) {
-          this.loadSubpack("MainScene", 0, this._mainPacks, caller, listener);
+        _proto.openMainScene = function openMainScene() {
+          this.loadSubpack("MainScene", 0, this._mainPacks);
         };
 
         _proto.selectRoleScene = function selectRoleScene(msg) {
@@ -74,17 +74,17 @@ System.register("chunks:///_virtual/AppMain.ts", ['./rollupPluginModLoBabelHelpe
           //});
         };
 
-        _proto.loadSubpack = function loadSubpack(sceneName, index, packs, caller, listener) {
+        _proto.loadSubpack = function loadSubpack(sceneName, index, packs) {
           var length = packs.length;
+          var step = index / length;
+          GameEvent.emit(GameEvent.ON_LOADING_PROCESS, step);
 
           if (index >= length) {
             this.loadScene(sceneName);
           } else {
             var thisSelf = this;
             assetManager.loadBundle(packs[index], function (err) {
-              var step = index / length;
-              listener.call(caller, step);
-              thisSelf.loadSubpack(sceneName, index + 1, packs, caller, listener);
+              thisSelf.loadSubpack(sceneName, index + 1, packs);
             });
           }
         };
@@ -704,6 +704,7 @@ System.register("chunks:///_virtual/GameEvent.ts", ['./rollupPluginModLoBabelHel
           _this.ON_CHAT_MESSAGE = "on_chat_message";
           _this.CONNECTION_ERROR = "net_connection_error";
           _this.CONNECTION_CLOSED = "net_connection_closed";
+          _this.ON_LOADING_PROCESS = "on_loading_process";
           _this.OPEN_MAIN_SCENE = "open_main_scene";
           _this.LOGIN_RESULT = "login_result";
           _this.GET_ROLE_RESULT = "get_role_result";
@@ -1086,14 +1087,21 @@ System.register("chunks:///_virtual/MetaMask.ts", ['cc'], function (exports) {
 
         _proto.connectMetaMask = function connectMetaMask(caller, listener) {
           if (MetaMask.isInstalled()) {
-            window.ethereum.request({
-              method: 'eth_requestAccounts'
-            }).then(function (accounts) {
-              var account = accounts[0];
-              listener.call(caller, 1, account);
-            })["catch"](function (error) {
-              listener.call(caller, 0, error);
-            });
+            var ethereum = window.ethereum;
+
+            if (ethereum._state.initialized != true) {
+              var erro = new Error("MetaMask is not initialized!\n请刷新页面再试!");
+              listener.call(caller, 0, erro);
+            } else {
+              ethereum.request({
+                method: 'eth_requestAccounts'
+              }).then(function (accounts) {
+                var account = accounts[0];
+                listener.call(caller, 1, account);
+              })["catch"](function (error) {
+                listener.call(caller, 0, error);
+              });
+            }
           } else listener.call(caller, 0, "MetaMask is not installed!");
         };
 
@@ -1177,15 +1185,14 @@ System.register("chunks:///_virtual/PeerConnection.ts", ['./rollupPluginModLoBab
           console.log(event);
         };
 
-        _proto.login = function login(httpUrl, wsUrl, account) {
+        _proto.login = function login(httpUrl, wsUrl) {
           var thisSelf = this;
+          var account = UserInfo.account;
 
           _Connection.prototype.httpConnect.call(this, httpUrl, account, this, function (result, token) {
             console.log("http login result=%d, token&msg=%s", result, token);
 
             if (result == 1) {
-              UserInfo.account = account; //save the account;
-
               UserInfo.token = token; //save the account;
 
               thisSelf.connect(wsUrl, token);
@@ -1462,10 +1469,10 @@ System.register("chunks:///_virtual/SelectScene.ts", ['./rollupPluginModLoBabelH
   };
 });
 
-System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './TheConfig.ts', './Define.ts', './PeerConnection.ts', './fairygui.mjs', './MetaMask.ts'], function (exports) {
+System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './TheConfig.ts', './Define.ts', './UserInfo.ts', './PeerConnection.ts', './fairygui.mjs', './MetaMask.ts'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, cclegacy, _decorator, Component, GameEvent, TheConfig, Define, PeerConnection, GRoot, UIPackage, MetaMask;
+  var _inheritsLoose, cclegacy, _decorator, color, Component, GameEvent, TheConfig, Define, UserInfo, PeerConnection, GRoot, UIPackage, MetaMask;
 
   return {
     setters: [function (module) {
@@ -1473,6 +1480,7 @@ System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHe
     }, function (module) {
       cclegacy = module.cclegacy;
       _decorator = module._decorator;
+      color = module.color;
       Component = module.Component;
     }, function (module) {
       GameEvent = module.default;
@@ -1480,6 +1488,8 @@ System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHe
       TheConfig = module.default;
     }, function (module) {
       Define = module.default;
+    }, function (module) {
+      UserInfo = module.default;
     }, function (module) {
       PeerConnection = module.default;
     }, function (module) {
@@ -1515,14 +1525,19 @@ System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHe
         _proto.start = function start() {
           console.log("StartScene loading!");
           GRoot.create();
-          UIPackage.loadPackage("ui/login", this.onLoadUI.bind(this));
+          UIPackage.loadPackage("ui/startScene", this.onLoadUI.bind(this));
         };
 
         _proto.onLoadUI = function onLoadUI(err) {
-          var view = UIPackage.createObject("login", "startScene").asCom;
+          var view = UIPackage.createObject("startScene", "scene").asCom;
           GRoot.inst.addChild(view);
           view.makeFullScreen();
           this._mainView = view;
+          view.getChild("goBtn").visible = false;
+          view.getChild("startBtn").visible = false;
+          view.getChild("selection").visible = false;
+          view.getChild("loading").visible = false;
+          this.schedule(this.onCheckMetaMask, 1);
           GameEvent.on(GameEvent.LOGIN_RESULT, this.onLoginResult, this);
           view.getChild("startBtn").onClick(this.onStart, this);
         };
@@ -1533,9 +1548,14 @@ System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHe
 
         _proto.onStart = function onStart() {
           console.log("StartScene onStart!");
-          this._mainView.getChild("startBtn").enabled = false; //this.onLoginResult(Define.ERR_SUCCESS);
+          this._mainView.getChild("startBtn").enabled = false;
+
+          var tips = this._mainView.getChild("tips");
+
+          tips.text = "开始连接MeatMask..."; //this.onLoginResult(Define.ERR_SUCCESS);
           //return;
 
+          var thisSelf = this;
           var metaMask = new MetaMask();
           metaMask.connectMetaMask(this, function (result, response) {
             if (result == 1) {
@@ -1558,21 +1578,86 @@ System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHe
               console.log("Get MetaMask account=%s", response);
               response = randomString();
               console.log("For testing, account change to=%s", response);
-              var peerConnection = PeerConnection.instance();
-              peerConnection.login(TheConfig.httpUrl, TheConfig.wsUrl, response);
-            } else console.error("connect MetaMask failed for: %s", response);
+              UserInfo.account = response; //save the account;
+
+              thisSelf.onGetAccount();
+            } else {
+              console.error("connect MetaMask failed for: %s", response);
+              tips.text = "连接MetaMask失败: " + response.message;
+            }
           });
+        };
+
+        _proto.onGetAccount = function onGetAccount() {
+          var tips = this._mainView.getChild("tips");
+
+          tips.text = "请选择游戏角色";
+          this._mainView.getChild("startBtn").visible = false;
+
+          var goBtn = this._mainView.getChild("goBtn");
+
+          goBtn.onClick(this.startLogin, this);
+          this._mainView.getChild("selection").visible = true;
+          goBtn.visible = true;
+        };
+
+        _proto.startLogin = function startLogin() {
+          this._mainView.getChild("goBtn").visible = false;
+          this._mainView.getChild("selection").visible = false;
+
+          var tips = this._mainView.getChild("tips");
+
+          tips.text = "登录游戏...";
+          var peerConnection = PeerConnection.instance();
+          peerConnection.login(TheConfig.httpUrl, TheConfig.wsUrl);
         };
 
         _proto.onLoginResult = function onLoginResult(result, msg) {
           if (result == Define.ERR_SUCCESS) {
             console.log("StartScene --> 登录成功!");
-            GameEvent.emit(GameEvent.OPEN_MAIN_SCENE, this, function (step) {
-              console.log("loading main scene %d", step * 100);
-            });
+
+            var loading = this._mainView.getChild("loading");
+
+            loading.visible = true;
+            GameEvent.on(GameEvent.ON_LOADING_PROCESS, this.onLoadingProcess, this);
+            GameEvent.emit(GameEvent.OPEN_MAIN_SCENE);
           } else {
-            this._mainView.getChild("startBtn").enabled = true;
+            //this._mainView.getChild<fgui.GButton>("startBtn").enabled = true;
             console.log("StartScene --> 登录失败:%s", msg);
+
+            var tips = this._mainView.getChild("tips");
+
+            tips.text = "登录游戏失败: " + msg;
+          }
+        };
+
+        _proto.onLoadingProcess = function onLoadingProcess(value) {
+          value = Math.floor(value * 100);
+          if (value > 100) value = 100;
+
+          this._mainView.getChild("loading").tweenValue(value, 0.3);
+
+          console.log("loading main scene %d", value);
+        };
+
+        _proto.onCheckMetaMask = function onCheckMetaMask() {
+          if (this.onMetaMaskStatus()) {
+            this.unschedule(this.onCheckMetaMask);
+            this._mainView.getChild("startBtn").visible = true;
+          }
+        };
+
+        _proto.onMetaMaskStatus = function onMetaMaskStatus() {
+          var tips = this._mainView.getChild("tips");
+
+          if (MetaMask.isInstalled()) {
+            tips.color = color(0xff, 0xff, 0xff);
+            tips.text = "点击“开始游戏”登录";
+            return true;
+          } else {
+            tips.color = color(0xff, 0x00, 0x00);
+            tips.text = "请安装MetaMask!";
+            return false;
           }
         };
 

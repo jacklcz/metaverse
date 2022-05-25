@@ -12,29 +12,36 @@
         "inBundle": false
       },
       {
+        "url": "db://assets/scenes/SelectScene.scene",
+        "uuid": "9e91cb7a-e873-4609-9f6a-a7beb6e2a9d8",
+        "inBundle": false
+      },
+      {
         "url": "db://assets/scenes/StartScene.scene",
         "uuid": "ce0cdef9-0155-4399-a84b-b1afe09187d5",
         "inBundle": false
       }
     ],
-    "debug": true
+    "debug": true,
+    "name": "meatverse",
+    "replaceSplashScreen": true
   },
   "BuildTaskManager": {
     "taskMap": {
-      "1653371296558": {
-        "id": "1653371296558",
+      "1653465718790": {
+        "id": "1653465718790",
         "progress": 1,
         "state": "success",
-        "message": "2022-5-24 13:49 Build success in 98176 ms!",
+        "message": "2022-5-25 16:02 Build success in 16668 ms!",
         "options": {
-          "name": "IVSMetaverse",
+          "name": "meatverse",
           "platform": "web-desktop",
           "buildPath": "project://build",
           "debug": true,
           "md5Cache": false,
           "skipCompressTexture": false,
           "sourceMaps": false,
-          "replaceSplashScreen": false,
+          "replaceSplashScreen": true,
           "mainBundleCompressionType": "merge_dep",
           "mainBundleIsRemote": false,
           "mergeStartScene": false,
@@ -49,6 +56,11 @@
               "inBundle": false
             },
             {
+              "url": "db://assets/scenes/SelectScene.scene",
+              "uuid": "9e91cb7a-e873-4609-9f6a-a7beb6e2a9d8",
+              "inBundle": false
+            },
+            {
               "url": "db://assets/scenes/StartScene.scene",
               "uuid": "ce0cdef9-0155-4399-a84b-b1afe09187d5",
               "inBundle": false
@@ -59,7 +71,7 @@
             "web-desktop": {
               "resolution": {
                 "designWidth": 1280,
-                "designHeight": 960
+                "designHeight": 590
               },
               "polyfills": {
                 "asyncFunctions": true
@@ -72,7 +84,7 @@
             }
           }
         },
-        "time": "2022-5-24 13:48",
+        "time": "2022-5-25 16:01",
         "dirty": false
       }
     }

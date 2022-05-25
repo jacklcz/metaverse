@@ -44,14 +44,14 @@ export default class PeerConnection extends Connection {
 		console.log(event);
 	}
 
-	public login(httpUrl: string, wsUrl: string, account: string): void {
+	public login(httpUrl: string, wsUrl: string): void {
 
 		let thisSelf = this;
+		let account = UserInfo.account;
 		super.httpConnect(httpUrl, account, this, function(result: any, token: any): void {
 			console.log("http login result=%d, token&msg=%s", result, token);
 			
 			if(result == 1){
-				UserInfo.account = account; //save the account;
 				UserInfo.token = token; //save the account;
 
 				thisSelf.connect(wsUrl, token); 
