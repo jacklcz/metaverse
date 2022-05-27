@@ -113,9 +113,7 @@ export default class PeerConnection extends Connection {
 
 	private msgPlace(data: any): void {
 		let Placeables = proto.game.Placeables;
-		let places = Placeables.decode(decode(data));
-
-		console.log("on Placeables");
+		let places = Placeables.decode(decode(data));		
 
 		let result = places.result;
 		let length = places.result.length;

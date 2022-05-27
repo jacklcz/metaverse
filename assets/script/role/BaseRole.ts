@@ -19,7 +19,7 @@ export enum RotateType {
 export abstract class BaseRole extends Component {
     
     private _roleType: string = "0";
-    private _moveSpeed: number = 23;
+    private _moveSpeed: number = 7;
     private _rotaSpeed: number = 80;
 
     abstract get moving(): number;

@@ -84,7 +84,7 @@ export class RoleScene extends Component {
 
             node.setWorldPosition(startPos);
             node.setRotationFromEuler(rotation);
-            console.log("recv position %s", startPos.toString())
+            //console.log("recv position %s", startPos.toString())
         }
     }
 

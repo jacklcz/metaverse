@@ -195,7 +195,7 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
 
           _this = _Component.call.apply(_Component, [this].concat(args)) || this;
           _this._roleType = "0";
-          _this._moveSpeed = 23;
+          _this._moveSpeed = 7;
           _this._rotaSpeed = 80;
           return _this;
         }
@@ -1609,7 +1609,6 @@ System.register("chunks:///_virtual/PeerConnection.ts", ['./rollupPluginModLoBab
         _proto.msgPlace = function msgPlace(data) {
           var Placeables = _cjsExports.game.Placeables;
           var places = Placeables.decode(decode(data));
-          console.log("on Placeables");
           var result = places.result;
           var length = places.result.length;
 
@@ -1924,8 +1923,7 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
             var gameRole = node.getComponent("GameRole");
             gameRole.setMoving(moveType);
             node.setWorldPosition(startPos);
-            node.setRotationFromEuler(rotation);
-            console.log("recv position %s", startPos.toString());
+            node.setRotationFromEuler(rotation); //console.log("recv position %s", startPos.toString())
           }
         };
 
@@ -2579,7 +2577,7 @@ System.register("chunks:///_virtual/ThirdPersonCamera.ts", ['./rollupPluginModLo
         enumerable: true,
         writable: true,
         initializer: function initializer() {
-          return new Vec3(0, 20, 20);
+          return new Vec3(0, 10, 10);
         }
       }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "moveSmooth", [property], {
         configurable: true,

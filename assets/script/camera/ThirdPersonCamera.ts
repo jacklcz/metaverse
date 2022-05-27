@@ -30,7 +30,7 @@ export class ThirdPersonCamera extends Component {
     cameraType: ThirdPersonCameraType = ThirdPersonCameraType.FollowTrackRotation;
     
     @property
-    positionOffset: Vec3 = new Vec3(0, 20, 20);
+    positionOffset: Vec3 = new Vec3(0, 10, 10);
     
     @property
     moveSmooth: number = 0.02;
