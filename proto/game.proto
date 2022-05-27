@@ -32,9 +32,10 @@ message LoginResponse {
 message Placeable {
   string id = 1;
   string nickname = 2;
-  sint64 x = 3;
-  sint64 y = 4;
-  sint64 z = 5;
+  string character = 3;
+  sint64 x = 4;
+  sint64 y = 5;
+  sint64 z = 6;
 }
 
 message Placeables {

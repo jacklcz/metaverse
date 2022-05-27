@@ -111,6 +111,8 @@ export class StartScene extends Component {
         if(result == Define.ERR_SUCCESS) {
             console.log("StartScene --> 登录成功!");
 
+            PeerConnection.instance().sendPosition(UserInfo.initPos);
+
             let loading = this._mainView.getChild<fgui.GProgressBar>("loading");
             loading.visible = true;            
             GameEvent.on(GameEvent.ON_LOADING_PROCESS, this.onLoadingProcess, this);

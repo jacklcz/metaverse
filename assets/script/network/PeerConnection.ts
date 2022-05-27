@@ -87,11 +87,19 @@ export default class PeerConnection extends Connection {
 	public sendMoving(type: number, startPos: Vec3, rotation: Vec3): void {
 		if(this.channel){
 			let Point = proto.game.Point;
-			let Move = proto.game.Move;
+			let Move = proto.game.Move;			
 			let move = Move.create({
 				moveType: type,
-				stratPos: Point.create({x: startPos.x, y: startPos.y, z: startPos.z}),
-				rotation: Point.create({x: startPos.x, y: startPos.y, z: startPos.z}),
+				stratPos: Point.create({
+					x: Math.floor(startPos.x * 1000), 
+					y: Math.floor(startPos.y * 1000), 
+					z: Math.floor(startPos.z * 1000)
+				}),
+				rotation: Point.create({
+					x: Math.floor(rotation.x * 1000), 
+					y: Math.floor(rotation.y * 1000), 
+					z: Math.floor(rotation.z * 1000)
+				}),
 			});
 
 			let msg = Move.encode(move).finish();
@@ -107,6 +115,8 @@ export default class PeerConnection extends Connection {
 		let Placeables = proto.game.Placeables;
 		let places = Placeables.decode(decode(data));
 
+		console.log("on Placeables");
+
 		let result = places.result;
 		let length = places.result.length;
 		for(var i = 0; i < length; i++){
@@ -115,9 +125,7 @@ export default class PeerConnection extends Connection {
 			let nickName = thisMsg.nickname;
 			let position = v3(thisMsg.x, thisMsg.y, thisMsg.z);
 			GameEvent.emit(GameEvent.ON_ROLE_LOCATION, id, nickName, position);
-		}	
-		
-      	console.log(places);
+		}
 	}
 
 	private msgChat(data: any): void {
@@ -136,8 +144,8 @@ export default class PeerConnection extends Connection {
 		let move = Move.decode(decode(data));
 		let thisStart = move.stratPos;
 		let thisRotat = move.rotation;
-		let startPos = v3(thisStart.x, thisStart.y, thisStart.z);
-		let rotation = v3(thisRotat.x, thisRotat.y, thisRotat.z);
+		let startPos = v3(thisStart.x / 1000, thisStart.y / 1000, thisStart.z / 1000);
+		let rotation = v3(thisRotat.x / 1000, thisRotat.y / 1000, thisRotat.z / 1000);
 		GameEvent.emit(GameEvent.ON_ROLE_MOVING, move.id, move.moveType, startPos, rotation);
 	}
 }

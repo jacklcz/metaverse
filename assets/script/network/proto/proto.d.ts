@@ -426,6 +426,9 @@ export namespace game {
         /** Placeable nickname */
         nickname?: (string|null);
 
+        /** Placeable character */
+        character?: (string|null);
+
         /** Placeable x */
         x?: (number|Long|null);
 
@@ -450,6 +453,9 @@ export namespace game {
 
         /** Placeable nickname. */
         public nickname: string;
+
+        /** Placeable character. */
+        public character: string;
 
         /** Placeable x. */
         public x: (number|Long);

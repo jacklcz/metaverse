@@ -986,6 +986,7 @@ $root.game = (function() {
          * @interface IPlaceable
          * @property {string|null} [id] Placeable id
          * @property {string|null} [nickname] Placeable nickname
+         * @property {string|null} [character] Placeable character
          * @property {number|Long|null} [x] Placeable x
          * @property {number|Long|null} [y] Placeable y
          * @property {number|Long|null} [z] Placeable z
@@ -1021,6 +1022,14 @@ $root.game = (function() {
          * @instance
          */
         Placeable.prototype.nickname = "";
+
+        /**
+         * Placeable character.
+         * @member {string} character
+         * @memberof game.Placeable
+         * @instance
+         */
+        Placeable.prototype.character = "";
 
         /**
          * Placeable x.
@@ -1074,12 +1083,14 @@ $root.game = (function() {
                 writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
             if (message.nickname != null && Object.hasOwnProperty.call(message, "nickname"))
                 writer.uint32(/* id 2, wireType 2 =*/18).string(message.nickname);
+            if (message.character != null && Object.hasOwnProperty.call(message, "character"))
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.character);
             if (message.x != null && Object.hasOwnProperty.call(message, "x"))
-                writer.uint32(/* id 3, wireType 0 =*/24).sint64(message.x);
+                writer.uint32(/* id 4, wireType 0 =*/32).sint64(message.x);
             if (message.y != null && Object.hasOwnProperty.call(message, "y"))
-                writer.uint32(/* id 4, wireType 0 =*/32).sint64(message.y);
+                writer.uint32(/* id 5, wireType 0 =*/40).sint64(message.y);
             if (message.z != null && Object.hasOwnProperty.call(message, "z"))
-                writer.uint32(/* id 5, wireType 0 =*/40).sint64(message.z);
+                writer.uint32(/* id 6, wireType 0 =*/48).sint64(message.z);
             return writer;
         };
 
@@ -1121,12 +1132,15 @@ $root.game = (function() {
                     message.nickname = reader.string();
                     break;
                 case 3:
-                    message.x = reader.sint64();
+                    message.character = reader.string();
                     break;
                 case 4:
-                    message.y = reader.sint64();
+                    message.x = reader.sint64();
                     break;
                 case 5:
+                    message.y = reader.sint64();
+                    break;
+                case 6:
                     message.z = reader.sint64();
                     break;
                 default:
@@ -1170,6 +1184,9 @@ $root.game = (function() {
             if (message.nickname != null && message.hasOwnProperty("nickname"))
                 if (!$util.isString(message.nickname))
                     return "nickname: string expected";
+            if (message.character != null && message.hasOwnProperty("character"))
+                if (!$util.isString(message.character))
+                    return "character: string expected";
             if (message.x != null && message.hasOwnProperty("x"))
                 if (!$util.isInteger(message.x) && !(message.x && $util.isInteger(message.x.low) && $util.isInteger(message.x.high)))
                     return "x: integer|Long expected";
@@ -1198,6 +1215,8 @@ $root.game = (function() {
                 message.id = String(object.id);
             if (object.nickname != null)
                 message.nickname = String(object.nickname);
+            if (object.character != null)
+                message.character = String(object.character);
             if (object.x != null)
                 if ($util.Long)
                     (message.x = $util.Long.fromValue(object.x)).unsigned = false;
@@ -1244,6 +1263,7 @@ $root.game = (function() {
             if (options.defaults) {
                 object.id = "";
                 object.nickname = "";
+                object.character = "";
                 if ($util.Long) {
                     var long = new $util.Long(0, 0, false);
                     object.x = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
@@ -1264,6 +1284,8 @@ $root.game = (function() {
                 object.id = message.id;
             if (message.nickname != null && message.hasOwnProperty("nickname"))
                 object.nickname = message.nickname;
+            if (message.character != null && message.hasOwnProperty("character"))
+                object.character = message.character;
             if (message.x != null && message.hasOwnProperty("x"))
                 if (typeof message.x === "number")
                     object.x = options.longs === String ? String(message.x) : message.x;

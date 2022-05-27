@@ -1,4 +1,4 @@
-import { _decorator, Component, Vec3, v3 } from 'cc';
+import { _decorator, Component, Vec3, v3, Animation } from 'cc';
 const { ccclass, property } = _decorator;
 
 export enum MoveType {    
@@ -21,6 +21,11 @@ export abstract class BaseRole extends Component {
     private _moveSpeed: number = 6;
     private _rotaSpeed: number = 80;    
 
+    abstract get moving(): number;
+    abstract set moving(value: number);
+    abstract onMovingPrv(deltaTime: number): void;
+    abstract onMoving(flag: boolean): void;
+
     public get moveSpeed(): number {
         return this._moveSpeed;
     }
@@ -29,13 +34,29 @@ export abstract class BaseRole extends Component {
         return this._rotaSpeed;
     }
 
-    abstract get moving(): number;
-    abstract set moving(value: number);
-    abstract onMoving(deltaTime: number): void;
+    public setMoving(value: number): void {
+        this.moving = value;
+        if(value == MoveType.None){
+            this.stopAction();
+        }
+        else this.moveAction();
+    }
+
+    protected get animation(): Animation {
+        return this.node.getComponent(Animation);
+    }
+
+    protected stopAction(): void {
+        this.animation.play("idle01");
+    }
+
+    protected moveAction(): void {
+        this.animation.play("run");
+    }
 
     update(deltaTime: number) {
 
-        this.onMoving(deltaTime);        
+        this.onMovingPrv(deltaTime);        
 
         let move = 0;
         switch(this.moving){
@@ -59,6 +80,8 @@ export abstract class BaseRole extends Component {
 
             let offset: Vec3 = v3();
             Vec3.multiplyScalar(offset, forward, deltaTime);
+
+            this.onMoving(false);
 
             let pos = this.node.getWorldPosition();            
             this.node.setWorldPosition(pos.add(offset));

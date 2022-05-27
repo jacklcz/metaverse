@@ -16,6 +16,7 @@ export class GameRole extends BaseRole {
         this._moving = value;
     }    
 
-    public onMoving(deltaTime: number): void {}
+    public onMovingPrv(deltaTime: number): void {}
+    public onMoving(flag: boolean): void {}
 }
 

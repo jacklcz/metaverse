@@ -14,7 +14,7 @@ export default class GlobalNode extends Component {
 
     onLoad () {
         GlobalNode._thisNode = this;
-        let gameRole = this.node.getChildByName("GameRole");
+        let gameRole = this.node.getChildByName("GirlRole");
         gameRole.active = false;
     }
 

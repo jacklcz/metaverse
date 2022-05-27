@@ -2,7 +2,7 @@ import {encode, decode} from "../base/base64/Base64";
 import Define from "../base/Define";
 import GameEvent from "../base/GameEvent";
 import proto from "./proto/proto.js";
-import {Socket} from "phoenix";
+import {Socket, Presence} from "phoenix";
 import UserInfo from "../base/UserInfo";
 import { Vec3 } from "cc";
 
@@ -95,7 +95,7 @@ export default abstract class Connection {
 			let thisSelf = this;
 			this._channel = this._socket.channel(id, {});
 			this._channel.join()
-				.receive("ok", resp => { thisSelf.onJoinChannel(true); })
+				.receive("ok", resp => { thisSelf.onJoinChannel(true, id); })
 				.receive("error", resp => { thisSelf.onJoinChannel(false); })
 		}
 		else GameEvent.emit(GameEvent.LOGIN_RESULT, Define.ERR_ERROR,
@@ -128,13 +128,7 @@ export default abstract class Connection {
 		this._onSocketError = onErrorCb;
 	}	
 	
-	private onMessage(event: any): void {		
-		//this._recBuffer.writeArrayBuffer(event.data);
-		//this._recBuffer.pos = 0;
-		//if(this._recBuffer.bytesAvailable > 0){
-		//	super.onPacketHander(this._recBuffer);
-		//}
-		//this._recBuffer.clear();
+	private onMessage(event: any): void {
 	}
 
 	private onOpen(event: any = null): void {
@@ -156,21 +150,37 @@ export default abstract class Connection {
 		}		
 	}
 
-	protected onJoinChannel(result: boolean): void {
+	protected onJoinChannel(result: boolean, topic?: string): void {
 		if(result) {
 			console.log("Joined channel successfully");
-			this.onRegisterEntry(this._channel);
-			this.sendPosition(UserInfo.initPos);
+			
+			function handleLeave(diff, topic): void {
+				let leaves = diff.leaves[topic];
+				if(leaves){
+					for(let user of leaves.metas){
+						let id = user.user_id;
+						GameEvent.emit(GameEvent.ON_ROLE_OFFLINE, id);
+					}
+				}
+			}
 
+			let presence = new Presence(this._channel);
+			this._channel.on("presence_diff", diff =>{				
+				presence = Presence.syncDiff(presence, diff)
+				//handleJoin(diff, topic)
+				handleLeave(diff, topic)
+			});
+
+			this.onRegisterEntry(this._channel);			
 			GameEvent.emit(GameEvent.LOGIN_RESULT, Define.ERR_SUCCESS);
 		}
 		else GameEvent.emit(GameEvent.LOGIN_RESULT, Define.ERR_ERROR, "Unable to join channel");
 	}
 
-	protected sendPosition(position: Vec3): void {
+	public sendPosition(position: Vec3): void {
 		let Placeable = proto.game.Placeable;
 		let message = Placeable.create({
-			id: UserInfo.id,
+			//id: UserInfo.id,
 			x: position.x,
 			y: position.y,
 			z: position.z

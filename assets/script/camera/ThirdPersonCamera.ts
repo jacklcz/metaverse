@@ -1,8 +1,12 @@
 import { _decorator, Component, Node, Enum } from 'cc';
 import { EventMouse, input, Input, Quat, Vec3, IVec3Like } from 'cc';
 const { ccclass, property } = _decorator;
+
 import { Quaternion } from "./Quaternion";
 import { VectorTool } from "./VectorTool";
+
+import GameEvent from '../base/GameEvent';
+import { MyRole } from '../role/MyRole';
 
 export enum ThirdPersonCameraType {
     /** 相机紧跟随着目标，相机不会旋转 */
@@ -52,6 +56,11 @@ export class ThirdPersonCamera extends Component {
         input.on(Input.EventType.MOUSE_UP, this.mouseUp, this);
         input.on(Input.EventType.MOUSE_WHEEL, this.mouseWheel, this);
 
+        GameEvent.on(GameEvent.ON_INIT_OWNER, this.onInitMyRole, this);
+    }
+
+    private onInitMyRole(): void {        
+        this.target = this.lookAt = MyRole.instance().node;
         this.cameraType == ThirdPersonCameraType.Follow && this.node.lookAt(this.target.worldPosition);
     }
     
