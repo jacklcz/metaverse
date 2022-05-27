@@ -121,10 +121,11 @@ export default class PeerConnection extends Connection {
 		let length = places.result.length;
 		for(var i = 0; i < length; i++){
 			let thisMsg = result[i];
-			let id = thisMsg.id;
+			let id = thisMsg.id;			
 			let nickName = thisMsg.nickname;
+			let character = thisMsg.character;
 			let position = v3(thisMsg.x, thisMsg.y, thisMsg.z);
-			GameEvent.emit(GameEvent.ON_ROLE_LOCATION, id, nickName, position);
+			GameEvent.emit(GameEvent.ON_ROLE_LOCATION, id, character, nickName, position);
 		}
 	}
 

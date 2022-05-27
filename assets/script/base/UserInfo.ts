@@ -7,7 +7,7 @@ class _UserInfo {
     public nickName: string = null;
     public token: string = null;
     public role: string = null;
-    public initPos: Vec3 = v3(12, 1, 18);
+    public initPos: Vec3 = v3(12, 0, 18);
 }
 
 var UserInfo = new _UserInfo();

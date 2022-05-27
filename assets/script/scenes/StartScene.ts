@@ -47,7 +47,7 @@ export class StartScene extends Component {
 
         this._mainView.getChild<fgui.GButton>("startBtn").enabled = false;
         let tips = this._mainView.getChild<fgui.GTextField>("tips");
-        tips.text = "开始连接MeatMask..."
+        tips.text = "开始连接MetaMask..."
         //this.onLoginResult(Define.ERR_SUCCESS);
         //return;
 

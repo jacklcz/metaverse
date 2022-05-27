@@ -27,28 +27,27 @@ export class RoleScene extends Component {
     }
 
     protected initMyRole(): void {
-        let role = GlobalNode.instance().node.getChildByName("GirlRole"); 
-        let thisRole = instantiate(role);
-        thisRole.addComponent("MyRole");
-        
-        this._roleList[UserInfo.id] = thisRole;
-        this.node.addChild(thisRole);
-        thisRole.active = true;
 
-        thisRole.setWorldPosition(UserInfo.initPos);
-        thisRole.layer = this.node.layer;
+        this.newRole(UserInfo.id, UserInfo.role, "", UserInfo.initPos, "MyRole");
 
         GameEvent.emit(GameEvent.ON_INIT_OWNER);
         PeerConnection.instance().sendPosition(UserInfo.initPos);
     }
 
-    protected onRoleLocation(id: string, nickName: string, position: Vec3): void {
+    protected onRoleLocation(id: string, character: string, nickName: string, position: Vec3): void {
         
         console.log("onRoleLocation: %s", id);
 
-        let gameRole = GlobalNode.instance().node.getChildByName("GirlRole");        
-        let thisRole = instantiate(gameRole);
-        thisRole.addComponent("GameRole");       
+        this.newRole(id, character, nickName, position, "GameRole");
+    }
+
+    protected newRole(id: string, character: string, nickName: string, position: Vec3, comName: string): void {
+
+        let type = (character == "0") ? "BoyRole" : "GirlRole";
+        let role = GlobalNode.instance().node.getChildByName(type);        
+        let thisRole = instantiate(role);
+        let gameRole: any = thisRole.addComponent(comName);
+        gameRole.roleType = character;
 
         this._roleList[id] = thisRole;
         this.node.addChild(thisRole);

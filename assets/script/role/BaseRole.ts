@@ -18,13 +18,22 @@ export enum RotateType {
 @ccclass('BaseRole')
 export abstract class BaseRole extends Component {
     
+    private _roleType: string = "0";
     private _moveSpeed: number = 23;
-    private _rotaSpeed: number = 80;    
+    private _rotaSpeed: number = 80;
 
     abstract get moving(): number;
     abstract set moving(value: number);
     abstract onMovingPrv(deltaTime: number): void;
     abstract onMoving(flag: boolean): void;
+
+    public get roleType(): string {
+        return this._roleType;
+    }
+
+    public set roleType(type: string) {
+        this._roleType = type;
+    }
 
     public get moveSpeed(): number {
         return this._moveSpeed;
@@ -47,11 +56,13 @@ export abstract class BaseRole extends Component {
     }
 
     protected stopAction(): void {
-        this.animation.play("idle01");
+        let name = this.roleType == "0" ? "Idle" : "idle01"
+        this.animation.play(name);
     }
 
     protected moveAction(): void {
-        this.animation.play("run");
+        let name = this.roleType == "0" ? "Running" : "run"
+        this.animation.play(name);
     }
 
     update(deltaTime: number) {

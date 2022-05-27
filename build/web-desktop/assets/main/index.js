@@ -194,6 +194,7 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
           }
 
           _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _this._roleType = "0";
           _this._moveSpeed = 23;
           _this._rotaSpeed = 80;
           return _this;
@@ -210,11 +211,13 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
         };
 
         _proto.stopAction = function stopAction() {
-          this.animation.play("idle01");
+          var name = this.roleType == "0" ? "Idle" : "idle01";
+          this.animation.play(name);
         };
 
         _proto.moveAction = function moveAction() {
-          this.animation.play("run");
+          var name = this.roleType == "0" ? "Running" : "run";
+          this.animation.play(name);
         };
 
         _proto.update = function update(deltaTime) {
@@ -250,6 +253,14 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
         };
 
         _createClass(BaseRole, [{
+          key: "roleType",
+          get: function get() {
+            return this._roleType;
+          },
+          set: function set(type) {
+            this._roleType = type;
+          }
+        }, {
           key: "moveSpeed",
           get: function get() {
             return this._moveSpeed;
@@ -383,7 +394,7 @@ System.register("chunks:///_virtual/ChatFrame.ts", ['./rollupPluginModLoBabelHel
 
         _proto.formatString = function formatString(text, max) {
           if (text.length > 7) {
-            text = "0x.." + text.slice(text.length - 4); //text = text.slice(0, 3) + ".." + text[text.length - 1];
+            text = "0x.." + text.slice(text.length - 4);
           }
 
           return text;
@@ -987,8 +998,8 @@ System.register("chunks:///_virtual/GlobalNode.ts", ['./rollupPluginModLoBabelHe
 
         _proto.onLoad = function onLoad() {
           GlobalNode._thisNode = this;
-          var gameRole = this.node.getChildByName("GirlRole");
-          gameRole.active = false;
+          this.node.getChildByName("GirlRole").active = false;
+          this.node.getChildByName("BoyRole").active = false;
         };
 
         _proto.onChatEnded = function onChatEnded() {
@@ -1606,8 +1617,9 @@ System.register("chunks:///_virtual/PeerConnection.ts", ['./rollupPluginModLoBab
             var thisMsg = result[i];
             var id = thisMsg.id;
             var nickName = thisMsg.nickname;
+            var character = thisMsg.character;
             var position = v3(thisMsg.x, thisMsg.y, thisMsg.z);
-            GameEvent.emit(GameEvent.ON_ROLE_LOCATION, id, nickName, position);
+            GameEvent.emit(GameEvent.ON_ROLE_LOCATION, id, character, nickName, position);
           }
         };
 
@@ -1864,23 +1876,22 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
         };
 
         _proto.initMyRole = function initMyRole() {
-          var role = GlobalNode.instance().node.getChildByName("GirlRole");
-          var thisRole = instantiate(role);
-          thisRole.addComponent("MyRole");
-          this._roleList[UserInfo.id] = thisRole;
-          this.node.addChild(thisRole);
-          thisRole.active = true;
-          thisRole.setWorldPosition(UserInfo.initPos);
-          thisRole.layer = this.node.layer;
+          this.newRole(UserInfo.id, UserInfo.role, "", UserInfo.initPos, "MyRole");
           GameEvent.emit(GameEvent.ON_INIT_OWNER);
           PeerConnection.instance().sendPosition(UserInfo.initPos);
         };
 
-        _proto.onRoleLocation = function onRoleLocation(id, nickName, position) {
+        _proto.onRoleLocation = function onRoleLocation(id, character, nickName, position) {
           console.log("onRoleLocation: %s", id);
-          var gameRole = GlobalNode.instance().node.getChildByName("GirlRole");
-          var thisRole = instantiate(gameRole);
-          thisRole.addComponent("GameRole");
+          this.newRole(id, character, nickName, position, "GameRole");
+        };
+
+        _proto.newRole = function newRole(id, character, nickName, position, comName) {
+          var type = character == "0" ? "BoyRole" : "GirlRole";
+          var role = GlobalNode.instance().node.getChildByName(type);
+          var thisRole = instantiate(role);
+          var gameRole = thisRole.addComponent(comName);
+          gameRole.roleType = character;
           this._roleList[id] = thisRole;
           this.node.addChild(thisRole);
           thisRole.setWorldPosition(position);
@@ -2132,7 +2143,7 @@ System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHe
 
           var tips = this._mainView.getChild("tips");
 
-          tips.text = "开始连接MeatMask..."; //this.onLoginResult(Define.ERR_SUCCESS);
+          tips.text = "开始连接MetaMask..."; //this.onLoginResult(Define.ERR_SUCCESS);
           //return;
 
           var thisSelf = this;
@@ -2614,7 +2625,7 @@ System.register("chunks:///_virtual/UserInfo.ts", ['cc'], function (exports) {
         this.nickName = null;
         this.token = null;
         this.role = null;
-        this.initPos = v3(12, 1, 18);
+        this.initPos = v3(12, 0, 18);
       };
 
       var UserInfo = exports('default', new _UserInfo());
