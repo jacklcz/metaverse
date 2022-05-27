@@ -30,7 +30,7 @@ export class ThirdPersonCamera extends Component {
     cameraType: ThirdPersonCameraType = ThirdPersonCameraType.FollowTrackRotation;
     
     @property
-    positionOffset: Vec3 = new Vec3(0, 5, 5);
+    positionOffset: Vec3 = new Vec3(0, 20, 20);
     
     @property
     moveSmooth: number = 0.02;
@@ -59,7 +59,7 @@ export class ThirdPersonCamera extends Component {
         GameEvent.on(GameEvent.ON_INIT_OWNER, this.onInitMyRole, this);
     }
 
-    private onInitMyRole(): void {        
+    private onInitMyRole(): void {
         this.target = this.lookAt = MyRole.instance().node;
         this.cameraType == ThirdPersonCameraType.Follow && this.node.lookAt(this.target.worldPosition);
     }

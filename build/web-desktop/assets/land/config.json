@@ -2,10 +2,10 @@
     "importBase": "import",
     "nativeBase": "native",
     "name": "land",
-    "deps": [
-        "main"
-    ],
+    "deps": [],
     "uuids": [
+        "119b1309-1fae-474e-8063-23ac5edf96a0",
+        "119b1309-1fae-474e-8063-23ac5edf96a0@6c48a",
         "d17772e0-5967-42d8-9369-0c6f07b0ec19"
     ],
     "paths": {
@@ -20,10 +20,7 @@
         "import": [],
         "native": []
     },
-    "redirect": [
-        "d17772e0-5967-42d8-9369-0c6f07b0ec19",
-        "0"
-    ],
+    "redirect": [],
     "debug": true,
     "extensionMap": {}
 }

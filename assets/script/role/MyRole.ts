@@ -81,7 +81,7 @@ export class MyRole extends BaseRole {
         let startPos = this.node.getWorldPosition();            
         PeerConnection.instance().sendMoving(this.moving, startPos, euler);
 
-        console.log("send startPos %s", startPos.toString());
+        //console.log("send startPos %s", startPos.toString());
     }
 }
 

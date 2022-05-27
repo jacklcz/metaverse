@@ -194,7 +194,7 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
           }
 
           _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-          _this._moveSpeed = 6;
+          _this._moveSpeed = 23;
           _this._rotaSpeed = 80;
           return _this;
         }
@@ -383,7 +383,7 @@ System.register("chunks:///_virtual/ChatFrame.ts", ['./rollupPluginModLoBabelHel
 
         _proto.formatString = function formatString(text, max) {
           if (text.length > 7) {
-            text = text[0] + ".." + text.slice(text.length - 4); //text = text.slice(0, 3) + ".." + text[text.length - 1];
+            text = "0x.." + text.slice(text.length - 4); //text = text.slice(0, 3) + ".." + text[text.length - 1];
           }
 
           return text;
@@ -1425,8 +1425,7 @@ System.register("chunks:///_virtual/MyRole.ts", ['./rollupPluginModLoBabelHelper
           var thisRota = this.node.getWorldRotation();
           thisRota.getEulerAngles(euler);
           var startPos = this.node.getWorldPosition();
-          PeerConnection.instance().sendMoving(this.moving, startPos, euler);
-          console.log("send startPos %s", startPos.toString());
+          PeerConnection.instance().sendMoving(this.moving, startPos, euler); //console.log("send startPos %s", startPos.toString());
         };
 
         _createClass(MyRole, [{
@@ -1801,10 +1800,10 @@ System.register("chunks:///_virtual/Quaternion.ts", ['cc'], function (exports) {
   };
 });
 
-System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './BaseRole.ts', './GlobalNode.ts', './UserInfo.ts', './MyRole.ts'], function (exports) {
+System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './BaseRole.ts', './GlobalNode.ts', './UserInfo.ts', './PeerConnection.ts', './MyRole.ts'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, cclegacy, _decorator, input, Input, instantiate, KeyCode, Component, GameEvent, RotateType, MoveType, GlobalNode, UserInfo, MyRole;
+  var _inheritsLoose, cclegacy, _decorator, input, Input, instantiate, KeyCode, Component, GameEvent, RotateType, MoveType, GlobalNode, UserInfo, PeerConnection, MyRole;
 
   return {
     setters: [function (module) {
@@ -1826,6 +1825,8 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
       GlobalNode = module.default;
     }, function (module) {
       UserInfo = module.default;
+    }, function (module) {
+      PeerConnection = module.default;
     }, function (module) {
       MyRole = module.MyRole;
     }],
@@ -1854,24 +1855,25 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
         var _proto = RoleScene.prototype;
 
         _proto.start = function start() {
-          this.initMyRole();
-          input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
-          input.on(Input.EventType.KEY_UP, this.onKeyUp, this);
           GameEvent.on(GameEvent.ON_ROLE_LOCATION, this.onRoleLocation, this);
           GameEvent.on(GameEvent.ON_ROLE_OFFLINE, this.onRoleOffline, this);
           GameEvent.on(GameEvent.ON_ROLE_MOVING, this.onRoleMoving, this);
+          this.initMyRole();
+          input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
+          input.on(Input.EventType.KEY_UP, this.onKeyUp, this);
         };
 
         _proto.initMyRole = function initMyRole() {
           var role = GlobalNode.instance().node.getChildByName("GirlRole");
           var thisRole = instantiate(role);
           thisRole.addComponent("MyRole");
-          thisRole.setWorldPosition(UserInfo.initPos);
-          thisRole.layer = this.node.layer;
           this._roleList[UserInfo.id] = thisRole;
           this.node.addChild(thisRole);
           thisRole.active = true;
+          thisRole.setWorldPosition(UserInfo.initPos);
+          thisRole.layer = this.node.layer;
           GameEvent.emit(GameEvent.ON_INIT_OWNER);
+          PeerConnection.instance().sendPosition(UserInfo.initPos);
         };
 
         _proto.onRoleLocation = function onRoleLocation(id, nickName, position) {
@@ -1879,32 +1881,39 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
           var gameRole = GlobalNode.instance().node.getChildByName("GirlRole");
           var thisRole = instantiate(gameRole);
           thisRole.addComponent("GameRole");
+          this._roleList[id] = thisRole;
+          this.node.addChild(thisRole);
           thisRole.setWorldPosition(position);
           thisRole.layer = this.node.layer;
-          this._roleList[UserInfo.id] = thisRole;
-          this.node.addChild(thisRole);
           thisRole.active = true;
         };
 
         _proto.onRoleOffline = function onRoleOffline(id) {
           console.log("onRoleOffline: %s", id);
 
-          if (this._roleList.hasOwnProperty(id)) {
-            var thisRole = this._roleList[id];
+          if (id == UserInfo.id) {
+            console.log("onRoleOffline: %s ========MyRole?????", id);
+            return;
+          }
+
+          var node = this._roleList[id];
+
+          if (node) {
             delete this._roleList[id];
-            this.node.removeChild(thisRole.node);
-            thisRole.destroy();
+            this.node.removeChild(node);
+            node.destroy();
           }
         };
 
         _proto.onRoleMoving = function onRoleMoving(id, moveType, startPos, rotation) {
-          console.log("onRoleMoving = %s", id);
+          //console.log("onRoleMoving = %s", id);
+          var node = this._roleList[id];
 
-          if (this._roleList.hasOwnProperty(id)) {
-            var thisRole = this._roleList[id];
-            thisRole.setMoving(moveType);
-            thisRole.node.setWorldPosition(startPos);
-            thisRole.node.setRotationFromEuler(rotation);
+          if (node) {
+            var gameRole = node.getComponent("GameRole");
+            gameRole.setMoving(moveType);
+            node.setWorldPosition(startPos);
+            node.setRotationFromEuler(rotation);
             console.log("recv position %s", startPos.toString());
           }
         };
@@ -2191,7 +2200,6 @@ System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHe
         _proto.onLoginResult = function onLoginResult(result, msg) {
           if (result == Define.ERR_SUCCESS) {
             console.log("StartScene --> 登录成功!");
-            PeerConnection.instance().sendPosition(UserInfo.initPos);
 
             var loading = this._mainView.getChild("loading");
 
@@ -2560,7 +2568,7 @@ System.register("chunks:///_virtual/ThirdPersonCamera.ts", ['./rollupPluginModLo
         enumerable: true,
         writable: true,
         initializer: function initializer() {
-          return new Vec3(0, 5, 5);
+          return new Vec3(0, 20, 20);
         }
       }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "moveSmooth", [property], {
         configurable: true,

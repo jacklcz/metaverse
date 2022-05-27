@@ -18,7 +18,7 @@ export enum RotateType {
 @ccclass('BaseRole')
 export abstract class BaseRole extends Component {
     
-    private _moveSpeed: number = 6;
+    private _moveSpeed: number = 23;
     private _rotaSpeed: number = 80;    
 
     abstract get moving(): number;

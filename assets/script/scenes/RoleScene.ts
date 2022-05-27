@@ -1,4 +1,4 @@
-import { _decorator, Component, instantiate, input, Input, EventKeyboard, KeyCode, Vec3} from 'cc';
+import { _decorator, Component, Node, instantiate, input, Input, EventKeyboard, KeyCode, Vec3} from 'cc';
 const { ccclass, property } = _decorator;
 
 import GlobalNode from '../GlobalNode';
@@ -6,6 +6,7 @@ import { MyRole } from '../role/MyRole';
 import UserInfo from '../base/UserInfo';
 import GameEvent from '../base/GameEvent';
 import { MoveType, RotateType } from '../role/BaseRole';
+import PeerConnection from '../network/PeerConnection';
 import { GameRole } from '../role/GameRole';
 
 @ccclass('RoleScene')
@@ -14,29 +15,31 @@ export class RoleScene extends Component {
     private _roleList: {} = {};
 
     start() {
-        this.initMyRole();
 
-        input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
-        input.on(Input.EventType.KEY_UP, this.onKeyUp, this);   
-        
         GameEvent.on(GameEvent.ON_ROLE_LOCATION, this.onRoleLocation, this);
         GameEvent.on(GameEvent.ON_ROLE_OFFLINE, this.onRoleOffline, this);        
         GameEvent.on(GameEvent.ON_ROLE_MOVING, this.onRoleMoving, this);
+
+        this.initMyRole();
+
+        input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
+        input.on(Input.EventType.KEY_UP, this.onKeyUp, this);
     }
 
     protected initMyRole(): void {
         let role = GlobalNode.instance().node.getChildByName("GirlRole"); 
         let thisRole = instantiate(role);
-
         thisRole.addComponent("MyRole");
-        thisRole.setWorldPosition(UserInfo.initPos);
-        thisRole.layer = this.node.layer;
-
+        
         this._roleList[UserInfo.id] = thisRole;
         this.node.addChild(thisRole);
         thisRole.active = true;
 
+        thisRole.setWorldPosition(UserInfo.initPos);
+        thisRole.layer = this.node.layer;
+
         GameEvent.emit(GameEvent.ON_INIT_OWNER);
+        PeerConnection.instance().sendPosition(UserInfo.initPos);
     }
 
     protected onRoleLocation(id: string, nickName: string, position: Vec3): void {
@@ -45,38 +48,43 @@ export class RoleScene extends Component {
 
         let gameRole = GlobalNode.instance().node.getChildByName("GirlRole");        
         let thisRole = instantiate(gameRole);
+        thisRole.addComponent("GameRole");       
 
-        thisRole.addComponent("GameRole");
+        this._roleList[id] = thisRole;
+        this.node.addChild(thisRole);
+
         thisRole.setWorldPosition(position);
         thisRole.layer = this.node.layer;
-
-        this._roleList[UserInfo.id] = thisRole;
-        this.node.addChild(thisRole);
         thisRole.active = true;
     }
 
     protected onRoleOffline(id: string): void {
 
         console.log("onRoleOffline: %s", id);
+        if(id == UserInfo.id){
+            console.log("onRoleOffline: %s ========MyRole?????", id);
+            return;
+        }
 
-        if(this._roleList.hasOwnProperty(id)){
-            let thisRole: GameRole = this._roleList[id];
+        let node: Node = this._roleList[id];
+        if(node){
             delete this._roleList[id];
-
-            this.node.removeChild(thisRole.node);
-            thisRole.destroy();
+            this.node.removeChild(node);
+            node.destroy();
         }
     }
 
     protected onRoleMoving(id: string, moveType: number, startPos: Vec3, rotation: Vec3): void {
         
-        console.log("onRoleMoving = %s", id);
+        //console.log("onRoleMoving = %s", id);
         
-        if(this._roleList.hasOwnProperty(id)){
-            let thisRole: GameRole = this._roleList[id];
-            thisRole.setMoving(moveType);
-            thisRole.node.setWorldPosition(startPos);
-            thisRole.node.setRotationFromEuler(rotation);
+        let node: Node = this._roleList[id];
+        if(node){
+            let gameRole: any = node.getComponent("GameRole");
+            gameRole.setMoving(moveType);
+
+            node.setWorldPosition(startPos);
+            node.setRotationFromEuler(rotation);
             console.log("recv position %s", startPos.toString())
         }
     }

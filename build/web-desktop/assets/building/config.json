@@ -2,16 +2,381 @@
     "importBase": "import",
     "nativeBase": "native",
     "name": "building",
-    "deps": [],
-    "uuids": [],
-    "paths": {},
+    "deps": [
+        "main"
+    ],
+    "uuids": [
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@0089c",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@01ad9",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@0510b",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@08c68",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@09209",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@0927a",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@0a1d1",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@0a576",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@0ccb1",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@0eca6",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@1b083",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@221a5",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@38d21",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@3effa",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@40d43",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@42c4f",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@4ed0f",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@4ee56",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@5127b",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@60a1c",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@6463d",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@683d1",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@684b2",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@6d810",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@719f8",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@885e8",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@8e537",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@95f05",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@9666c",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@9b633",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@9ea44",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@b875f",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@c03e4",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@c69f7",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@cde4f",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@d14d2",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@d6750",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@d94e6",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@e59fc",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@e6681",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@f77f7",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@f8c5a",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@f9737",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@fad87",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@fdd69"
+    ],
+    "paths": {
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@9666c": [
+            "Land/SM_Item_Drink_01",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@8e537": [
+            "Land/SM_Item_Drink_02",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@08c68": [
+            "Land/Plane",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@c69f7": [
+            "Land/SM_Env_Road_Parking_01",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@e6681": [
+            "Land/SM_Env_Sidewalk_Corner_01",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@01ad9": [
+            "Land/SM_Env_Sidewalk_Corner_End_01",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@0eca6": [
+            "Land/SM_Env_Sidewalk_Straight_01",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@d6750": [
+            "Land/SM_Env_Sidewalk_Straight_02",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@719f8": [
+            "Land/SM_Env_Road_Corner_End_02",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@4ed0f": [
+            "Land/SM_Env_Sidewalk_Corner_End_02",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@09209": [
+            "Land/SM_Env_Road_01",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@6d810": [
+            "Land/SM_Env_Sidewalk_Straight_03",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@5127b": [
+            "Land/SM_Env_Sidewalk_Corner_End_03",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@b875f": [
+            "Land/SM_Env_Road_Crossing_02",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@0a1d1": [
+            "Land/SM_Env_Sidewalk_Corner_04",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@40d43": [
+            "Land/SM_Env_Sidewalk_Straight_Path_01",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@60a1c": [
+            "Land/SM_Env_Path_01",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@cde4f": [
+            "Land/SM_Env_Sidewalk_Driveway_Wide_01",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@684b2": [
+            "Land/SM_Env_Grass_01",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@0ccb1": [
+            "Land/SM_Env_Driveway_Wide_01",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@c03e4": [
+            "Land/SM_Env_Driveway_Wide_PathRight_01",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@885e8": [
+            "Land/SM_Bld_House_Interior_Floor_01",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@683d1": [
+            "Land/SM_Env_Sidewalk_Corner_02",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@0a576": [
+            "Land/SM_Env_Sidewalk_Corner_03",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@f8c5a": [
+            "Land/SM_Env_Sidewalk_Crossing_01",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@1b083": [
+            "Land/SM_Env_Concrete_Base_01",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@4ee56": [
+            "Land/SM_Generic_Mountains_Snow_01",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@0927a": [
+            "Land/SM_Env_Sidewalk_Crossing_02",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@d14d2": [
+            "Land/SM_Generic_Ground_03",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@0510b": [
+            "Land/SM_Generic_Ground_04",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@9ea44": [
+            "Land/SM_Generic_Mountains_Grass_01",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@f9737": [
+            "Land/SM_Generic_Mountains_Grass_02",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@38d21": [
+            "Land/SM_Env_Road_Crossing_01",
+            "cc.Mesh",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@6463d": [
+            "Land/PolygonTown_Texture_01_A.jpg",
+            "cc.ImageAsset",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@95f05": [
+            "Land/PolygonTown_Texture_Metallic.jpg",
+            "cc.ImageAsset",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@d94e6": [
+            "Land/PolygonTown_Road_Normal.png",
+            "cc.ImageAsset",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@fad87": [
+            "Land/PolygonTown_Road_01.jpg",
+            "cc.ImageAsset",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@3effa": [
+            "Land/UnnamedTexture-0",
+            "cc.Texture2D",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@221a5": [
+            "Land/UnnamedTexture-1",
+            "cc.Texture2D",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@0089c": [
+            "Land/UnnamedTexture-2",
+            "cc.Texture2D",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@9b633": [
+            "Land/UnnamedTexture-3",
+            "cc.Texture2D",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@f77f7": [
+            "Land/PolygonTown_01_A",
+            "cc.Material",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@e59fc": [
+            "Land/Default-Material",
+            "cc.Material",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@42c4f": [
+            "Land/PolygonTown_Road",
+            "cc.Material",
+            1
+        ],
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@fdd69": [
+            "Land/Land",
+            "cc.Prefab",
+            1
+        ]
+    },
     "scenes": {},
     "packs": {},
     "versions": {
         "import": [],
         "native": []
     },
-    "redirect": [],
+    "redirect": [
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@0089c",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@01ad9",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@0510b",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@08c68",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@09209",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@0927a",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@0a1d1",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@0a576",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@0ccb1",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@0eca6",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@1b083",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@221a5",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@38d21",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@3effa",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@40d43",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@42c4f",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@4ed0f",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@4ee56",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@5127b",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@60a1c",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@6463d",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@683d1",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@684b2",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@6d810",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@719f8",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@885e8",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@8e537",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@95f05",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@9666c",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@9b633",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@9ea44",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@b875f",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@c03e4",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@c69f7",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@cde4f",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@d14d2",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@d6750",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@d94e6",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@e59fc",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@e6681",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@f77f7",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@f8c5a",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@f9737",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@fad87",
+        "0",
+        "9853cc41-749f-4ae7-b03f-cec0af53a8fe@fdd69",
+        "0"
+    ],
     "debug": true,
     "extensionMap": {}
 }

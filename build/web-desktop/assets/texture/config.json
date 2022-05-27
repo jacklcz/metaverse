@@ -2,9 +2,7 @@
     "importBase": "import",
     "nativeBase": "native",
     "name": "texture",
-    "deps": [
-        "main"
-    ],
+    "deps": [],
     "uuids": [
         "119b1309-1fae-474e-8063-23ac5edf96a0",
         "119b1309-1fae-474e-8063-23ac5edf96a0@6c48a"
@@ -26,12 +24,7 @@
         "import": [],
         "native": []
     },
-    "redirect": [
-        "119b1309-1fae-474e-8063-23ac5edf96a0",
-        "0",
-        "119b1309-1fae-474e-8063-23ac5edf96a0@6c48a",
-        "0"
-    ],
+    "redirect": [],
     "debug": true,
     "extensionMap": {}
 }
