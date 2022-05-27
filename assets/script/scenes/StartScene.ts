@@ -67,8 +67,8 @@ export class StartScene extends Component {
                     return result
                 }
                 
-                response = randomString();
-                console.log("For testing, account change to=%s", response);
+                //response = randomString();
+                //console.log("For testing, account change to=%s", response);
 
                 UserInfo.account = response; //save the account;
                 thisSelf.onGetAccount();

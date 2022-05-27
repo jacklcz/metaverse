@@ -2148,25 +2148,8 @@ System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHe
           var metaMask = new MetaMask();
           metaMask.connectMetaMask(this, function (result, response) {
             if (result == 1) {
-              var randomString = function randomString(length) {
-                if (length === void 0) {
-                  length = 10;
-                }
-
-                var t = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678";
-                var a = t.length;
-                var result = "";
-
-                for (var i = 0; i < length; i++) {
-                  result += t.charAt(Math.floor(Math.random() * a));
-                }
-
-                return result;
-              };
-
+              //console.log("For testing, account change to=%s", response);
               console.log("Get MetaMask account=%s", response);
-              response = randomString();
-              console.log("For testing, account change to=%s", response);
               UserInfo.account = response; //save the account;
 
               thisSelf.onGetAccount();

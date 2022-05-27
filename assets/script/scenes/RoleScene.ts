@@ -94,7 +94,7 @@ export class RoleScene extends Component {
             case KeyCode.KEY_W:                
                 MyRole.instance().setMoving(MoveType.Forward);
                 break;
-            case KeyCode.KEY_S:
+            case KeyCode.KEY_S:            
                 MyRole.instance().setMoving(MoveType.Backward);
                 break;
             //case KeyCode.KEY_Q:
