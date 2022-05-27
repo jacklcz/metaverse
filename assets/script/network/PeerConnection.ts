@@ -1,3 +1,6 @@
+import { _decorator, Vec3, v3 } from 'cc';
+const { ccclass, property } = _decorator;
+
 import GameEvent from "../base/GameEvent";
 import Connection from "./Connection";
 import {encode, decode} from "../base/base64/Base64";
@@ -20,8 +23,9 @@ export default class PeerConnection extends Connection {
 	}	
 
 	public onRegisterEntry(channel: any): void {
-		this.registerCommandEntry(channel, "placeables", this, this.msgPosition);		
+		this.registerCommandEntry(channel, "placeables", this, this.msgPlace);		
 		this.registerCommandEntry(channel, "messages", this, this.msgChat);
+		this.registerCommandEntry(channel, "move", this, this.msgMoving);
 	}
 
 	protected registerCommandEntry(channel: any, command: string, caller: any, listener: Function): void {
@@ -48,14 +52,18 @@ export default class PeerConnection extends Connection {
 
 		let thisSelf = this;
 		let account = UserInfo.account;
-		super.httpConnect(httpUrl, account, this, function(result: any, token: any): void {
-			console.log("http login result=%d, token&msg=%s", result, token);
-			
-			if(result == 1){
-				UserInfo.token = token; //save the account;
-
-				thisSelf.connect(wsUrl, token); 
-			}
+		super.httpConnect(httpUrl, account, this, 
+			function(result: any, token: any, id?: any, nickname?: any, character?: any): void {
+				console.log("http login result=%d, token&msg=%s", result, token);
+				
+				if(result == 1){
+					UserInfo.id = id;
+					UserInfo.token = token;
+					UserInfo.role = character;
+					UserInfo.nickName = nickname;
+					
+					thisSelf.connect(wsUrl, token); 
+				}
 		});
 	}	
 
@@ -76,14 +84,40 @@ export default class PeerConnection extends Connection {
 		}
 	}
 
+	public sendMoving(type: number, startPos: Vec3, rotation: Vec3): void {
+		if(this.channel){
+			let Point = proto.game.Point;
+			let Move = proto.game.Move;
+			let move = Move.create({
+				moveType: type,
+				stratPos: Point.create({x: startPos.x, y: startPos.y, z: startPos.z}),
+				rotation: Point.create({x: startPos.x, y: startPos.y, z: startPos.z}),
+			});
+
+			let msg = Move.encode(move).finish();
+			this.channel.push("move", {payload: encode(msg)});
+		}
+	}
+
 	private msgKeepAlive(buffer: any): void {
 		console.log("keep alive " + new Date(Date.now()).toLocaleTimeString());
 	}
 
-	private msgPosition(data: any): void {
+	private msgPlace(data: any): void {
 		let Placeables = proto.game.Placeables;
-		let placeables = Placeables.decode(decode(data));
-      	console.log(placeables);
+		let places = Placeables.decode(decode(data));
+
+		let result = places.result;
+		let length = places.result.length;
+		for(var i = 0; i < length; i++){
+			let thisMsg = result[i];
+			let id = thisMsg.id;
+			let nickName = thisMsg.nickname;
+			let position = v3(thisMsg.x, thisMsg.y, thisMsg.z);
+			GameEvent.emit(GameEvent.ON_ROLE_LOCATION, id, nickName, position);
+		}	
+		
+      	console.log(places);
 	}
 
 	private msgChat(data: any): void {
@@ -91,10 +125,20 @@ export default class PeerConnection extends Connection {
 		let messages = Messages.decode(decode(data));
 		let result = messages.result;
 		let length = result.length;
-		for(var i = 0; i < length; i ++){
+		for(var i = 0; i < length; i ++) {
 			let thisMsg = result[i];
 			GameEvent.emit(GameEvent.ON_CHAT_MESSAGE, thisMsg.nickname, thisMsg.data);
 		}
+	}
+
+	private msgMoving(data: any): void {
+		let Move = proto.game.Move;
+		let move = Move.decode(decode(data));
+		let thisStart = move.stratPos;
+		let thisRotat = move.rotation;
+		let startPos = v3(thisStart.x, thisStart.y, thisStart.z);
+		let rotation = v3(thisRotat.x, thisRotat.y, thisRotat.z);
+		GameEvent.emit(GameEvent.ON_ROLE_MOVING, move.id, move.moveType, startPos, rotation);
 	}
 }
 

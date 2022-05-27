@@ -5,9 +5,11 @@ class MyEvent extends EventTarget{
     constructor() { super(); }
 
     //system event define
-    public ON_OWNER_LOCATION = "on_owner_location";
+    public ON_ROLE_LOCATION = "on_role_location";
+    public ON_ROLE_OFFLINE = "on_role_offline";
     public ON_SEND_CHAT_MSG = "on_send_chat_msg";
     public ON_CHAT_MESSAGE = "on_chat_message";
+    public ON_ROLE_MOVING = "on_role_moving";
 
     //network event define
     public CONNECTION_ERROR = "net_connection_error";

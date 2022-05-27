@@ -1,9 +1,10 @@
 import {encode, decode} from "../base/base64/Base64";
 import Define from "../base/Define";
 import GameEvent from "../base/GameEvent";
-import protobufjs from 'protobufjs';
 import proto from "./proto/proto.js";
 import {Socket} from "phoenix";
+import UserInfo from "../base/UserInfo";
+import { Vec3 } from "cc";
 
 export default abstract class Connection {
 		
@@ -42,8 +43,8 @@ export default abstract class Connection {
 					let resp = HttpResponse.decode(decode(response));	
 					if(resp.code == 1){
 						let LoginResponse = proto.game.LoginResponse;
-						let thisResponse = LoginResponse.decode(resp.data.value);
-						listener.call(caller, resp.code, thisResponse.token);
+						let theResp = LoginResponse.decode(resp.data.value);
+						listener.call(caller, resp.code, theResp.token, theResp.id, theResp.nickname, theResp.character);
 					}
 					else listener.call(caller, 0, resp.message);
 				}
@@ -55,7 +56,10 @@ export default abstract class Connection {
 		}				
 		
 		const LoginRequest = proto.game.LoginRequest;
-		let login = LoginRequest.create({nickname: acount});
+		let login = LoginRequest.create({
+			nickname: acount,
+			character: UserInfo.role
+		});
 		let data = encode(LoginRequest.encode(login).finish());
 		
 		xhr.open("POST", httpUrl, true);
@@ -156,20 +160,20 @@ export default abstract class Connection {
 		if(result) {
 			console.log("Joined channel successfully");
 			this.onRegisterEntry(this._channel);
-			this.sendPosition();
+			this.sendPosition(UserInfo.initPos);
 
 			GameEvent.emit(GameEvent.LOGIN_RESULT, Define.ERR_SUCCESS);
 		}
 		else GameEvent.emit(GameEvent.LOGIN_RESULT, Define.ERR_ERROR, "Unable to join channel");
 	}
 
-	protected sendPosition(): void {
+	protected sendPosition(position: Vec3): void {
 		let Placeable = proto.game.Placeable;
 		let message = Placeable.create({
-			id: "1",
-			x: 1000,
-			y: 1000,
-			z: 200
+			id: UserInfo.id,
+			x: position.x,
+			y: position.y,
+			z: position.z
 		  })
 	  
 		  let msg = Placeable.encode(message).finish();

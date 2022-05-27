@@ -4,6 +4,19 @@ package game;
 
 import "google/protobuf/any.proto";
 
+message Point {
+  sint32 x = 1;
+  sint32 y = 2;
+  sint32 z = 3;
+}
+
+message Move {
+  string id = 1;
+  uint32 moveType = 2;
+  Point stratPos = 3;
+  Point rotation = 4;
+}
+
 message LoginRequest {
   string nickname = 1;
   string character = 2;
@@ -18,9 +31,10 @@ message LoginResponse {
 
 message Placeable {
   string id = 1;
-  sint64 x = 2;
-  sint64 y = 3;
-  sint64 z = 4;
+  string nickname = 2;
+  sint64 x = 3;
+  sint64 y = 4;
+  sint64 z = 5;
 }
 
 message Placeables {

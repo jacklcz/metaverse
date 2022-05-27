@@ -13,7 +13,9 @@ export default class GlobalNode extends Component {
     }
 
     onLoad () {
-        GlobalNode._thisNode = this;        
+        GlobalNode._thisNode = this;
+        let gameRole = this.node.getChildByName("GameRole");
+        gameRole.active = false;
     }
 
     public onChatEnded(): void {

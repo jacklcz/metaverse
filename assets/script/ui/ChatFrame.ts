@@ -74,8 +74,9 @@ export class ChatFrame extends Node {
     }
 
     protected formatString(text: string, max: number = 6): string {
-        if(text.length > 6){
-            text = text.slice(0, 3) + ".." + text[text.length - 1];
+        if(text.length > 7){
+            text = text[0] + ".." + text.slice(text.length - 4);
+            //text = text.slice(0, 3) + ".." + text[text.length - 1];
         }
         return text;
     }

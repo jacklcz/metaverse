@@ -18,6 +18,502 @@ $root.game = (function() {
      */
     var game = {};
 
+    game.Point = (function() {
+
+        /**
+         * Properties of a Point.
+         * @memberof game
+         * @interface IPoint
+         * @property {number|null} [x] Point x
+         * @property {number|null} [y] Point y
+         * @property {number|null} [z] Point z
+         */
+
+        /**
+         * Constructs a new Point.
+         * @memberof game
+         * @classdesc Represents a Point.
+         * @implements IPoint
+         * @constructor
+         * @param {game.IPoint=} [properties] Properties to set
+         */
+        function Point(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * Point x.
+         * @member {number} x
+         * @memberof game.Point
+         * @instance
+         */
+        Point.prototype.x = 0;
+
+        /**
+         * Point y.
+         * @member {number} y
+         * @memberof game.Point
+         * @instance
+         */
+        Point.prototype.y = 0;
+
+        /**
+         * Point z.
+         * @member {number} z
+         * @memberof game.Point
+         * @instance
+         */
+        Point.prototype.z = 0;
+
+        /**
+         * Creates a new Point instance using the specified properties.
+         * @function create
+         * @memberof game.Point
+         * @static
+         * @param {game.IPoint=} [properties] Properties to set
+         * @returns {game.Point} Point instance
+         */
+        Point.create = function create(properties) {
+            return new Point(properties);
+        };
+
+        /**
+         * Encodes the specified Point message. Does not implicitly {@link game.Point.verify|verify} messages.
+         * @function encode
+         * @memberof game.Point
+         * @static
+         * @param {game.IPoint} message Point message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        Point.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.x != null && Object.hasOwnProperty.call(message, "x"))
+                writer.uint32(/* id 1, wireType 0 =*/8).sint32(message.x);
+            if (message.y != null && Object.hasOwnProperty.call(message, "y"))
+                writer.uint32(/* id 2, wireType 0 =*/16).sint32(message.y);
+            if (message.z != null && Object.hasOwnProperty.call(message, "z"))
+                writer.uint32(/* id 3, wireType 0 =*/24).sint32(message.z);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified Point message, length delimited. Does not implicitly {@link game.Point.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof game.Point
+         * @static
+         * @param {game.IPoint} message Point message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        Point.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a Point message from the specified reader or buffer.
+         * @function decode
+         * @memberof game.Point
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {game.Point} Point
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        Point.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.game.Point();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.x = reader.sint32();
+                    break;
+                case 2:
+                    message.y = reader.sint32();
+                    break;
+                case 3:
+                    message.z = reader.sint32();
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a Point message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof game.Point
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {game.Point} Point
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        Point.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a Point message.
+         * @function verify
+         * @memberof game.Point
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        Point.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.x != null && message.hasOwnProperty("x"))
+                if (!$util.isInteger(message.x))
+                    return "x: integer expected";
+            if (message.y != null && message.hasOwnProperty("y"))
+                if (!$util.isInteger(message.y))
+                    return "y: integer expected";
+            if (message.z != null && message.hasOwnProperty("z"))
+                if (!$util.isInteger(message.z))
+                    return "z: integer expected";
+            return null;
+        };
+
+        /**
+         * Creates a Point message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof game.Point
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {game.Point} Point
+         */
+        Point.fromObject = function fromObject(object) {
+            if (object instanceof $root.game.Point)
+                return object;
+            var message = new $root.game.Point();
+            if (object.x != null)
+                message.x = object.x | 0;
+            if (object.y != null)
+                message.y = object.y | 0;
+            if (object.z != null)
+                message.z = object.z | 0;
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a Point message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof game.Point
+         * @static
+         * @param {game.Point} message Point
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        Point.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.x = 0;
+                object.y = 0;
+                object.z = 0;
+            }
+            if (message.x != null && message.hasOwnProperty("x"))
+                object.x = message.x;
+            if (message.y != null && message.hasOwnProperty("y"))
+                object.y = message.y;
+            if (message.z != null && message.hasOwnProperty("z"))
+                object.z = message.z;
+            return object;
+        };
+
+        /**
+         * Converts this Point to JSON.
+         * @function toJSON
+         * @memberof game.Point
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        Point.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return Point;
+    })();
+
+    game.Move = (function() {
+
+        /**
+         * Properties of a Move.
+         * @memberof game
+         * @interface IMove
+         * @property {string|null} [id] Move id
+         * @property {number|null} [moveType] Move moveType
+         * @property {game.IPoint|null} [stratPos] Move stratPos
+         * @property {game.IPoint|null} [rotation] Move rotation
+         */
+
+        /**
+         * Constructs a new Move.
+         * @memberof game
+         * @classdesc Represents a Move.
+         * @implements IMove
+         * @constructor
+         * @param {game.IMove=} [properties] Properties to set
+         */
+        function Move(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * Move id.
+         * @member {string} id
+         * @memberof game.Move
+         * @instance
+         */
+        Move.prototype.id = "";
+
+        /**
+         * Move moveType.
+         * @member {number} moveType
+         * @memberof game.Move
+         * @instance
+         */
+        Move.prototype.moveType = 0;
+
+        /**
+         * Move stratPos.
+         * @member {game.IPoint|null|undefined} stratPos
+         * @memberof game.Move
+         * @instance
+         */
+        Move.prototype.stratPos = null;
+
+        /**
+         * Move rotation.
+         * @member {game.IPoint|null|undefined} rotation
+         * @memberof game.Move
+         * @instance
+         */
+        Move.prototype.rotation = null;
+
+        /**
+         * Creates a new Move instance using the specified properties.
+         * @function create
+         * @memberof game.Move
+         * @static
+         * @param {game.IMove=} [properties] Properties to set
+         * @returns {game.Move} Move instance
+         */
+        Move.create = function create(properties) {
+            return new Move(properties);
+        };
+
+        /**
+         * Encodes the specified Move message. Does not implicitly {@link game.Move.verify|verify} messages.
+         * @function encode
+         * @memberof game.Move
+         * @static
+         * @param {game.IMove} message Move message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        Move.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+            if (message.moveType != null && Object.hasOwnProperty.call(message, "moveType"))
+                writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.moveType);
+            if (message.stratPos != null && Object.hasOwnProperty.call(message, "stratPos"))
+                $root.game.Point.encode(message.stratPos, writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+            if (message.rotation != null && Object.hasOwnProperty.call(message, "rotation"))
+                $root.game.Point.encode(message.rotation, writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
+            return writer;
+        };
+
+        /**
+         * Encodes the specified Move message, length delimited. Does not implicitly {@link game.Move.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof game.Move
+         * @static
+         * @param {game.IMove} message Move message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        Move.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a Move message from the specified reader or buffer.
+         * @function decode
+         * @memberof game.Move
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {game.Move} Move
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        Move.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.game.Move();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1:
+                    message.id = reader.string();
+                    break;
+                case 2:
+                    message.moveType = reader.uint32();
+                    break;
+                case 3:
+                    message.stratPos = $root.game.Point.decode(reader, reader.uint32());
+                    break;
+                case 4:
+                    message.rotation = $root.game.Point.decode(reader, reader.uint32());
+                    break;
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a Move message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof game.Move
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {game.Move} Move
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        Move.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a Move message.
+         * @function verify
+         * @memberof game.Move
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        Move.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.id != null && message.hasOwnProperty("id"))
+                if (!$util.isString(message.id))
+                    return "id: string expected";
+            if (message.moveType != null && message.hasOwnProperty("moveType"))
+                if (!$util.isInteger(message.moveType))
+                    return "moveType: integer expected";
+            if (message.stratPos != null && message.hasOwnProperty("stratPos")) {
+                var error = $root.game.Point.verify(message.stratPos);
+                if (error)
+                    return "stratPos." + error;
+            }
+            if (message.rotation != null && message.hasOwnProperty("rotation")) {
+                var error = $root.game.Point.verify(message.rotation);
+                if (error)
+                    return "rotation." + error;
+            }
+            return null;
+        };
+
+        /**
+         * Creates a Move message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof game.Move
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {game.Move} Move
+         */
+        Move.fromObject = function fromObject(object) {
+            if (object instanceof $root.game.Move)
+                return object;
+            var message = new $root.game.Move();
+            if (object.id != null)
+                message.id = String(object.id);
+            if (object.moveType != null)
+                message.moveType = object.moveType >>> 0;
+            if (object.stratPos != null) {
+                if (typeof object.stratPos !== "object")
+                    throw TypeError(".game.Move.stratPos: object expected");
+                message.stratPos = $root.game.Point.fromObject(object.stratPos);
+            }
+            if (object.rotation != null) {
+                if (typeof object.rotation !== "object")
+                    throw TypeError(".game.Move.rotation: object expected");
+                message.rotation = $root.game.Point.fromObject(object.rotation);
+            }
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a Move message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof game.Move
+         * @static
+         * @param {game.Move} message Move
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        Move.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.id = "";
+                object.moveType = 0;
+                object.stratPos = null;
+                object.rotation = null;
+            }
+            if (message.id != null && message.hasOwnProperty("id"))
+                object.id = message.id;
+            if (message.moveType != null && message.hasOwnProperty("moveType"))
+                object.moveType = message.moveType;
+            if (message.stratPos != null && message.hasOwnProperty("stratPos"))
+                object.stratPos = $root.game.Point.toObject(message.stratPos, options);
+            if (message.rotation != null && message.hasOwnProperty("rotation"))
+                object.rotation = $root.game.Point.toObject(message.rotation, options);
+            return object;
+        };
+
+        /**
+         * Converts this Move to JSON.
+         * @function toJSON
+         * @memberof game.Move
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        Move.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        return Move;
+    })();
+
     game.LoginRequest = (function() {
 
         /**
@@ -489,6 +985,7 @@ $root.game = (function() {
          * @memberof game
          * @interface IPlaceable
          * @property {string|null} [id] Placeable id
+         * @property {string|null} [nickname] Placeable nickname
          * @property {number|Long|null} [x] Placeable x
          * @property {number|Long|null} [y] Placeable y
          * @property {number|Long|null} [z] Placeable z
@@ -516,6 +1013,14 @@ $root.game = (function() {
          * @instance
          */
         Placeable.prototype.id = "";
+
+        /**
+         * Placeable nickname.
+         * @member {string} nickname
+         * @memberof game.Placeable
+         * @instance
+         */
+        Placeable.prototype.nickname = "";
 
         /**
          * Placeable x.
@@ -567,12 +1072,14 @@ $root.game = (function() {
                 writer = $Writer.create();
             if (message.id != null && Object.hasOwnProperty.call(message, "id"))
                 writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+            if (message.nickname != null && Object.hasOwnProperty.call(message, "nickname"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.nickname);
             if (message.x != null && Object.hasOwnProperty.call(message, "x"))
-                writer.uint32(/* id 2, wireType 0 =*/16).sint64(message.x);
+                writer.uint32(/* id 3, wireType 0 =*/24).sint64(message.x);
             if (message.y != null && Object.hasOwnProperty.call(message, "y"))
-                writer.uint32(/* id 3, wireType 0 =*/24).sint64(message.y);
+                writer.uint32(/* id 4, wireType 0 =*/32).sint64(message.y);
             if (message.z != null && Object.hasOwnProperty.call(message, "z"))
-                writer.uint32(/* id 4, wireType 0 =*/32).sint64(message.z);
+                writer.uint32(/* id 5, wireType 0 =*/40).sint64(message.z);
             return writer;
         };
 
@@ -611,12 +1118,15 @@ $root.game = (function() {
                     message.id = reader.string();
                     break;
                 case 2:
-                    message.x = reader.sint64();
+                    message.nickname = reader.string();
                     break;
                 case 3:
-                    message.y = reader.sint64();
+                    message.x = reader.sint64();
                     break;
                 case 4:
+                    message.y = reader.sint64();
+                    break;
+                case 5:
                     message.z = reader.sint64();
                     break;
                 default:
@@ -657,6 +1167,9 @@ $root.game = (function() {
             if (message.id != null && message.hasOwnProperty("id"))
                 if (!$util.isString(message.id))
                     return "id: string expected";
+            if (message.nickname != null && message.hasOwnProperty("nickname"))
+                if (!$util.isString(message.nickname))
+                    return "nickname: string expected";
             if (message.x != null && message.hasOwnProperty("x"))
                 if (!$util.isInteger(message.x) && !(message.x && $util.isInteger(message.x.low) && $util.isInteger(message.x.high)))
                     return "x: integer|Long expected";
@@ -683,6 +1196,8 @@ $root.game = (function() {
             var message = new $root.game.Placeable();
             if (object.id != null)
                 message.id = String(object.id);
+            if (object.nickname != null)
+                message.nickname = String(object.nickname);
             if (object.x != null)
                 if ($util.Long)
                     (message.x = $util.Long.fromValue(object.x)).unsigned = false;
@@ -728,6 +1243,7 @@ $root.game = (function() {
             var object = {};
             if (options.defaults) {
                 object.id = "";
+                object.nickname = "";
                 if ($util.Long) {
                     var long = new $util.Long(0, 0, false);
                     object.x = options.longs === String ? long.toString() : options.longs === Number ? long.toNumber() : long;
@@ -746,6 +1262,8 @@ $root.game = (function() {
             }
             if (message.id != null && message.hasOwnProperty("id"))
                 object.id = message.id;
+            if (message.nickname != null && message.hasOwnProperty("nickname"))
+                object.nickname = message.nickname;
             if (message.x != null && message.hasOwnProperty("x"))
                 if (typeof message.x === "number")
                     object.x = options.longs === String ? String(message.x) : message.x;

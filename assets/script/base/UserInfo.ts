@@ -1,9 +1,13 @@
-import { _decorator } from 'cc';
+import { _decorator, Vec3, v3 } from 'cc';
 const { ccclass, property } = _decorator;
 
 class _UserInfo {
+    public id: string = null;
     public account: string = null;
+    public nickName: string = null;
     public token: string = null;
+    public role: string = null;
+    public initPos: Vec3 = v3(12, 1, 18);
 }
 
 var UserInfo = new _UserInfo();

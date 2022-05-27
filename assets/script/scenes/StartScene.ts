@@ -94,10 +94,14 @@ export class StartScene extends Component {
     }
 
     private startLogin(): void {
-        this._mainView.getChild<fgui.GButton>("goBtn").visible = false;
-        this._mainView.getChild<fgui.GComponent>("selection").visible = false;
+        this._mainView.getChild<fgui.GButton>("goBtn").visible = false;        
         let tips = this._mainView.getChild<fgui.GTextField>("tips");
         tips.text = "登录游戏...";
+
+        let selection = this._mainView.getChild<fgui.GComponent>("selection");
+        selection.visible = false;
+        let index = selection.getController("select").selectedIndex;
+        UserInfo.role = index.toString();
 
         let peerConnection = PeerConnection.instance();
         peerConnection.login(TheConfig.httpUrl, TheConfig.wsUrl);
@@ -124,8 +128,9 @@ export class StartScene extends Component {
         value = Math.floor(value * 100);
         if(value > 100) value = 100;
         
-        this._mainView.getChild<fgui.GProgressBar>("loading").tweenValue(value, 0.3);
         console.log("loading main scene %d", value);
+        let loading = this._mainView.getChild<fgui.GProgressBar>("loading");
+        if(loading) loading.value = value;        
     }
 
     private onCheckMetaMask(): void {
