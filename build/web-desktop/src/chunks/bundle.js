@@ -18888,192 +18888,6 @@ System.register("chunks:///_virtual/index.js", ['./cjs-loader.mjs'], function (e
       var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
 
       loader.define(__cjsMetaURL, function (exports$1, require, module, __filename, __dirname) {
-        module.exports = asPromise;
-        /**
-         * Callback as used by {@link util.asPromise}.
-         * @typedef asPromiseCallback
-         * @type {function}
-         * @param {Error|null} error Error, if any
-         * @param {...*} params Additional arguments
-         * @returns {undefined}
-         */
-
-        /**
-         * Returns a promise from a node-style callback function.
-         * @memberof util
-         * @param {asPromiseCallback} fn Function to call
-         * @param {*} ctx Function context
-         * @param {...*} params Function arguments
-         * @returns {Promise<*>} Promisified function
-         */
-
-        function asPromise(fn, ctx
-        /*, varargs */
-        ) {
-          var params = new Array(arguments.length - 1),
-              offset = 0,
-              index = 2,
-              pending = true;
-
-          while (index < arguments.length) {
-            params[offset++] = arguments[index++];
-          }
-
-          return new Promise(function executor(resolve, reject) {
-            params[offset] = function callback(err
-            /*, varargs */
-            ) {
-              if (pending) {
-                pending = false;
-                if (err) reject(err);else {
-                  var params = new Array(arguments.length - 1),
-                      offset = 0;
-
-                  while (offset < params.length) {
-                    params[offset++] = arguments[offset];
-                  }
-
-                  resolve.apply(null, params);
-                }
-              }
-            };
-
-            try {
-              fn.apply(ctx || null, params);
-            } catch (err) {
-              if (pending) {
-                pending = false;
-                reject(err);
-              }
-            }
-          });
-        } // #endregion ORIGINAL CODE
-
-
-        _cjsExports = exports('default', module.exports);
-      }, {});
-    }
-  };
-});
-
-System.register("chunks:///_virtual/index2.js", ['./cjs-loader.mjs'], function (exports, module) {
-  'use strict';
-
-  var loader;
-  return {
-    setters: [function (module) {
-      loader = module.default;
-    }],
-    execute: function () {
-      exports('default', void 0);
-
-      var _cjsExports;
-
-      var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
-
-      loader.define(__cjsMetaURL, function (exports$1, require, module, __filename, __dirname) {
-        module.exports = EventEmitter;
-        /**
-         * Constructs a new event emitter instance.
-         * @classdesc A minimal event emitter.
-         * @memberof util
-         * @constructor
-         */
-
-        function EventEmitter() {
-          /**
-           * Registered listeners.
-           * @type {Object.<string,*>}
-           * @private
-           */
-          this._listeners = {};
-        }
-        /**
-         * Registers an event listener.
-         * @param {string} evt Event name
-         * @param {function} fn Listener
-         * @param {*} [ctx] Listener context
-         * @returns {util.EventEmitter} `this`
-         */
-
-
-        EventEmitter.prototype.on = function on(evt, fn, ctx) {
-          (this._listeners[evt] || (this._listeners[evt] = [])).push({
-            fn: fn,
-            ctx: ctx || this
-          });
-          return this;
-        };
-        /**
-         * Removes an event listener or any matching listeners if arguments are omitted.
-         * @param {string} [evt] Event name. Removes all listeners if omitted.
-         * @param {function} [fn] Listener to remove. Removes all listeners of `evt` if omitted.
-         * @returns {util.EventEmitter} `this`
-         */
-
-
-        EventEmitter.prototype.off = function off(evt, fn) {
-          if (evt === undefined) this._listeners = {};else {
-            if (fn === undefined) this._listeners[evt] = [];else {
-              var listeners = this._listeners[evt];
-
-              for (var i = 0; i < listeners.length;) {
-                if (listeners[i].fn === fn) listeners.splice(i, 1);else ++i;
-              }
-            }
-          }
-          return this;
-        };
-        /**
-         * Emits an event by calling its listeners with the specified arguments.
-         * @param {string} evt Event name
-         * @param {...*} args Arguments
-         * @returns {util.EventEmitter} `this`
-         */
-
-
-        EventEmitter.prototype.emit = function emit(evt) {
-          var listeners = this._listeners[evt];
-
-          if (listeners) {
-            var args = [],
-                i = 1;
-
-            for (; i < arguments.length;) {
-              args.push(arguments[i++]);
-            }
-
-            for (i = 0; i < listeners.length;) {
-              listeners[i].fn.apply(listeners[i++].ctx, args);
-            }
-          }
-
-          return this;
-        }; // #endregion ORIGINAL CODE
-
-
-        _cjsExports = exports('default', module.exports);
-      }, {});
-    }
-  };
-});
-
-System.register("chunks:///_virtual/index3.js", ['./cjs-loader.mjs'], function (exports, module) {
-  'use strict';
-
-  var loader;
-  return {
-    setters: [function (module) {
-      loader = module.default;
-    }],
-    execute: function () {
-      exports('default', void 0);
-
-      var _cjsExports;
-
-      var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
-
-      loader.define(__cjsMetaURL, function (exports$1, require, module, __filename, __dirname) {
         /**
          * A minimal base64 implementation for number arrays.
          * @memberof util
@@ -19225,6 +19039,192 @@ System.register("chunks:///_virtual/index3.js", ['./cjs-loader.mjs'], function (
 
         base64.test = function test(string) {
           return /^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/.test(string);
+        }; // #endregion ORIGINAL CODE
+
+
+        _cjsExports = exports('default', module.exports);
+      }, {});
+    }
+  };
+});
+
+System.register("chunks:///_virtual/index2.js", ['./cjs-loader.mjs'], function (exports, module) {
+  'use strict';
+
+  var loader;
+  return {
+    setters: [function (module) {
+      loader = module.default;
+    }],
+    execute: function () {
+      exports('default', void 0);
+
+      var _cjsExports;
+
+      var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
+
+      loader.define(__cjsMetaURL, function (exports$1, require, module, __filename, __dirname) {
+        module.exports = asPromise;
+        /**
+         * Callback as used by {@link util.asPromise}.
+         * @typedef asPromiseCallback
+         * @type {function}
+         * @param {Error|null} error Error, if any
+         * @param {...*} params Additional arguments
+         * @returns {undefined}
+         */
+
+        /**
+         * Returns a promise from a node-style callback function.
+         * @memberof util
+         * @param {asPromiseCallback} fn Function to call
+         * @param {*} ctx Function context
+         * @param {...*} params Function arguments
+         * @returns {Promise<*>} Promisified function
+         */
+
+        function asPromise(fn, ctx
+        /*, varargs */
+        ) {
+          var params = new Array(arguments.length - 1),
+              offset = 0,
+              index = 2,
+              pending = true;
+
+          while (index < arguments.length) {
+            params[offset++] = arguments[index++];
+          }
+
+          return new Promise(function executor(resolve, reject) {
+            params[offset] = function callback(err
+            /*, varargs */
+            ) {
+              if (pending) {
+                pending = false;
+                if (err) reject(err);else {
+                  var params = new Array(arguments.length - 1),
+                      offset = 0;
+
+                  while (offset < params.length) {
+                    params[offset++] = arguments[offset];
+                  }
+
+                  resolve.apply(null, params);
+                }
+              }
+            };
+
+            try {
+              fn.apply(ctx || null, params);
+            } catch (err) {
+              if (pending) {
+                pending = false;
+                reject(err);
+              }
+            }
+          });
+        } // #endregion ORIGINAL CODE
+
+
+        _cjsExports = exports('default', module.exports);
+      }, {});
+    }
+  };
+});
+
+System.register("chunks:///_virtual/index3.js", ['./cjs-loader.mjs'], function (exports, module) {
+  'use strict';
+
+  var loader;
+  return {
+    setters: [function (module) {
+      loader = module.default;
+    }],
+    execute: function () {
+      exports('default', void 0);
+
+      var _cjsExports;
+
+      var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
+
+      loader.define(__cjsMetaURL, function (exports$1, require, module, __filename, __dirname) {
+        module.exports = EventEmitter;
+        /**
+         * Constructs a new event emitter instance.
+         * @classdesc A minimal event emitter.
+         * @memberof util
+         * @constructor
+         */
+
+        function EventEmitter() {
+          /**
+           * Registered listeners.
+           * @type {Object.<string,*>}
+           * @private
+           */
+          this._listeners = {};
+        }
+        /**
+         * Registers an event listener.
+         * @param {string} evt Event name
+         * @param {function} fn Listener
+         * @param {*} [ctx] Listener context
+         * @returns {util.EventEmitter} `this`
+         */
+
+
+        EventEmitter.prototype.on = function on(evt, fn, ctx) {
+          (this._listeners[evt] || (this._listeners[evt] = [])).push({
+            fn: fn,
+            ctx: ctx || this
+          });
+          return this;
+        };
+        /**
+         * Removes an event listener or any matching listeners if arguments are omitted.
+         * @param {string} [evt] Event name. Removes all listeners if omitted.
+         * @param {function} [fn] Listener to remove. Removes all listeners of `evt` if omitted.
+         * @returns {util.EventEmitter} `this`
+         */
+
+
+        EventEmitter.prototype.off = function off(evt, fn) {
+          if (evt === undefined) this._listeners = {};else {
+            if (fn === undefined) this._listeners[evt] = [];else {
+              var listeners = this._listeners[evt];
+
+              for (var i = 0; i < listeners.length;) {
+                if (listeners[i].fn === fn) listeners.splice(i, 1);else ++i;
+              }
+            }
+          }
+          return this;
+        };
+        /**
+         * Emits an event by calling its listeners with the specified arguments.
+         * @param {string} evt Event name
+         * @param {...*} args Arguments
+         * @returns {util.EventEmitter} `this`
+         */
+
+
+        EventEmitter.prototype.emit = function emit(evt) {
+          var listeners = this._listeners[evt];
+
+          if (listeners) {
+            var args = [],
+                i = 1;
+
+            for (; i < arguments.length;) {
+              args.push(arguments[i++]);
+            }
+
+            for (i = 0; i < listeners.length;) {
+              listeners[i].fn.apply(listeners[i++].ctx, args);
+            }
+          }
+
+          return this;
         }; // #endregion ORIGINAL CODE
 
 
@@ -20088,7 +20088,7 @@ System.register("chunks:///_virtual/minimal.js", ['./cjs-loader.mjs', './index-m
   };
 });
 
-System.register("chunks:///_virtual/minimal2.js", ['./cjs-loader.mjs', './index.js', './index3.js', './index2.js', './index4.js', './index5.js', './index6.js', './index7.js', './longbits.js'], function (exports, module) {
+System.register("chunks:///_virtual/minimal2.js", ['./cjs-loader.mjs', './index2.js', './index.js', './index3.js', './index4.js', './index5.js', './index6.js', './index7.js', './longbits.js'], function (exports, module) {
   'use strict';
 
   var loader, __cjsMetaURL$1, __cjsMetaURL$2, __cjsMetaURL$3, __cjsMetaURL$4, __cjsMetaURL$5, __cjsMetaURL$6, __cjsMetaURL$7, __cjsMetaURL$8;
@@ -21294,6 +21294,207 @@ System.register("chunks:///_virtual/phoenix.mjs", [], function (exports) {
         return LongPoll;
       }()); // js/phoenix/presence.js
 
+      var Presence = exports('Presence', /*#__PURE__*/function () {
+        function Presence(channel, opts) {
+          var _this9 = this;
+
+          if (opts === void 0) {
+            opts = {};
+          }
+
+          var events = opts.events || {
+            state: "presence_state",
+            diff: "presence_diff"
+          };
+          this.state = {};
+          this.pendingDiffs = [];
+          this.channel = channel;
+          this.joinRef = null;
+          this.caller = {
+            onJoin: function onJoin() {},
+            onLeave: function onLeave() {},
+            onSync: function onSync() {}
+          };
+          this.channel.on(events.state, function (newState) {
+            var _this9$caller = _this9.caller,
+                onJoin = _this9$caller.onJoin,
+                onLeave = _this9$caller.onLeave,
+                onSync = _this9$caller.onSync;
+            _this9.joinRef = _this9.channel.joinRef();
+            _this9.state = Presence.syncState(_this9.state, newState, onJoin, onLeave);
+
+            _this9.pendingDiffs.forEach(function (diff) {
+              _this9.state = Presence.syncDiff(_this9.state, diff, onJoin, onLeave);
+            });
+
+            _this9.pendingDiffs = [];
+            onSync();
+          });
+          this.channel.on(events.diff, function (diff) {
+            var _this9$caller2 = _this9.caller,
+                onJoin = _this9$caller2.onJoin,
+                onLeave = _this9$caller2.onLeave,
+                onSync = _this9$caller2.onSync;
+
+            if (_this9.inPendingSyncState()) {
+              _this9.pendingDiffs.push(diff);
+            } else {
+              _this9.state = Presence.syncDiff(_this9.state, diff, onJoin, onLeave);
+              onSync();
+            }
+          });
+        }
+
+        var _proto5 = Presence.prototype;
+
+        _proto5.onJoin = function onJoin(callback) {
+          this.caller.onJoin = callback;
+        };
+
+        _proto5.onLeave = function onLeave(callback) {
+          this.caller.onLeave = callback;
+        };
+
+        _proto5.onSync = function onSync(callback) {
+          this.caller.onSync = callback;
+        };
+
+        _proto5.list = function list(by) {
+          return Presence.list(this.state, by);
+        };
+
+        _proto5.inPendingSyncState = function inPendingSyncState() {
+          return !this.joinRef || this.joinRef !== this.channel.joinRef();
+        };
+
+        Presence.syncState = function syncState(currentState, newState, onJoin, onLeave) {
+          var _this10 = this;
+
+          var state = this.clone(currentState);
+          var joins = {};
+          var leaves = {};
+          this.map(state, function (key, presence) {
+            if (!newState[key]) {
+              leaves[key] = presence;
+            }
+          });
+          this.map(newState, function (key, newPresence) {
+            var currentPresence = state[key];
+
+            if (currentPresence) {
+              var newRefs = newPresence.metas.map(function (m) {
+                return m.phx_ref;
+              });
+              var curRefs = currentPresence.metas.map(function (m) {
+                return m.phx_ref;
+              });
+              var joinedMetas = newPresence.metas.filter(function (m) {
+                return curRefs.indexOf(m.phx_ref) < 0;
+              });
+              var leftMetas = currentPresence.metas.filter(function (m) {
+                return newRefs.indexOf(m.phx_ref) < 0;
+              });
+
+              if (joinedMetas.length > 0) {
+                joins[key] = newPresence;
+                joins[key].metas = joinedMetas;
+              }
+
+              if (leftMetas.length > 0) {
+                leaves[key] = _this10.clone(currentPresence);
+                leaves[key].metas = leftMetas;
+              }
+            } else {
+              joins[key] = newPresence;
+            }
+          });
+          return this.syncDiff(state, {
+            joins: joins,
+            leaves: leaves
+          }, onJoin, onLeave);
+        };
+
+        Presence.syncDiff = function syncDiff(state, diff, onJoin, onLeave) {
+          var _this11 = this;
+
+          var _this$clone = this.clone(diff),
+              joins = _this$clone.joins,
+              leaves = _this$clone.leaves;
+
+          if (!onJoin) {
+            onJoin = function onJoin() {};
+          }
+
+          if (!onLeave) {
+            onLeave = function onLeave() {};
+          }
+
+          this.map(joins, function (key, newPresence) {
+            var currentPresence = state[key];
+            state[key] = _this11.clone(newPresence);
+
+            if (currentPresence) {
+              var _state$key$metas;
+
+              var joinedRefs = state[key].metas.map(function (m) {
+                return m.phx_ref;
+              });
+              var curMetas = currentPresence.metas.filter(function (m) {
+                return joinedRefs.indexOf(m.phx_ref) < 0;
+              });
+
+              (_state$key$metas = state[key].metas).unshift.apply(_state$key$metas, curMetas);
+            }
+
+            onJoin(key, currentPresence, newPresence);
+          });
+          this.map(leaves, function (key, leftPresence) {
+            var currentPresence = state[key];
+
+            if (!currentPresence) {
+              return;
+            }
+
+            var refsToRemove = leftPresence.metas.map(function (m) {
+              return m.phx_ref;
+            });
+            currentPresence.metas = currentPresence.metas.filter(function (p) {
+              return refsToRemove.indexOf(p.phx_ref) < 0;
+            });
+            onLeave(key, currentPresence, leftPresence);
+
+            if (currentPresence.metas.length === 0) {
+              delete state[key];
+            }
+          });
+          return state;
+        };
+
+        Presence.list = function list(presences, chooser) {
+          if (!chooser) {
+            chooser = function chooser(key, pres) {
+              return pres;
+            };
+          }
+
+          return this.map(presences, function (key, presence) {
+            return chooser(key, presence);
+          });
+        };
+
+        Presence.map = function map(obj, func) {
+          return Object.getOwnPropertyNames(obj).map(function (key) {
+            return func(key, obj[key]);
+          });
+        };
+
+        Presence.clone = function clone(obj) {
+          return JSON.parse(JSON.stringify(obj));
+        };
+
+        return Presence;
+      }()); // js/phoenix/serializer.js
+
       var serializer_default = exports('Serializer', {
         HEADER_LENGTH: 1,
         META_LENGTH: 4,
@@ -21980,6 +22181,510 @@ System.register("chunks:///_virtual/proto.js", ['./cjs-loader.mjs', './minimal.j
            */
           var game = {};
 
+          game.Point = function () {
+            /**
+             * Properties of a Point.
+             * @memberof game
+             * @interface IPoint
+             * @property {number|null} [x] Point x
+             * @property {number|null} [y] Point y
+             * @property {number|null} [z] Point z
+             */
+
+            /**
+             * Constructs a new Point.
+             * @memberof game
+             * @classdesc Represents a Point.
+             * @implements IPoint
+             * @constructor
+             * @param {game.IPoint=} [properties] Properties to set
+             */
+            function Point(properties) {
+              if (properties) for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i) {
+                if (properties[keys[i]] != null) this[keys[i]] = properties[keys[i]];
+              }
+            }
+            /**
+             * Point x.
+             * @member {number} x
+             * @memberof game.Point
+             * @instance
+             */
+
+
+            Point.prototype.x = 0;
+            /**
+             * Point y.
+             * @member {number} y
+             * @memberof game.Point
+             * @instance
+             */
+
+            Point.prototype.y = 0;
+            /**
+             * Point z.
+             * @member {number} z
+             * @memberof game.Point
+             * @instance
+             */
+
+            Point.prototype.z = 0;
+            /**
+             * Creates a new Point instance using the specified properties.
+             * @function create
+             * @memberof game.Point
+             * @static
+             * @param {game.IPoint=} [properties] Properties to set
+             * @returns {game.Point} Point instance
+             */
+
+            Point.create = function create(properties) {
+              return new Point(properties);
+            };
+            /**
+             * Encodes the specified Point message. Does not implicitly {@link game.Point.verify|verify} messages.
+             * @function encode
+             * @memberof game.Point
+             * @static
+             * @param {game.IPoint} message Point message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+
+
+            Point.encode = function encode(message, writer) {
+              if (!writer) writer = $Writer.create();
+              if (message.x != null && Object.hasOwnProperty.call(message, "x")) writer.uint32(
+              /* id 1, wireType 0 =*/
+              8).sint32(message.x);
+              if (message.y != null && Object.hasOwnProperty.call(message, "y")) writer.uint32(
+              /* id 2, wireType 0 =*/
+              16).sint32(message.y);
+              if (message.z != null && Object.hasOwnProperty.call(message, "z")) writer.uint32(
+              /* id 3, wireType 0 =*/
+              24).sint32(message.z);
+              return writer;
+            };
+            /**
+             * Encodes the specified Point message, length delimited. Does not implicitly {@link game.Point.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof game.Point
+             * @static
+             * @param {game.IPoint} message Point message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+
+
+            Point.encodeDelimited = function encodeDelimited(message, writer) {
+              return this.encode(message, writer).ldelim();
+            };
+            /**
+             * Decodes a Point message from the specified reader or buffer.
+             * @function decode
+             * @memberof game.Point
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {game.Point} Point
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+
+
+            Point.decode = function decode(reader, length) {
+              if (!(reader instanceof $Reader)) reader = $Reader.create(reader);
+              var end = length === undefined ? reader.len : reader.pos + length,
+                  message = new $root.game.Point();
+
+              while (reader.pos < end) {
+                var tag = reader.uint32();
+
+                switch (tag >>> 3) {
+                  case 1:
+                    message.x = reader.sint32();
+                    break;
+
+                  case 2:
+                    message.y = reader.sint32();
+                    break;
+
+                  case 3:
+                    message.z = reader.sint32();
+                    break;
+
+                  default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+              }
+
+              return message;
+            };
+            /**
+             * Decodes a Point message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof game.Point
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {game.Point} Point
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+
+
+            Point.decodeDelimited = function decodeDelimited(reader) {
+              if (!(reader instanceof $Reader)) reader = new $Reader(reader);
+              return this.decode(reader, reader.uint32());
+            };
+            /**
+             * Verifies a Point message.
+             * @function verify
+             * @memberof game.Point
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+
+
+            Point.verify = function verify(message) {
+              if (typeof message !== "object" || message === null) return "object expected";
+              if (message.x != null && message.hasOwnProperty("x")) if (!$util.isInteger(message.x)) return "x: integer expected";
+              if (message.y != null && message.hasOwnProperty("y")) if (!$util.isInteger(message.y)) return "y: integer expected";
+              if (message.z != null && message.hasOwnProperty("z")) if (!$util.isInteger(message.z)) return "z: integer expected";
+              return null;
+            };
+            /**
+             * Creates a Point message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof game.Point
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {game.Point} Point
+             */
+
+
+            Point.fromObject = function fromObject(object) {
+              if (object instanceof $root.game.Point) return object;
+              var message = new $root.game.Point();
+              if (object.x != null) message.x = object.x | 0;
+              if (object.y != null) message.y = object.y | 0;
+              if (object.z != null) message.z = object.z | 0;
+              return message;
+            };
+            /**
+             * Creates a plain object from a Point message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof game.Point
+             * @static
+             * @param {game.Point} message Point
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+
+
+            Point.toObject = function toObject(message, options) {
+              if (!options) options = {};
+              var object = {};
+
+              if (options.defaults) {
+                object.x = 0;
+                object.y = 0;
+                object.z = 0;
+              }
+
+              if (message.x != null && message.hasOwnProperty("x")) object.x = message.x;
+              if (message.y != null && message.hasOwnProperty("y")) object.y = message.y;
+              if (message.z != null && message.hasOwnProperty("z")) object.z = message.z;
+              return object;
+            };
+            /**
+             * Converts this Point to JSON.
+             * @function toJSON
+             * @memberof game.Point
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+
+
+            Point.prototype.toJSON = function toJSON() {
+              return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Point;
+          }();
+
+          game.Move = function () {
+            /**
+             * Properties of a Move.
+             * @memberof game
+             * @interface IMove
+             * @property {string|null} [id] Move id
+             * @property {number|null} [moveType] Move moveType
+             * @property {game.IPoint|null} [stratPos] Move stratPos
+             * @property {game.IPoint|null} [rotation] Move rotation
+             */
+
+            /**
+             * Constructs a new Move.
+             * @memberof game
+             * @classdesc Represents a Move.
+             * @implements IMove
+             * @constructor
+             * @param {game.IMove=} [properties] Properties to set
+             */
+            function Move(properties) {
+              if (properties) for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i) {
+                if (properties[keys[i]] != null) this[keys[i]] = properties[keys[i]];
+              }
+            }
+            /**
+             * Move id.
+             * @member {string} id
+             * @memberof game.Move
+             * @instance
+             */
+
+
+            Move.prototype.id = "";
+            /**
+             * Move moveType.
+             * @member {number} moveType
+             * @memberof game.Move
+             * @instance
+             */
+
+            Move.prototype.moveType = 0;
+            /**
+             * Move stratPos.
+             * @member {game.IPoint|null|undefined} stratPos
+             * @memberof game.Move
+             * @instance
+             */
+
+            Move.prototype.stratPos = null;
+            /**
+             * Move rotation.
+             * @member {game.IPoint|null|undefined} rotation
+             * @memberof game.Move
+             * @instance
+             */
+
+            Move.prototype.rotation = null;
+            /**
+             * Creates a new Move instance using the specified properties.
+             * @function create
+             * @memberof game.Move
+             * @static
+             * @param {game.IMove=} [properties] Properties to set
+             * @returns {game.Move} Move instance
+             */
+
+            Move.create = function create(properties) {
+              return new Move(properties);
+            };
+            /**
+             * Encodes the specified Move message. Does not implicitly {@link game.Move.verify|verify} messages.
+             * @function encode
+             * @memberof game.Move
+             * @static
+             * @param {game.IMove} message Move message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+
+
+            Move.encode = function encode(message, writer) {
+              if (!writer) writer = $Writer.create();
+              if (message.id != null && Object.hasOwnProperty.call(message, "id")) writer.uint32(
+              /* id 1, wireType 2 =*/
+              10).string(message.id);
+              if (message.moveType != null && Object.hasOwnProperty.call(message, "moveType")) writer.uint32(
+              /* id 2, wireType 0 =*/
+              16).uint32(message.moveType);
+              if (message.stratPos != null && Object.hasOwnProperty.call(message, "stratPos")) $root.game.Point.encode(message.stratPos, writer.uint32(
+              /* id 3, wireType 2 =*/
+              26).fork()).ldelim();
+              if (message.rotation != null && Object.hasOwnProperty.call(message, "rotation")) $root.game.Point.encode(message.rotation, writer.uint32(
+              /* id 4, wireType 2 =*/
+              34).fork()).ldelim();
+              return writer;
+            };
+            /**
+             * Encodes the specified Move message, length delimited. Does not implicitly {@link game.Move.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof game.Move
+             * @static
+             * @param {game.IMove} message Move message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+
+
+            Move.encodeDelimited = function encodeDelimited(message, writer) {
+              return this.encode(message, writer).ldelim();
+            };
+            /**
+             * Decodes a Move message from the specified reader or buffer.
+             * @function decode
+             * @memberof game.Move
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {game.Move} Move
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+
+
+            Move.decode = function decode(reader, length) {
+              if (!(reader instanceof $Reader)) reader = $Reader.create(reader);
+              var end = length === undefined ? reader.len : reader.pos + length,
+                  message = new $root.game.Move();
+
+              while (reader.pos < end) {
+                var tag = reader.uint32();
+
+                switch (tag >>> 3) {
+                  case 1:
+                    message.id = reader.string();
+                    break;
+
+                  case 2:
+                    message.moveType = reader.uint32();
+                    break;
+
+                  case 3:
+                    message.stratPos = $root.game.Point.decode(reader, reader.uint32());
+                    break;
+
+                  case 4:
+                    message.rotation = $root.game.Point.decode(reader, reader.uint32());
+                    break;
+
+                  default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+              }
+
+              return message;
+            };
+            /**
+             * Decodes a Move message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof game.Move
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {game.Move} Move
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+
+
+            Move.decodeDelimited = function decodeDelimited(reader) {
+              if (!(reader instanceof $Reader)) reader = new $Reader(reader);
+              return this.decode(reader, reader.uint32());
+            };
+            /**
+             * Verifies a Move message.
+             * @function verify
+             * @memberof game.Move
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+
+
+            Move.verify = function verify(message) {
+              if (typeof message !== "object" || message === null) return "object expected";
+              if (message.id != null && message.hasOwnProperty("id")) if (!$util.isString(message.id)) return "id: string expected";
+              if (message.moveType != null && message.hasOwnProperty("moveType")) if (!$util.isInteger(message.moveType)) return "moveType: integer expected";
+
+              if (message.stratPos != null && message.hasOwnProperty("stratPos")) {
+                var error = $root.game.Point.verify(message.stratPos);
+                if (error) return "stratPos." + error;
+              }
+
+              if (message.rotation != null && message.hasOwnProperty("rotation")) {
+                var error = $root.game.Point.verify(message.rotation);
+                if (error) return "rotation." + error;
+              }
+
+              return null;
+            };
+            /**
+             * Creates a Move message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof game.Move
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {game.Move} Move
+             */
+
+
+            Move.fromObject = function fromObject(object) {
+              if (object instanceof $root.game.Move) return object;
+              var message = new $root.game.Move();
+              if (object.id != null) message.id = String(object.id);
+              if (object.moveType != null) message.moveType = object.moveType >>> 0;
+
+              if (object.stratPos != null) {
+                if (typeof object.stratPos !== "object") throw TypeError(".game.Move.stratPos: object expected");
+                message.stratPos = $root.game.Point.fromObject(object.stratPos);
+              }
+
+              if (object.rotation != null) {
+                if (typeof object.rotation !== "object") throw TypeError(".game.Move.rotation: object expected");
+                message.rotation = $root.game.Point.fromObject(object.rotation);
+              }
+
+              return message;
+            };
+            /**
+             * Creates a plain object from a Move message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof game.Move
+             * @static
+             * @param {game.Move} message Move
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+
+
+            Move.toObject = function toObject(message, options) {
+              if (!options) options = {};
+              var object = {};
+
+              if (options.defaults) {
+                object.id = "";
+                object.moveType = 0;
+                object.stratPos = null;
+                object.rotation = null;
+              }
+
+              if (message.id != null && message.hasOwnProperty("id")) object.id = message.id;
+              if (message.moveType != null && message.hasOwnProperty("moveType")) object.moveType = message.moveType;
+              if (message.stratPos != null && message.hasOwnProperty("stratPos")) object.stratPos = $root.game.Point.toObject(message.stratPos, options);
+              if (message.rotation != null && message.hasOwnProperty("rotation")) object.rotation = $root.game.Point.toObject(message.rotation, options);
+              return object;
+            };
+            /**
+             * Converts this Move to JSON.
+             * @function toJSON
+             * @memberof game.Move
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+
+
+            Move.prototype.toJSON = function toJSON() {
+              return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            return Move;
+          }();
+
           game.LoginRequest = function () {
             /**
              * Properties of a LoginRequest.
@@ -22452,6 +23157,8 @@ System.register("chunks:///_virtual/proto.js", ['./cjs-loader.mjs', './minimal.j
              * @memberof game
              * @interface IPlaceable
              * @property {string|null} [id] Placeable id
+             * @property {string|null} [nickname] Placeable nickname
+             * @property {string|null} [character] Placeable character
              * @property {number|Long|null} [x] Placeable x
              * @property {number|Long|null} [y] Placeable y
              * @property {number|Long|null} [z] Placeable z
@@ -22479,6 +23186,22 @@ System.register("chunks:///_virtual/proto.js", ['./cjs-loader.mjs', './minimal.j
 
 
             Placeable.prototype.id = "";
+            /**
+             * Placeable nickname.
+             * @member {string} nickname
+             * @memberof game.Placeable
+             * @instance
+             */
+
+            Placeable.prototype.nickname = "";
+            /**
+             * Placeable character.
+             * @member {string} character
+             * @memberof game.Placeable
+             * @instance
+             */
+
+            Placeable.prototype.character = "";
             /**
              * Placeable x.
              * @member {number|Long} x
@@ -22531,15 +23254,21 @@ System.register("chunks:///_virtual/proto.js", ['./cjs-loader.mjs', './minimal.j
               if (message.id != null && Object.hasOwnProperty.call(message, "id")) writer.uint32(
               /* id 1, wireType 2 =*/
               10).string(message.id);
+              if (message.nickname != null && Object.hasOwnProperty.call(message, "nickname")) writer.uint32(
+              /* id 2, wireType 2 =*/
+              18).string(message.nickname);
+              if (message.character != null && Object.hasOwnProperty.call(message, "character")) writer.uint32(
+              /* id 3, wireType 2 =*/
+              26).string(message.character);
               if (message.x != null && Object.hasOwnProperty.call(message, "x")) writer.uint32(
-              /* id 2, wireType 0 =*/
-              16).sint64(message.x);
-              if (message.y != null && Object.hasOwnProperty.call(message, "y")) writer.uint32(
-              /* id 3, wireType 0 =*/
-              24).sint64(message.y);
-              if (message.z != null && Object.hasOwnProperty.call(message, "z")) writer.uint32(
               /* id 4, wireType 0 =*/
-              32).sint64(message.z);
+              32).sint64(message.x);
+              if (message.y != null && Object.hasOwnProperty.call(message, "y")) writer.uint32(
+              /* id 5, wireType 0 =*/
+              40).sint64(message.y);
+              if (message.z != null && Object.hasOwnProperty.call(message, "z")) writer.uint32(
+              /* id 6, wireType 0 =*/
+              48).sint64(message.z);
               return writer;
             };
             /**
@@ -22583,14 +23312,22 @@ System.register("chunks:///_virtual/proto.js", ['./cjs-loader.mjs', './minimal.j
                     break;
 
                   case 2:
-                    message.x = reader.sint64();
+                    message.nickname = reader.string();
                     break;
 
                   case 3:
-                    message.y = reader.sint64();
+                    message.character = reader.string();
                     break;
 
                   case 4:
+                    message.x = reader.sint64();
+                    break;
+
+                  case 5:
+                    message.y = reader.sint64();
+                    break;
+
+                  case 6:
                     message.z = reader.sint64();
                     break;
 
@@ -22631,6 +23368,8 @@ System.register("chunks:///_virtual/proto.js", ['./cjs-loader.mjs', './minimal.j
             Placeable.verify = function verify(message) {
               if (typeof message !== "object" || message === null) return "object expected";
               if (message.id != null && message.hasOwnProperty("id")) if (!$util.isString(message.id)) return "id: string expected";
+              if (message.nickname != null && message.hasOwnProperty("nickname")) if (!$util.isString(message.nickname)) return "nickname: string expected";
+              if (message.character != null && message.hasOwnProperty("character")) if (!$util.isString(message.character)) return "character: string expected";
               if (message.x != null && message.hasOwnProperty("x")) if (!$util.isInteger(message.x) && !(message.x && $util.isInteger(message.x.low) && $util.isInteger(message.x.high))) return "x: integer|Long expected";
               if (message.y != null && message.hasOwnProperty("y")) if (!$util.isInteger(message.y) && !(message.y && $util.isInteger(message.y.low) && $util.isInteger(message.y.high))) return "y: integer|Long expected";
               if (message.z != null && message.hasOwnProperty("z")) if (!$util.isInteger(message.z) && !(message.z && $util.isInteger(message.z.low) && $util.isInteger(message.z.high))) return "z: integer|Long expected";
@@ -22650,6 +23389,8 @@ System.register("chunks:///_virtual/proto.js", ['./cjs-loader.mjs', './minimal.j
               if (object instanceof $root.game.Placeable) return object;
               var message = new $root.game.Placeable();
               if (object.id != null) message.id = String(object.id);
+              if (object.nickname != null) message.nickname = String(object.nickname);
+              if (object.character != null) message.character = String(object.character);
               if (object.x != null) if ($util.Long) (message.x = $util.Long.fromValue(object.x)).unsigned = false;else if (typeof object.x === "string") message.x = parseInt(object.x, 10);else if (typeof object.x === "number") message.x = object.x;else if (typeof object.x === "object") message.x = new $util.LongBits(object.x.low >>> 0, object.x.high >>> 0).toNumber();
               if (object.y != null) if ($util.Long) (message.y = $util.Long.fromValue(object.y)).unsigned = false;else if (typeof object.y === "string") message.y = parseInt(object.y, 10);else if (typeof object.y === "number") message.y = object.y;else if (typeof object.y === "object") message.y = new $util.LongBits(object.y.low >>> 0, object.y.high >>> 0).toNumber();
               if (object.z != null) if ($util.Long) (message.z = $util.Long.fromValue(object.z)).unsigned = false;else if (typeof object.z === "string") message.z = parseInt(object.z, 10);else if (typeof object.z === "number") message.z = object.z;else if (typeof object.z === "object") message.z = new $util.LongBits(object.z.low >>> 0, object.z.high >>> 0).toNumber();
@@ -22672,6 +23413,8 @@ System.register("chunks:///_virtual/proto.js", ['./cjs-loader.mjs', './minimal.j
 
               if (options.defaults) {
                 object.id = "";
+                object.nickname = "";
+                object.character = "";
 
                 if ($util.Long) {
                   var _long = new $util.Long(0, 0, false);
@@ -22693,6 +23436,8 @@ System.register("chunks:///_virtual/proto.js", ['./cjs-loader.mjs', './minimal.j
               }
 
               if (message.id != null && message.hasOwnProperty("id")) object.id = message.id;
+              if (message.nickname != null && message.hasOwnProperty("nickname")) object.nickname = message.nickname;
+              if (message.character != null && message.hasOwnProperty("character")) object.character = message.character;
               if (message.x != null && message.hasOwnProperty("x")) if (typeof message.x === "number") object.x = options.longs === String ? String(message.x) : message.x;else object.x = options.longs === String ? $util.Long.prototype.toString.call(message.x) : options.longs === Number ? new $util.LongBits(message.x.low >>> 0, message.x.high >>> 0).toNumber() : message.x;
               if (message.y != null && message.hasOwnProperty("y")) if (typeof message.y === "number") object.y = options.longs === String ? String(message.y) : message.y;else object.y = options.longs === String ? $util.Long.prototype.toString.call(message.y) : options.longs === Number ? new $util.LongBits(message.y.low >>> 0, message.y.high >>> 0).toNumber() : message.y;
               if (message.z != null && message.hasOwnProperty("z")) if (typeof message.z === "number") object.z = options.longs === String ? String(message.z) : message.z;else object.z = options.longs === String ? $util.Long.prototype.toString.call(message.z) : options.longs === Number ? new $util.LongBits(message.z.low >>> 0, message.z.high >>> 0).toNumber() : message.z;
@@ -24440,11 +25185,14 @@ System.register("chunks:///_virtual/rollupPluginModLoBabelHelpers.js", [], funct
     execute: function () {
       exports({
         applyDecoratedDescriptor: _applyDecoratedDescriptor,
+        arrayLikeToArray: _arrayLikeToArray,
         assertThisInitialized: _assertThisInitialized,
         createClass: _createClass,
+        createForOfIteratorHelperLoose: _createForOfIteratorHelperLoose,
         inheritsLoose: _inheritsLoose,
         initializerDefineProperty: _initializerDefineProperty,
-        setPrototypeOf: _setPrototypeOf
+        setPrototypeOf: _setPrototypeOf,
+        unsupportedIterableToArray: _unsupportedIterableToArray
       });
 
       function _defineProperties(target, props) {
@@ -24487,6 +25235,44 @@ System.register("chunks:///_virtual/rollupPluginModLoBabelHelpers.js", [], funct
         }
 
         return self;
+      }
+
+      function _unsupportedIterableToArray(o, minLen) {
+        if (!o) return;
+        if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+        var n = Object.prototype.toString.call(o).slice(8, -1);
+        if (n === "Object" && o.constructor) n = o.constructor.name;
+        if (n === "Map" || n === "Set") return Array.from(o);
+        if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+      }
+
+      function _arrayLikeToArray(arr, len) {
+        if (len == null || len > arr.length) len = arr.length;
+
+        for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+
+        return arr2;
+      }
+
+      function _createForOfIteratorHelperLoose(o, allowArrayLike) {
+        var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"];
+        if (it) return (it = it.call(o)).next.bind(it);
+
+        if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
+          if (it) o = it;
+          var i = 0;
+          return function () {
+            if (i >= o.length) return {
+              done: true
+            };
+            return {
+              done: false,
+              value: o[i++]
+            };
+          };
+        }
+
+        throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
       }
 
       function _initializerDefineProperty(target, property, descriptor, context) {

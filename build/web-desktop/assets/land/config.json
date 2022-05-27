@@ -1,0 +1,29 @@
+{
+    "importBase": "import",
+    "nativeBase": "native",
+    "name": "land",
+    "deps": [
+        "main"
+    ],
+    "uuids": [
+        "d17772e0-5967-42d8-9369-0c6f07b0ec19"
+    ],
+    "paths": {
+        "d17772e0-5967-42d8-9369-0c6f07b0ec19": [
+            "terrain",
+            "cc.TerrainAsset"
+        ]
+    },
+    "scenes": {},
+    "packs": {},
+    "versions": {
+        "import": [],
+        "native": []
+    },
+    "redirect": [
+        "d17772e0-5967-42d8-9369-0c6f07b0ec19",
+        "0"
+    ],
+    "debug": true,
+    "extensionMap": {}
+}

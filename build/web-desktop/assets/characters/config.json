@@ -2,16 +2,172 @@
     "importBase": "import",
     "nativeBase": "native",
     "name": "characters",
-    "deps": [],
-    "uuids": [],
-    "paths": {},
+    "deps": [
+        "main"
+    ],
+    "uuids": [
+        "0ee30a6e-a597-4d66-a448-533f1aebcf4e",
+        "0f1d1a6ff",
+        "1baf0fc9-befa-459c-8bdd-af1a450a0319",
+        "63a9f7b4-ad66-4c67-ac10-22e0c7070bba",
+        "63a9f7b4-ad66-4c67-ac10-22e0c7070bba@6c48a",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@24c9f",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@2c581",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@438fe",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@6af9c",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@6e7c3",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@7c89c",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@a04af",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@ac3f0",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@c2caa",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@cf5ee",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@d36f8",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@ee525",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@f87ee",
+        "f4ae9105-a142-4206-9c32-a44479881594"
+    ],
+    "paths": {
+        "63a9f7b4-ad66-4c67-ac10-22e0c7070bba": [
+            "girl/girl",
+            "cc.ImageAsset"
+        ],
+        "63a9f7b4-ad66-4c67-ac10-22e0c7070bba@6c48a": [
+            "girl/girl/texture",
+            "cc.Texture2D",
+            1
+        ],
+        "f4ae9105-a142-4206-9c32-a44479881594": [
+            "girl/girl",
+            "cc.Material"
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@a04af": [
+            "girl/girlAll/girl",
+            "cc.Mesh",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@ac3f0": [
+            "girl/girlAll/idle01",
+            "cc.AnimationClip",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@cf5ee": [
+            "girl/girlAll/run",
+            "cc.AnimationClip",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@24c9f": [
+            "girl/girlAll/move",
+            "cc.AnimationClip",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@f87ee": [
+            "girl/girlAll/jump",
+            "cc.AnimationClip",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@ee525": [
+            "girl/girlAll/win",
+            "cc.AnimationClip",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@2c581": [
+            "girl/girlAll/idle02",
+            "cc.AnimationClip",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@6e7c3": [
+            "girl/girlAll/move01",
+            "cc.AnimationClip",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@6af9c": [
+            "girl/girlAll/jump01",
+            "cc.AnimationClip",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@d36f8": [
+            "girl/girlAll/jump02",
+            "cc.AnimationClip",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@7c89c": [
+            "girl/girlAll/fail",
+            "cc.AnimationClip",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@438fe": [
+            "girl/girlAll/UnnamedSkeleton",
+            "cc.Skeleton",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@c2caa": [
+            "girl/girlAll/girlAll",
+            "cc.Prefab",
+            1
+        ],
+        "0ee30a6e-a597-4d66-a448-533f1aebcf4e": [
+            "res/model/girl/girl",
+            "cc.Material"
+        ]
+    },
     "scenes": {},
-    "packs": {},
+    "packs": {
+        "0f1d1a6ff": [
+            "0ee30a6e-a597-4d66-a448-533f1aebcf4e",
+            "1baf0fc9-befa-459c-8bdd-af1a450a0319"
+        ]
+    },
     "versions": {
         "import": [],
         "native": []
     },
-    "redirect": [],
+    "redirect": [
+        "63a9f7b4-ad66-4c67-ac10-22e0c7070bba",
+        "0",
+        "63a9f7b4-ad66-4c67-ac10-22e0c7070bba@6c48a",
+        "0",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@24c9f",
+        "0",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@2c581",
+        "0",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@438fe",
+        "0",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@6af9c",
+        "0",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@6e7c3",
+        "0",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@7c89c",
+        "0",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@a04af",
+        "0",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@ac3f0",
+        "0",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@c2caa",
+        "0",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@cf5ee",
+        "0",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@d36f8",
+        "0",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@ee525",
+        "0",
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@f87ee",
+        "0",
+        "f4ae9105-a142-4206-9c32-a44479881594",
+        "0"
+    ],
     "debug": true,
-    "extensionMap": {}
+    "extensionMap": {
+        ".cconb": [
+            "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@24c9f",
+            "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@2c581",
+            "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@6af9c",
+            "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@6e7c3",
+            "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@7c89c",
+            "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@ac3f0",
+            "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@cf5ee",
+            "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@d36f8",
+            "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@ee525",
+            "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@f87ee"
+        ]
+    }
 }
