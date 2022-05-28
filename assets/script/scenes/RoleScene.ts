@@ -91,7 +91,7 @@ export class RoleScene extends Component {
     protected onKeyDown(event: EventKeyboard): void {
         let flag = true;
         switch(event.keyCode) {
-            case KeyCode.KEY_W:                
+            case KeyCode.KEY_W:               
                 MyRole.instance().setMoving(MoveType.Forward);
                 break;
             case KeyCode.KEY_S:            

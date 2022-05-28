@@ -91,88 +91,6 @@
         "fd939588-07e7-4d69-b9bf-30d07958ef92@11b97"
     ],
     "paths": {
-        "63a9f7b4-ad66-4c67-ac10-22e0c7070bba": [
-            "girl/girl",
-            "cc.ImageAsset"
-        ],
-        "63a9f7b4-ad66-4c67-ac10-22e0c7070bba@6c48a": [
-            "girl/girl/texture",
-            "cc.Texture2D",
-            1
-        ],
-        "f4ae9105-a142-4206-9c32-a44479881594": [
-            "girl/girl",
-            "cc.Material"
-        ],
-        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@a04af": [
-            "girl/girlAll/girl",
-            "cc.Mesh",
-            1
-        ],
-        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@ac3f0": [
-            "girl/girlAll/idle01",
-            "cc.AnimationClip",
-            1
-        ],
-        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@cf5ee": [
-            "girl/girlAll/run",
-            "cc.AnimationClip",
-            1
-        ],
-        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@24c9f": [
-            "girl/girlAll/move",
-            "cc.AnimationClip",
-            1
-        ],
-        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@f87ee": [
-            "girl/girlAll/jump",
-            "cc.AnimationClip",
-            1
-        ],
-        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@ee525": [
-            "girl/girlAll/win",
-            "cc.AnimationClip",
-            1
-        ],
-        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@2c581": [
-            "girl/girlAll/idle02",
-            "cc.AnimationClip",
-            1
-        ],
-        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@6e7c3": [
-            "girl/girlAll/move01",
-            "cc.AnimationClip",
-            1
-        ],
-        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@6af9c": [
-            "girl/girlAll/jump01",
-            "cc.AnimationClip",
-            1
-        ],
-        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@d36f8": [
-            "girl/girlAll/jump02",
-            "cc.AnimationClip",
-            1
-        ],
-        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@7c89c": [
-            "girl/girlAll/fail",
-            "cc.AnimationClip",
-            1
-        ],
-        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@438fe": [
-            "girl/girlAll/UnnamedSkeleton",
-            "cc.Skeleton",
-            1
-        ],
-        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@c2caa": [
-            "girl/girlAll/girlAll",
-            "cc.Prefab",
-            1
-        ],
-        "0ee30a6e-a597-4d66-a448-533f1aebcf4e": [
-            "res/model/girl/girl",
-            "cc.Material"
-        ],
         "b2783b26-9a95-43d1-985c-a79e690c85f4@23673": [
             "boy/character_01/base_color_texture-8",
             "cc.Texture2D",
@@ -457,6 +375,84 @@
             "boy/character_01",
             "cc.Prefab"
         ],
+        "63a9f7b4-ad66-4c67-ac10-22e0c7070bba": [
+            "girl/girl",
+            "cc.ImageAsset"
+        ],
+        "63a9f7b4-ad66-4c67-ac10-22e0c7070bba@6c48a": [
+            "girl/girl/texture",
+            "cc.Texture2D",
+            1
+        ],
+        "f4ae9105-a142-4206-9c32-a44479881594": [
+            "girl/girl",
+            "cc.Material"
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@a04af": [
+            "girl/girlAll/girl",
+            "cc.Mesh",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@ac3f0": [
+            "girl/girlAll/idle01",
+            "cc.AnimationClip",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@cf5ee": [
+            "girl/girlAll/run",
+            "cc.AnimationClip",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@24c9f": [
+            "girl/girlAll/move",
+            "cc.AnimationClip",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@f87ee": [
+            "girl/girlAll/jump",
+            "cc.AnimationClip",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@ee525": [
+            "girl/girlAll/win",
+            "cc.AnimationClip",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@2c581": [
+            "girl/girlAll/idle02",
+            "cc.AnimationClip",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@6e7c3": [
+            "girl/girlAll/move01",
+            "cc.AnimationClip",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@6af9c": [
+            "girl/girlAll/jump01",
+            "cc.AnimationClip",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@d36f8": [
+            "girl/girlAll/jump02",
+            "cc.AnimationClip",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@7c89c": [
+            "girl/girlAll/fail",
+            "cc.AnimationClip",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@438fe": [
+            "girl/girlAll/UnnamedSkeleton",
+            "cc.Skeleton",
+            1
+        ],
+        "abc641f4-cd1c-4128-9f6d-95fb0bf834c7@c2caa": [
+            "girl/girlAll/girlAll",
+            "cc.Prefab",
+            1
+        ],
         "0b84b9f4-c33b-4775-a30c-a6dcfe4e8266@c2696": [
             "boy/animations/Idle/Idle",
             "cc.AnimationClip",
@@ -496,6 +492,10 @@
             "boy/animations/Walking/Walking",
             "cc.AnimationClip",
             1
+        ],
+        "0ee30a6e-a597-4d66-a448-533f1aebcf4e": [
+            "res/model/girl/girl",
+            "cc.Material"
         ]
     },
     "scenes": {},

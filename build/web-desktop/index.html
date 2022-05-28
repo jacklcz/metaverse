@@ -20,16 +20,20 @@
     <link rel="icon" href="favicon.ico"/>
   </head>
   <body>
-    <h1 class="header">meatverse</h1>
+    <!-- <h1 class="header">meatverse</h1> -->
 
-    <div id="GameDiv" style="width: 1280px; height: 590px;">
-      <div id="Cocos3dGameContainer">
-        <canvas id="GameCanvas" width="1280" height="590"></canvas>
+    <div id="GameDiv" style="width:100%; height: 100%;">
+      <canvas id="GameCanvas" width="100%" height="100%"></canvas>
+      <div id="splash">
+        <div class="progress-bar stripes">
+          <span style="width: 0%"></span>
+        </div>
       </div>
     </div>
+    <!--
     <p class="footer">
       Created with <a href="https://www.cocos.com/products" title="Cocos Creator">Cocos Creator</a>
-    </p>
+    </p> -->
     <!-- Polyfills bundle. -->
 <script src="src/polyfills.bundle.js" charset="utf-8"> </script>
 

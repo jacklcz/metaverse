@@ -18888,6 +18888,90 @@ System.register("chunks:///_virtual/index.js", ['./cjs-loader.mjs'], function (e
       var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
 
       loader.define(__cjsMetaURL, function (exports$1, require, module, __filename, __dirname) {
+        module.exports = asPromise;
+        /**
+         * Callback as used by {@link util.asPromise}.
+         * @typedef asPromiseCallback
+         * @type {function}
+         * @param {Error|null} error Error, if any
+         * @param {...*} params Additional arguments
+         * @returns {undefined}
+         */
+
+        /**
+         * Returns a promise from a node-style callback function.
+         * @memberof util
+         * @param {asPromiseCallback} fn Function to call
+         * @param {*} ctx Function context
+         * @param {...*} params Function arguments
+         * @returns {Promise<*>} Promisified function
+         */
+
+        function asPromise(fn, ctx
+        /*, varargs */
+        ) {
+          var params = new Array(arguments.length - 1),
+              offset = 0,
+              index = 2,
+              pending = true;
+
+          while (index < arguments.length) {
+            params[offset++] = arguments[index++];
+          }
+
+          return new Promise(function executor(resolve, reject) {
+            params[offset] = function callback(err
+            /*, varargs */
+            ) {
+              if (pending) {
+                pending = false;
+                if (err) reject(err);else {
+                  var params = new Array(arguments.length - 1),
+                      offset = 0;
+
+                  while (offset < params.length) {
+                    params[offset++] = arguments[offset];
+                  }
+
+                  resolve.apply(null, params);
+                }
+              }
+            };
+
+            try {
+              fn.apply(ctx || null, params);
+            } catch (err) {
+              if (pending) {
+                pending = false;
+                reject(err);
+              }
+            }
+          });
+        } // #endregion ORIGINAL CODE
+
+
+        _cjsExports = exports('default', module.exports);
+      }, {});
+    }
+  };
+});
+
+System.register("chunks:///_virtual/index2.js", ['./cjs-loader.mjs'], function (exports, module) {
+  'use strict';
+
+  var loader;
+  return {
+    setters: [function (module) {
+      loader = module.default;
+    }],
+    execute: function () {
+      exports('default', void 0);
+
+      var _cjsExports;
+
+      var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
+
+      loader.define(__cjsMetaURL, function (exports$1, require, module, __filename, __dirname) {
         /**
          * A minimal base64 implementation for number arrays.
          * @memberof util
@@ -19048,193 +19132,7 @@ System.register("chunks:///_virtual/index.js", ['./cjs-loader.mjs'], function (e
   };
 });
 
-System.register("chunks:///_virtual/index2.js", ['./cjs-loader.mjs'], function (exports, module) {
-  'use strict';
-
-  var loader;
-  return {
-    setters: [function (module) {
-      loader = module.default;
-    }],
-    execute: function () {
-      exports('default', void 0);
-
-      var _cjsExports;
-
-      var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
-
-      loader.define(__cjsMetaURL, function (exports$1, require, module, __filename, __dirname) {
-        module.exports = EventEmitter;
-        /**
-         * Constructs a new event emitter instance.
-         * @classdesc A minimal event emitter.
-         * @memberof util
-         * @constructor
-         */
-
-        function EventEmitter() {
-          /**
-           * Registered listeners.
-           * @type {Object.<string,*>}
-           * @private
-           */
-          this._listeners = {};
-        }
-        /**
-         * Registers an event listener.
-         * @param {string} evt Event name
-         * @param {function} fn Listener
-         * @param {*} [ctx] Listener context
-         * @returns {util.EventEmitter} `this`
-         */
-
-
-        EventEmitter.prototype.on = function on(evt, fn, ctx) {
-          (this._listeners[evt] || (this._listeners[evt] = [])).push({
-            fn: fn,
-            ctx: ctx || this
-          });
-          return this;
-        };
-        /**
-         * Removes an event listener or any matching listeners if arguments are omitted.
-         * @param {string} [evt] Event name. Removes all listeners if omitted.
-         * @param {function} [fn] Listener to remove. Removes all listeners of `evt` if omitted.
-         * @returns {util.EventEmitter} `this`
-         */
-
-
-        EventEmitter.prototype.off = function off(evt, fn) {
-          if (evt === undefined) this._listeners = {};else {
-            if (fn === undefined) this._listeners[evt] = [];else {
-              var listeners = this._listeners[evt];
-
-              for (var i = 0; i < listeners.length;) {
-                if (listeners[i].fn === fn) listeners.splice(i, 1);else ++i;
-              }
-            }
-          }
-          return this;
-        };
-        /**
-         * Emits an event by calling its listeners with the specified arguments.
-         * @param {string} evt Event name
-         * @param {...*} args Arguments
-         * @returns {util.EventEmitter} `this`
-         */
-
-
-        EventEmitter.prototype.emit = function emit(evt) {
-          var listeners = this._listeners[evt];
-
-          if (listeners) {
-            var args = [],
-                i = 1;
-
-            for (; i < arguments.length;) {
-              args.push(arguments[i++]);
-            }
-
-            for (i = 0; i < listeners.length;) {
-              listeners[i].fn.apply(listeners[i++].ctx, args);
-            }
-          }
-
-          return this;
-        }; // #endregion ORIGINAL CODE
-
-
-        _cjsExports = exports('default', module.exports);
-      }, {});
-    }
-  };
-});
-
 System.register("chunks:///_virtual/index3.js", ['./cjs-loader.mjs'], function (exports, module) {
-  'use strict';
-
-  var loader;
-  return {
-    setters: [function (module) {
-      loader = module.default;
-    }],
-    execute: function () {
-      exports('default', void 0);
-
-      var _cjsExports;
-
-      var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
-
-      loader.define(__cjsMetaURL, function (exports$1, require, module, __filename, __dirname) {
-        module.exports = asPromise;
-        /**
-         * Callback as used by {@link util.asPromise}.
-         * @typedef asPromiseCallback
-         * @type {function}
-         * @param {Error|null} error Error, if any
-         * @param {...*} params Additional arguments
-         * @returns {undefined}
-         */
-
-        /**
-         * Returns a promise from a node-style callback function.
-         * @memberof util
-         * @param {asPromiseCallback} fn Function to call
-         * @param {*} ctx Function context
-         * @param {...*} params Function arguments
-         * @returns {Promise<*>} Promisified function
-         */
-
-        function asPromise(fn, ctx
-        /*, varargs */
-        ) {
-          var params = new Array(arguments.length - 1),
-              offset = 0,
-              index = 2,
-              pending = true;
-
-          while (index < arguments.length) {
-            params[offset++] = arguments[index++];
-          }
-
-          return new Promise(function executor(resolve, reject) {
-            params[offset] = function callback(err
-            /*, varargs */
-            ) {
-              if (pending) {
-                pending = false;
-                if (err) reject(err);else {
-                  var params = new Array(arguments.length - 1),
-                      offset = 0;
-
-                  while (offset < params.length) {
-                    params[offset++] = arguments[offset];
-                  }
-
-                  resolve.apply(null, params);
-                }
-              }
-            };
-
-            try {
-              fn.apply(ctx || null, params);
-            } catch (err) {
-              if (pending) {
-                pending = false;
-                reject(err);
-              }
-            }
-          });
-        } // #endregion ORIGINAL CODE
-
-
-        _cjsExports = exports('default', module.exports);
-      }, {});
-    }
-  };
-});
-
-System.register("chunks:///_virtual/index4.js", ['./cjs-loader.mjs'], function (exports, module) {
   'use strict';
 
   var loader;
@@ -19595,6 +19493,78 @@ System.register("chunks:///_virtual/index4.js", ['./cjs-loader.mjs'], function (
   };
 });
 
+System.register("chunks:///_virtual/index4.js", ['./cjs-loader.mjs'], function (exports, module) {
+  'use strict';
+
+  var loader;
+  return {
+    setters: [function (module) {
+      loader = module.default;
+    }],
+    execute: function () {
+      exports('default', void 0);
+
+      var _cjsExports;
+
+      var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
+
+      loader.define(__cjsMetaURL, function (exports$1, require, module, __filename, __dirname) {
+        module.exports = pool;
+        /**
+         * An allocator as used by {@link util.pool}.
+         * @typedef PoolAllocator
+         * @type {function}
+         * @param {number} size Buffer size
+         * @returns {Uint8Array} Buffer
+         */
+
+        /**
+         * A slicer as used by {@link util.pool}.
+         * @typedef PoolSlicer
+         * @type {function}
+         * @param {number} start Start offset
+         * @param {number} end End offset
+         * @returns {Uint8Array} Buffer slice
+         * @this {Uint8Array}
+         */
+
+        /**
+         * A general purpose buffer pool.
+         * @memberof util
+         * @function
+         * @param {PoolAllocator} alloc Allocator
+         * @param {PoolSlicer} slice Slicer
+         * @param {number} [size=8192] Slab size
+         * @returns {PoolAllocator} Pooled allocator
+         */
+
+        function pool(alloc, slice, size) {
+          var SIZE = size || 8192;
+          var MAX = SIZE >>> 1;
+          var slab = null;
+          var offset = SIZE;
+          return function pool_alloc(size) {
+            if (size < 1 || size > MAX) return alloc(size);
+
+            if (offset + size > SIZE) {
+              slab = alloc(SIZE);
+              offset = 0;
+            }
+
+            var buf = slice.call(slab, offset, offset += size);
+            if (offset & 7) // align to 32 bit
+              offset = (offset | 7) + 1;
+            return buf;
+          };
+        } // #endregion ORIGINAL CODE
+
+
+        _cjsExports = exports('default', module.exports);
+      }, {});
+    }
+  };
+});
+
 System.register("chunks:///_virtual/index5.js", ['./cjs-loader.mjs'], function (exports, module) {
   'use strict';
 
@@ -19638,6 +19608,108 @@ System.register("chunks:///_virtual/index5.js", ['./cjs-loader.mjs'], function (
 });
 
 System.register("chunks:///_virtual/index6.js", ['./cjs-loader.mjs'], function (exports, module) {
+  'use strict';
+
+  var loader;
+  return {
+    setters: [function (module) {
+      loader = module.default;
+    }],
+    execute: function () {
+      exports('default', void 0);
+
+      var _cjsExports;
+
+      var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
+
+      loader.define(__cjsMetaURL, function (exports$1, require, module, __filename, __dirname) {
+        module.exports = EventEmitter;
+        /**
+         * Constructs a new event emitter instance.
+         * @classdesc A minimal event emitter.
+         * @memberof util
+         * @constructor
+         */
+
+        function EventEmitter() {
+          /**
+           * Registered listeners.
+           * @type {Object.<string,*>}
+           * @private
+           */
+          this._listeners = {};
+        }
+        /**
+         * Registers an event listener.
+         * @param {string} evt Event name
+         * @param {function} fn Listener
+         * @param {*} [ctx] Listener context
+         * @returns {util.EventEmitter} `this`
+         */
+
+
+        EventEmitter.prototype.on = function on(evt, fn, ctx) {
+          (this._listeners[evt] || (this._listeners[evt] = [])).push({
+            fn: fn,
+            ctx: ctx || this
+          });
+          return this;
+        };
+        /**
+         * Removes an event listener or any matching listeners if arguments are omitted.
+         * @param {string} [evt] Event name. Removes all listeners if omitted.
+         * @param {function} [fn] Listener to remove. Removes all listeners of `evt` if omitted.
+         * @returns {util.EventEmitter} `this`
+         */
+
+
+        EventEmitter.prototype.off = function off(evt, fn) {
+          if (evt === undefined) this._listeners = {};else {
+            if (fn === undefined) this._listeners[evt] = [];else {
+              var listeners = this._listeners[evt];
+
+              for (var i = 0; i < listeners.length;) {
+                if (listeners[i].fn === fn) listeners.splice(i, 1);else ++i;
+              }
+            }
+          }
+          return this;
+        };
+        /**
+         * Emits an event by calling its listeners with the specified arguments.
+         * @param {string} evt Event name
+         * @param {...*} args Arguments
+         * @returns {util.EventEmitter} `this`
+         */
+
+
+        EventEmitter.prototype.emit = function emit(evt) {
+          var listeners = this._listeners[evt];
+
+          if (listeners) {
+            var args = [],
+                i = 1;
+
+            for (; i < arguments.length;) {
+              args.push(arguments[i++]);
+            }
+
+            for (i = 0; i < listeners.length;) {
+              listeners[i].fn.apply(listeners[i++].ctx, args);
+            }
+          }
+
+          return this;
+        }; // #endregion ORIGINAL CODE
+
+
+        _cjsExports = exports('default', module.exports);
+      }, {});
+    }
+  };
+});
+
+System.register("chunks:///_virtual/index7.js", ['./cjs-loader.mjs'], function (exports, module) {
   'use strict';
 
   var loader;
@@ -19757,78 +19829,6 @@ System.register("chunks:///_virtual/index6.js", ['./cjs-loader.mjs'], function (
 
           return offset - start;
         }; // #endregion ORIGINAL CODE
-
-
-        _cjsExports = exports('default', module.exports);
-      }, {});
-    }
-  };
-});
-
-System.register("chunks:///_virtual/index7.js", ['./cjs-loader.mjs'], function (exports, module) {
-  'use strict';
-
-  var loader;
-  return {
-    setters: [function (module) {
-      loader = module.default;
-    }],
-    execute: function () {
-      exports('default', void 0);
-
-      var _cjsExports;
-
-      var __cjsMetaURL = exports('__cjsMetaURL', module.meta.url);
-
-      loader.define(__cjsMetaURL, function (exports$1, require, module, __filename, __dirname) {
-        module.exports = pool;
-        /**
-         * An allocator as used by {@link util.pool}.
-         * @typedef PoolAllocator
-         * @type {function}
-         * @param {number} size Buffer size
-         * @returns {Uint8Array} Buffer
-         */
-
-        /**
-         * A slicer as used by {@link util.pool}.
-         * @typedef PoolSlicer
-         * @type {function}
-         * @param {number} start Start offset
-         * @param {number} end End offset
-         * @returns {Uint8Array} Buffer slice
-         * @this {Uint8Array}
-         */
-
-        /**
-         * A general purpose buffer pool.
-         * @memberof util
-         * @function
-         * @param {PoolAllocator} alloc Allocator
-         * @param {PoolSlicer} slice Slicer
-         * @param {number} [size=8192] Slab size
-         * @returns {PoolAllocator} Pooled allocator
-         */
-
-        function pool(alloc, slice, size) {
-          var SIZE = size || 8192;
-          var MAX = SIZE >>> 1;
-          var slab = null;
-          var offset = SIZE;
-          return function pool_alloc(size) {
-            if (size < 1 || size > MAX) return alloc(size);
-
-            if (offset + size > SIZE) {
-              slab = alloc(SIZE);
-              offset = 0;
-            }
-
-            var buf = slice.call(slab, offset, offset += size);
-            if (offset & 7) // align to 32 bit
-              offset = (offset | 7) + 1;
-            return buf;
-          };
-        } // #endregion ORIGINAL CODE
 
 
         _cjsExports = exports('default', module.exports);
@@ -20088,7 +20088,7 @@ System.register("chunks:///_virtual/minimal.js", ['./cjs-loader.mjs', './index-m
   };
 });
 
-System.register("chunks:///_virtual/minimal2.js", ['./cjs-loader.mjs', './index3.js', './index.js', './index2.js', './index4.js', './index5.js', './index6.js', './index7.js', './longbits.js'], function (exports, module) {
+System.register("chunks:///_virtual/minimal2.js", ['./cjs-loader.mjs', './index.js', './index2.js', './index6.js', './index3.js', './index5.js', './index7.js', './index4.js', './longbits.js'], function (exports, module) {
   'use strict';
 
   var loader, __cjsMetaURL$1, __cjsMetaURL$2, __cjsMetaURL$3, __cjsMetaURL$4, __cjsMetaURL$5, __cjsMetaURL$6, __cjsMetaURL$7, __cjsMetaURL$8;

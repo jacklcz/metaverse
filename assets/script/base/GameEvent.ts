@@ -16,6 +16,7 @@ class MyEvent extends EventTarget{
     public CONNECTION_ERROR = "net_connection_error";
     public CONNECTION_CLOSED = "net_connection_closed";
     
+    public ON_LOADING_TIPS = "on_loading_tips";
     public ON_LOADING_PROCESS = "on_loading_process";
 
     //switch event define

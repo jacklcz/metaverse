@@ -20,12 +20,22 @@ export default class AppMain extends Component {
     }
 
     private loadScene(sceneName: string): void {
-        director.preloadScene(sceneName, function (): void {
-            director.loadScene(sceneName);
-        });
+
+        GameEvent.emit(GameEvent.ON_LOADING_TIPS, "加载场景数据...");
+        GameEvent.emit(GameEvent.ON_LOADING_PROCESS, 0);
+
+        director.preloadScene(sceneName,
+            function(coomplateCount: number, totalCount: any, item: any): void{
+                GameEvent.emit(GameEvent.ON_LOADING_PROCESS, coomplateCount / totalCount);
+            },
+            function (): void {
+                director.loadScene(sceneName);
+            }
+        );
     }  
 
     private openMainScene(): void {
+        GameEvent.emit(GameEvent.ON_LOADING_TIPS, "加载基础资源数据...");
         this.loadSubpack("MainScene", 0, this._mainPacks);
     }
 

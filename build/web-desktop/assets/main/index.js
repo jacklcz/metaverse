@@ -53,12 +53,17 @@ System.register("chunks:///_virtual/AppMain.ts", ['./rollupPluginModLoBabelHelpe
         };
 
         _proto.loadScene = function loadScene(sceneName) {
-          director.preloadScene(sceneName, function () {
+          GameEvent.emit(GameEvent.ON_LOADING_TIPS, "加载场景数据...");
+          GameEvent.emit(GameEvent.ON_LOADING_PROCESS, 0);
+          director.preloadScene(sceneName, function (coomplateCount, totalCount, item) {
+            GameEvent.emit(GameEvent.ON_LOADING_PROCESS, coomplateCount / totalCount);
+          }, function () {
             director.loadScene(sceneName);
           });
         };
 
         _proto.openMainScene = function openMainScene() {
+          GameEvent.emit(GameEvent.ON_LOADING_TIPS, "加载基础资源数据...");
           this.loadSubpack("MainScene", 0, this._mainPacks);
         };
 
@@ -874,6 +879,7 @@ System.register("chunks:///_virtual/GameEvent.ts", ['./rollupPluginModLoBabelHel
           _this.ON_ROLE_MOVING = "on_role_moving";
           _this.CONNECTION_ERROR = "net_connection_error";
           _this.CONNECTION_CLOSED = "net_connection_closed";
+          _this.ON_LOADING_TIPS = "on_loading_tips";
           _this.ON_LOADING_PROCESS = "on_loading_process";
           _this.OPEN_MAIN_SCENE = "open_main_scene";
           _this.LOGIN_RESULT = "login_result";
@@ -2196,6 +2202,7 @@ System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHe
             var loading = this._mainView.getChild("loading");
 
             loading.visible = true;
+            GameEvent.on(GameEvent.ON_LOADING_TIPS, this.onLoadingTips, this);
             GameEvent.on(GameEvent.ON_LOADING_PROCESS, this.onLoadingProcess, this);
             GameEvent.emit(GameEvent.OPEN_MAIN_SCENE);
           } else {
@@ -2206,6 +2213,10 @@ System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHe
 
             tips.text = "登录游戏失败: " + msg;
           }
+        };
+
+        _proto.onLoadingTips = function onLoadingTips(tips) {
+          this._mainView.getChild("tips").text = tips;
         };
 
         _proto.onLoadingProcess = function onLoadingProcess(value) {
@@ -2560,7 +2571,7 @@ System.register("chunks:///_virtual/ThirdPersonCamera.ts", ['./rollupPluginModLo
         enumerable: true,
         writable: true,
         initializer: function initializer() {
-          return new Vec3(0, 10, 10);
+          return new Vec3(0, 4.8, 10);
         }
       }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "moveSmooth", [property], {
         configurable: true,

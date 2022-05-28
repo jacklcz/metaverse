@@ -66,7 +66,6 @@ export class StartScene extends Component {
                     }
                     return result
                 }
-                
                 //response = randomString();
                 //console.log("For testing, account change to=%s", response);
 
@@ -112,7 +111,9 @@ export class StartScene extends Component {
             console.log("StartScene --> 登录成功!");
 
             let loading = this._mainView.getChild<fgui.GProgressBar>("loading");
-            loading.visible = true;            
+            loading.visible = true;     
+            
+            GameEvent.on(GameEvent.ON_LOADING_TIPS, this.onLoadingTips, this);
             GameEvent.on(GameEvent.ON_LOADING_PROCESS, this.onLoadingProcess, this);
             GameEvent.emit(GameEvent.OPEN_MAIN_SCENE);
         }
@@ -122,6 +123,10 @@ export class StartScene extends Component {
             let tips = this._mainView.getChild<fgui.GTextField>("tips");
             tips.text = "登录游戏失败: " + msg;
         }
+    }
+
+    private onLoadingTips(tips: string): void {
+        this._mainView.getChild<fgui.GTextField>("tips").text = tips;
     }
 
     private onLoadingProcess(value: any): void {
