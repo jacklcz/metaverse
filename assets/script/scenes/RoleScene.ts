@@ -88,16 +88,13 @@ export class RoleScene extends Component {
         }
     }
 
-    protected onKeyDown(event: EventKeyboard): void {
-        console.log("onKeyDown = %d", event.keyCode);
+    protected onKeyDown(event: EventKeyboard): void {        
         let flag = true;
         switch(event.keyCode) {
-            case KeyCode.KEY_W:
-            case 0x77:
+            case KeyCode.KEY_W:            
                 MyRole.instance().setMoving(MoveType.Forward);
                 break;
-            case KeyCode.KEY_S:            
-            case 0x73:
+            case KeyCode.KEY_S:
                 MyRole.instance().setMoving(MoveType.Backward);
                 break;
             //case KeyCode.KEY_Q:
@@ -106,12 +103,10 @@ export class RoleScene extends Component {
             //case KeyCode.KEY_E:
             //    MyRole.moving = MoveType.Right;
             //    break;
-            case KeyCode.KEY_A:
-            case 0x61:
+            case KeyCode.KEY_A:            
                 MyRole.ratation = RotateType.Left;
                 break;
-            case KeyCode.KEY_D:
-            case 0x64:
+            case KeyCode.KEY_D:            
                 MyRole.ratation = RotateType.Right;
                 break;
             default:
@@ -127,17 +122,13 @@ export class RoleScene extends Component {
         let flag = true;
         switch(event.keyCode) {
             case KeyCode.KEY_W:                
-            case KeyCode.KEY_S:
-            case 0x73:
-            case 0x77:               
+            case KeyCode.KEY_S:            
             //case KeyCode.KEY_Q:
             //case KeyCode.KEY_E:
                 MyRole.instance().setMoving(MoveType.None);
                 break;
             case KeyCode.KEY_A:               
-            case KeyCode.KEY_D:
-            case 0x61:
-            case 0x64:
+            case KeyCode.KEY_D:            
                 MyRole.ratation = RotateType.None;
                 break;
             default:

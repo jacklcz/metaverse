@@ -1934,17 +1934,14 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
         };
 
         _proto.onKeyDown = function onKeyDown(event) {
-          console.log("onKeyDown = %d", event.keyCode);
           var flag = true;
 
           switch (event.keyCode) {
             case KeyCode.KEY_W:
-            case 0x77:
               MyRole.instance().setMoving(MoveType.Forward);
               break;
 
             case KeyCode.KEY_S:
-            case 0x73:
               MyRole.instance().setMoving(MoveType.Backward);
               break;
             //case KeyCode.KEY_Q:
@@ -1955,12 +1952,10 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
             //    break;
 
             case KeyCode.KEY_A:
-            case 0x61:
               MyRole.ratation = RotateType.Left;
               break;
 
             case KeyCode.KEY_D:
-            case 0x64:
               MyRole.ratation = RotateType.Right;
               break;
 
@@ -1980,8 +1975,6 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
           switch (event.keyCode) {
             case KeyCode.KEY_W:
             case KeyCode.KEY_S:
-            case 0x73:
-            case 0x77:
               //case KeyCode.KEY_Q:
               //case KeyCode.KEY_E:
               MyRole.instance().setMoving(MoveType.None);
@@ -1989,8 +1982,6 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
 
             case KeyCode.KEY_A:
             case KeyCode.KEY_D:
-            case 0x61:
-            case 0x64:
               MyRole.ratation = RotateType.None;
               break;
 
