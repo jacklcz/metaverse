@@ -1934,6 +1934,7 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
         };
 
         _proto.onKeyDown = function onKeyDown(event) {
+          console.log("onKeyDown = %d", event.keyCode);
           var flag = true;
 
           switch (event.keyCode) {

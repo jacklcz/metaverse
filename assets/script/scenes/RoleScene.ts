@@ -89,6 +89,7 @@ export class RoleScene extends Component {
     }
 
     protected onKeyDown(event: EventKeyboard): void {
+        console.log("onKeyDown = %d", event.keyCode);
         let flag = true;
         switch(event.keyCode) {
             case KeyCode.KEY_W:
