@@ -103,7 +103,6 @@
     "_illuminanceHDR": 65000,
     "_illuminance": 65000,
     "_illuminanceLDR": 1.6927083333333335,
-    "_id": "597uMYCbhEtJQc0ffJlcgA",
     "_shadowEnabled": false,
     "_shadowPcf": 0,
     "_shadowBias": 0.00001,
@@ -114,7 +113,8 @@
     "_shadowFixedArea": false,
     "_shadowNear": 0.1,
     "_shadowFar": 10,
-    "_shadowOrthoSize": 5
+    "_shadowOrthoSize": 5,
+    "_id": "597uMYCbhEtJQc0ffJlcgA"
   },
   {
     "__type__": "cc.StaticLightSettings",
@@ -292,7 +292,7 @@
     "_lpos": {
       "__type__": "cc.Vec3",
       "x": 975,
-      "y": 450,
+      "y": 450.00000000000006,
       "z": 0
     },
     "_lrot": {
@@ -373,7 +373,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 553.8612565445027,
+    "_orthoHeight": 480.03282275711155,
     "_near": 1,
     "_far": 2000,
     "_color": {
@@ -450,8 +450,8 @@
     "_target": null,
     "_left": 0,
     "_right": 0,
-    "_top": 0,
-    "_bottom": 0,
+    "_top": 5.684341886080802e-14,
+    "_bottom": 5.684341886080802e-14,
     "_horizontalCenter": 0,
     "_verticalCenter": 0,
     "_isAbsLeft": true,
@@ -545,8 +545,8 @@
   },
   {
     "__type__": "cc.ShadowsInfo",
-    "_type": 0,
     "_enabled": false,
+    "_type": 0,
     "_normal": {
       "__type__": "cc.Vec3",
       "x": 0,
@@ -570,6 +570,7 @@
   },
   {
     "__type__": "cc.SkyboxInfo",
+    "_envLightingType": 0,
     "_envmapHDR": {
       "__uuid__": "d032ac98-05e1-4090-88bb-eb640dcb5fc1@b47c0",
       "__expectedType__": "cc.TextureCube"
@@ -584,9 +585,8 @@
     },
     "_diffuseMapHDR": null,
     "_diffuseMapLDR": null,
-    "_enabled": true,
-    "_useHDR": true,
-    "_envLightingType": 0
+    "_enabled": false,
+    "_useHDR": true
   },
   {
     "__type__": "cc.FogInfo",
