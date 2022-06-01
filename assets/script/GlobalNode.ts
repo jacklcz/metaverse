@@ -14,8 +14,10 @@ export default class GlobalNode extends Component {
 
     onLoad () {
         GlobalNode._thisNode = this;
-        this.node.getChildByName("GirlRole").active = false;
-        this.node.getChildByName("BoyRole").active = false;
+        this.node.getChildByName("character_01").active = false;
+        this.node.getChildByName("character_02").active = false;
+        this.node.getChildByName("character_03").active = false;
+        this.node.getChildByName("character_04").active = false;
     }
 
     public onChatEnded(): void {

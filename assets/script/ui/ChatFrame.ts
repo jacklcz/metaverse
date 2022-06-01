@@ -2,6 +2,7 @@ import { _decorator, Node, EventHandler} from 'cc';
 const { ccclass, property } = _decorator;
 
 import * as fgui from "fairygui-cc";
+import Define from '../base/Define';
 import GlobalNode from '../GlobalNode';
 import GameEvent from '../base/GameEvent';
 import PeerConnection from '../network/PeerConnection';
@@ -49,7 +50,7 @@ export class ChatFrame extends Node {
     }
 
     protected onChatMessage(nickName: string, msg: string): void {        
-        nickName = this.formatString(nickName);
+        nickName = Define.briefString(nickName);
         let thisText = `[${nickName}]: [COLOR=#FFFF00]${msg}[/COLOR]`;
         this._messages.push(thisText);
         if(this._messages.length > 50){
@@ -71,13 +72,6 @@ export class ChatFrame extends Node {
         
         let msgList = this._com.getChild<fgui.GTextField>("msgList");
         msgList.text = text;
-    }
-
-    protected formatString(text: string, max: number = 6): string {
-        if(text.length > 7){
-            text = "0x.." + text.slice(text.length - 4);            
-        }
-        return text;
     }
 }
 

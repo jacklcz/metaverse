@@ -1,6 +1,8 @@
 import { _decorator, Component, Vec3, v3, Animation } from 'cc';
 const { ccclass, property } = _decorator;
 
+import Define from '../base/Define';
+
 export enum MoveType {    
     None     = 0,  //不移动
     Forward  = 1,  //向前
@@ -18,6 +20,7 @@ export enum RotateType {
 @ccclass('BaseRole')
 export abstract class BaseRole extends Component {
     
+    private _roleID: string = "";
     private _roleType: string = "0";
     private _moveSpeed: number = 7;
     private _rotaSpeed: number = 80;
@@ -26,6 +29,14 @@ export abstract class BaseRole extends Component {
     abstract set moving(value: number);
     abstract onMovingPrv(deltaTime: number): void;
     abstract onMoving(flag: boolean): void;
+
+    public get roleID(): string{
+        return this._roleID;
+    }
+
+    public set roleID(id: string) {
+        this._roleID = id;
+    }
 
     public get roleType(): string {
         return this._roleType;
@@ -51,18 +62,23 @@ export abstract class BaseRole extends Component {
         else this.moveAction();
     }
 
+    public updateName(): void {
+        let title = Define.briefString(this.roleID);
+        let node = this.node.getChildByName("NameNode");
+        let roleName: any = node.getComponent("RoleName");
+        roleName.setText(title);
+    }
+
     protected get animation(): Animation {
         return this.node.getComponent(Animation);
     }
 
-    protected stopAction(): void {
-        let name = this.roleType == "0" ? "Idle" : "idle01"
-        this.animation.play(name);
+    protected stopAction(): void {        
+        this.animation.play("Idle");
     }
 
-    protected moveAction(): void {
-        let name = this.roleType == "0" ? "Running" : "run"
-        this.animation.play(name);
+    protected moveAction(): void {        
+        this.animation.play("Running");
     }
 
     update(deltaTime: number) {

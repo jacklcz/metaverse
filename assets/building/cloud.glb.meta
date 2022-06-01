@@ -1,0 +1,204 @@
+{
+  "ver": "2.1.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "9a1a623f-0e5a-4574-ad5f-166edebbb303",
+  "files": [],
+  "subMetas": {
+    "e00bf": {
+      "importer": "gltf-mesh",
+      "uuid": "9a1a623f-0e5a-4574-ad5f-166edebbb303@e00bf",
+      "displayName": "",
+      "id": "e00bf",
+      "name": "SM_Generic_Cloud_02.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ea6d2": {
+      "importer": "gltf-mesh",
+      "uuid": "9a1a623f-0e5a-4574-ad5f-166edebbb303@ea6d2",
+      "displayName": "",
+      "id": "ea6d2",
+      "name": "SM_Generic_Cloud_03.mesh",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e0f6c": {
+      "importer": "gltf-mesh",
+      "uuid": "9a1a623f-0e5a-4574-ad5f-166edebbb303@e0f6c",
+      "displayName": "",
+      "id": "e0f6c",
+      "name": "SM_Generic_Cloud_01.mesh",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6463d": {
+      "importer": "gltf-embeded-image",
+      "uuid": "9a1a623f-0e5a-4574-ad5f-166edebbb303@6463d",
+      "displayName": "",
+      "id": "6463d",
+      "name": "PolygonTown_Texture_01_A.jpg.image",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "95f05": {
+      "importer": "gltf-embeded-image",
+      "uuid": "9a1a623f-0e5a-4574-ad5f-166edebbb303@95f05",
+      "displayName": "",
+      "id": "95f05",
+      "name": "PolygonTown_Texture_Metallic.jpg.image",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "3effa": {
+      "importer": "texture",
+      "uuid": "9a1a623f-0e5a-4574-ad5f-166edebbb303@3effa",
+      "displayName": "",
+      "id": "3effa",
+      "name": "UnnamedTexture-0.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "9a1a623f-0e5a-4574-ad5f-166edebbb303@6463d"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "221a5": {
+      "importer": "texture",
+      "uuid": "9a1a623f-0e5a-4574-ad5f-166edebbb303@221a5",
+      "displayName": "",
+      "id": "221a5",
+      "name": "UnnamedTexture-1.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "9a1a623f-0e5a-4574-ad5f-166edebbb303@95f05"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f77f7": {
+      "importer": "gltf-material",
+      "uuid": "9a1a623f-0e5a-4574-ad5f-166edebbb303@f77f7",
+      "displayName": "",
+      "id": "f77f7",
+      "name": "PolygonTown_01_A.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "72d7b": {
+      "importer": "gltf-scene",
+      "uuid": "9a1a623f-0e5a-4574-ad5f-166edebbb303@72d7b",
+      "displayName": "",
+      "id": "72d7b",
+      "name": "cloud.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "PolygonTown_Texture_01_A.jpg",
+        "uri": "9a1a623f-0e5a-4574-ad5f-166edebbb303@6463d"
+      },
+      {
+        "name": "PolygonTown_Texture_Metallic.jpg",
+        "uri": "9a1a623f-0e5a-4574-ad5f-166edebbb303@95f05"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "redirect": "9a1a623f-0e5a-4574-ad5f-166edebbb303@72d7b",
+    "assetFinder": {
+      "meshes": [
+        "9a1a623f-0e5a-4574-ad5f-166edebbb303@e00bf",
+        "9a1a623f-0e5a-4574-ad5f-166edebbb303@ea6d2",
+        "9a1a623f-0e5a-4574-ad5f-166edebbb303@e0f6c"
+      ],
+      "skeletons": [],
+      "textures": [
+        "9a1a623f-0e5a-4574-ad5f-166edebbb303@3effa",
+        "9a1a623f-0e5a-4574-ad5f-166edebbb303@221a5"
+      ],
+      "materials": [
+        "9a1a623f-0e5a-4574-ad5f-166edebbb303@f77f7"
+      ],
+      "scenes": [
+        "9a1a623f-0e5a-4574-ad5f-166edebbb303@72d7b"
+      ]
+    }
+  }
+}

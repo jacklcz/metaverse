@@ -43,11 +43,13 @@ export class RoleScene extends Component {
 
     protected newRole(id: string, character: string, nickName: string, position: Vec3, comName: string): void {
 
-        let type = (character == "0") ? "BoyRole" : "GirlRole";
+        let type = (character == "0") ? "character_01" : "character_03";
         let role = GlobalNode.instance().node.getChildByName(type);        
         let thisRole = instantiate(role);
+
         let gameRole: any = thisRole.addComponent(comName);
         gameRole.roleType = character;
+        gameRole.roleID = id;
 
         this._roleList[id] = thisRole;
         this.node.addChild(thisRole);
@@ -55,6 +57,7 @@ export class RoleScene extends Component {
         thisRole.setWorldPosition(position);
         thisRole.layer = this.node.layer;
         thisRole.active = true;
+        gameRole.updateName();
     }
 
     protected onRoleOffline(id: string): void {

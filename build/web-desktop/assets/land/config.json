@@ -2,13 +2,18 @@
     "importBase": "import",
     "nativeBase": "native",
     "name": "land",
-    "deps": [],
+    "deps": [
+        "main"
+    ],
     "uuids": [
-        "119b1309-1fae-474e-8063-23ac5edf96a0",
-        "119b1309-1fae-474e-8063-23ac5edf96a0@6c48a",
-        "d17772e0-5967-42d8-9369-0c6f07b0ec19"
+        "d17772e0-5967-42d8-9369-0c6f07b0ec19",
+        "ee1ddf95-af01-4563-b800-5ee4f7b0a030"
     ],
     "paths": {
+        "ee1ddf95-af01-4563-b800-5ee4f7b0a030": [
+            "Land",
+            "cc.Prefab"
+        ],
         "d17772e0-5967-42d8-9369-0c6f07b0ec19": [
             "terrain",
             "cc.TerrainAsset"
@@ -20,7 +25,10 @@
         "import": [],
         "native": []
     },
-    "redirect": [],
+    "redirect": [
+        "ee1ddf95-af01-4563-b800-5ee4f7b0a030",
+        "0"
+    ],
     "debug": true,
     "extensionMap": {}
 }

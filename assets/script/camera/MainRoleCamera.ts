@@ -11,7 +11,7 @@ export class MainRoleCamera extends Component {
 
     private _target: Node = null;
     private _lookAt: number = 0.1;
-    private _offset: Vec3 = new Vec3(0, 2.0, 5.4);
+    private _offset: Vec3 = new Vec3(0, 2.0, 6.4);
 
     private _moveSmooth: number = 0.02;
     private _rotateSmooth: number = 0.03;

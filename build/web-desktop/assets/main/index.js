@@ -141,10 +141,10 @@ System.register("chunks:///_virtual/Base64.ts", ['cc', './Utf8.ts', './main.ts']
   };
 });
 
-System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Define.ts'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, _createClass, cclegacy, _decorator, Vec3, v3, Animation, Component;
+  var _inheritsLoose, _createClass, cclegacy, _decorator, Vec3, v3, Animation, Component, Define;
 
   return {
     setters: [function (module) {
@@ -157,6 +157,8 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
       v3 = module.v3;
       Animation = module.Animation;
       Component = module.Component;
+    }, function (module) {
+      Define = module.default;
     }],
     execute: function () {
       exports({
@@ -199,6 +201,7 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
           }
 
           _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _this._roleID = "";
           _this._roleType = "0";
           _this._moveSpeed = 7;
           _this._rotaSpeed = 80;
@@ -215,14 +218,19 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
           } else this.moveAction();
         };
 
+        _proto.updateName = function updateName() {
+          var title = Define.briefString(this.roleID);
+          var node = this.node.getChildByName("NameNode");
+          var roleName = node.getComponent("RoleName");
+          roleName.setText(title);
+        };
+
         _proto.stopAction = function stopAction() {
-          var name = this.roleType == "0" ? "Idle" : "idle01";
-          this.animation.play(name);
+          this.animation.play("Idle");
         };
 
         _proto.moveAction = function moveAction() {
-          var name = this.roleType == "0" ? "Running" : "run";
-          this.animation.play(name);
+          this.animation.play("Running");
         };
 
         _proto.update = function update(deltaTime) {
@@ -258,6 +266,14 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
         };
 
         _createClass(BaseRole, [{
+          key: "roleID",
+          get: function get() {
+            return this._roleID;
+          },
+          set: function set(id) {
+            this._roleID = id;
+          }
+        }, {
           key: "roleType",
           get: function get() {
             return this._roleType;
@@ -290,10 +306,10 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
   };
 });
 
-System.register("chunks:///_virtual/ChatFrame.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './GlobalNode.ts', './PeerConnection.ts'], function (exports) {
+System.register("chunks:///_virtual/ChatFrame.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './Define.ts', './GlobalNode.ts', './PeerConnection.ts'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, cclegacy, _decorator, EventHandler, Node, GameEvent, GlobalNode, PeerConnection;
+  var _inheritsLoose, cclegacy, _decorator, EventHandler, Node, GameEvent, Define, GlobalNode, PeerConnection;
 
   return {
     setters: [function (module) {
@@ -305,6 +321,8 @@ System.register("chunks:///_virtual/ChatFrame.ts", ['./rollupPluginModLoBabelHel
       Node = module.Node;
     }, function (module) {
       GameEvent = module.default;
+    }, function (module) {
+      Define = module.default;
     }, function (module) {
       GlobalNode = module.default;
     }, function (module) {
@@ -366,7 +384,7 @@ System.register("chunks:///_virtual/ChatFrame.ts", ['./rollupPluginModLoBabelHel
         };
 
         _proto.onChatMessage = function onChatMessage(nickName, msg) {
-          nickName = this.formatString(nickName);
+          nickName = Define.briefString(nickName);
           var thisText = "[" + nickName + "]: [COLOR=#FFFF00]" + msg + "[/COLOR]";
 
           this._messages.push(thisText);
@@ -395,14 +413,6 @@ System.register("chunks:///_virtual/ChatFrame.ts", ['./rollupPluginModLoBabelHel
           var msgList = this._com.getChild("msgList");
 
           msgList.text = text;
-        };
-
-        _proto.formatString = function formatString(text, max) {
-          if (text.length > 7) {
-            text = "0x.." + text.slice(text.length - 4);
-          }
-
-          return text;
         };
 
         return ChatFrame;
@@ -791,12 +801,30 @@ System.register("chunks:///_virtual/Define.ts", ['cc'], function (exports) {
     execute: function () {
       cclegacy._RF.push({}, "caa53EmBQBHNb/JqL8nB5FE", "Define", undefined);
 
-      var _define = function _define() {
-        this.ERR_ERROR = 0;
-        this.ERR_SUCCESS = 1;
-        this.ERR_TIMEOUT = 2;
-        this.ERR_FAILED = -1;
-      };
+      var _define = /*#__PURE__*/function () {
+        function _define() {
+          this.ERR_ERROR = 0;
+          this.ERR_SUCCESS = 1;
+          this.ERR_TIMEOUT = 2;
+          this.ERR_FAILED = -1;
+        }
+
+        var _proto = _define.prototype;
+
+        _proto.briefString = function briefString(text, max) {
+          if (max === void 0) {
+            max = 7;
+          }
+
+          if (text.length > max) {
+            text = "0x.." + text.slice(text.length - 4);
+          }
+
+          return text;
+        };
+
+        return _define;
+      }();
 
       var Define = exports('default', new _define());
 
@@ -960,8 +988,10 @@ System.register("chunks:///_virtual/GlobalNode.ts", ['./rollupPluginModLoBabelHe
 
         _proto.onLoad = function onLoad() {
           GlobalNode._thisNode = this;
-          this.node.getChildByName("GirlRole").active = false;
-          this.node.getChildByName("BoyRole").active = false;
+          this.node.getChildByName("character_01").active = false;
+          this.node.getChildByName("character_02").active = false;
+          this.node.getChildByName("character_03").active = false;
+          this.node.getChildByName("character_04").active = false;
         };
 
         _proto.onChatEnded = function onChatEnded() {
@@ -976,7 +1006,7 @@ System.register("chunks:///_virtual/GlobalNode.ts", ['./rollupPluginModLoBabelHe
   };
 });
 
-System.register("chunks:///_virtual/main", ['./GameEvent.ts', './TheConfig.ts', './AppMain.ts', './poliyfill.ts', './Utf8.ts', './main.ts', './Base64.ts', './BaseRole.ts', './GlobalNode.ts', './Define.ts', './proto.mjs_cjs=&original=.js', './UserInfo.ts', './Connection.ts', './PeerConnection.ts', './ChatFrame.ts', './ControlScene.ts', './GameRole.ts', './VectorTool.ts', './MyRole.ts', './MainRoleCamera.ts', './MainScene.ts', './MetaMask.ts', './Quaternion.ts', './RoleName.ts', './RoleScene.ts', './SelectScene.ts', './StartScene.ts', './ThirdPersonCamera.ts'], function () {
+System.register("chunks:///_virtual/main", ['./GameEvent.ts', './TheConfig.ts', './AppMain.ts', './poliyfill.ts', './Utf8.ts', './main.ts', './Base64.ts', './Define.ts', './BaseRole.ts', './GlobalNode.ts', './proto.mjs_cjs=&original=.js', './UserInfo.ts', './Connection.ts', './PeerConnection.ts', './ChatFrame.ts', './ControlScene.ts', './GameRole.ts', './VectorTool.ts', './MyRole.ts', './MainRoleCamera.ts', './MainScene.ts', './MetaMask.ts', './Quaternion.ts', './RoleName.ts', './RoleScene.ts', './SelectScene.ts', './StartScene.ts', './ThirdPersonCamera.ts'], function () {
   'use strict';
 
   return {
@@ -1253,7 +1283,7 @@ System.register("chunks:///_virtual/MainRoleCamera.ts", ['./rollupPluginModLoBab
           _this = _Component.call.apply(_Component, [this].concat(args)) || this;
           _this._target = null;
           _this._lookAt = 0.1;
-          _this._offset = new Vec3(0, 2.0, 5.4);
+          _this._offset = new Vec3(0, 2.0, 6.4);
           _this._moveSmooth = 0.02;
           _this._rotateSmooth = 0.03;
           _this._forward = new Vec3();
@@ -1951,38 +1981,74 @@ System.register("chunks:///_virtual/Quaternion.ts", ['cc'], function (exports) {
 System.register("chunks:///_virtual/RoleName.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, cclegacy, _decorator, Component;
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, cclegacy, _decorator, Node, Label, v3, Quat, Vec3, Component;
 
   return {
     setters: [function (module) {
+      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
       _inheritsLoose = module.inheritsLoose;
+      _initializerDefineProperty = module.initializerDefineProperty;
+      _assertThisInitialized = module.assertThisInitialized;
     }, function (module) {
       cclegacy = module.cclegacy;
       _decorator = module._decorator;
+      Node = module.Node;
+      Label = module.Label;
+      v3 = module.v3;
+      Quat = module.Quat;
+      Vec3 = module.Vec3;
       Component = module.Component;
     }],
     execute: function () {
-      var _dec, _class;
+      var _dec, _dec2, _class, _class2, _descriptor;
 
       cclegacy._RF.push({}, "ec4784trRhOLobnVASd52gA", "RoleName", undefined);
 
       var ccclass = _decorator.ccclass,
           property = _decorator.property;
-      var RoleName = exports('RoleName', (_dec = ccclass('RoleName'), _dec(_class = /*#__PURE__*/function (_Component) {
+      var RoleName = exports('RoleName', (_dec = ccclass('RoleName'), _dec2 = property(Node), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
         _inheritsLoose(RoleName, _Component);
 
         function RoleName() {
-          return _Component.apply(this, arguments) || this;
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+
+          _initializerDefineProperty(_this, "alignCamera", _descriptor, _assertThisInitialized(_this));
+
+          return _this;
         }
 
         var _proto = RoleName.prototype;
 
-        _proto.start = function start() {};
+        _proto.setText = function setText(text) {
+          var node = this.node.getChildByName("NickName");
+          node.getComponent(Label).string = text;
+        };
 
-        _proto.setText = function setText(text) {};
+        _proto.update = function update(deltaTime) {
+          var dir = v3();
+          var rotation = new Quat();
+          Vec3.subtract(dir, this.alignCamera.worldPosition, this.node.worldPosition);
+          Quat.fromViewUp(rotation, dir.normalize(), Vec3.UP);
+          var euler = v3();
+          rotation.getEulerAngles(euler);
+          this.node.setWorldRotationFromEuler(0, euler.y, 0);
+        };
 
         return RoleName;
-      }(Component)) || _class));
+      }(Component), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "alignCamera", [_dec2], {
+        configurable: true,
+        enumerable: true,
+        writable: true,
+        initializer: function initializer() {
+          return null;
+        }
+      }), _class2)) || _class));
 
       cclegacy._RF.pop();
     }
@@ -2064,16 +2130,18 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
         };
 
         _proto.newRole = function newRole(id, character, nickName, position, comName) {
-          var type = character == "0" ? "BoyRole" : "GirlRole";
+          var type = character == "0" ? "character_01" : "character_03";
           var role = GlobalNode.instance().node.getChildByName(type);
           var thisRole = instantiate(role);
           var gameRole = thisRole.addComponent(comName);
           gameRole.roleType = character;
+          gameRole.roleID = id;
           this._roleList[id] = thisRole;
           this.node.addChild(thisRole);
           thisRole.setWorldPosition(position);
           thisRole.layer = this.node.layer;
           thisRole.active = true;
+          gameRole.updateName();
         };
 
         _proto.onRoleOffline = function onRoleOffline(id) {
