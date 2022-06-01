@@ -2,78 +2,16 @@
     "importBase": "import",
     "nativeBase": "native",
     "name": "material",
-    "deps": [
-        "main"
-    ],
-    "uuids": [
-        "06fd39d47",
-        "0d4f3f73-cb63-45fa-89c2-a83f11d0210f",
-        "0d95442eb",
-        "1baf0fc9-befa-459c-8bdd-af1a450a0319",
-        "36e72977-8179-4f07-8032-21c802799fdb",
-        "3c4c4a2e-ac49-4c94-bc9c-95af7c42c37d",
-        "3c4c4a2e-ac49-4c94-bc9c-95af7c42c37d@6c48a",
-        "4154328c-7e18-4dfe-82cb-c5f4a291ec59",
-        "4154328c-7e18-4dfe-82cb-c5f4a291ec59@6c48a",
-        "563fdc96-3bd7-4a09-b568-e3408b4566c7",
-        "74fa386b-3abd-4d7c-81ba-6ae59d6d213d",
-        "8afff1d6-f47a-430d-96a4-510f3a1c44be",
-        "977cdd94-1cc6-445c-a65a-a4d58c65a646",
-        "977cdd94-1cc6-445c-a65a-a4d58c65a646@6c48a",
-        "9a75576f-3cfd-46bc-ba3f-755a290d7548",
-        "af3eb6a0-dc61-4e0e-889d-a91bb1f60697"
-    ],
-    "paths": {
-        "8afff1d6-f47a-430d-96a4-510f3a1c44be": [
-            "aab",
-            "cc.Material"
-        ],
-        "74fa386b-3abd-4d7c-81ba-6ae59d6d213d": [
-            "aac",
-            "cc.Material"
-        ],
-        "9a75576f-3cfd-46bc-ba3f-755a290d7548": [
-            "aad",
-            "cc.Material"
-        ],
-        "0d4f3f73-cb63-45fa-89c2-a83f11d0210f": [
-            "aae",
-            "cc.Material"
-        ],
-        "36e72977-8179-4f07-8032-21c802799fdb": [
-            "aaf",
-            "cc.Material"
-        ],
-        "af3eb6a0-dc61-4e0e-889d-a91bb1f60697": [
-            "aag",
-            "cc.Material"
-        ],
-        "563fdc96-3bd7-4a09-b568-e3408b4566c7": [
-            "aah",
-            "cc.Material"
-        ]
-    },
+    "deps": [],
+    "uuids": [],
+    "paths": {},
     "scenes": {},
-    "packs": {
-        "0d95442eb": [
-            "3c4c4a2e-ac49-4c94-bc9c-95af7c42c37d",
-            "977cdd94-1cc6-445c-a65a-a4d58c65a646",
-            "4154328c-7e18-4dfe-82cb-c5f4a291ec59"
-        ],
-        "06fd39d47": [
-            "3c4c4a2e-ac49-4c94-bc9c-95af7c42c37d@6c48a",
-            "977cdd94-1cc6-445c-a65a-a4d58c65a646@6c48a",
-            "4154328c-7e18-4dfe-82cb-c5f4a291ec59@6c48a"
-        ]
-    },
+    "packs": {},
     "versions": {
         "import": [],
         "native": []
     },
-    "redirect": [
-        "1baf0fc9-befa-459c-8bdd-af1a450a0319",
-        "0"
-    ],
+    "redirect": [],
     "debug": true,
     "extensionMap": {}
 }

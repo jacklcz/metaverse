@@ -2,14 +2,14 @@
   "ver": "2.1.14",
   "importer": "fbx",
   "imported": true,
-  "uuid": "4faee2da-5a3d-42bf-b297-ce0a160a7d40",
+  "uuid": "0af5fa08-4502-4526-8dbe-48bb19637cf7",
   "files": [
     "__original-animation-0.cconb"
   ],
   "subMetas": {
     "79072": {
       "importer": "gltf-scene",
-      "uuid": "4faee2da-5a3d-42bf-b297-ce0a160a7d40@79072",
+      "uuid": "0af5fa08-4502-4526-8dbe-48bb19637cf7@79072",
       "displayName": "",
       "id": "79072",
       "name": "Walking.prefab",
@@ -25,7 +25,7 @@
     },
     "dc888": {
       "importer": "gltf-animation",
-      "uuid": "4faee2da-5a3d-42bf-b297-ce0a160a7d40@dc888",
+      "uuid": "0af5fa08-4502-4526-8dbe-48bb19637cf7@dc888",
       "displayName": "",
       "id": "dc888",
       "name": "Walking.animation",
@@ -65,14 +65,14 @@
         ]
       }
     ],
-    "redirect": "4faee2da-5a3d-42bf-b297-ce0a160a7d40@79072",
+    "redirect": "0af5fa08-4502-4526-8dbe-48bb19637cf7@79072",
     "assetFinder": {
       "meshes": [],
       "skeletons": [],
       "textures": [],
       "materials": [],
       "scenes": [
-        "4faee2da-5a3d-42bf-b297-ce0a160a7d40@79072"
+        "0af5fa08-4502-4526-8dbe-48bb19637cf7@79072"
       ]
     }
   }

@@ -1,0 +1,5014 @@
+[
+  {
+    "__type__": "cc.Prefab",
+    "_name": "",
+    "_objFlags": 0,
+    "_native": "",
+    "data": {
+      "__id__": 1
+    },
+    "optimizationPolicy": 0,
+    "persistent": false,
+    "asyncLoadAssets": false
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "character_06",
+    "_objFlags": 0,
+    "__editorExtras__": {},
+    "_parent": null,
+    "_children": [
+      {
+        "__id__": 2
+      }
+    ],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 188
+      }
+    ],
+    "_prefab": {
+      "__id__": 190
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 1.908,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Armature",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 1
+    },
+    "_children": [
+      {
+        "__id__": 3
+      },
+      {
+        "__id__": 8
+      },
+      {
+        "__id__": 13
+      },
+      {
+        "__id__": 18
+      },
+      {
+        "__id__": 23
+      },
+      {
+        "__id__": 28
+      },
+      {
+        "__id__": 33
+      },
+      {
+        "__id__": 38
+      },
+      {
+        "__id__": 43
+      },
+      {
+        "__id__": 48
+      },
+      {
+        "__id__": 53
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 187
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "EyeLeft",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 4
+      }
+    ],
+    "_prefab": {
+      "__id__": 7
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.SkinnedMeshRenderer",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 3
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 5
+    },
+    "_visFlags": 0,
+    "_materials": [
+      {
+        "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@bb84f",
+        "__expectedType__": "cc.Material"
+      }
+    ],
+    "lightmapSettings": {
+      "__id__": 6
+    },
+    "_mesh": {
+      "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@37b83",
+      "__expectedType__": "cc.Mesh"
+    },
+    "_shadowCastingMode": 0,
+    "_shadowReceivingMode": 1,
+    "_shadowBias": 0,
+    "_shadowNormalBias": 0,
+    "_enableMorph": true,
+    "_skeleton": {
+      "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@f9d1d",
+      "__expectedType__": "cc.Skeleton"
+    },
+    "_skinningRoot": {
+      "__id__": 1
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "94CLbUmu5d6avnayyWwSfy"
+  },
+  {
+    "__type__": "cc.ModelLightmapSettings",
+    "texture": null,
+    "uvParam": {
+      "__type__": "cc.Vec4",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 0
+    },
+    "_bakeable": false,
+    "_castShadow": false,
+    "_receiveShadow": false,
+    "_recieveShadow": false,
+    "_lightmapSize": 64
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "28uXHKsN5b/aSP6XlsbNBh"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "EyeRight",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 9
+      }
+    ],
+    "_prefab": {
+      "__id__": 12
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.SkinnedMeshRenderer",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 8
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 10
+    },
+    "_visFlags": 0,
+    "_materials": [
+      {
+        "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@bb84f",
+        "__expectedType__": "cc.Material"
+      }
+    ],
+    "lightmapSettings": {
+      "__id__": 11
+    },
+    "_mesh": {
+      "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@9635c",
+      "__expectedType__": "cc.Mesh"
+    },
+    "_shadowCastingMode": 0,
+    "_shadowReceivingMode": 1,
+    "_shadowBias": 0,
+    "_shadowNormalBias": 0,
+    "_enableMorph": true,
+    "_skeleton": {
+      "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@f9d1d",
+      "__expectedType__": "cc.Skeleton"
+    },
+    "_skinningRoot": {
+      "__id__": 1
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "b2ndg9JJlV0ZmNglknMILd"
+  },
+  {
+    "__type__": "cc.ModelLightmapSettings",
+    "texture": null,
+    "uvParam": {
+      "__type__": "cc.Vec4",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 0
+    },
+    "_bakeable": false,
+    "_castShadow": false,
+    "_receiveShadow": false,
+    "_recieveShadow": false,
+    "_lightmapSize": 64
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "fa2mefi3RdoZZLEisaOkc8"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Wolf3D_Body",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 14
+      }
+    ],
+    "_prefab": {
+      "__id__": 17
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.SkinnedMeshRenderer",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 13
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 15
+    },
+    "_visFlags": 0,
+    "_materials": [
+      {
+        "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@e111b",
+        "__expectedType__": "cc.Material"
+      },
+      {
+        "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@e111b",
+        "__expectedType__": "cc.Material"
+      },
+      {
+        "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@e111b",
+        "__expectedType__": "cc.Material"
+      }
+    ],
+    "lightmapSettings": {
+      "__id__": 16
+    },
+    "_mesh": {
+      "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@b6359",
+      "__expectedType__": "cc.Mesh"
+    },
+    "_shadowCastingMode": 0,
+    "_shadowReceivingMode": 1,
+    "_shadowBias": 0,
+    "_shadowNormalBias": 0,
+    "_enableMorph": true,
+    "_skeleton": {
+      "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@f9d1d",
+      "__expectedType__": "cc.Skeleton"
+    },
+    "_skinningRoot": {
+      "__id__": 1
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "57YpxDK7hb1LrlKsivoeuN"
+  },
+  {
+    "__type__": "cc.ModelLightmapSettings",
+    "texture": null,
+    "uvParam": {
+      "__type__": "cc.Vec4",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 0
+    },
+    "_bakeable": false,
+    "_castShadow": false,
+    "_receiveShadow": false,
+    "_recieveShadow": false,
+    "_lightmapSize": 64
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "46xt41W6decoli3rWMeiJk"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Wolf3D_Glasses",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 19
+      }
+    ],
+    "_prefab": {
+      "__id__": 22
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.SkinnedMeshRenderer",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 18
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 20
+    },
+    "_visFlags": 0,
+    "_materials": [
+      {
+        "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@b329e",
+        "__expectedType__": "cc.Material"
+      }
+    ],
+    "lightmapSettings": {
+      "__id__": 21
+    },
+    "_mesh": {
+      "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@59b69",
+      "__expectedType__": "cc.Mesh"
+    },
+    "_shadowCastingMode": 0,
+    "_shadowReceivingMode": 1,
+    "_shadowBias": 0,
+    "_shadowNormalBias": 0,
+    "_enableMorph": true,
+    "_skeleton": {
+      "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@f9d1d",
+      "__expectedType__": "cc.Skeleton"
+    },
+    "_skinningRoot": {
+      "__id__": 1
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "00AiHGdrhUJpD5a07IEjYl"
+  },
+  {
+    "__type__": "cc.ModelLightmapSettings",
+    "texture": null,
+    "uvParam": {
+      "__type__": "cc.Vec4",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 0
+    },
+    "_bakeable": false,
+    "_castShadow": false,
+    "_receiveShadow": false,
+    "_recieveShadow": false,
+    "_lightmapSize": 64
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "f2qVPbTN1dopp5bJxFUDJ/"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Wolf3D_Hair",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 24
+      }
+    ],
+    "_prefab": {
+      "__id__": 27
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.SkinnedMeshRenderer",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 23
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 25
+    },
+    "_visFlags": 0,
+    "_materials": [
+      {
+        "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@88077",
+        "__expectedType__": "cc.Material"
+      }
+    ],
+    "lightmapSettings": {
+      "__id__": 26
+    },
+    "_mesh": {
+      "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@8f0a6",
+      "__expectedType__": "cc.Mesh"
+    },
+    "_shadowCastingMode": 0,
+    "_shadowReceivingMode": 1,
+    "_shadowBias": 0,
+    "_shadowNormalBias": 0,
+    "_enableMorph": true,
+    "_skeleton": {
+      "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@f9d1d",
+      "__expectedType__": "cc.Skeleton"
+    },
+    "_skinningRoot": {
+      "__id__": 1
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "3cH29SvDxb2pLlQxUY3vFO"
+  },
+  {
+    "__type__": "cc.ModelLightmapSettings",
+    "texture": null,
+    "uvParam": {
+      "__type__": "cc.Vec4",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 0
+    },
+    "_bakeable": false,
+    "_castShadow": false,
+    "_receiveShadow": false,
+    "_recieveShadow": false,
+    "_lightmapSize": 64
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "972oqAeqpdcYE/LOMBHd4a"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Wolf3D_Head",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 29
+      }
+    ],
+    "_prefab": {
+      "__id__": 32
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.SkinnedMeshRenderer",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 28
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 30
+    },
+    "_visFlags": 0,
+    "_materials": [
+      {
+        "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@476b9",
+        "__expectedType__": "cc.Material"
+      }
+    ],
+    "lightmapSettings": {
+      "__id__": 31
+    },
+    "_mesh": {
+      "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@a4f4d",
+      "__expectedType__": "cc.Mesh"
+    },
+    "_shadowCastingMode": 0,
+    "_shadowReceivingMode": 1,
+    "_shadowBias": 0,
+    "_shadowNormalBias": 0,
+    "_enableMorph": true,
+    "_skeleton": {
+      "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@f9d1d",
+      "__expectedType__": "cc.Skeleton"
+    },
+    "_skinningRoot": {
+      "__id__": 1
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "1duVrqKGtfz7V32l1K+IWO"
+  },
+  {
+    "__type__": "cc.ModelLightmapSettings",
+    "texture": null,
+    "uvParam": {
+      "__type__": "cc.Vec4",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 0
+    },
+    "_bakeable": false,
+    "_castShadow": false,
+    "_receiveShadow": false,
+    "_recieveShadow": false,
+    "_lightmapSize": 64
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "c5N7W1y8tZb4/mE+nTMH5D"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Wolf3D_Outfit_Bottom",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 34
+      }
+    ],
+    "_prefab": {
+      "__id__": 37
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.SkinnedMeshRenderer",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 33
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 35
+    },
+    "_visFlags": 0,
+    "_materials": [
+      {
+        "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@cce2c",
+        "__expectedType__": "cc.Material"
+      }
+    ],
+    "lightmapSettings": {
+      "__id__": 36
+    },
+    "_mesh": {
+      "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@fba9c",
+      "__expectedType__": "cc.Mesh"
+    },
+    "_shadowCastingMode": 0,
+    "_shadowReceivingMode": 1,
+    "_shadowBias": 0,
+    "_shadowNormalBias": 0,
+    "_enableMorph": true,
+    "_skeleton": {
+      "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@f9d1d",
+      "__expectedType__": "cc.Skeleton"
+    },
+    "_skinningRoot": {
+      "__id__": 1
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "9bmd4tUgxXxpGqMQjkMBFP"
+  },
+  {
+    "__type__": "cc.ModelLightmapSettings",
+    "texture": null,
+    "uvParam": {
+      "__type__": "cc.Vec4",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 0
+    },
+    "_bakeable": false,
+    "_castShadow": false,
+    "_receiveShadow": false,
+    "_recieveShadow": false,
+    "_lightmapSize": 64
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "e2qppKExNVrINGbPTJ7l8m"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Wolf3D_Outfit_Footwear",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 39
+      }
+    ],
+    "_prefab": {
+      "__id__": 42
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.SkinnedMeshRenderer",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 38
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 40
+    },
+    "_visFlags": 0,
+    "_materials": [
+      {
+        "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@b725a",
+        "__expectedType__": "cc.Material"
+      }
+    ],
+    "lightmapSettings": {
+      "__id__": 41
+    },
+    "_mesh": {
+      "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@0b9c0",
+      "__expectedType__": "cc.Mesh"
+    },
+    "_shadowCastingMode": 0,
+    "_shadowReceivingMode": 1,
+    "_shadowBias": 0,
+    "_shadowNormalBias": 0,
+    "_enableMorph": true,
+    "_skeleton": {
+      "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@f9d1d",
+      "__expectedType__": "cc.Skeleton"
+    },
+    "_skinningRoot": {
+      "__id__": 1
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "38JJ5NuDhfgq2E1eSlqo8s"
+  },
+  {
+    "__type__": "cc.ModelLightmapSettings",
+    "texture": null,
+    "uvParam": {
+      "__type__": "cc.Vec4",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 0
+    },
+    "_bakeable": false,
+    "_castShadow": false,
+    "_receiveShadow": false,
+    "_recieveShadow": false,
+    "_lightmapSize": 64
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "a0QRbol7VSQ4EToQAVRVkD"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Wolf3D_Outfit_Top",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 44
+      }
+    ],
+    "_prefab": {
+      "__id__": 47
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.SkinnedMeshRenderer",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 43
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 45
+    },
+    "_visFlags": 0,
+    "_materials": [
+      {
+        "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@d918b",
+        "__expectedType__": "cc.Material"
+      }
+    ],
+    "lightmapSettings": {
+      "__id__": 46
+    },
+    "_mesh": {
+      "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@e4a32",
+      "__expectedType__": "cc.Mesh"
+    },
+    "_shadowCastingMode": 0,
+    "_shadowReceivingMode": 1,
+    "_shadowBias": 0,
+    "_shadowNormalBias": 0,
+    "_enableMorph": true,
+    "_skeleton": {
+      "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@f9d1d",
+      "__expectedType__": "cc.Skeleton"
+    },
+    "_skinningRoot": {
+      "__id__": 1
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "9cX2b9qk9a0a3v9YkHdVSi"
+  },
+  {
+    "__type__": "cc.ModelLightmapSettings",
+    "texture": null,
+    "uvParam": {
+      "__type__": "cc.Vec4",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 0
+    },
+    "_bakeable": false,
+    "_castShadow": false,
+    "_receiveShadow": false,
+    "_recieveShadow": false,
+    "_lightmapSize": 64
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "fahAylFo5ZIoerxcEp0vSw"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Wolf3D_Teeth",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [
+      {
+        "__id__": 49
+      }
+    ],
+    "_prefab": {
+      "__id__": 52
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 1
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.SkinnedMeshRenderer",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 48
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 50
+    },
+    "_visFlags": 0,
+    "_materials": [
+      {
+        "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@aeb3f",
+        "__expectedType__": "cc.Material"
+      }
+    ],
+    "lightmapSettings": {
+      "__id__": 51
+    },
+    "_mesh": {
+      "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@910b4",
+      "__expectedType__": "cc.Mesh"
+    },
+    "_shadowCastingMode": 0,
+    "_shadowReceivingMode": 1,
+    "_shadowBias": 0,
+    "_shadowNormalBias": 0,
+    "_enableMorph": true,
+    "_skeleton": {
+      "__uuid__": "e3be2025-a3d0-4222-87e9-91eb6ae61916@f9d1d",
+      "__expectedType__": "cc.Skeleton"
+    },
+    "_skinningRoot": {
+      "__id__": 1
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "8aJUPJ5nRfqIzlUHwGiJ8g"
+  },
+  {
+    "__type__": "cc.ModelLightmapSettings",
+    "texture": null,
+    "uvParam": {
+      "__type__": "cc.Vec4",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "w": 0
+    },
+    "_bakeable": false,
+    "_castShadow": false,
+    "_receiveShadow": false,
+    "_recieveShadow": false,
+    "_lightmapSize": 64
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "1exrIkSkJaZoYZBGDrbVl7"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Hips",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 2
+    },
+    "_children": [
+      {
+        "__id__": 54
+      },
+      {
+        "__id__": 166
+      },
+      {
+        "__id__": 176
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 186
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 3.5090618019824327e-13,
+      "y": 1.0369641780853271,
+      "z": 0.040428921580314636
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -0.029978149765491065,
+      "y": -0.000026139775862481034,
+      "z": 7.83976463725009e-7,
+      "w": 0.9995505539254808
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999998807907104,
+      "y": 0.9999998807907104,
+      "z": 0.9999998807907104
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": -3.4357576591320176,
+      "y": -0.0029913582507308982,
+      "z": 0.00017959318821184292
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Spine",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 53
+    },
+    "_children": [
+      {
+        "__id__": 55
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 165
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 1.3980132156088398e-12,
+      "y": 0.0963631421327591,
+      "z": 1.818759898242206e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -0.013785630232147853,
+      "y": 0.000026275137782212392,
+      "z": 3.588388547982453e-7,
+      "w": 0.9999049733392624
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1.000000238418579,
+      "y": 1.0000001192092896,
+      "z": 1.000000238418579
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": -1.5797669011215179,
+      "y": 0.0030111897506380344,
+      "z": -3.9128184212632666e-7
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Spine1",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 54
+    },
+    "_children": [
+      {
+        "__id__": 56
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 164
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 4.129407590609119e-14,
+      "y": 0.09147459268569946,
+      "z": -1.2466491838836191e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -0.03635684733989359,
+      "y": 1.1054702211419086e-7,
+      "z": 9.852298482268894e-8,
+      "w": 0.9993388712801488
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999997615814209,
+      "y": 0.9999994039535522,
+      "z": 0.9999992251396179
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": -4.167106189631531,
+      "y": 0.000013069845851872525,
+      "z": 0.000010821878695158556
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Spine2",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 55
+    },
+    "_children": [
+      {
+        "__id__": 57
+      },
+      {
+        "__id__": 67
+      },
+      {
+        "__id__": 115
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 163
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 1.7247898123845876e-14,
+      "y": 0.12162076681852341,
+      "z": 3.93618471150603e-9
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.0635919482818086,
+      "y": -1.6341995140696592e-7,
+      "z": -9.179424668369853e-8,
+      "w": 0.9979759837359258
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1.0000001192092896,
+      "y": 1.0000004768371582,
+      "z": 0.9999997019767761
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 7.292020882236529,
+      "y": -0.000018019730271533137,
+      "z": -0.000011688413130874612
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Neck",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 56
+    },
+    "_children": [
+      {
+        "__id__": 58
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 66
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 1.6975544844051622e-14,
+      "y": 0.12444131076335907,
+      "z": -3.5255048658200394e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.13964588590562022,
+      "y": 3.695573532382703e-8,
+      "z": -1.1887780417777516e-7,
+      "w": 0.9902015080525878
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 0.9999997019767761,
+      "z": 1.000001072883606
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 16.054711431674257,
+      "y": 0.000006095631648525232,
+      "z": -0.000012897539469256585
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "Head",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 57
+    },
+    "_children": [
+      {
+        "__id__": 59
+      },
+      {
+        "__id__": 61
+      },
+      {
+        "__id__": 63
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 65
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -2.4542434057250873e-14,
+      "y": 0.09079489856958389,
+      "z": 3.944463600191739e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -0.05336152701243523,
+      "y": 4.495754472879174e-8,
+      "z": 1.2768992828284898e-7,
+      "w": 0.9985752587736604
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999998807907104,
+      "y": 1.000001072883606,
+      "z": 0.999998927116394
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": -6.117686221683132,
+      "y": 0.000005925211115275857,
+      "z": 0.000014336435351372388
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "HeadTop_End",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 58
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 60
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 4.914020138881408e-15,
+      "y": 0.18131636083126068,
+      "z": -2.1938603822491132e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -0.07446514082014209,
+      "y": -1.1465986933928896e-7,
+      "z": -9.439338215154304e-9,
+      "w": 0.9972236172507264
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999999403953552,
+      "y": 1,
+      "z": 0.9999999403953552
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": -8.540982389072479,
+      "y": -0.000013183120740571488,
+      "z": -1.0026391084663816e-7
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "744UkiBalVc65Cf6lVdNvo"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftEye",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 58
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 62
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0.03408871218562126,
+      "y": 0.07999003678560257,
+      "z": 0.0740024521946907
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -0.07016055331333661,
+      "y": 3.3577445485951994e-9,
+      "z": -1.8908620569541217e-8,
+      "w": 0.9975357120217632
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 1
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": -8.046417836389738,
+      "y": 2.3179933702569138e-7,
+      "z": -0.0000021884243877513357
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "d8Bw+ItzhS5LR3GFar+j1N"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightEye",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 58
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 64
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -0.03350641950964928,
+      "y": 0.07993162423372269,
+      "z": 0.07401071488857269
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -0.07016055331333661,
+      "y": 3.357744326550593e-9,
+      "z": -1.8908620569541217e-8,
+      "w": 0.9975357120217632
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1,
+      "z": 0.9999999403953552
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": -8.046417836389738,
+      "y": 2.3179931164395623e-7,
+      "z": -0.0000021884243859661397
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "18wO+9mWxduo+Gr6uswX5R"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "d7ANLMDo1Rn6CrU6a96vW+"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "d7eiwvaqtT14LEBQgu1jNP"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftShoulder",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 56
+    },
+    "_children": [
+      {
+        "__id__": 68
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 114
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0.062223341315984726,
+      "y": 0.10491129755973816,
+      "z": -0.012486664578318596
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.48168738716865833,
+      "y": 0.49276902221425944,
+      "z": -0.5889068956298934,
+      "w": 0.4223086786560223
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.999999463558197,
+      "y": 1.000000238418579,
+      "z": 1.000000238418579
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 99.07392631926986,
+      "y": 100.32965362238495,
+      "z": -1.2995648263284862
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftArm",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 67
+    },
+    "_children": [
+      {
+        "__id__": 69
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 113
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -1.4761556421660771e-8,
+      "y": 0.06534282118082047,
+      "z": 1.5301378653020947e-7
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.38480094367441553,
+      "y": 0.06913691811615805,
+      "z": 0.03828748344650321,
+      "w": 0.9196099112732598
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999987483024597,
+      "y": 1.000000238418579,
+      "z": 1.0000008344650269
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 45.06184382934112,
+      "y": 5.6497535693500875,
+      "z": 7.101473745654377
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftForeArm",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 68
+    },
+    "_children": [
+      {
+        "__id__": 70
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 112
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 2.253506536931127e-8,
+      "y": 0.2688433825969696,
+      "z": -1.798820647991306e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.015386312118917325,
+      "y": -0.00923469094884527,
+      "z": 0.2376626706833182,
+      "w": 0.9711819792634805
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999973177909851,
+      "y": 1.0000025033950806,
+      "z": 1
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 2.214011208658713,
+      "y": -1.6308777385616682,
+      "z": 27.47381770590912
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftHand",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 69
+    },
+    "_children": [
+      {
+        "__id__": 71
+      },
+      {
+        "__id__": 79
+      },
+      {
+        "__id__": 87
+      },
+      {
+        "__id__": 95
+      },
+      {
+        "__id__": 103
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 111
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -2.8470116930634504e-8,
+      "y": 0.25737518072128296,
+      "z": -1.1414877576498839e-7
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.015977393359102657,
+      "y": -0.12041893987209601,
+      "z": -0.04006021722842138,
+      "w": 0.9917858543138942
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999985694885254,
+      "y": 1.0000015497207642,
+      "z": 1.000000238418579
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 1.2675541329736575,
+      "y": -13.79261453121203,
+      "z": -4.778866096340696
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftHandThumb1",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 70
+    },
+    "_children": [
+      {
+        "__id__": 72
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 78
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -0.016604261472821236,
+      "y": 0.01429883111268282,
+      "z": 0.015933096408843994
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.17928548870705752,
+      "y": 0.0030927368031350684,
+      "z": 0.36818115308424904,
+      "w": 0.9122991762748066
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1.0000083446502686,
+      "y": 0.9999915957450867,
+      "z": 1.0000014305114746
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 26.048743502026966,
+      "y": -9.836561243173419,
+      "z": 42.2906411390236
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftHandThumb2",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 71
+    },
+    "_children": [
+      {
+        "__id__": 73
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 77
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 7.933987689057176e-8,
+      "y": 0.03407910093665123,
+      "z": 4.1406558182188746e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.03535803750853385,
+      "y": -0.018298776669668775,
+      "z": -0.22103743073183155,
+      "w": 0.9744523683440919
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999914169311523,
+      "y": 1.0000081062316895,
+      "z": 0.9999997019767761
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 3.8669676302802776,
+      "y": -1.2727619332037352,
+      "z": -25.599311600698066
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftHandThumb3",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 72
+    },
+    "_children": [
+      {
+        "__id__": 74
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 76
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -2.195627075707307e-7,
+      "y": 0.031169019639492035,
+      "z": -6.15887856270092e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.06517300930196157,
+      "y": 0.0026039944548279857,
+      "z": -0.06588827987790892,
+      "w": 0.9956929409442129
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999966025352478,
+      "y": 1.000003457069397,
+      "z": 0.9999999403953552
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 7.542213385111357,
+      "y": 0.7960542646036599,
+      "z": -7.519844318627057
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftHandThumb4",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 73
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 75
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -6.053550123397144e-7,
+      "y": 0.03377929702401161,
+      "z": -1.0243836356949032e-7
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -0.03271909779582709,
+      "y": 0.029710570136267673,
+      "z": 0.04319752349134319,
+      "w": 0.9980885314569142
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1.0000020265579224,
+      "y": 0.9999978542327881,
+      "z": 1.0000001192092896
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": -3.9061490694500707,
+      "y": 3.5750672173967204,
+      "z": 4.834951063635722
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "a7egS3FypWmYC9EPhpKhDz"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "d8B9tK43JVHph5ldptTL3r"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "a8aRuigVlW1ryoDEX6pTTX"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "a1s1YOi0lVuJlt2IiE6x3f"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftHandIndex1",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 70
+    },
+    "_children": [
+      {
+        "__id__": 80
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 86
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -0.021300259977579117,
+      "y": 0.08553459495306015,
+      "z": 0.01461225375533104
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.10182616843677225,
+      "y": -0.013132434317699733,
+      "z": 0.0758083312512563,
+      "w": 0.9918225988064989
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1.0000028610229492,
+      "y": 0.9999974370002747,
+      "z": 1.0000005960464478
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 11.902106366472006,
+      "y": -2.4041908710271978,
+      "z": 8.493799585166077
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftHandIndex2",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 79
+    },
+    "_children": [
+      {
+        "__id__": 81
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 85
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 5.7096858796512606e-8,
+      "y": 0.03222041577100754,
+      "z": -5.0383786032170974e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.17599778070937272,
+      "y": 0.033181481428379074,
+      "z": -0.025112197079339867,
+      "w": 0.9835106242605833
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999983906745911,
+      "y": 1.0000003576278687,
+      "z": 1.0000008344650269
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 20.371487514889097,
+      "y": 4.253007001100313,
+      "z": -2.1615084327075897
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftHandIndex3",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 80
+    },
+    "_children": [
+      {
+        "__id__": 82
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 84
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 4.841047740455906e-8,
+      "y": 0.02831682376563549,
+      "z": 7.571768634306864e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.13336019144480232,
+      "y": -0.04654576231222313,
+      "z": -0.031514901494171355,
+      "w": 0.9894722645594429
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999982714653015,
+      "y": 1.000001072883606,
+      "z": 1.0000001192092896
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 15.171637616834808,
+      "y": -4.815122417167541,
+      "z": -4.288636057936468
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftHandIndex4",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 81
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 83
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -2.2208828553971216e-8,
+      "y": 0.025588396936655045,
+      "z": -2.3861533193780815e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -0.06403251822410955,
+      "y": 0.04265855558105686,
+      "z": -0.030693403075486427,
+      "w": 0.9965630934633606
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999998211860657,
+      "y": 0.9999997019767761,
+      "z": 1
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": -7.197197396761619,
+      "y": 4.6617870432556,
+      "z": -3.8209589785254052
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "34qtiGLYBTHJZz59g/j9Qc"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "aeU7OqWclU6KL9VGIpvXFY"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "7av+g5Bi1e5696dXaDOx/p"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "a602B/Si9ZfpHOd4tJjWdt"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftHandMiddle1",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 70
+    },
+    "_children": [
+      {
+        "__id__": 88
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 94
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -0.004846036434173584,
+      "y": 0.08406209200620651,
+      "z": 0.010732172057032585
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.10420279693468301,
+      "y": -0.0002690848129705621,
+      "z": -0.02734005011391571,
+      "w": 0.99418017801811
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999995827674866,
+      "y": 1.0000004768371582,
+      "z": 1.0000004768371582
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 11.975033131568019,
+      "y": 0.29624588969693283,
+      "z": -3.1194598068635564
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftHandMiddle2",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 87
+    },
+    "_children": [
+      {
+        "__id__": 89
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 93
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 3.725290298461914e-8,
+      "y": 0.03819407895207405,
+      "z": 4.470348358154297e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.15075260575772562,
+      "y": 0.02291630235094563,
+      "z": 0.03965080575479825,
+      "w": 0.9875101561740068
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1.0000008344650269,
+      "y": 0.9999982714653015,
+      "z": 1.0000004768371582
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 17.277662200163828,
+      "y": 1.9155737598623803,
+      "z": 4.888706399928201
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftHandMiddle3",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 88
+    },
+    "_children": [
+      {
+        "__id__": 90
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 92
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -2.922530306648241e-8,
+      "y": 0.03219444677233696,
+      "z": -1.2517576308823664e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.145755755247747,
+      "y": -0.007176415177995131,
+      "z": 0.010190239338816975,
+      "w": 0.9892420926646671
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1.0000004768371582,
+      "y": 0.999999463558197,
+      "z": 0.9999999403953552
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 16.772293211005493,
+      "y": -0.9839199966571567,
+      "z": 1.0353463754022527
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftHandMiddle4",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 89
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 91
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 4.251711160918603e-8,
+      "y": 0.024584943428635597,
+      "z": -5.0034081766625604e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -0.07933509197766109,
+      "y": 0.0022673746136370474,
+      "z": -0.02302357324043291,
+      "w": 0.9965795087540681
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999999403953552,
+      "y": 0.9999997615814209,
+      "z": 0.9999999403953552
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": -9.101987890875774,
+      "y": 0.04967609589060843,
+      "z": -2.6508414488173595
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "682Lk14uZXIrIpC29YNOYU"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "1di3o201Ve1r+uIyKZok0/"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "02F5s08upQhppKLGd9EfzB"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "f9WZgaMM5VaqsGL4DfAvGK"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftHandRing1",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 70
+    },
+    "_children": [
+      {
+        "__id__": 96
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 102
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0.016770990565419197,
+      "y": 0.08656313270330429,
+      "z": 0.008757766336202621
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.1379296721580973,
+      "y": 0.023424806950054028,
+      "z": -0.08379429971167228,
+      "w": 0.986612993677634
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999975562095642,
+      "y": 1.000002384185791,
+      "z": 1.000001072883606
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 16.23897989163163,
+      "y": 4.027196727891949,
+      "z": -9.142075505274478
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftHandRing2",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 95
+    },
+    "_children": [
+      {
+        "__id__": 97
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 101
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 2.0124943933552686e-9,
+      "y": 0.03037966415286064,
+      "z": 3.2526813242839125e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.17339487052489483,
+      "y": 0.019416479034009133,
+      "z": 0.03389944445848522,
+      "w": 0.9840772565621985
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1.0000001192092896,
+      "y": 0.9999991655349731,
+      "z": 1.0000001192092896
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 19.930027040450216,
+      "y": 1.5202536108859566,
+      "z": 4.212327916532688
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftHandRing3",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 96
+    },
+    "_children": [
+      {
+        "__id__": 98
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 100
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -1.909211277961731e-8,
+      "y": 0.028316456824541092,
+      "z": 6.28642737865448e-9
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.03109332938659729,
+      "y": -0.013055321842514825,
+      "z": -0.01881751057409537,
+      "w": 0.9992540541499138
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.999999463558197,
+      "y": 1.0000008344650269,
+      "z": 1.000000238418579
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 3.537079620552888,
+      "y": -1.4290694171035316,
+      "z": -2.2017777795323332
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftHandRing4",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 97
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 99
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -2.7659025292336992e-8,
+      "y": 0.021250823512673378,
+      "z": -8.802609308133924e-9
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -0.015983497902791508,
+      "y": 0.00318271586670583,
+      "z": 0.020556417922286796,
+      "w": 0.9996558566810417
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 0.9999996423721313,
+      "z": 0.9999994039535522
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": -1.84030413869512,
+      "y": 0.4025792286311753,
+      "z": 2.349610435158758
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "e69z+os5hXC4Ox5raPwJNy"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "32zUJ0W/VSJLAfiPbI45d1"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "c3xrVyAYtRI4/sHo3XLRXM"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "00PYpGDmJZs48DToxJk+gb"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftHandPinky1",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 70
+    },
+    "_children": [
+      {
+        "__id__": 104
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 110
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0.0325833298265934,
+      "y": 0.07914748042821884,
+      "z": 0.0054901414550840855
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.1967969355567666,
+      "y": 0.02432840650207989,
+      "z": -0.19264183623281955,
+      "w": 0.9610245666606984
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999944567680359,
+      "y": 1.0000057220458984,
+      "z": 1.0000003576278687
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 24.557293920518124,
+      "y": 7.552248542759319,
+      "z": -21.142673324105097
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftHandPinky2",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 103
+    },
+    "_children": [
+      {
+        "__id__": 105
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 109
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 2.5705803707865016e-8,
+      "y": 0.027638014405965805,
+      "z": -1.3750844019000397e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.08557440927360614,
+      "y": 0.03390482750434096,
+      "z": 0.07126476483907693,
+      "w": 0.993201297039933
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999996423721313,
+      "y": 0.9999990463256836,
+      "z": 1.0000003576278687
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 9.61202955796089,
+      "y": 3.1965007220812267,
+      "z": 8.474155835509542
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftHandPinky3",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 104
+    },
+    "_children": [
+      {
+        "__id__": 106
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 108
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -1.5717237289436525e-8,
+      "y": 0.017656126990914345,
+      "z": -1.8128426759744798e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.10002378940277326,
+      "y": -0.034647445505292196,
+      "z": -0.012314959208672753,
+      "w": 0.9943053544325086
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 1.0000003576278687,
+      "z": 0.9999999403953552
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 11.428963706341575,
+      "y": -3.8112331224032574,
+      "z": -1.800575434457629
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftHandPinky4",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 105
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 107
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -3.5868616521383956e-8,
+      "y": 0.013380756601691246,
+      "z": -3.315106411605484e-9
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -0.03942201891974499,
+      "y": 0.02194253463805879,
+      "z": 0.010462966376970138,
+      "w": 0.9989269021968239
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1.0000003576278687,
+      "y": 1.0000004768371582,
+      "z": 1.0000005960464478
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": -4.544489333109056,
+      "y": 2.560319254800416,
+      "z": 1.0986244619300793
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "fdJvEK/MJTTq75quA6ukKu"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "28eQVqvzldf5lUDQ6BXTam"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "194ombrzBWzbBIsnlSzSbs"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "3c6wRBLOBeJqX5H+JFG5yU"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "6f6gdIUe5RQ5qO0zsgFnfx"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "31l0qU1rxerJ3IaRwSSmfp"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "c02e1YYRNf3rzaWBoV92MC"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "4cRuK6CJBZYYe6Y8d+U1w5"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightShoulder",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 56
+    },
+    "_children": [
+      {
+        "__id__": 116
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 162
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -0.06222330033779144,
+      "y": 0.10491117835044861,
+      "z": -0.012486672028899193
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.4816872941941586,
+      "y": -0.49276946628510204,
+      "z": 0.5889063912625316,
+      "w": 0.4223089698776808
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999997615814209,
+      "y": 0.9999998211860657,
+      "z": 1.0000003576278687
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 99.0738468820095,
+      "y": -100.32963530079462,
+      "z": 1.2995408035065341
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightArm",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 115
+    },
+    "_children": [
+      {
+        "__id__": 117
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 161
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -7.524306511186296e-9,
+      "y": 0.06534283608198166,
+      "z": -9.975316572763404e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.3848018579185769,
+      "y": -0.06913686423227168,
+      "z": -0.038287534642603996,
+      "w": 0.9196095306365257
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999992251396179,
+      "y": 0.9999997615814209,
+      "z": 1.000001072883606
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 45.06195817408484,
+      "y": -5.649738524268556,
+      "z": -7.1014824041744955
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightForeArm",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 116
+    },
+    "_children": [
+      {
+        "__id__": 118
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 160
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -2.486602568296803e-8,
+      "y": 0.26884275674819946,
+      "z": 5.612779929720091e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.015385304331874043,
+      "y": 0.009234361203020812,
+      "z": -0.23766277350807366,
+      "w": 0.9711819732018495
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999973773956299,
+      "y": 1.000002145767212,
+      "z": 0.9999998211860657
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 2.2138749758928467,
+      "y": 1.6308058252326767,
+      "z": -27.473832275002714
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightHand",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 117
+    },
+    "_children": [
+      {
+        "__id__": 119
+      },
+      {
+        "__id__": 127
+      },
+      {
+        "__id__": 135
+      },
+      {
+        "__id__": 143
+      },
+      {
+        "__id__": 151
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 159
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -6.219153192432714e-8,
+      "y": 0.25737449526786804,
+      "z": 4.805721687262121e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.015977900430980897,
+      "y": 0.12041997131113483,
+      "z": 0.04005920130832954,
+      "w": 0.9917857619454827
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999987483024597,
+      "y": 1.0000017881393433,
+      "z": 1.0000001192092896
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 1.2676209272311498,
+      "y": 13.792731652328024,
+      "z": 4.778758725044175
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightHandThumb1",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 118
+    },
+    "_children": [
+      {
+        "__id__": 120
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 126
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0.01660475879907608,
+      "y": 0.014298660680651665,
+      "z": 0.015932997688651085
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.17928376238244156,
+      "y": -0.00309410332426409,
+      "z": -0.368181068215806,
+      "w": 0.9122995451484578
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1.0000081062316895,
+      "y": 0.9999905228614807,
+      "z": 1.0000014305114746
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 26.048417175603113,
+      "y": 9.836270023736336,
+      "z": -42.29068730816712
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightHandThumb2",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 119
+    },
+    "_children": [
+      {
+        "__id__": 121
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 125
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 9.118474508795771e-8,
+      "y": 0.034078922122716904,
+      "z": -7.42785246643507e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.0353575452836182,
+      "y": 0.01829167042674793,
+      "z": 0.22104025891041798,
+      "w": 0.9744518780962617
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999914765357971,
+      "y": 1.0000085830688477,
+      "z": 1
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 3.8671076143204863,
+      "y": 1.271885039047067,
+      "z": 25.59961494145228
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightHandThumb3",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 120
+    },
+    "_children": [
+      {
+        "__id__": 122
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 124
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -8.52650643423658e-8,
+      "y": 0.03116910345852375,
+      "z": -7.227862397485296e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.06517787837704442,
+      "y": -0.002598481179013778,
+      "z": 0.06589180044015268,
+      "w": 0.9956924036571657
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999964237213135,
+      "y": 1.0000035762786865,
+      "z": 0.9999998807907104
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 7.542740987571419,
+      "y": -0.7954839501135947,
+      "z": 7.520285470034784
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightHandThumb4",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 121
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 123
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 8.414315857407928e-7,
+      "y": 0.03377942740917206,
+      "z": 2.1923277415680786e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -0.032716404223154666,
+      "y": -0.029702672350385893,
+      "z": -0.043205126560771835,
+      "w": 0.9980885257274629
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1.000002145767212,
+      "y": 0.999997615814209,
+      "z": 0.999999463558197
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": -3.905831127906951,
+      "y": -3.574178986589158,
+      "z": -4.8358626413008885
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "c7ATuFRI9T677+BwUIYUI+"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "1at1ikhXNZOpO3GbzqPPQp"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "dbspE3B+hYOYbZIsTrH67f"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "dfZO12BTleiow5ToIZ27dh"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightHandIndex1",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 118
+    },
+    "_children": [
+      {
+        "__id__": 128
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 134
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0.021300556138157845,
+      "y": 0.08553431183099747,
+      "z": 0.014612214639782906
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.10182580321376457,
+      "y": 0.013131932316189797,
+      "z": -0.07580658770777904,
+      "w": 0.9918227762123722
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1.000002384185791,
+      "y": 0.9999972581863403,
+      "z": 1.000000238418579
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 11.902052342993933,
+      "y": 2.404108398312756,
+      "z": -8.493607262475146
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightHandIndex2",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 127
+    },
+    "_children": [
+      {
+        "__id__": 129
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 133
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 2.5547558735183884e-8,
+      "y": 0.03222097456455231,
+      "z": 1.1930062271403585e-7
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.17599353871015574,
+      "y": -0.033190965033628346,
+      "z": 0.025113849407658685,
+      "w": 0.9835110211585545
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999987483024597,
+      "y": 1.0000007152557373,
+      "z": 1.0000016689300537
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 20.37102173072575,
+      "y": -4.2541022765000225,
+      "z": 2.1615206743718987
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightHandIndex3",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 128
+    },
+    "_children": [
+      {
+        "__id__": 130
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 132
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -1.6763806343078613e-8,
+      "y": 0.02831626683473587,
+      "z": -1.210719347000122e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.13336864054992015,
+      "y": 0.04655842089982344,
+      "z": 0.03151094154528259,
+      "w": 0.9894706563229203
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999980926513672,
+      "y": 1.0000007152557373,
+      "z": 1.0000007152557373
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 15.172577510153884,
+      "y": 4.816587035219466,
+      "z": 4.288419169653389
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightHandIndex4",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 129
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 131
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -4.948108767166559e-8,
+      "y": 0.025588346645236015,
+      "z": -2.483966277111449e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -0.06403354493362948,
+      "y": -0.04265855956493349,
+      "z": 0.030688233376409777,
+      "w": 0.9965631865322504
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999997615814209,
+      "y": 0.9999998211860657,
+      "z": 0.9999998807907104
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": -7.197337098885844,
+      "y": -4.661819278633416,
+      "z": 3.8203726830376614
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "75KsWOaTRakLBZHUVL4DEk"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "fbaVMHtXtU4bOi4RdzBEvb"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "fftazcVTBVAYIJjmPQX5++"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "03g87rj49R9oZfSYMf1/Yk"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightHandMiddle1",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 118
+    },
+    "_children": [
+      {
+        "__id__": 136
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 142
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0.0048507750034332275,
+      "y": 0.08382277190685272,
+      "z": 0.010622695088386536
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.10420223405692172,
+      "y": 0.0002687546096006941,
+      "z": 0.02734103074851754,
+      "w": 0.994180210136027
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999991655349731,
+      "y": 1.0000009536743164,
+      "z": 1.000000238418579
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 11.974970151530519,
+      "y": -0.29629355467397894,
+      "z": 3.119567825799479
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightHandMiddle2",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 135
+    },
+    "_children": [
+      {
+        "__id__": 137
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 141
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -5.587935447692871e-9,
+      "y": 0.038194265216588974,
+      "z": -3.725290298461914e-9
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.15074971382303004,
+      "y": -0.022920287839980128,
+      "z": -0.039651717964964674,
+      "w": 0.987510468526807
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1.0000009536743164,
+      "y": 0.9999984502792358,
+      "z": 1.0000003576278687
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 17.277306781475726,
+      "y": -1.9160253300099692,
+      "z": -4.8888729045733035
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightHandMiddle3",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 136
+    },
+    "_children": [
+      {
+        "__id__": 138
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 140
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 2.4148915755972666e-8,
+      "y": 0.032193612307310104,
+      "z": -1.4662727920722318e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.1457562984756618,
+      "y": 0.007178473001252645,
+      "z": -0.010192152639284928,
+      "w": 0.9892419779834566
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1.000000238418579,
+      "y": 0.9999988079071045,
+      "z": 1.0000007152557373
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 16.772360681755895,
+      "y": 0.9841859049133596,
+      "z": -1.0355283432090272
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightHandMiddle4",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 137
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 139
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 2.2108030961476288e-8,
+      "y": 0.024584753438830376,
+      "z": 1.4525681990562589e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -0.07933670808258177,
+      "y": -0.0022698582185328576,
+      "z": 0.023024755525704252,
+      "w": 0.9965793471306078
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 0.9999999403953552,
+      "z": 0.9999998807907104
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": -9.102167728793475,
+      "y": -0.049944962394030484,
+      "z": 2.650999206850099
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "832DN+jp9e0rh0I2LtzEZX"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "25Env3lRFSbaGtlndDO56x"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "b4dScK2XZaQ49Po9aRIbOR"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "20o5lXOdtepodn251j92oz"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightHandRing1",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 118
+    },
+    "_children": [
+      {
+        "__id__": 144
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 150
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -0.016713185235857964,
+      "y": 0.08634638041257858,
+      "z": 0.008878937922418118
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.13792882890811534,
+      "y": -0.023425437562840837,
+      "z": 0.08379499633135547,
+      "w": 0.9866130374269607
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999963641166687,
+      "y": 1.000002145767212,
+      "z": 1.0000004768371582
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 16.238891800225478,
+      "y": -4.027273017143265,
+      "z": 9.14214789944642
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightHandRing2",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 143
+    },
+    "_children": [
+      {
+        "__id__": 145
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 149
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 5.378495426811014e-9,
+      "y": 0.030379431322216988,
+      "z": 3.632621314864082e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.1733977850924172,
+      "y": -0.019413205688077365,
+      "z": -0.03389606071033554,
+      "w": 0.9840769241468259
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1.0000008344650269,
+      "y": 0.9999992251396179,
+      "z": 0.9999998807907104
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 19.930380318953272,
+      "y": -1.5199378329275461,
+      "z": -4.211885298575151
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightHandRing3",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 144
+    },
+    "_children": [
+      {
+        "__id__": 146
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 148
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 6.562700605172722e-8,
+      "y": 0.028316734358668327,
+      "z": -9.356767805002164e-9
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.03108489086345524,
+      "y": 0.013043763186663733,
+      "z": 0.01881227383850211,
+      "w": 0.9992545662417375
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999999403953552,
+      "y": 1.0000007152557373,
+      "z": 1.000000238418579
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 3.536143915940037,
+      "y": 1.4277815204027733,
+      "z": 2.2011249666084485
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightHandRing4",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 145
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 147
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -1.2531412352245752e-8,
+      "y": 0.021251019090414047,
+      "z": -1.974178687191852e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -0.01597250982413661,
+      "y": -0.0031685672856470223,
+      "z": -0.02055959942219916,
+      "w": 0.9996560118275051
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 0.9999998807907104,
+      "z": 0.9999997615814209
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": -1.8390123102499556,
+      "y": -0.4009371671603713,
+      "z": -2.350005484277056
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "54WIWW9PdVfaZ0uY8MaqQC"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "92qmFKzZJUzZnwRXTcGrRN"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "35QhO7j1teNr4/38uAWDDY"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "a73+IMP91dibllatHDpeer"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightHandPinky1",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 118
+    },
+    "_children": [
+      {
+        "__id__": 152
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 158
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -0.03260479494929314,
+      "y": 0.07897920906543732,
+      "z": 0.005533361807465553
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.1967961183052802,
+      "y": -0.02432841237587551,
+      "z": 0.19264291137997339,
+      "w": 0.9610245183481487
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999937415122986,
+      "y": 1.0000054836273193,
+      "z": 1.0000003576278687
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 24.557212867094943,
+      "y": -7.552262375792335,
+      "z": 21.142801427724162
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightHandPinky2",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 151
+    },
+    "_children": [
+      {
+        "__id__": 153
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 157
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -2.570582502414709e-8,
+      "y": 0.027638407424092293,
+      "z": 3.5609048154583434e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.0855726304855961,
+      "y": -0.033907760833935104,
+      "z": -0.07126058789237454,
+      "w": 0.9932016498577907
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999997019767761,
+      "y": 0.999999463558197,
+      "z": 1.0000003576278687
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 9.611806091185754,
+      "y": -3.196892564149868,
+      "z": -8.47370020677804
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightHandPinky3",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 152
+    },
+    "_children": [
+      {
+        "__id__": 154
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 156
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -1.4102202960941668e-8,
+      "y": 0.01765550673007965,
+      "z": -8.862790501495965e-9
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.10003331212233664,
+      "y": 0.03465741096075968,
+      "z": 0.012309925518259154,
+      "w": 0.9943041114594
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999997615814209,
+      "y": 1.000000238418579,
+      "z": 1.0000005960464478
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 11.430060030310859,
+      "y": 3.8124102020346387,
+      "z": 1.8001519802617807
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightHandPinky4",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 153
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 155
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -1.0148902163109597e-8,
+      "y": 0.013381225988268852,
+      "z": 3.4482539490454656e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -0.03943355763194008,
+      "y": -0.021955322525331233,
+      "z": -0.010463036621122513,
+      "w": 0.998926165044225
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999998807907104,
+      "y": 1.0000001192092896,
+      "z": 0.9999999403953552
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": -4.54582666088464,
+      "y": -2.5617970427814885,
+      "z": -1.0985448056317502
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "32xJuz/pRZB4IbkP5y206m"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "a8TrbptvlfIYsi/ihZ0rCW"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "fdBl/CR0VbeJNElFTa7tk6"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "50hbCw5URTfLtlHb1AFI2M"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "a7Dghjp9RfKLibjVZu42jY"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "9dUuLO621c6IvURDYGsx3D"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "16jmFr7FxQirtkdVZaC1Xo"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "fb5t91HJNQWaXPdCMnM3NB"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "f4KZ41fPJYuIFUHPcQbX8F"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "e9kYENsZ9TQYDUxebwlwoL"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "78VH3lGL1aspuyAQOQLxpx"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftUpLeg",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 53
+    },
+    "_children": [
+      {
+        "__id__": 167
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 175
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 0.09545618295669556,
+      "y": -0.019578678533434868,
+      "z": 0.0027796670328825712
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.0019001589698216558,
+      "y": 0.05632986992319358,
+      "z": -0.9978473333306925,
+      "w": 0.03352662397485424
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999984502792358,
+      "y": 1.0000003576278687,
+      "z": 0.999996542930603
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 173.52349462855403,
+      "y": 179.5653426578421,
+      "z": -3.824171155001138
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftLeg",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 166
+    },
+    "_children": [
+      {
+        "__id__": 168
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 174
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -1.2514614233793964e-8,
+      "y": 0.4475071430206299,
+      "z": -4.8191069190739455e-11
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -0.03768037162062664,
+      "y": 0.0003425766101390172,
+      "z": -0.0009753126398639718,
+      "w": 0.9992893079589374
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 0.9999997615814209,
+      "z": 0.9999997615814209
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": -4.318842665441678,
+      "y": 0.035017302969607214,
+      "z": -0.11316243600648415
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftFoot",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 167
+    },
+    "_children": [
+      {
+        "__id__": 169
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 173
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -3.3760443329811096e-9,
+      "y": 0.4495583176612854,
+      "z": -4.0745362639427185e-10
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.4950735568296092,
+      "y": -0.014959290683150541,
+      "z": -0.029909819484575238,
+      "w": 0.8682072308203479
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999993443489075,
+      "y": 1.0000020265579224,
+      "z": 0.9999982118606567
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 59.39273064372775,
+      "y": 0.20899986062997633,
+      "z": -3.8272093501882605
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftToeBase",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 168
+    },
+    "_children": [
+      {
+        "__id__": 170
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 172
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 3.1028310587544183e-8,
+      "y": 0.1565721482038498,
+      "z": -4.524146390849637e-9
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.3307121880287395,
+      "y": -0.010280939402743652,
+      "z": 0.026137202094356157,
+      "w": 0.9433136263411653
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1.000000238418579,
+      "y": 0.999987781047821,
+      "z": 1.0000115633010864
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 38.684616201733924,
+      "y": -2.1042179140874095,
+      "z": 2.4364404892924116
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "LeftToe_End",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 169
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 171
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 5.943106895500705e-9,
+      "y": 0.08319523185491562,
+      "z": -8.736504852890903e-10
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.016260046120587464,
+      "y": 0.7088008352413124,
+      "z": -0.02440224156663849,
+      "w": 0.7047989198827548
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1,
+      "y": 0.9999998807907104,
+      "z": 0.9999998211860657
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 3.2972716529452453,
+      "y": 90.34312197530866,
+      "z": -0.6501536576746808
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "88NfdagfFUmoF+pdB0/Yuf"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "f2EqlilKVQ/atyoA6KRf97"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "7bHx9Z0A9Vy5bZr+4QxQYQ"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "ed2qBhn95T+7ZKhUQg7upO"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "5dsEtJW1VdBJnTO1j15AGo"
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightUpLeg",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 53
+    },
+    "_children": [
+      {
+        "__id__": 177
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 185
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -0.09545592963695526,
+      "y": -0.01957867667078972,
+      "z": 0.0027896363753825426
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.0019580943672006077,
+      "y": -0.05637870984387047,
+      "z": 0.9978443709650651,
+      "w": 0.033529364385913106
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1.0000003576278687,
+      "y": 0.9999998211860657,
+      "z": 1.0000019073486328
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 173.5176563947139,
+      "y": -179.5584979682174,
+      "z": 3.8240880123604
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightLeg",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 176
+    },
+    "_children": [
+      {
+        "__id__": 178
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 184
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 1.4200930209540275e-8,
+      "y": 0.44750699400901794,
+      "z": 4.689968857718441e-9
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": -0.03768267652556905,
+      "y": -0.00034328917874277854,
+      "z": 0.0009756018465470964,
+      "w": 0.9992892205179871
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 1.000000238418579,
+      "y": 1.0000001192092896,
+      "z": 0.9999998807907104
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": -4.31910688802403,
+      "y": -0.03509738963070954,
+      "z": 0.1131987108302358
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightFoot",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 177
+    },
+    "_children": [
+      {
+        "__id__": 179
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 183
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": -5.5959281652917525e-9,
+      "y": 0.4495575726032257,
+      "z": 1.3116933317292023e-8
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.49507911329999804,
+      "y": 0.014956275429970403,
+      "z": 0.02991059321995474,
+      "w": 0.8682040876502373
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999997019767761,
+      "y": 0.9999995827674866,
+      "z": 0.9999994039535522
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 59.39347474497971,
+      "y": -0.20936897488552206,
+      "z": 3.827113806172871
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightToeBase",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 178
+    },
+    "_children": [
+      {
+        "__id__": 180
+      }
+    ],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 182
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 1.829730678082342e-8,
+      "y": 0.15657232701778412,
+      "z": -7.301466986575633e-9
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.3307148388260815,
+      "y": 0.01038233616278328,
+      "z": -0.026126128542188477,
+      "w": 0.9433118932163629
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999999403953552,
+      "y": 1.000002145767212,
+      "z": 0.9999977946281433
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 38.68509994529773,
+      "y": 2.1147734689732234,
+      "z": -2.4313879692948843
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.Node",
+    "_name": "RightToe_End",
+    "_objFlags": 0,
+    "_parent": {
+      "__id__": 179
+    },
+    "_children": [],
+    "_active": true,
+    "_components": [],
+    "_prefab": {
+      "__id__": 181
+    },
+    "_lpos": {
+      "__type__": "cc.Vec3",
+      "x": 5.2793529548011975e-9,
+      "y": 0.08319637179374695,
+      "z": -2.9088242925467966e-10
+    },
+    "_lrot": {
+      "__type__": "cc.Quat",
+      "x": 0.01627243577845213,
+      "y": -0.7088770409431059,
+      "z": 0.024420758997722704,
+      "w": 0.7047213457726093
+    },
+    "_lscale": {
+      "__type__": "cc.Vec3",
+      "x": 0.9999999403953552,
+      "y": 0.9999998807907104,
+      "z": 0.9999997615814209
+    },
+    "_layer": 1073741824,
+    "_euler": {
+      "__type__": "cc.Vec3",
+      "x": 3.299849450319958,
+      "y": -90.35560653469798,
+      "z": 0.6502837039251399
+    },
+    "_id": ""
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "5bwdrEDmBWm75uqdhjMBPV"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "72W+ymHS1Z9pX9OArLf3zF"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "51cPzcm/hUw4abWYai9Rjv"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "39aedD0ihfCo2YxIzD0cJS"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "45DXsVjaNYu5FFpqzOnvRv"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "117U35pZFQMalrXSWAPOWS"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "9bgdO3AstesJNcyms3L+bk"
+  },
+  {
+    "__type__": "cc.SkeletalAnimation",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "__prefab": {
+      "__id__": 189
+    },
+    "playOnLoad": true,
+    "_clips": [
+      {
+        "__uuid__": "0b84b9f4-c33b-4775-a30c-a6dcfe4e8266@c2696",
+        "__expectedType__": "cc.AnimationClip"
+      },
+      {
+        "__uuid__": "0af5fa08-4502-4526-8dbe-48bb19637cf7@dc888",
+        "__expectedType__": "cc.AnimationClip"
+      },
+      {
+        "__uuid__": "9fb6951e-a39a-49a7-80ee-687e443f9cec@b84cf",
+        "__expectedType__": "cc.AnimationClip"
+      },
+      {
+        "__uuid__": "fd939588-07e7-4d69-b9bf-30d07958ef92@01ef8",
+        "__expectedType__": "cc.AnimationClip"
+      }
+    ],
+    "_defaultClip": {
+      "__uuid__": "0b84b9f4-c33b-4775-a30c-a6dcfe4e8266@c2696",
+      "__expectedType__": "cc.AnimationClip"
+    },
+    "_useBakedAnimation": true,
+    "_sockets": [],
+    "_id": ""
+  },
+  {
+    "__type__": "cc.CompPrefabInfo",
+    "fileId": "e3C9AWQ9VSSK3ezuBcv/Lc"
+  },
+  {
+    "__type__": "cc.PrefabInfo",
+    "root": {
+      "__id__": 1
+    },
+    "asset": {
+      "__id__": 0
+    },
+    "fileId": "c1XeanlcdWi4vVwQBqVuI0"
+  }
+]

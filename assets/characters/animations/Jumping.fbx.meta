@@ -2,14 +2,14 @@
   "ver": "2.1.14",
   "importer": "fbx",
   "imported": true,
-  "uuid": "c119a819-2034-4002-849c-ffc9ab5a3054",
+  "uuid": "fd939588-07e7-4d69-b9bf-30d07958ef92",
   "files": [
     "__original-animation-0.cconb"
   ],
   "subMetas": {
     "01ef8": {
       "importer": "gltf-animation",
-      "uuid": "c119a819-2034-4002-849c-ffc9ab5a3054@01ef8",
+      "uuid": "fd939588-07e7-4d69-b9bf-30d07958ef92@01ef8",
       "displayName": "",
       "id": "01ef8",
       "name": "Jumping.animation",
@@ -32,7 +32,7 @@
     },
     "11b97": {
       "importer": "gltf-scene",
-      "uuid": "c119a819-2034-4002-849c-ffc9ab5a3054@11b97",
+      "uuid": "fd939588-07e7-4d69-b9bf-30d07958ef92@11b97",
       "displayName": "",
       "id": "11b97",
       "name": "Jumping.prefab",
@@ -65,14 +65,14 @@
         ]
       }
     ],
-    "redirect": "c119a819-2034-4002-849c-ffc9ab5a3054@11b97",
+    "redirect": "fd939588-07e7-4d69-b9bf-30d07958ef92@11b97",
     "assetFinder": {
       "meshes": [],
       "skeletons": [],
       "textures": [],
       "materials": [],
       "scenes": [
-        "c119a819-2034-4002-849c-ffc9ab5a3054@11b97"
+        "fd939588-07e7-4d69-b9bf-30d07958ef92@11b97"
       ]
     }
   }

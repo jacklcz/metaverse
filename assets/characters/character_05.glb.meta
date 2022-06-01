@@ -1,0 +1,1250 @@
+{
+  "ver": "2.1.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5",
+  "files": [],
+  "subMetas": {
+    "10486": {
+      "importer": "texture",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@10486",
+      "displayName": "",
+      "id": "10486",
+      "name": "UnnamedTexture-16.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "nearest",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@8768d"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "32955": {
+      "importer": "gltf-embeded-image",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@32955",
+      "displayName": "",
+      "id": "32955",
+      "name": "outfit-school-02-v2-f-bottom-N.image",
+      "userData": {
+        "gltfIndex": 9
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "50743": {
+      "importer": "texture",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@50743",
+      "displayName": "",
+      "id": "50743",
+      "name": "UnnamedTexture-5.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "nearest",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@557bf"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "55257": {
+      "importer": "texture",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@55257",
+      "displayName": "",
+      "id": "55257",
+      "name": "UnnamedTexture-12.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "nearest",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@6237d"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "88077": {
+      "importer": "gltf-material",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@88077",
+      "displayName": "",
+      "id": "88077",
+      "name": "Wolf3D_Hair.material",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "37b83": {
+      "importer": "gltf-mesh",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@37b83",
+      "displayName": "",
+      "id": "37b83",
+      "name": "EyeLeft.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9635c": {
+      "importer": "gltf-mesh",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@9635c",
+      "displayName": "",
+      "id": "9635c",
+      "name": "EyeRight.mesh",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b6359": {
+      "importer": "gltf-mesh",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@b6359",
+      "displayName": "",
+      "id": "b6359",
+      "name": "Wolf3D_Body.mesh",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "59b69": {
+      "importer": "gltf-mesh",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@59b69",
+      "displayName": "",
+      "id": "59b69",
+      "name": "Wolf3D_Glasses.mesh",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8f0a6": {
+      "importer": "gltf-mesh",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@8f0a6",
+      "displayName": "",
+      "id": "8f0a6",
+      "name": "Wolf3D_Hair.mesh",
+      "userData": {
+        "gltfIndex": 4
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a4f4d": {
+      "importer": "gltf-mesh",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@a4f4d",
+      "displayName": "",
+      "id": "a4f4d",
+      "name": "Wolf3D_Head.mesh",
+      "userData": {
+        "gltfIndex": 5
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "fba9c": {
+      "importer": "gltf-mesh",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@fba9c",
+      "displayName": "",
+      "id": "fba9c",
+      "name": "Wolf3D_Outfit_Bottom.mesh",
+      "userData": {
+        "gltfIndex": 6
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0b9c0": {
+      "importer": "gltf-mesh",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@0b9c0",
+      "displayName": "",
+      "id": "0b9c0",
+      "name": "Wolf3D_Outfit_Footwear.mesh",
+      "userData": {
+        "gltfIndex": 7
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e4a32": {
+      "importer": "gltf-mesh",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@e4a32",
+      "displayName": "",
+      "id": "e4a32",
+      "name": "Wolf3D_Outfit_Top.mesh",
+      "userData": {
+        "gltfIndex": 8
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "910b4": {
+      "importer": "gltf-mesh",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@910b4",
+      "displayName": "",
+      "id": "910b4",
+      "name": "Wolf3D_Teeth.mesh",
+      "userData": {
+        "gltfIndex": 9
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f9d1d": {
+      "importer": "gltf-skeleton",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@f9d1d",
+      "displayName": "",
+      "id": "f9d1d",
+      "name": "Armature.skeleton",
+      "userData": {
+        "gltfIndex": 0,
+        "jointsLength": 67
+      },
+      "ver": "1.0.1",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "7fee2": {
+      "importer": "gltf-embeded-image",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@7fee2",
+      "displayName": "",
+      "id": "7fee2",
+      "name": "1622793666-eye-05-mask.image",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "00ebe": {
+      "importer": "gltf-embeded-image",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@00ebe",
+      "displayName": "",
+      "id": "00ebe",
+      "name": "body-athletic-f-N.image",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8e806": {
+      "importer": "gltf-embeded-image",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@8e806",
+      "displayName": "",
+      "id": "8e806",
+      "name": "body_texture.image",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ab75f": {
+      "importer": "gltf-embeded-image",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@ab75f",
+      "displayName": "",
+      "id": "ab75f",
+      "name": "glasses-39-N.image",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".png",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "4d010": {
+      "importer": "gltf-embeded-image",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@4d010",
+      "displayName": "",
+      "id": "4d010",
+      "name": "glasses-39-D.image",
+      "userData": {
+        "gltfIndex": 4
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".png",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "557bf": {
+      "importer": "gltf-embeded-image",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@557bf",
+      "displayName": "",
+      "id": "557bf",
+      "name": "glasses-39-R.image",
+      "userData": {
+        "gltfIndex": 5
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".png",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ff272": {
+      "importer": "gltf-embeded-image",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@ff272",
+      "displayName": "",
+      "id": "ff272",
+      "name": "har-84-N.image",
+      "userData": {
+        "gltfIndex": 6
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".png",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "3ff37": {
+      "importer": "gltf-embeded-image",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@3ff37",
+      "displayName": "",
+      "id": "3ff37",
+      "name": "hair_color.image",
+      "userData": {
+        "gltfIndex": 7
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "ca8a9": {
+      "importer": "gltf-embeded-image",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@ca8a9",
+      "displayName": "",
+      "id": "ca8a9",
+      "name": "face_texture.image",
+      "userData": {
+        "gltfIndex": 8
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "cfdee": {
+      "importer": "gltf-embeded-image",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@cfdee",
+      "displayName": "",
+      "id": "cfdee",
+      "name": "outfit-school-02-v2-f-bottom-D.image",
+      "userData": {
+        "gltfIndex": 10
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d6c13": {
+      "importer": "gltf-embeded-image",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@d6c13",
+      "displayName": "",
+      "id": "d6c13",
+      "name": "outfit-school-02-v2-f-bottom-R.image",
+      "userData": {
+        "gltfIndex": 11
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".png",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6237d": {
+      "importer": "gltf-embeded-image",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@6237d",
+      "displayName": "",
+      "id": "6237d",
+      "name": "outfit-school-02-v2-f-footwear-N.image",
+      "userData": {
+        "gltfIndex": 12
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e0179": {
+      "importer": "gltf-embeded-image",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@e0179",
+      "displayName": "",
+      "id": "e0179",
+      "name": "outfit-school-02-v2-f-footwear-D.image",
+      "userData": {
+        "gltfIndex": 13
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1ceed": {
+      "importer": "gltf-embeded-image",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@1ceed",
+      "displayName": "",
+      "id": "1ceed",
+      "name": "outfit-school-02-v2-f-footwear-M-outfit-school-02-v2-f-footwear-R.image",
+      "userData": {
+        "gltfIndex": 14
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".png",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "02a0b": {
+      "importer": "gltf-embeded-image",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@02a0b",
+      "displayName": "",
+      "id": "02a0b",
+      "name": "outfit-school-02-v2-f-top-N.image",
+      "userData": {
+        "gltfIndex": 15
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8768d": {
+      "importer": "gltf-embeded-image",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@8768d",
+      "displayName": "",
+      "id": "8768d",
+      "name": "outfit-school-02-v2-f-top-D.image",
+      "userData": {
+        "gltfIndex": 16
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b4de1": {
+      "importer": "gltf-embeded-image",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@b4de1",
+      "displayName": "",
+      "id": "b4de1",
+      "name": "outfit-school-02-v2-f-top-R.image",
+      "userData": {
+        "gltfIndex": 17
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".png",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "dca09": {
+      "importer": "gltf-embeded-image",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@dca09",
+      "displayName": "",
+      "id": "dca09",
+      "name": "Wolf3D_Teeth.image",
+      "userData": {
+        "gltfIndex": 18
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "3effa": {
+      "importer": "texture",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@3effa",
+      "displayName": "",
+      "id": "3effa",
+      "name": "UnnamedTexture-0.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "nearest",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@7fee2"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "221a5": {
+      "importer": "texture",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@221a5",
+      "displayName": "",
+      "id": "221a5",
+      "name": "UnnamedTexture-1.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "nearest",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@00ebe"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0089c": {
+      "importer": "texture",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@0089c",
+      "displayName": "",
+      "id": "0089c",
+      "name": "UnnamedTexture-2.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "nearest",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@8e806"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9b633": {
+      "importer": "texture",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@9b633",
+      "displayName": "",
+      "id": "9b633",
+      "name": "UnnamedTexture-3.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "nearest",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@ab75f"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9b782": {
+      "importer": "texture",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@9b782",
+      "displayName": "",
+      "id": "9b782",
+      "name": "UnnamedTexture-4.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "nearest",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@4d010"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "99ea5": {
+      "importer": "texture",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@99ea5",
+      "displayName": "",
+      "id": "99ea5",
+      "name": "UnnamedTexture-6.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "nearest",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@ff272"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "006bd": {
+      "importer": "texture",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@006bd",
+      "displayName": "",
+      "id": "006bd",
+      "name": "UnnamedTexture-7.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "nearest",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@3ff37"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "531b0": {
+      "importer": "texture",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@531b0",
+      "displayName": "",
+      "id": "531b0",
+      "name": "UnnamedTexture-8.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "nearest",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@ca8a9"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9c3d2": {
+      "importer": "texture",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@9c3d2",
+      "displayName": "",
+      "id": "9c3d2",
+      "name": "UnnamedTexture-9.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "nearest",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@32955"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f7e17": {
+      "importer": "texture",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@f7e17",
+      "displayName": "",
+      "id": "f7e17",
+      "name": "UnnamedTexture-10.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "nearest",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@cfdee"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a2905": {
+      "importer": "texture",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@a2905",
+      "displayName": "",
+      "id": "a2905",
+      "name": "UnnamedTexture-11.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "nearest",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@d6c13"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "809d9": {
+      "importer": "texture",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@809d9",
+      "displayName": "",
+      "id": "809d9",
+      "name": "UnnamedTexture-13.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "nearest",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@e0179"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b4841": {
+      "importer": "texture",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@b4841",
+      "displayName": "",
+      "id": "b4841",
+      "name": "UnnamedTexture-14.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "nearest",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@1ceed"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "3c999": {
+      "importer": "texture",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@3c999",
+      "displayName": "",
+      "id": "3c999",
+      "name": "UnnamedTexture-15.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "nearest",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@02a0b"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d4524": {
+      "importer": "texture",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@d4524",
+      "displayName": "",
+      "id": "d4524",
+      "name": "UnnamedTexture-17.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "nearest",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@b4de1"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d932b": {
+      "importer": "texture",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@d932b",
+      "displayName": "",
+      "id": "d932b",
+      "name": "UnnamedTexture-18.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "nearest",
+        "magfilter": "linear",
+        "mipfilter": "linear",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@dca09"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "bb84f": {
+      "importer": "gltf-material",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@bb84f",
+      "displayName": "",
+      "id": "bb84f",
+      "name": "Wolf3D_Eye.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e111b": {
+      "importer": "gltf-material",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@e111b",
+      "displayName": "",
+      "id": "e111b",
+      "name": "Wolf3D_Body.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b329e": {
+      "importer": "gltf-material",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@b329e",
+      "displayName": "",
+      "id": "b329e",
+      "name": "Wolf3D_Glasses.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "476b9": {
+      "importer": "gltf-material",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@476b9",
+      "displayName": "",
+      "id": "476b9",
+      "name": "Wolf3D_Skin.material",
+      "userData": {
+        "gltfIndex": 4
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "cce2c": {
+      "importer": "gltf-material",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@cce2c",
+      "displayName": "",
+      "id": "cce2c",
+      "name": "Wolf3D_Outfit_Bottom.material",
+      "userData": {
+        "gltfIndex": 5
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b725a": {
+      "importer": "gltf-material",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@b725a",
+      "displayName": "",
+      "id": "b725a",
+      "name": "Wolf3D_Outfit_Footwear.material",
+      "userData": {
+        "gltfIndex": 6
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d918b": {
+      "importer": "gltf-material",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@d918b",
+      "displayName": "",
+      "id": "d918b",
+      "name": "Wolf3D_Outfit_Top.material",
+      "userData": {
+        "gltfIndex": 7
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "aeb3f": {
+      "importer": "gltf-material",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@aeb3f",
+      "displayName": "",
+      "id": "aeb3f",
+      "name": "Wolf3D_Teeth.material",
+      "userData": {
+        "gltfIndex": 8
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0112e": {
+      "importer": "gltf-scene",
+      "uuid": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@0112e",
+      "displayName": "",
+      "id": "0112e",
+      "name": "character_05.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "1622793666-eye-05-mask",
+        "uri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@7fee2"
+      },
+      {
+        "name": "body-athletic-f-N",
+        "uri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@00ebe"
+      },
+      {
+        "name": "body_texture",
+        "uri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@8e806"
+      },
+      {
+        "name": "glasses-39-N",
+        "uri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@ab75f"
+      },
+      {
+        "name": "glasses-39-D",
+        "uri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@4d010"
+      },
+      {
+        "name": "glasses-39-R",
+        "uri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@557bf"
+      },
+      {
+        "name": "har-84-N",
+        "uri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@ff272"
+      },
+      {
+        "name": "hair_color",
+        "uri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@3ff37"
+      },
+      {
+        "name": "face_texture",
+        "uri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@ca8a9"
+      },
+      {
+        "name": "outfit-school-02-v2-f-bottom-N",
+        "uri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@32955"
+      },
+      {
+        "name": "outfit-school-02-v2-f-bottom-D",
+        "uri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@cfdee"
+      },
+      {
+        "name": "outfit-school-02-v2-f-bottom-R",
+        "uri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@d6c13"
+      },
+      {
+        "name": "outfit-school-02-v2-f-footwear-N",
+        "uri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@6237d"
+      },
+      {
+        "name": "outfit-school-02-v2-f-footwear-D",
+        "uri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@e0179"
+      },
+      {
+        "name": "outfit-school-02-v2-f-footwear-M-outfit-school-02-v2-f-footwear-R",
+        "uri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@1ceed"
+      },
+      {
+        "name": "outfit-school-02-v2-f-top-N",
+        "uri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@02a0b"
+      },
+      {
+        "name": "outfit-school-02-v2-f-top-D",
+        "uri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@8768d"
+      },
+      {
+        "name": "outfit-school-02-v2-f-top-R",
+        "uri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@b4de1"
+      },
+      {
+        "name": "Wolf3D_Teeth",
+        "uri": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@dca09"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "redirect": "2e059a2a-4329-4aaa-8876-857cc0fd37d5@0112e",
+    "assetFinder": {
+      "meshes": [
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@37b83",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@9635c",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@b6359",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@59b69",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@8f0a6",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@a4f4d",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@fba9c",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@0b9c0",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@e4a32",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@910b4"
+      ],
+      "skeletons": [
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@f9d1d"
+      ],
+      "textures": [
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@3effa",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@221a5",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@0089c",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@9b633",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@9b782",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@50743",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@99ea5",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@006bd",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@531b0",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@9c3d2",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@f7e17",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@a2905",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@55257",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@809d9",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@b4841",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@3c999",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@10486",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@d4524",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@d932b"
+      ],
+      "materials": [
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@bb84f",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@e111b",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@b329e",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@88077",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@476b9",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@cce2c",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@b725a",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@d918b",
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@aeb3f"
+      ],
+      "scenes": [
+        "2e059a2a-4329-4aaa-8876-857cc0fd37d5@0112e"
+      ]
+    }
+  }
+}

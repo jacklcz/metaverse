@@ -302,7 +302,7 @@
   },
   {
     "__type__": "cc.PrefabInstance",
-    "fileId": "a7L+NCfaVKzJHQSaopRF4Y",
+    "fileId": "3dDncRsbJMpKVBBaheHsUe",
     "mountedChildren": [],
     "mountedComponents": [],
     "propertyOverrides": [
@@ -549,7 +549,7 @@
       "__id__": 21
     },
     "asset": {
-      "__uuid__": "668c8980-6ca4-4399-b43e-a22eff0fd591",
+      "__uuid__": "c1b931e7-38fc-46d5-8aeb-732f7676ab0e",
       "__expectedType__": "cc.Prefab"
     },
     "fileId": "4ea0aEdD9PHI8f0RIFCG/S",
@@ -559,7 +559,7 @@
   },
   {
     "__type__": "cc.PrefabInstance",
-    "fileId": "0afVbDrHJAr7j56Lnonwe0",
+    "fileId": "c8gppB/nJJxpeLvehjgrIW",
     "mountedChildren": [
       {
         "__id__": 24
@@ -835,7 +835,7 @@
     ],
     "value": {
       "__type__": "cc.Vec3",
-      "x": 2,
+      "x": 0,
       "y": 0,
       "z": 0
     }
@@ -898,7 +898,7 @@
   },
   {
     "__type__": "cc.PrefabInstance",
-    "fileId": "19UoiwoAVGGLVBLntV40g+",
+    "fileId": "44EFnbzodOk78eT6Pty4YF",
     "mountedChildren": [
       {
         "__id__": 41
@@ -1237,7 +1237,7 @@
   },
   {
     "__type__": "cc.PrefabInstance",
-    "fileId": "7e5ItMXg1PsKORSNnp9DxE",
+    "fileId": "f9WYwZ0BVOgIfT97w4DkVm",
     "mountedChildren": [
       {
         "__id__": 58
@@ -1513,7 +1513,7 @@
     ],
     "value": {
       "__type__": "cc.Vec3",
-      "x": 0,
+      "x": 2,
       "y": 0,
       "z": 0
     }
@@ -1557,7 +1557,8 @@
     },
     "_prefab": {
       "__id__": 73
-    }
+    },
+    "__editorExtras__": {}
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -1565,7 +1566,7 @@
       "__id__": 72
     },
     "asset": {
-      "__uuid__": "af95cbca-ab67-47da-abb2-52786ddbf686@76792",
+      "__uuid__": "79cdcc43-571c-409e-a4ea-28c3632e94a4",
       "__expectedType__": "cc.Prefab"
     },
     "fileId": "e3F1/zyF9VC77E+QM6qVjr",
@@ -1575,7 +1576,7 @@
   },
   {
     "__type__": "cc.PrefabInstance",
-    "fileId": "edBvKPrZ5B06sfdwWz0CJJ",
+    "fileId": "80PCkrkIFBTKsOhY5IW8ZY",
     "mountedChildren": [
       {
         "__id__": 75
@@ -2010,7 +2011,7 @@
     "_priority": 1073741824,
     "_fov": 45,
     "_fovAxis": 0,
-    "_orthoHeight": 564.6767810026386,
+    "_orthoHeight": 574.2801047120419,
     "_near": 1,
     "_far": 2000,
     "_color": {
