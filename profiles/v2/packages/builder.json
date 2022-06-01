@@ -29,11 +29,11 @@
   },
   "BuildTaskManager": {
     "taskMap": {
-      "1654082016784": {
-        "id": "1654082016784",
+      "1654086650546": {
+        "id": "1654086650546",
         "progress": 1,
         "state": "success",
-        "message": "2022-6-1 19:14 Build success in 24387 ms!",
+        "message": "2022-6-1 20:31 Build success in 25711 ms!",
         "options": {
           "name": "meatverse",
           "platform": "web-desktop",
@@ -85,7 +85,7 @@
             }
           }
         },
-        "time": "2022-6-1 19:13",
+        "time": "2022-6-1 20:30",
         "dirty": false
       }
     }
