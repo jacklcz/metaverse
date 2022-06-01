@@ -1,5 +1,5 @@
 import { _decorator, Component, Node, Enum } from 'cc';
-import { EventMouse, input, Input, Quat, Vec3, IVec3Like } from 'cc';
+import { EventMouse, Vec2, Input, Quat, Vec3, IVec3Like } from 'cc';
 const { ccclass, property } = _decorator;
 
 import { Quaternion } from "./Quaternion";
@@ -27,7 +27,7 @@ export class ThirdPersonCamera extends Component {
     lookAt: Node = null;
     
     @property({ type: Enum(ThirdPersonCameraType) })
-    cameraType: ThirdPersonCameraType = ThirdPersonCameraType.FollowTrackRotation;
+    cameraType: ThirdPersonCameraType = ThirdPersonCameraType.FollowIndependentRotation;
     
     @property
     positionOffset: Vec3 = new Vec3(0, 4.8, 10);
@@ -51,11 +51,6 @@ export class ThirdPersonCamera extends Component {
     private forwardView: Vec3 = new Vec3();
 
     start() {
-        input.on(Input.EventType.MOUSE_DOWN, this.mouseDown, this);        
-        input.on(Input.EventType.MOUSE_MOVE, this.mouseMove, this);
-        input.on(Input.EventType.MOUSE_UP, this.mouseUp, this);
-        input.on(Input.EventType.MOUSE_WHEEL, this.mouseWheel, this);
-
         GameEvent.on(GameEvent.ON_INIT_OWNER, this.onInitMyRole, this);
     }
 
@@ -64,22 +59,22 @@ export class ThirdPersonCamera extends Component {
         this.cameraType == ThirdPersonCameraType.Follow && this.node.lookAt(this.target.worldPosition);
     }
     
-    private mouseDown(e: EventMouse) {
+    public mouseDown(e: EventMouse) {
         this.isDown = true;
     }
 
-    private mouseMove(e: EventMouse) {
+    public mouseMove(delta: Vec2) {
         if (this.cameraType == ThirdPersonCameraType.FollowIndependentRotation) {
-            this.setIndependentRotation(e);
+            this.setIndependentRotation(delta);
         }
     }
 
-    private mouseUp(e: EventMouse) {
+    public mouseUp(e: EventMouse) {
         this.isDown = false;
     }
 
-    private mouseWheel(e: EventMouse): void {
-        console.log("mouseWheel");
+    public mouseWheel(delta: number): void {
+        console.log("mouseWheel %d", delta);
     }
 
     update(dt: number) {
@@ -128,10 +123,10 @@ export class ThirdPersonCamera extends Component {
         this.node.position = this.node.position.lerp(desiredPos, this.moveSmooth);
     }
 
-    private setIndependentRotation(e: EventMouse) {
+    private setIndependentRotation(delta: Vec2) {
 
-        let radX: number = -e.movementX;
-        let radY: number = -e.movementY;
+        let radX: number = -delta.x;
+        let radY: number = -delta.y;
         let _quat: Quat = new Quat();
         
         let _right = Vec3.transformQuat(this._right, Vec3.RIGHT, this.node.rotation);

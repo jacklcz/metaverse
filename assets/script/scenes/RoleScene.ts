@@ -23,7 +23,7 @@ export class RoleScene extends Component {
         this.initMyRole();
 
         input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
-        input.on(Input.EventType.KEY_UP, this.onKeyUp, this);
+        input.on(Input.EventType.KEY_UP, this.onKeyUp, this);        
     }
 
     protected initMyRole(): void {
@@ -89,12 +89,14 @@ export class RoleScene extends Component {
     }
 
     protected onKeyDown(event: EventKeyboard): void {        
-        let flag = true;
+        let flag = true;        
         switch(event.keyCode) {
-            case KeyCode.KEY_W:            
+            case KeyCode.KEY_W:
+            case KeyCode.ARROW_UP:        
                 MyRole.instance().setMoving(MoveType.Forward);
                 break;
             case KeyCode.KEY_S:
+            case KeyCode.ARROW_DOWN:
                 MyRole.instance().setMoving(MoveType.Backward);
                 break;
             //case KeyCode.KEY_Q:
@@ -103,11 +105,18 @@ export class RoleScene extends Component {
             //case KeyCode.KEY_E:
             //    MyRole.moving = MoveType.Right;
             //    break;
-            case KeyCode.KEY_A:            
+            case KeyCode.KEY_A:
+            case KeyCode.ARROW_LEFT:        
                 MyRole.ratation = RotateType.Left;
                 break;
-            case KeyCode.KEY_D:            
+            case KeyCode.KEY_D:
+            case KeyCode.ARROW_RIGHT:            
                 MyRole.ratation = RotateType.Right;
+                break;
+            case KeyCode.PAGE_DOWN:
+                console.log("PAGE_DOWN");
+                break;
+            case KeyCode.PAGE_UP:
                 break;
             default:
                 flag = false;
@@ -125,10 +134,14 @@ export class RoleScene extends Component {
             case KeyCode.KEY_S:            
             //case KeyCode.KEY_Q:
             //case KeyCode.KEY_E:
+            case KeyCode.ARROW_UP:
+            case KeyCode.ARROW_DOWN:
                 MyRole.instance().setMoving(MoveType.None);
                 break;
             case KeyCode.KEY_A:               
-            case KeyCode.KEY_D:            
+            case KeyCode.KEY_D:
+            case KeyCode.ARROW_LEFT:
+            case KeyCode.ARROW_RIGHT:           
                 MyRole.ratation = RotateType.None;
                 break;
             default:
