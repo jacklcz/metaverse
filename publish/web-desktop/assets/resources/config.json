@@ -1,0 +1,35 @@
+{
+    "importBase": "import",
+    "nativeBase": "native",
+    "name": "resources",
+    "deps": [],
+    "uuids": [
+        "1a1f06fc-ea54-41ea-87cc-838daa85770b",
+        "1a1f06fc-ea54-41ea-87cc-838daa85770b@6c48a",
+        "e9f20415-6bd0-4356-b069-a866dcaaac44"
+    ],
+    "paths": {
+        "e9f20415-6bd0-4356-b069-a866dcaaac44": [
+            "ui/startScene",
+            "cc.BufferAsset"
+        ],
+        "1a1f06fc-ea54-41ea-87cc-838daa85770b": [
+            "ui/startScene_atlas0",
+            "cc.ImageAsset"
+        ],
+        "1a1f06fc-ea54-41ea-87cc-838daa85770b@6c48a": [
+            "ui/startScene_atlas0/texture",
+            "cc.Texture2D",
+            1
+        ]
+    },
+    "scenes": {},
+    "packs": {},
+    "versions": {
+        "import": [],
+        "native": []
+    },
+    "redirect": [],
+    "debug": true,
+    "extensionMap": {}
+}
