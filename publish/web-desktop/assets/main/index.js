@@ -144,7 +144,7 @@ System.register("chunks:///_virtual/Base64.ts", ['cc', './Utf8.ts', './main.ts']
 System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Define.ts'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, _createClass, cclegacy, _decorator, Vec3, v3, Animation, Component, Define;
+  var _inheritsLoose, _createClass, cclegacy, _decorator, Animation, Vec3, v3, Component, Define;
 
   return {
     setters: [function (module) {
@@ -153,9 +153,9 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
     }, function (module) {
       cclegacy = module.cclegacy;
       _decorator = module._decorator;
+      Animation = module.Animation;
       Vec3 = module.Vec3;
       v3 = module.v3;
-      Animation = module.Animation;
       Component = module.Component;
     }, function (module) {
       Define = module.default;
@@ -180,6 +180,7 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
         MoveType[MoveType["Backward"] = 2] = "Backward";
         MoveType[MoveType["Left"] = 3] = "Left";
         MoveType[MoveType["Right"] = 4] = "Right";
+        MoveType[MoveType["Jump"] = 5] = "Jump";
       })(MoveType || (MoveType = exports('MoveType', {})));
 
       var RotateType;
@@ -189,6 +190,15 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
         RotateType[RotateType["Left"] = 1] = "Left";
         RotateType[RotateType["Right"] = 2] = "Right";
       })(RotateType || (RotateType = exports('RotateType', {})));
+
+      var ActionType;
+
+      (function (ActionType) {
+        ActionType["Idle"] = "Idle";
+        ActionType["Run"] = "Running";
+        ActionType["Walk"] = "Walking";
+        ActionType["Jump"] = "Jumping";
+      })(ActionType || (ActionType = {}));
 
       var BaseRole = exports('BaseRole', (_dec = ccclass('BaseRole'), _dec(_class = /*#__PURE__*/function (_Component) {
         _inheritsLoose(BaseRole, _Component);
@@ -203,19 +213,31 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
           _this = _Component.call.apply(_Component, [this].concat(args)) || this;
           _this._roleID = "";
           _this._roleType = "0";
-          _this._moveSpeed = 7;
+          _this._moveType = 0;
+          _this._moveSpeed = 4.5;
           _this._rotaSpeed = 80;
+          _this._action = "";
           return _this;
         }
 
         var _proto = BaseRole.prototype;
 
+        _proto.switchMove = function switchMove() {
+          this.moveType = this.moveType == 0 ? 1 : 0;
+          return this.setMoving(this.moving);
+        };
+
         _proto.setMoving = function setMoving(value) {
+          var flag = false;
           this.moving = value;
 
           if (value == MoveType.None) {
-            this.stopAction();
-          } else this.moveAction();
+            flag = this.stopAction();
+          } else if (value == MoveType.Jump) {
+            flag = this.jupmAction();
+          } else flag = this.moveAction();
+
+          return flag;
         };
 
         _proto.updateName = function updateName() {
@@ -226,11 +248,36 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
         };
 
         _proto.stopAction = function stopAction() {
-          this.animation.play("Idle");
+          return this.playAction(ActionType.Idle);
         };
 
         _proto.moveAction = function moveAction() {
-          this.animation.play("Running");
+          return this.playAction(this.moveType == 0 ? ActionType.Run : ActionType.Walk);
+        };
+
+        _proto.jupmAction = function jupmAction() {
+          if (this._action == ActionType.Jump) return false;
+          this.playAction(ActionType.Jump);
+          this.animation.on(Animation.EventType.LASTFRAME, this.onFinishJump, this, true);
+          return true;
+        };
+
+        _proto.onFinishJump = function onFinishJump(type, state) {
+          this._action = "";
+          this.setMoving(this.moving);
+        };
+
+        _proto.playAction = function playAction(action) {
+          if (action == this._action || this._action == ActionType.Jump) return false;
+          this._action = action;
+          this.animation.play(action);
+          return true;
+        };
+
+        _proto.getMoveSpeed = function getMoveSpeed() {
+          var speed = this.moveSpeed;
+          if (this.moveType != 0) speed /= 2;
+          return speed;
         };
 
         _proto.update = function update(deltaTime) {
@@ -239,11 +286,11 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
 
           switch (this.moving) {
             case MoveType.Forward:
-              move = -this.moveSpeed;
+              move = -this.getMoveSpeed();
               break;
 
             case MoveType.Backward:
-              move = this.moveSpeed;
+              move = this.getMoveSpeed();
               break;
 
             case MoveType.Left:
@@ -280,6 +327,14 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
           },
           set: function set(type) {
             this._roleType = type;
+          }
+        }, {
+          key: "moveType",
+          get: function get() {
+            return this._moveType;
+          },
+          set: function set(type) {
+            this._moveType = type;
           }
         }, {
           key: "moveSpeed",
@@ -1286,11 +1341,7 @@ System.register("chunks:///_virtual/MainRoleCamera.ts", ['./rollupPluginModLoBab
           _this._offset = new Vec3(0, 2.0, 6.4);
           _this._moveSmooth = 0.02;
           _this._rotateSmooth = 0.03;
-          _this._forward = new Vec3();
-          _this._right = new Vec3();
-          _this._up = new Vec3();
           _this._velocity = new Vec3();
-          _this._forwardView = new Vec3();
           return _this;
         }
 
@@ -1363,10 +1414,9 @@ System.register("chunks:///_virtual/MainRoleCamera.ts", ['./rollupPluginModLoBab
           node.setWorldRotation(rotation);
         };
 
-        _proto.setFollowTrack = function setFollowTrack() {
+        _proto.setFollowTrack = function setFollowTrack(deltaTime) {
           var pos = this.toPosition();
           this.node.position = VectorTool.SmoothDampV3(this.node.position, pos, this._velocity, this._moveSmooth, 100000, 0.02);
-          this._forwardView = Vec3.subtract(this._forwardView, this.node.position, this.target.getWorldPosition());
           this.node.lookAt(this.target.worldPosition);
         };
 
@@ -1381,7 +1431,7 @@ System.register("chunks:///_virtual/MainRoleCamera.ts", ['./rollupPluginModLoBab
         _proto.update = function update(deltaTime) {
           if (!this.target) return;
           if (MyRole.moving == 0 && MyRole.ratation == 0) return;
-          this.setFollowTrack();
+          this.setFollowTrack(deltaTime);
         };
 
         _createClass(MainRoleCamera, [{
@@ -1562,6 +1612,14 @@ System.register("chunks:///_virtual/MyRole.ts", ['./rollupPluginModLoBabelHelper
 
         _proto.start = function start() {};
 
+        _proto.setBackward = function setBackward() {
+          var euler = v3();
+          var thisRota = this.node.getWorldRotation();
+          thisRota.getEulerAngles(euler);
+          euler.y += 180;
+          this.node.setRotationFromEuler(euler);
+        };
+
         _proto.onMovingPrv = function onMovingPrv(deltaTime) {
           var rotation = 0;
 
@@ -1598,12 +1656,18 @@ System.register("chunks:///_virtual/MyRole.ts", ['./rollupPluginModLoBabelHelper
           }
         };
 
-        _proto.sendMovtion = function sendMovtion() {
+        _proto.sendAction = function sendAction(action) {
+          this.sendMovtion(action);
+        };
+
+        _proto.sendMovtion = function sendMovtion(action) {
           var euler = v3();
           var thisRota = this.node.getWorldRotation();
           thisRota.getEulerAngles(euler);
+          if (!action) action = this.moving;
+          if (this.moveType != 0) action |= 0x10000;
           var startPos = this.node.getWorldPosition();
-          PeerConnection.instance().sendMoving(this.moving, startPos, euler); //console.log("send startPos %s", startPos.toString());
+          PeerConnection.instance().sendMoving(action, startPos, euler);
         };
 
         _createClass(MyRole, [{
@@ -2058,7 +2122,7 @@ System.register("chunks:///_virtual/RoleName.ts", ['./rollupPluginModLoBabelHelp
 System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './BaseRole.ts', './GlobalNode.ts', './UserInfo.ts', './PeerConnection.ts', './MyRole.ts'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, cclegacy, _decorator, input, Input, instantiate, KeyCode, Component, GameEvent, RotateType, MoveType, GlobalNode, UserInfo, PeerConnection, MyRole;
+  var _inheritsLoose, cclegacy, _decorator, input, Input, instantiate, KeyCode, Component, GameEvent, MoveType, RotateType, GlobalNode, UserInfo, PeerConnection, MyRole;
 
   return {
     setters: [function (module) {
@@ -2074,8 +2138,8 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
     }, function (module) {
       GameEvent = module.default;
     }, function (module) {
-      RotateType = module.RotateType;
       MoveType = module.MoveType;
+      RotateType = module.RotateType;
     }, function (module) {
       GlobalNode = module.default;
     }, function (module) {
@@ -2161,15 +2225,16 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
           }
         };
 
-        _proto.onRoleMoving = function onRoleMoving(id, moveType, startPos, rotation) {
+        _proto.onRoleMoving = function onRoleMoving(id, action, startPos, rotation) {
           //console.log("onRoleMoving = %s", id);
           var node = this._roleList[id];
 
           if (node) {
-            var gameRole = node.getComponent("GameRole");
-            gameRole.setMoving(moveType);
             node.setWorldPosition(startPos);
-            node.setRotationFromEuler(rotation); //console.log("recv position %s", startPos.toString())
+            node.setRotationFromEuler(rotation);
+            var gameRole = node.getComponent("GameRole");
+            gameRole.moveType = action & 0x10000;
+            gameRole.setMoving(action & 0x0ffff);
           }
         };
 
@@ -2184,7 +2249,9 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
 
             case KeyCode.KEY_S:
             case KeyCode.ARROW_DOWN:
-              MyRole.instance().setMoving(MoveType.Backward);
+              MyRole.instance().setBackward();
+              MyRole.instance().setMoving(MoveType.Forward); //MyRole.instance().setMoving(MoveType.Backward);
+
               break;
             //case KeyCode.KEY_Q:
             //    MyRole.moving = MoveType.Left;
@@ -2203,12 +2270,15 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
               MyRole.ratation = RotateType.Right;
               break;
 
-            case KeyCode.PAGE_DOWN:
-              console.log("PAGE_DOWN");
+            case KeyCode.SHIFT_LEFT:
+            case KeyCode.SHIFT_RIGHT:
+              flag = MyRole.instance().switchMove();
               break;
 
-            case KeyCode.PAGE_UP:
-              break;
+            case KeyCode.SPACE:
+              if (MyRole.instance().jupmAction()) {
+                MyRole.instance().sendAction(MoveType.Jump);
+              }
 
             default:
               flag = false;
