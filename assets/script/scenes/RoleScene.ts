@@ -7,7 +7,6 @@ import UserInfo from '../base/UserInfo';
 import GameEvent from '../base/GameEvent';
 import { MoveType, RotateType } from '../role/BaseRole';
 import PeerConnection from '../network/PeerConnection';
-import { GameRole } from '../role/GameRole';
 
 @ccclass('RoleScene')
 export class RoleScene extends Component {
@@ -76,23 +75,24 @@ export class RoleScene extends Component {
         }
     }
 
-    protected onRoleMoving(id: string, moveType: number, startPos: Vec3, rotation: Vec3): void {
+    protected onRoleMoving(id: string, action: number, startPos: Vec3, rotation: Vec3): void {
         
         //console.log("onRoleMoving = %s", id);
         
         let node: Node = this._roleList[id];
         if(node){
-            let gameRole: any = node.getComponent("GameRole");
-            gameRole.setMoving(moveType);
 
             node.setWorldPosition(startPos);
             node.setRotationFromEuler(rotation);
-            //console.log("recv position %s", startPos.toString())
+                        
+            let gameRole: any = node.getComponent("GameRole");
+            gameRole.moveType = action & 0x10000;
+            gameRole.setMoving(action & 0x0ffff);
         }
     }
 
     protected onKeyDown(event: EventKeyboard): void {        
-        let flag = true;        
+        let flag = true;
         switch(event.keyCode) {
             case KeyCode.KEY_W:
             case KeyCode.ARROW_UP:        
@@ -100,7 +100,9 @@ export class RoleScene extends Component {
                 break;
             case KeyCode.KEY_S:
             case KeyCode.ARROW_DOWN:
-                MyRole.instance().setMoving(MoveType.Backward);
+                MyRole.instance().setBackward();
+                MyRole.instance().setMoving(MoveType.Forward);
+                //MyRole.instance().setMoving(MoveType.Backward);
                 break;
             //case KeyCode.KEY_Q:
             //    MyRole.moving = MoveType.Left;
@@ -113,14 +115,17 @@ export class RoleScene extends Component {
                 MyRole.ratation = RotateType.Left;
                 break;
             case KeyCode.KEY_D:
-            case KeyCode.ARROW_RIGHT:            
+            case KeyCode.ARROW_RIGHT:
                 MyRole.ratation = RotateType.Right;
+                break;            
+            case KeyCode.SHIFT_LEFT:
+            case KeyCode.SHIFT_RIGHT:
+                flag = MyRole.instance().switchMove();
                 break;
-            case KeyCode.PAGE_DOWN:
-                console.log("PAGE_DOWN");
-                break;
-            case KeyCode.PAGE_UP:
-                break;
+            case KeyCode.SPACE:
+                if(MyRole.instance().jupmAction()){
+                    MyRole.instance().sendAction(MoveType.Jump);                    
+                }
             default:
                 flag = false;
                 break;

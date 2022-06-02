@@ -42,6 +42,14 @@ export class MyRole extends BaseRole {
         MyRole.ratation = value;
     }
 
+    public setBackward(): void {
+        let euler = v3();
+        let thisRota = this.node.getWorldRotation();
+        thisRota.getEulerAngles(euler);
+        euler.y += 180;
+        this.node.setRotationFromEuler(euler);
+    }
+
     public onMovingPrv(deltaTime: number): void {
         let rotation = 0;
         switch(this.ratation){
@@ -69,19 +77,24 @@ export class MyRole extends BaseRole {
         let passTime = thisTime - this._lastSyncTime;
         if(passTime >= 500 || flag) {
             this._lastSyncTime = thisTime;
-            this.sendMovtion();            
+            this.sendMovtion();
         }
     }
 
-    protected sendMovtion(): void {
+    public sendAction(action: number): void {
+        this.sendMovtion(action);
+    }
+
+    protected sendMovtion(action?: number): void {
         let euler = v3();
         let thisRota = this.node.getWorldRotation();
         thisRota.getEulerAngles(euler);
         
-        let startPos = this.node.getWorldPosition();            
-        PeerConnection.instance().sendMoving(this.moving, startPos, euler);
+        if(!action) action = this.moving;
+        if(this.moveType != 0) action |= 0x10000;
 
-        //console.log("send startPos %s", startPos.toString());
+        let startPos = this.node.getWorldPosition();            
+        PeerConnection.instance().sendMoving(action, startPos, euler);        
     }
 }
 

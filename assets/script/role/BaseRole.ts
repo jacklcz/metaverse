@@ -9,6 +9,7 @@ export enum MoveType {
     Backward = 2,  //向后
     Left     = 3,  //向左
     Right    = 4,  //向右
+    Jump     = 5,
 };
 
 export enum RotateType {
@@ -17,13 +18,22 @@ export enum RotateType {
     Right = 2,   //右
 }
 
+enum ActionType {
+    Idle = "Idle",
+    Run  = "Running",
+    Walk = "Walking",
+    Jump = "Jumping"
+}
+
 @ccclass('BaseRole')
 export abstract class BaseRole extends Component {
     
     private _roleID: string = "";
     private _roleType: string = "0";
-    private _moveSpeed: number = 7;
+    private _moveType: number = 0;
+    private _moveSpeed: number = 4.5;
     private _rotaSpeed: number = 80;
+    private _action: string = "";
 
     abstract get moving(): number;
     abstract set moving(value: number);
@@ -46,6 +56,19 @@ export abstract class BaseRole extends Component {
         this._roleType = type;
     }
 
+    public get moveType(): number {
+        return this._moveType;
+    }
+
+    public set moveType(type: number) {
+        this._moveType = type;
+    }
+
+    public switchMove(): boolean {
+        this.moveType = this.moveType == 0 ? 1 : 0;
+        return this.setMoving(this.moving);
+    }
+
     public get moveSpeed(): number {
         return this._moveSpeed;
     }
@@ -54,12 +77,17 @@ export abstract class BaseRole extends Component {
         return this._rotaSpeed;
     }
 
-    public setMoving(value: number): void {
+    public setMoving(value: number): boolean {
+        let flag = false;
         this.moving = value;
         if(value == MoveType.None){
-            this.stopAction();
+            flag = this.stopAction();
         }
-        else this.moveAction();
+        else if(value == MoveType.Jump){
+            flag = this.jupmAction();
+        }
+        else flag = this.moveAction();
+        return flag;
     }
 
     public updateName(): void {
@@ -73,12 +101,39 @@ export abstract class BaseRole extends Component {
         return this.node.getComponent(Animation);
     }
 
-    protected stopAction(): void {        
-        this.animation.play("Idle");
+    protected stopAction(): boolean {        
+        return this.playAction(ActionType.Idle);
     }
 
-    protected moveAction(): void {        
-        this.animation.play("Running");
+    protected moveAction(): boolean {
+        return this.playAction(this.moveType == 0 ? ActionType.Run : ActionType.Walk);
+    }
+
+    public jupmAction(): boolean {
+        if(this._action == ActionType.Jump) return false;
+        
+        this.playAction(ActionType.Jump);
+        this.animation.on(Animation.EventType.LASTFRAME, this.onFinishJump, this, true);        
+        return true;
+    }
+
+    private onFinishJump(type, state): void {        
+        this._action = "";
+        this.setMoving(this.moving);
+    }
+
+    protected playAction(action: string): boolean {
+        if(action == this._action || this._action == ActionType.Jump) return false;
+
+        this._action = action;
+        this.animation.play(action);
+        return true;
+    }
+
+    protected getMoveSpeed(): number {
+        let speed = this.moveSpeed;
+        if(this.moveType != 0) speed /= 2;
+        return speed;
     }
 
     update(deltaTime: number) {
@@ -88,10 +143,10 @@ export abstract class BaseRole extends Component {
         let move = 0;
         switch(this.moving){
             case MoveType.Forward:
-                move = -this.moveSpeed;
+                move = -this.getMoveSpeed();
                 break;
             case MoveType.Backward:
-                move = this.moveSpeed;
+                move = this.getMoveSpeed();
                 break;
             case MoveType.Left:
                 break;

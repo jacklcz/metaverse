@@ -25,69 +25,10 @@
     "debug": true,
     "name": "meatverse",
     "replaceSplashScreen": true,
-    "skipCompressTexture": true
+    "skipCompressTexture": true,
+    "buildPath": "project://publish"
   },
   "BuildTaskManager": {
-    "taskMap": {
-      "1654091569761": {
-        "id": "1654091569761",
-        "progress": 1,
-        "state": "success",
-        "message": "2022-6-1 21:53 Build success in 22056 ms!",
-        "options": {
-          "name": "meatverse",
-          "platform": "web-desktop",
-          "buildPath": "project://build",
-          "debug": true,
-          "md5Cache": false,
-          "skipCompressTexture": true,
-          "sourceMaps": false,
-          "replaceSplashScreen": true,
-          "mainBundleCompressionType": "merge_dep",
-          "mainBundleIsRemote": false,
-          "mergeStartScene": false,
-          "experimentalEraseModules": false,
-          "compressTexture": true,
-          "packAutoAtlas": true,
-          "startScene": "ce0cdef9-0155-4399-a84b-b1afe09187d5",
-          "scenes": [
-            {
-              "url": "db://assets/scenes/MainScene.scene",
-              "uuid": "05f953bf-92b1-4173-a5f4-856c9b6142fa",
-              "inBundle": false
-            },
-            {
-              "url": "db://assets/scenes/SelectScene.scene",
-              "uuid": "9e91cb7a-e873-4609-9f6a-a7beb6e2a9d8",
-              "inBundle": false
-            },
-            {
-              "url": "db://assets/scenes/StartScene.scene",
-              "uuid": "ce0cdef9-0155-4399-a84b-b1afe09187d5",
-              "inBundle": false
-            }
-          ],
-          "outputName": "web-desktop",
-          "packages": {
-            "web-desktop": {
-              "resolution": {
-                "designWidth": 1280,
-                "designHeight": 590
-              },
-              "polyfills": {
-                "asyncFunctions": true
-              },
-              "remoteServerAddress": "http://metaverse.chainfn.com"
-            },
-            "cocos-service": {
-              "configID": "88b712",
-              "services": []
-            }
-          }
-        },
-        "time": "2022-6-1 21:52",
-        "dirty": false
-      }
-    }
+    "taskMap": {}
   }
 }

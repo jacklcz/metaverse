@@ -16,12 +16,7 @@ export class MainRoleCamera extends Component {
     private _moveSmooth: number = 0.02;
     private _rotateSmooth: number = 0.03;
 
-    private _forward: Vec3 = new Vec3();
-    private _right: Vec3 = new Vec3();
-    private _up: Vec3 = new Vec3();
-
-    private _velocity = new Vec3();
-    private _forwardView: Vec3 = new Vec3();
+    private _velocity = new Vec3();    
 
     start() {
         input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
@@ -103,17 +98,17 @@ export class MainRoleCamera extends Component {
         node.setWorldRotation(rotation);
     }
     
-    private setFollowTrack(): void {
-        let pos = this.toPosition();                
-        this.node.position = VectorTool.SmoothDampV3(this.node.position, pos, this._velocity, this._moveSmooth, 100000, 0.02);        
-        this._forwardView = Vec3.subtract(this._forwardView, this.node.position, this.target.getWorldPosition());
+    private setFollowTrack(deltaTime: number = 0.1): void {
+        let pos = this.toPosition();
+        this.node.position = VectorTool.SmoothDampV3(this.node.position, pos, this._velocity, this._moveSmooth, 100000, 0.02);
         this.node.lookAt(this.target.worldPosition);
     }
 
-    private toPosition(): Vec3 {
+    private toPosition(): Vec3 {        
         let u = Vec3.multiplyScalar(new Vec3(), Vec3.UP, this.offset.y);
         let f = Vec3.multiplyScalar(new Vec3(), this.target.forward, this.offset.z);
-        let thePos = this.target.getPosition(); thePos.y += this.lookAt;        
+        let thePos = this.target.getPosition(); thePos.y += this.lookAt;
+        
         return Vec3.add(new Vec3(), thePos, u).add(f);
     }
 
@@ -121,7 +116,7 @@ export class MainRoleCamera extends Component {
         if(!this.target) return;
         if(MyRole.moving == 0 && MyRole.ratation == 0) return;
         
-        this.setFollowTrack();
+        this.setFollowTrack(deltaTime);
     }
 }
 
