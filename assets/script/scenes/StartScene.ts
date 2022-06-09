@@ -4,11 +4,11 @@ const { ccclass, property } = _decorator;
 
 import * as fgui from "fairygui-cc";
 import Define from '../base/Define';
+import UserInfo from '../base/UserInfo';
 import GameEvent from "../base/GameEvent";
 import TheConfig from '../base/TheConfig';
-import UserInfo from '../base/UserInfo';
-import PeerConnection from '../network/PeerConnection';
 import MetaMask from '../network/MetaMask';
+import PeerConnection from '../network/PeerConnection';
 
 @ccclass('StartScene')
 export class StartScene extends Component {
@@ -26,30 +26,35 @@ export class StartScene extends Component {
         fgui.GRoot.inst.addChild(view);
         view.makeFullScreen();
         this._mainView = view;
+        
+        let panel = view.getChild<fgui.GComponent>("rolePanel");
+        panel.getChild("enterBtn").onClick(this.onEnterGame, this);
 
-        view.getChild<fgui.GButton>("goBtn").visible = false;
-        view.getChild<fgui.GButton>("startBtn").visible = false;
-        view.getChild<fgui.GComponent>("selection").visible = false;
-        view.getChild<fgui.GProgressBar>("loading").visible = false;
-        this.schedule(this.onCheckMetaMask, 1);
+        let control = panel.getController("c1");
+        control.on(fgui.Event.STATUS_CHANGED, this.onChanged, this);
+        control.selectedIndex = Math.floor(Math.random() * 8);
 
-        GameEvent.on(GameEvent.LOGIN_RESULT, this.onLoginResult, this);        
-        view.getChild("startBtn").onClick(this.onStart, this);
+        GameEvent.on(GameEvent.LOGIN_RESULT, this.onLoginResult, this);
     }
 
-    onDestroy() {        
-        console.log("StartScene onDestroy!");
+    private onChanged(): void {
+        let panel = this._mainView.getChild<fgui.GComponent>("rolePanel");
+        let index = panel.getController("c1").selectedIndex;
+
+        let url = "ui://startScene/role" + index.toString();
+        panel.getChild<fgui.GLoader>("header").url = url;
     }
 
-    private onStart(): void {
+    private onEnterGame(): void {
 
-        console.log("StartScene onStart!");
+        console.log("StartScene onEnterGame!");
 
-        this._mainView.getChild<fgui.GButton>("startBtn").enabled = false;
-        let tips = this._mainView.getChild<fgui.GTextField>("tips");
-        tips.text = "开始连接MetaMask..."
-        //this.onLoginResult(Define.ERR_SUCCESS);
-        //return;
+        let panel = this._mainView.getChild<fgui.GComponent>("rolePanel");
+        panel.getChild<fgui.GButton>("enterBtn").enabled = false;
+        let index = panel.getController("c1").selectedIndex;
+        panel.enabled = false;
+
+        UserInfo.role = index.toString();
 
         let thisSelf = this;
         let metaMask = new MetaMask();
@@ -57,84 +62,43 @@ export class StartScene extends Component {
             if(result == 1){
                 console.log("Get MetaMask account=%s", response);
 
-                function randomString(length: number = 10) {
-                    var t = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678";
-                    let a = t.length;
-                    let result = "";
-                    for (var i = 0; i < length; i++){
-                        result += t.charAt(Math.floor(Math.random() * a));
-                    }
-                    return result
-                }
-                //response = randomString();
-                //console.log("For testing, account change to=%s", response);
-
                 UserInfo.account = response; //save the account;
                 thisSelf.onGetAccount();
             }
-            else {
-                console.error("connect MetaMask failed for: %s", response);            
-                tips.text = "连接MetaMask失败: " + response.message;
-            }
+            else console.error("connect MetaMask failed for: %s", response.message);
         });
     }
-
+    
     private onGetAccount(): void {
-        let tips = this._mainView.getChild<fgui.GTextField>("tips");
-        tips.text = "请选择游戏角色";
-
-        this._mainView.getChild<fgui.GButton>("startBtn").visible = false;
-        
-        let goBtn = this._mainView.getChild<fgui.GButton>("goBtn");
-        goBtn.onClick(this.startLogin, this);
-
-        this._mainView.getChild<fgui.GComponent>("selection").visible = true;
-        goBtn.visible = true;
-    }
-
-    private startLogin(): void {
-        this._mainView.getChild<fgui.GButton>("goBtn").visible = false;        
-        let tips = this._mainView.getChild<fgui.GTextField>("tips");
-        tips.text = "登录游戏...";
-
-        let selection = this._mainView.getChild<fgui.GComponent>("selection");
-        selection.visible = false;
-        let index = selection.getController("select").selectedIndex;
-        UserInfo.role = index.toString();
 
         let peerConnection = PeerConnection.instance();
         peerConnection.login(TheConfig.httpUrl, TheConfig.wsUrl);
-    }
-
+    }   
+    
     private onLoginResult(result: number, msg?: any): void {
         if(result == Define.ERR_SUCCESS) {
             console.log("StartScene --> 登录成功!");
 
-            let loading = this._mainView.getChild<fgui.GProgressBar>("loading");
-            loading.visible = true;     
-            
-            GameEvent.on(GameEvent.ON_LOADING_TIPS, this.onLoadingTips, this);
+            this._mainView.getChild<fgui.GComponent>("rolePanel").visible = false;
+            this._mainView.getChild<fgui.GComponent>("selectBk").visible = false;
+                        
             GameEvent.on(GameEvent.ON_LOADING_PROCESS, this.onLoadingProcess, this);
             GameEvent.emit(GameEvent.OPEN_MAIN_SCENE);
         }
         else {
-            //this._mainView.getChild<fgui.GButton>("startBtn").enabled = true;
-            console.log("StartScene --> 登录失败:%s", msg);
-            let tips = this._mainView.getChild<fgui.GTextField>("tips");
-            tips.text = "登录游戏失败: " + msg;
+            let panel = this._mainView.getChild<fgui.GComponent>("rolePanel");
+            panel.getChild<fgui.GButton>("enterBtn").enabled = true;            
+            panel.enabled = true;
+            
+            console.log("SelectScene --> 登录失败:%s", msg);
         }
-    }
-
-    private onLoadingTips(tips: string): void {
-        this._mainView.getChild<fgui.GTextField>("tips").text = tips;
     }
 
     private onLoadingProcess(value: any): void {
         value = Math.floor(value * 100);
-        if(value > 100) value = 100;
+        if(value > 100) value = 100;        
         
-        console.log("loading main scene %d", value);
-        let loading = this._mainView.getChild<fgui.GProgressBar>("loading");
+        let loading = this._mainView.getChild<fgui.GProgressBar>("processBar");
         if(loading) loading.value = value;        
     }
 

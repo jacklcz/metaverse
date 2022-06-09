@@ -18,5 +18,6 @@ export class GameRole extends BaseRole {
 
     public onMovingPrv(deltaTime: number): void {}
     public onMoving(flag: boolean): void {}
+    public onInitedRole(): void {}    
 }
 

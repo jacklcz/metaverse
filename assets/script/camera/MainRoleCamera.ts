@@ -9,9 +9,8 @@ import { MyRole } from '../role/MyRole';
 @ccclass('MainRoleCamera')
 export class MainRoleCamera extends Component {
 
-    private _target: Node = null;
-    private _lookAt: number = 0.1;
-    private _offset: Vec3 = new Vec3(0, 2.0, 6.4);
+    private _target: Node = null;    
+    private _offset: Vec3 = new Vec3(0, 0.62, 4.6);
 
     private _moveSmooth: number = 0.02;
     private _rotateSmooth: number = 0.03;
@@ -20,14 +19,18 @@ export class MainRoleCamera extends Component {
 
     start() {
         input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
-        GameEvent.on(GameEvent.ON_INIT_OWNER, this.onInitMyRole, this);
+        GameEvent.on(GameEvent.ON_INITED_OWNER, this.onInitMyRole, this);
     }
 
     public get target(): Node { return this._target;}
     public set target(node: Node) { this._target = node; }
-
-    public get lookAt(): number { return this._lookAt; }
-    public get offset(): Vec3 { return this._offset; }    
+    
+    public get offset(): Vec3 { return this._offset; }
+    public get lookAt(): Vec3 { 
+        let lookAt = this.target.getWorldPosition();
+        lookAt.y += 1.5;
+        return lookAt; 
+    }
     
     protected onKeyDown(event: EventKeyboard): void {
         switch(event.keyCode) {            
@@ -45,7 +48,8 @@ export class MainRoleCamera extends Component {
         this.target = MyRole.instance().node;
 
         this.node.position = this.toPosition();        
-        this.node.lookAt(this.target.worldPosition);
+        //this.node.lookAt(this.target.worldPosition);
+        this.node.lookAt(this.lookAt);
     }   
 
     public onMouseMove(delta: Vec2) {        
@@ -64,13 +68,17 @@ export class MainRoleCamera extends Component {
         
         let speed = 0.002;
         let horizontal = -delta.x * speed;
-        let vertical = delta.y * speed;        
-        this.rotateAround(this.node, this.target.worldPosition,  Vec3.UP, horizontal);        
-        this.rotateAround(this.node, this.target.worldPosition, Vec3.RIGHT, vertical); 
+        let vertical = delta.y * speed;  
+
+        let lookAt = this.lookAt;
+        this.rotateAround(this.node, lookAt,  Vec3.UP, horizontal);
+        this.rotateAround(this.node, lookAt, Vec3.RIGHT, vertical); 
+        //this.rotateAround(this.node, this.target.worldPosition,  Vec3.UP, horizontal);
+        //this.rotateAround(this.node, this.target.worldPosition, Vec3.RIGHT, vertical); 
         
-        let targetPos = this.target.getWorldPosition();
+        //let targetPos = this.target.getWorldPosition();
         let cameraPos = this.node.getWorldPosition();        
-        this._offset.y = Math.abs(cameraPos.y - targetPos.y);
+        this._offset.y = Math.abs(cameraPos.y - lookAt.y);
     }
 
     private rotateAround(node: Node, point: Vec3, axis: Vec3, angle: number) {
@@ -84,7 +92,8 @@ export class MainRoleCamera extends Component {
         Vec3.add(position, point, position);
 
         let dir = v3();
-        Vec3.subtract(dir, position, this.target.worldPosition);
+        //Vec3.subtract(dir, position, this.target.worldPosition);
+        Vec3.subtract(dir, position, this.lookAt);
         let rotation = new Quat();
         Quat.fromViewUp(rotation, dir.normalize(), Vec3.UP);
 
@@ -101,13 +110,14 @@ export class MainRoleCamera extends Component {
     private setFollowTrack(deltaTime: number = 0.1): void {
         let pos = this.toPosition();
         this.node.position = VectorTool.SmoothDampV3(this.node.position, pos, this._velocity, this._moveSmooth, 100000, 0.02);
-        this.node.lookAt(this.target.worldPosition);
+        //this.node.lookAt(this.target.worldPosition);
+        this.node.lookAt(this.lookAt);
     }
 
     private toPosition(): Vec3 {        
         let u = Vec3.multiplyScalar(new Vec3(), Vec3.UP, this.offset.y);
         let f = Vec3.multiplyScalar(new Vec3(), this.target.forward, this.offset.z);
-        let thePos = this.target.getPosition(); thePos.y += this.lookAt;
+        let thePos = this.lookAt;//this.target.getPosition();
         
         return Vec3.add(new Vec3(), thePos, u).add(f);
     }

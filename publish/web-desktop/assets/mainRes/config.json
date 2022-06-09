@@ -6,9 +6,14 @@
     "uuids": [
         "46bc77e8-6542-417d-8e11-982e55633280",
         "49e4eacf-9296-402b-bb21-33a12f22cb03",
-        "49e4eacf-9296-402b-bb21-33a12f22cb03@6c48a"
+        "49e4eacf-9296-402b-bb21-33a12f22cb03@6c48a",
+        "d9a98a49-be65-4172-928b-391453dbc1ed"
     ],
     "paths": {
+        "d9a98a49-be65-4172-928b-391453dbc1ed": [
+            "map",
+            "cc.JsonAsset"
+        ],
         "46bc77e8-6542-417d-8e11-982e55633280": [
             "ui/mainScene",
             "cc.BufferAsset"

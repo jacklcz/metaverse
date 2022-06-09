@@ -15,13 +15,13 @@ export default class AppMain extends Component {
         setDisplayStats(false);
 
         GameEvent.on(GameEvent.OPEN_MAIN_SCENE, this.openMainScene, this);
-        GameEvent.on(GameEvent.LOGIN_ROLE_SCENE, this.selectRoleScene, this);
+        GameEvent.on(GameEvent.OPEN_ROLE_SCENE, this.openRoleScene, this);
         console.log("AppMain onLoad!");
     }
 
     private loadScene(sceneName: string): void {
 
-        GameEvent.emit(GameEvent.ON_LOADING_TIPS, "加载场景数据...");
+        GameEvent.emit(GameEvent.ON_LOADING_TIPS, "加载数据...");
         GameEvent.emit(GameEvent.ON_LOADING_PROCESS, 0);
 
         director.preloadScene(sceneName,
@@ -39,18 +39,8 @@ export default class AppMain extends Component {
         this.loadSubpack("MainScene", 0, this._mainPacks);
     }
 
-    private selectRoleScene(msg: any): void {
-        let thisSelf = this;
-        let resList = TheConfig.selectResList();
-        //resources.load(resList, JsonAsset,  function (err, assets: JsonAsset[]):void {
-        //    if(err){
-        //        console.log(err);
-        //    }
-        //    else {
-        //        TheConfig.selectCfg.setRes(resList, assets);
-        //        thisSelf.loadScene("SelectScene");
-        //    }
-        //});
+    private openRoleScene(msg: any): void {
+        this.loadSubpack("RoleScene", 0, this._mainPacks);        
     }
 
     private loadSubpack(sceneName: string, index: number, packs: string[]): void {

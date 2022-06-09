@@ -1,7 +1,8 @@
 import { _decorator, v3  } from 'cc';
-import PeerConnection from '../network/PeerConnection';
 const { ccclass, property } = _decorator;
 
+import GameEvent from '../base/GameEvent';
+import PeerConnection from '../network/PeerConnection';
 import { BaseRole, MoveType, RotateType } from './BaseRole';
 
 @ccclass('MyRole')
@@ -79,6 +80,13 @@ export class MyRole extends BaseRole {
             this._lastSyncTime = thisTime;
             this.sendMovtion();
         }
+    }
+
+    public onInitedRole(): void {
+        GameEvent.emit(GameEvent.ON_INITED_OWNER);
+
+        let position = this.node.getWorldPosition();
+        PeerConnection.instance().sendPosition(position);
     }
 
     public sendAction(action: number): void {

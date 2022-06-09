@@ -1,7 +1,7 @@
-System.register("chunks:///_virtual/AppMain.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './TheConfig.ts'], function (exports) {
+System.register("chunks:///_virtual/AppMain.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, cclegacy, _decorator, game, setDisplayStats, director, assetManager, Component, GameEvent, TheConfig;
+  var _inheritsLoose, cclegacy, _decorator, game, setDisplayStats, director, assetManager, Component, GameEvent;
 
   return {
     setters: [function (module) {
@@ -16,8 +16,6 @@ System.register("chunks:///_virtual/AppMain.ts", ['./rollupPluginModLoBabelHelpe
       Component = module.Component;
     }, function (module) {
       GameEvent = module.default;
-    }, function (module) {
-      TheConfig = module.default;
     }],
     execute: function () {
       var _dec, _class;
@@ -48,12 +46,12 @@ System.register("chunks:///_virtual/AppMain.ts", ['./rollupPluginModLoBabelHelpe
           game.addPersistRootNode(this.node);
           setDisplayStats(false);
           GameEvent.on(GameEvent.OPEN_MAIN_SCENE, this.openMainScene, this);
-          GameEvent.on(GameEvent.LOGIN_ROLE_SCENE, this.selectRoleScene, this);
+          GameEvent.on(GameEvent.OPEN_ROLE_SCENE, this.openRoleScene, this);
           console.log("AppMain onLoad!");
         };
 
         _proto.loadScene = function loadScene(sceneName) {
-          GameEvent.emit(GameEvent.ON_LOADING_TIPS, "加载场景数据...");
+          GameEvent.emit(GameEvent.ON_LOADING_TIPS, "加载数据...");
           GameEvent.emit(GameEvent.ON_LOADING_PROCESS, 0);
           director.preloadScene(sceneName, function (coomplateCount, totalCount, item) {
             GameEvent.emit(GameEvent.ON_LOADING_PROCESS, coomplateCount / totalCount);
@@ -67,16 +65,8 @@ System.register("chunks:///_virtual/AppMain.ts", ['./rollupPluginModLoBabelHelpe
           this.loadSubpack("MainScene", 0, this._mainPacks);
         };
 
-        _proto.selectRoleScene = function selectRoleScene(msg) {
-          var resList = TheConfig.selectResList(); //resources.load(resList, JsonAsset,  function (err, assets: JsonAsset[]):void {
-          //    if(err){
-          //        console.log(err);
-          //    }
-          //    else {
-          //        TheConfig.selectCfg.setRes(resList, assets);
-          //        thisSelf.loadScene("SelectScene");
-          //    }
-          //});
+        _proto.openRoleScene = function openRoleScene(msg) {
+          this.loadSubpack("RoleScene", 0, this._mainPacks);
         };
 
         _proto.loadSubpack = function loadSubpack(sceneName, index, packs) {
@@ -308,7 +298,7 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
             Vec3.multiplyScalar(offset, forward, deltaTime);
             this.onMoving(false);
             var pos = this.node.getWorldPosition();
-            this.node.setWorldPosition(pos.add(offset));
+            this.node.setWorldPosition(pos.add(offset)); //this.onUpdatePosition();
           }
         };
 
@@ -354,6 +344,77 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
         }]);
 
         return BaseRole;
+      }(Component)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/BuildScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts'], function (exports) {
+  'use strict';
+
+  var _inheritsLoose, cclegacy, _decorator, assetManager, JsonAsset, Component, GameEvent;
+
+  return {
+    setters: [function (module) {
+      _inheritsLoose = module.inheritsLoose;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      assetManager = module.assetManager;
+      JsonAsset = module.JsonAsset;
+      Component = module.Component;
+    }, function (module) {
+      GameEvent = module.default;
+    }],
+    execute: function () {
+      var _dec, _class;
+
+      cclegacy._RF.push({}, "5e094O/tl5AnJ79O+o4ef94", "BuildScene", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var BuildScene = exports('BuildScene', (_dec = ccclass('BuildScene'), _dec(_class = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(BuildScene, _Component);
+
+        function BuildScene() {
+          var _this;
+
+          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+          }
+
+          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
+          _this._mapData = null;
+          return _this;
+        }
+
+        var _proto = BuildScene.prototype;
+
+        _proto.start = function start() {
+          GameEvent.on(GameEvent.ON_INITED_OWNER, this.onInitedOwner, this);
+        };
+
+        _proto.onInitedOwner = function onInitedOwner() {
+          var thisSelf = this;
+          assetManager.loadBundle("mainRes", function (err, bundle) {
+            bundle.load("./map", JsonAsset, function (error, data) {
+              if (!error) {
+                thisSelf.initMapData(data.json);
+              } else console.log(error.message);
+            });
+          });
+        };
+
+        _proto.initMapData = function initMapData(data) {
+          this._mapData = data;
+          this.onUpdateView();
+        };
+
+        _proto.onUpdateView = function onUpdateView() {};
+
+        return BuildScene;
       }(Component)) || _class));
 
       cclegacy._RF.pop();
@@ -912,7 +973,7 @@ System.register("chunks:///_virtual/GameEvent.ts", ['./rollupPluginModLoBabelHel
           _this = _EventTarget.call(this) || this;
           _this.ON_ROLE_LOCATION = "on_role_location";
           _this.ON_ROLE_OFFLINE = "on_role_offline";
-          _this.ON_INIT_OWNER = "on_init_owner";
+          _this.ON_INITED_OWNER = "on_init_owner";
           _this.ON_SEND_CHAT_MSG = "on_send_chat_msg";
           _this.ON_CHAT_MESSAGE = "on_chat_message";
           _this.ON_ROLE_MOVING = "on_role_moving";
@@ -921,9 +982,9 @@ System.register("chunks:///_virtual/GameEvent.ts", ['./rollupPluginModLoBabelHel
           _this.ON_LOADING_TIPS = "on_loading_tips";
           _this.ON_LOADING_PROCESS = "on_loading_process";
           _this.OPEN_MAIN_SCENE = "open_main_scene";
+          _this.OPEN_ROLE_SCENE = "open_role_scene";
           _this.LOGIN_RESULT = "login_result";
           _this.GET_ROLE_RESULT = "get_role_result";
-          _this.LOGIN_ROLE_SCENE = "login_role_scene";
           _this.ON_OWNER_INITED = "on_owner_inited";
           _this.ON_ROLE_CREATED = "on_role_created";
           _this.ON_ROLE_REMOVED = "on_role_removed";
@@ -988,6 +1049,8 @@ System.register("chunks:///_virtual/GameRole.ts", ['./rollupPluginModLoBabelHelp
 
         _proto.onMoving = function onMoving(flag) {};
 
+        _proto.onInitedRole = function onInitedRole() {};
+
         _createClass(GameRole, [{
           key: "moving",
           get: function get() {
@@ -1043,10 +1106,14 @@ System.register("chunks:///_virtual/GlobalNode.ts", ['./rollupPluginModLoBabelHe
 
         _proto.onLoad = function onLoad() {
           GlobalNode._thisNode = this;
-          this.node.getChildByName("character_01").active = false;
-          this.node.getChildByName("character_02").active = false;
-          this.node.getChildByName("character_03").active = false;
-          this.node.getChildByName("character_04").active = false;
+          this.node.getChildByName("character0").active = false;
+          this.node.getChildByName("character1").active = false;
+          this.node.getChildByName("character2").active = false;
+          this.node.getChildByName("character3").active = false;
+          this.node.getChildByName("character4").active = false;
+          this.node.getChildByName("character5").active = false;
+          this.node.getChildByName("character6").active = false;
+          this.node.getChildByName("character7").active = false;
         };
 
         _proto.onChatEnded = function onChatEnded() {
@@ -1061,7 +1128,7 @@ System.register("chunks:///_virtual/GlobalNode.ts", ['./rollupPluginModLoBabelHe
   };
 });
 
-System.register("chunks:///_virtual/main", ['./GameEvent.ts', './TheConfig.ts', './AppMain.ts', './poliyfill.ts', './Utf8.ts', './main.ts', './Base64.ts', './Define.ts', './BaseRole.ts', './GlobalNode.ts', './proto.mjs_cjs=&original=.js', './UserInfo.ts', './Connection.ts', './PeerConnection.ts', './ChatFrame.ts', './ControlScene.ts', './GameRole.ts', './VectorTool.ts', './MyRole.ts', './MainRoleCamera.ts', './MainScene.ts', './MetaMask.ts', './Quaternion.ts', './RoleName.ts', './RoleScene.ts', './SelectScene.ts', './StartScene.ts', './ThirdPersonCamera.ts'], function () {
+System.register("chunks:///_virtual/main", ['./GameEvent.ts', './AppMain.ts', './poliyfill.ts', './Utf8.ts', './main.ts', './Base64.ts', './Define.ts', './BaseRole.ts', './BuildScene.ts', './GlobalNode.ts', './proto.mjs_cjs=&original=.js', './UserInfo.ts', './Connection.ts', './PeerConnection.ts', './ChatFrame.ts', './ControlScene.ts', './GameRole.ts', './VectorTool.ts', './MyRole.ts', './MainRoleCamera.ts', './MainScene.ts', './MetaMask.ts', './Quaternion.ts', './RoleName.ts', './RoleScene.ts', './TheConfig.ts', './StartScene.ts', './ThirdPersonCamera.ts'], function () {
   'use strict';
 
   return {
@@ -1337,8 +1404,7 @@ System.register("chunks:///_virtual/MainRoleCamera.ts", ['./rollupPluginModLoBab
 
           _this = _Component.call.apply(_Component, [this].concat(args)) || this;
           _this._target = null;
-          _this._lookAt = 0.1;
-          _this._offset = new Vec3(0, 2.0, 6.4);
+          _this._offset = new Vec3(0, 0.62, 4.6);
           _this._moveSmooth = 0.02;
           _this._rotateSmooth = 0.03;
           _this._velocity = new Vec3();
@@ -1349,7 +1415,7 @@ System.register("chunks:///_virtual/MainRoleCamera.ts", ['./rollupPluginModLoBab
 
         _proto.start = function start() {
           input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
-          GameEvent.on(GameEvent.ON_INIT_OWNER, this.onInitMyRole, this);
+          GameEvent.on(GameEvent.ON_INITED_OWNER, this.onInitMyRole, this);
         };
 
         _proto.onKeyDown = function onKeyDown(event) {
@@ -1366,8 +1432,9 @@ System.register("chunks:///_virtual/MainRoleCamera.ts", ['./rollupPluginModLoBab
 
         _proto.onInitMyRole = function onInitMyRole() {
           this.target = MyRole.instance().node;
-          this.node.position = this.toPosition();
-          this.node.lookAt(this.target.worldPosition);
+          this.node.position = this.toPosition(); //this.node.lookAt(this.target.worldPosition);
+
+          this.node.lookAt(this.lookAt);
         };
 
         _proto.onMouseMove = function onMouseMove(delta) {
@@ -1385,11 +1452,14 @@ System.register("chunks:///_virtual/MainRoleCamera.ts", ['./rollupPluginModLoBab
           var speed = 0.002;
           var horizontal = -delta.x * speed;
           var vertical = delta.y * speed;
-          this.rotateAround(this.node, this.target.worldPosition, Vec3.UP, horizontal);
-          this.rotateAround(this.node, this.target.worldPosition, Vec3.RIGHT, vertical);
-          var targetPos = this.target.getWorldPosition();
+          var lookAt = this.lookAt;
+          this.rotateAround(this.node, lookAt, Vec3.UP, horizontal);
+          this.rotateAround(this.node, lookAt, Vec3.RIGHT, vertical); //this.rotateAround(this.node, this.target.worldPosition,  Vec3.UP, horizontal);
+          //this.rotateAround(this.node, this.target.worldPosition, Vec3.RIGHT, vertical); 
+          //let targetPos = this.target.getWorldPosition();
+
           var cameraPos = this.node.getWorldPosition();
-          this._offset.y = Math.abs(cameraPos.y - targetPos.y);
+          this._offset.y = Math.abs(cameraPos.y - lookAt.y);
         };
 
         _proto.rotateAround = function rotateAround(node, point, axis, angle) {
@@ -1399,8 +1469,9 @@ System.register("chunks:///_virtual/MainRoleCamera.ts", ['./rollupPluginModLoBab
           Vec3.subtract(position, node.worldPosition, point);
           Vec3.transformQuat(position, position, quat);
           Vec3.add(position, point, position);
-          var dir = v3();
-          Vec3.subtract(dir, position, this.target.worldPosition);
+          var dir = v3(); //Vec3.subtract(dir, position, this.target.worldPosition);
+
+          Vec3.subtract(dir, position, this.lookAt);
           var rotation = new Quat();
           Quat.fromViewUp(rotation, dir.normalize(), Vec3.UP);
           var euler = v3();
@@ -1416,15 +1487,16 @@ System.register("chunks:///_virtual/MainRoleCamera.ts", ['./rollupPluginModLoBab
 
         _proto.setFollowTrack = function setFollowTrack(deltaTime) {
           var pos = this.toPosition();
-          this.node.position = VectorTool.SmoothDampV3(this.node.position, pos, this._velocity, this._moveSmooth, 100000, 0.02);
-          this.node.lookAt(this.target.worldPosition);
+          this.node.position = VectorTool.SmoothDampV3(this.node.position, pos, this._velocity, this._moveSmooth, 100000, 0.02); //this.node.lookAt(this.target.worldPosition);
+
+          this.node.lookAt(this.lookAt);
         };
 
         _proto.toPosition = function toPosition() {
           var u = Vec3.multiplyScalar(new Vec3(), Vec3.UP, this.offset.y);
           var f = Vec3.multiplyScalar(new Vec3(), this.target.forward, this.offset.z);
-          var thePos = this.target.getPosition();
-          thePos.y += this.lookAt;
+          var thePos = this.lookAt; //this.target.getPosition();
+
           return Vec3.add(new Vec3(), thePos, u).add(f);
         };
 
@@ -1443,14 +1515,16 @@ System.register("chunks:///_virtual/MainRoleCamera.ts", ['./rollupPluginModLoBab
             this._target = node;
           }
         }, {
-          key: "lookAt",
-          get: function get() {
-            return this._lookAt;
-          }
-        }, {
           key: "offset",
           get: function get() {
             return this._offset;
+          }
+        }, {
+          key: "lookAt",
+          get: function get() {
+            var lookAt = this.target.getWorldPosition();
+            lookAt.y += 1.5;
+            return lookAt;
           }
         }]);
 
@@ -1497,7 +1571,7 @@ System.register("chunks:///_virtual/MainScene.ts", ['./rollupPluginModLoBabelHel
         };
 
         _proto.onLoadFinish = function onLoadFinish(error) {
-          console.log("MainScene onLoadFinish for %s", error);
+          console.log("MainScene onLoadFinish %s", error ? error : "success");
         };
 
         return MainScene;
@@ -1564,10 +1638,10 @@ System.register("chunks:///_virtual/MetaMask.ts", ['cc'], function (exports) {
   };
 });
 
-System.register("chunks:///_virtual/MyRole.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './BaseRole.ts', './PeerConnection.ts'], function (exports) {
+System.register("chunks:///_virtual/MyRole.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './BaseRole.ts', './PeerConnection.ts'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, _assertThisInitialized, _createClass, cclegacy, _decorator, v3, MoveType, RotateType, BaseRole, PeerConnection;
+  var _inheritsLoose, _assertThisInitialized, _createClass, cclegacy, _decorator, v3, GameEvent, MoveType, RotateType, BaseRole, PeerConnection;
 
   return {
     setters: [function (module) {
@@ -1578,6 +1652,8 @@ System.register("chunks:///_virtual/MyRole.ts", ['./rollupPluginModLoBabelHelper
       cclegacy = module.cclegacy;
       _decorator = module._decorator;
       v3 = module.v3;
+    }, function (module) {
+      GameEvent = module.default;
     }, function (module) {
       MoveType = module.MoveType;
       RotateType = module.RotateType;
@@ -1654,6 +1730,12 @@ System.register("chunks:///_virtual/MyRole.ts", ['./rollupPluginModLoBabelHelper
             this._lastSyncTime = thisTime;
             this.sendMovtion();
           }
+        };
+
+        _proto.onInitedRole = function onInitedRole() {
+          GameEvent.emit(GameEvent.ON_INITED_OWNER);
+          var position = this.node.getWorldPosition();
+          PeerConnection.instance().sendPosition(position);
         };
 
         _proto.sendAction = function sendAction(action) {
@@ -2119,10 +2201,10 @@ System.register("chunks:///_virtual/RoleName.ts", ['./rollupPluginModLoBabelHelp
   };
 });
 
-System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './BaseRole.ts', './GlobalNode.ts', './UserInfo.ts', './PeerConnection.ts', './MyRole.ts'], function (exports) {
+System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './BaseRole.ts', './GlobalNode.ts', './UserInfo.ts', './MyRole.ts'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, cclegacy, _decorator, input, Input, instantiate, KeyCode, Component, GameEvent, MoveType, RotateType, GlobalNode, UserInfo, PeerConnection, MyRole;
+  var _inheritsLoose, cclegacy, _decorator, input, Input, instantiate, KeyCode, Component, GameEvent, MoveType, RotateType, GlobalNode, UserInfo, MyRole;
 
   return {
     setters: [function (module) {
@@ -2144,8 +2226,6 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
       GlobalNode = module.default;
     }, function (module) {
       UserInfo = module.default;
-    }, function (module) {
-      PeerConnection = module.default;
     }, function (module) {
       MyRole = module.MyRole;
     }],
@@ -2184,8 +2264,6 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
 
         _proto.initMyRole = function initMyRole() {
           this.newRole(UserInfo.id, UserInfo.role, "", UserInfo.initPos, "MyRole");
-          GameEvent.emit(GameEvent.ON_INIT_OWNER);
-          PeerConnection.instance().sendPosition(UserInfo.initPos);
         };
 
         _proto.onRoleLocation = function onRoleLocation(id, character, nickName, position) {
@@ -2194,7 +2272,7 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
         };
 
         _proto.newRole = function newRole(id, character, nickName, position, comName) {
-          var type = character == "0" ? "character_01" : "character_03";
+          var type = "character" + character;
           var role = GlobalNode.instance().node.getChildByName(type);
           var thisRole = instantiate(role);
           var gameRole = thisRole.addComponent(comName);
@@ -2206,6 +2284,7 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
           thisRole.layer = this.node.layer;
           thisRole.active = true;
           gameRole.updateName();
+          gameRole.onInitedRole();
         };
 
         _proto.onRoleOffline = function onRoleOffline(id) {
@@ -2328,71 +2407,10 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
   };
 });
 
-System.register("chunks:///_virtual/SelectScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './fairygui.mjs'], function (exports) {
+System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './Define.ts', './UserInfo.ts', './PeerConnection.ts', './fairygui.mjs', './MetaMask.ts', './TheConfig.ts'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, cclegacy, _decorator, Component, GRoot, UIPackage;
-
-  return {
-    setters: [function (module) {
-      _inheritsLoose = module.inheritsLoose;
-    }, function (module) {
-      cclegacy = module.cclegacy;
-      _decorator = module._decorator;
-      Component = module.Component;
-    }, function (module) {
-      GRoot = module.GRoot;
-      UIPackage = module.UIPackage;
-    }],
-    execute: function () {
-      var _dec, _class;
-
-      cclegacy._RF.push({}, "f6865kwf7pCvKOnKFyB86Jf", "SelectScene", undefined);
-
-      var ccclass = _decorator.ccclass,
-          property = _decorator.property;
-      var SelectScene = exports('SelectScene', (_dec = ccclass('SelectScene'), _dec(_class = /*#__PURE__*/function (_Component) {
-        _inheritsLoose(SelectScene, _Component);
-
-        function SelectScene() {
-          var _this;
-
-          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-          }
-
-          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-          _this._mainView = null;
-          return _this;
-        }
-
-        var _proto = SelectScene.prototype;
-
-        _proto.start = function start() {
-          console.log("SelectScene loading!");
-          GRoot.create();
-          UIPackage.loadPackage("ui/select", this.onLoadUI.bind(this));
-        };
-
-        _proto.onLoadUI = function onLoadUI(err) {
-          var view = UIPackage.createObject("select", "selectScene").asCom;
-          GRoot.inst.addChild(view);
-          view.makeFullScreen();
-          this._mainView = view;
-        };
-
-        return SelectScene;
-      }(Component)) || _class));
-
-      cclegacy._RF.pop();
-    }
-  };
-});
-
-System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './TheConfig.ts', './Define.ts', './UserInfo.ts', './PeerConnection.ts', './fairygui.mjs', './MetaMask.ts'], function (exports) {
-  'use strict';
-
-  var _inheritsLoose, cclegacy, _decorator, color, Component, GameEvent, TheConfig, Define, UserInfo, PeerConnection, GRoot, UIPackage, MetaMask;
+  var _inheritsLoose, cclegacy, _decorator, color, Component, GameEvent, Define, UserInfo, PeerConnection, GRoot, UIPackage, Event, MetaMask, TheConfig;
 
   return {
     setters: [function (module) {
@@ -2405,8 +2423,6 @@ System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHe
     }, function (module) {
       GameEvent = module.default;
     }, function (module) {
-      TheConfig = module.default;
-    }, function (module) {
       Define = module.default;
     }, function (module) {
       UserInfo = module.default;
@@ -2415,8 +2431,11 @@ System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHe
     }, function (module) {
       GRoot = module.GRoot;
       UIPackage = module.UIPackage;
+      Event = module.Event;
     }, function (module) {
       MetaMask = module.default;
+    }, function (module) {
+      TheConfig = module.default;
     }],
     execute: function () {
       var _dec, _class;
@@ -2453,69 +2472,44 @@ System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHe
           GRoot.inst.addChild(view);
           view.makeFullScreen();
           this._mainView = view;
-          view.getChild("goBtn").visible = false;
-          view.getChild("startBtn").visible = false;
-          view.getChild("selection").visible = false;
-          view.getChild("loading").visible = false;
-          this.schedule(this.onCheckMetaMask, 1);
+          var panel = view.getChild("rolePanel");
+          panel.getChild("enterBtn").onClick(this.onEnterGame, this);
+          var control = panel.getController("c1");
+          control.on(Event.STATUS_CHANGED, this.onChanged, this);
+          control.selectedIndex = Math.floor(Math.random() * 8);
           GameEvent.on(GameEvent.LOGIN_RESULT, this.onLoginResult, this);
-          view.getChild("startBtn").onClick(this.onStart, this);
         };
 
-        _proto.onDestroy = function onDestroy() {
-          console.log("StartScene onDestroy!");
+        _proto.onChanged = function onChanged() {
+          var panel = this._mainView.getChild("rolePanel");
+
+          var index = panel.getController("c1").selectedIndex;
+          var url = "ui://startScene/role" + index.toString();
+          panel.getChild("header").url = url;
         };
 
-        _proto.onStart = function onStart() {
-          console.log("StartScene onStart!");
-          this._mainView.getChild("startBtn").enabled = false;
+        _proto.onEnterGame = function onEnterGame() {
+          console.log("StartScene onEnterGame!");
 
-          var tips = this._mainView.getChild("tips");
+          var panel = this._mainView.getChild("rolePanel");
 
-          tips.text = "开始连接MetaMask..."; //this.onLoginResult(Define.ERR_SUCCESS);
-          //return;
-
+          panel.getChild("enterBtn").enabled = false;
+          var index = panel.getController("c1").selectedIndex;
+          panel.enabled = false;
+          UserInfo.role = index.toString();
           var thisSelf = this;
           var metaMask = new MetaMask();
           metaMask.connectMetaMask(this, function (result, response) {
             if (result == 1) {
-              //console.log("For testing, account change to=%s", response);
               console.log("Get MetaMask account=%s", response);
               UserInfo.account = response; //save the account;
 
               thisSelf.onGetAccount();
-            } else {
-              console.error("connect MetaMask failed for: %s", response);
-              tips.text = "连接MetaMask失败: " + response.message;
-            }
+            } else console.error("connect MetaMask failed for: %s", response.message);
           });
         };
 
         _proto.onGetAccount = function onGetAccount() {
-          var tips = this._mainView.getChild("tips");
-
-          tips.text = "请选择游戏角色";
-          this._mainView.getChild("startBtn").visible = false;
-
-          var goBtn = this._mainView.getChild("goBtn");
-
-          goBtn.onClick(this.startLogin, this);
-          this._mainView.getChild("selection").visible = true;
-          goBtn.visible = true;
-        };
-
-        _proto.startLogin = function startLogin() {
-          this._mainView.getChild("goBtn").visible = false;
-
-          var tips = this._mainView.getChild("tips");
-
-          tips.text = "登录游戏...";
-
-          var selection = this._mainView.getChild("selection");
-
-          selection.visible = false;
-          var index = selection.getController("select").selectedIndex;
-          UserInfo.role = index.toString();
           var peerConnection = PeerConnection.instance();
           peerConnection.login(TheConfig.httpUrl, TheConfig.wsUrl);
         };
@@ -2523,33 +2517,24 @@ System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHe
         _proto.onLoginResult = function onLoginResult(result, msg) {
           if (result == Define.ERR_SUCCESS) {
             console.log("StartScene --> 登录成功!");
-
-            var loading = this._mainView.getChild("loading");
-
-            loading.visible = true;
-            GameEvent.on(GameEvent.ON_LOADING_TIPS, this.onLoadingTips, this);
+            this._mainView.getChild("rolePanel").visible = false;
+            this._mainView.getChild("selectBk").visible = false;
             GameEvent.on(GameEvent.ON_LOADING_PROCESS, this.onLoadingProcess, this);
             GameEvent.emit(GameEvent.OPEN_MAIN_SCENE);
           } else {
-            //this._mainView.getChild<fgui.GButton>("startBtn").enabled = true;
-            console.log("StartScene --> 登录失败:%s", msg);
+            var panel = this._mainView.getChild("rolePanel");
 
-            var tips = this._mainView.getChild("tips");
-
-            tips.text = "登录游戏失败: " + msg;
+            panel.getChild("enterBtn").enabled = true;
+            panel.enabled = true;
+            console.log("SelectScene --> 登录失败:%s", msg);
           }
-        };
-
-        _proto.onLoadingTips = function onLoadingTips(tips) {
-          this._mainView.getChild("tips").text = tips;
         };
 
         _proto.onLoadingProcess = function onLoadingProcess(value) {
           value = Math.floor(value * 100);
           if (value > 100) value = 100;
-          console.log("loading main scene %d", value);
 
-          var loading = this._mainView.getChild("loading");
+          var loading = this._mainView.getChild("processBar");
 
           if (loading) loading.value = value;
         };

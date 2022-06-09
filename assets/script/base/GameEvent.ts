@@ -6,8 +6,8 @@ class MyEvent extends EventTarget{
 
     //system event define
     public ON_ROLE_LOCATION = "on_role_location";
-    public ON_ROLE_OFFLINE = "on_role_offline";
-    public ON_INIT_OWNER = "on_init_owner";
+    public ON_ROLE_OFFLINE = "on_role_offline";    
+    public ON_INITED_OWNER = "on_init_owner";
     public ON_SEND_CHAT_MSG = "on_send_chat_msg";
     public ON_CHAT_MESSAGE = "on_chat_message";
     public ON_ROLE_MOVING = "on_role_moving";
@@ -21,11 +21,11 @@ class MyEvent extends EventTarget{
 
     //switch event define
     public OPEN_MAIN_SCENE = "open_main_scene";
+    public OPEN_ROLE_SCENE = "open_role_scene";
 
     //message event define
     public LOGIN_RESULT = "login_result";
-    public GET_ROLE_RESULT = "get_role_result";
-    public LOGIN_ROLE_SCENE = "login_role_scene";
+    public GET_ROLE_RESULT = "get_role_result";    
 
     //message role define
     public ON_OWNER_INITED = "on_owner_inited";

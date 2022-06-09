@@ -17,7 +17,7 @@ export class RoleScene extends Component {
 
         GameEvent.on(GameEvent.ON_ROLE_LOCATION, this.onRoleLocation, this);
         GameEvent.on(GameEvent.ON_ROLE_OFFLINE, this.onRoleOffline, this);        
-        GameEvent.on(GameEvent.ON_ROLE_MOVING, this.onRoleMoving, this);
+        GameEvent.on(GameEvent.ON_ROLE_MOVING, this.onRoleMoving, this);        
 
         this.initMyRole();
 
@@ -26,11 +26,8 @@ export class RoleScene extends Component {
     }
 
     protected initMyRole(): void {
-
-        this.newRole(UserInfo.id, UserInfo.role, "", UserInfo.initPos, "MyRole");
-
-        GameEvent.emit(GameEvent.ON_INIT_OWNER);
-        PeerConnection.instance().sendPosition(UserInfo.initPos);
+        
+        this.newRole(UserInfo.id, UserInfo.role, "", UserInfo.initPos, "MyRole");        
     }
 
     protected onRoleLocation(id: string, character: string, nickName: string, position: Vec3): void {
@@ -42,7 +39,7 @@ export class RoleScene extends Component {
 
     protected newRole(id: string, character: string, nickName: string, position: Vec3, comName: string): void {
 
-        let type = (character == "0") ? "character_01" : "character_03";
+        let type = "character" + character;
         let role = GlobalNode.instance().node.getChildByName(type);        
         let thisRole = instantiate(role);
 
@@ -57,6 +54,7 @@ export class RoleScene extends Component {
         thisRole.layer = this.node.layer;
         thisRole.active = true;
         gameRole.updateName();
+        gameRole.onInitedRole();
     }
 
     protected onRoleOffline(id: string): void {

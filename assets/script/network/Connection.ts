@@ -31,7 +31,6 @@ export default abstract class Connection {
 
 	protected httpConnect(httpUrl: string, acount: string, caller: any, listener: Function): void{
 		
-		let thisSelf = this;
 		let xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = function () {
 			if (xhr.readyState == 4) {				

@@ -34,7 +34,7 @@
         "id": "1654164733612",
         "progress": 1,
         "state": "success",
-        "message": "2022-6-2 18:12 Build success in 33152 ms!",
+        "message": "2022-6-9 13:44 Build success in 43327 ms!",
         "options": {
           "name": "meatverse",
           "platform": "web-desktop",
@@ -55,11 +55,6 @@
             {
               "url": "db://assets/scenes/MainScene.scene",
               "uuid": "05f953bf-92b1-4173-a5f4-856c9b6142fa",
-              "inBundle": false
-            },
-            {
-              "url": "db://assets/scenes/SelectScene.scene",
-              "uuid": "9e91cb7a-e873-4609-9f6a-a7beb6e2a9d8",
               "inBundle": false
             },
             {
@@ -86,7 +81,7 @@
             }
           }
         },
-        "time": "2022-6-2 18:12",
+        "time": "2022-6-9 13:43",
         "dirty": false
       }
     }
