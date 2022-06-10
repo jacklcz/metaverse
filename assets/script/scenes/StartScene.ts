@@ -29,6 +29,7 @@ export class StartScene extends Component {
         
         let panel = view.getChild<fgui.GComponent>("rolePanel");
         panel.getChild("enterBtn").onClick(this.onEnterGame, this);
+        panel.getChild<fgui.GLoader>("header").url = "ui://startScene/role0";
 
         let control = panel.getController("c1");
         control.on(fgui.Event.STATUS_CHANGED, this.onChanged, this);

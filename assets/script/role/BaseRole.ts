@@ -39,7 +39,8 @@ export abstract class BaseRole extends Component {
     abstract set moving(value: number);
     abstract onMovingPrv(deltaTime: number): void;
     abstract onMoving(flag: boolean): void;
-    abstract onInitedRole(): void;    
+    abstract onUpdatedPosition(): void;
+    abstract onInitedRole(): void;
 
     public get roleID(): string{
         return this._roleID;
@@ -168,7 +169,7 @@ export abstract class BaseRole extends Component {
 
             let pos = this.node.getWorldPosition();            
             this.node.setWorldPosition(pos.add(offset));
-            //this.onUpdatePosition();
+            this.onUpdatedPosition();
         }
     }
 }

@@ -104,5 +104,9 @@ export class MyRole extends BaseRole {
         let startPos = this.node.getWorldPosition();            
         PeerConnection.instance().sendMoving(action, startPos, euler);        
     }
+
+    public onUpdatedPosition(): void {        
+        GameEvent.emit(GameEvent.ON_OWNER_POSITION);
+    }
 }
 

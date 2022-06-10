@@ -47,8 +47,7 @@ export class MainRoleCamera extends Component {
     private onInitMyRole(): void {
         this.target = MyRole.instance().node;
 
-        this.node.position = this.toPosition();        
-        //this.node.lookAt(this.target.worldPosition);
+        this.node.position = this.toPosition();
         this.node.lookAt(this.lookAt);
     }   
 
@@ -73,10 +72,7 @@ export class MainRoleCamera extends Component {
         let lookAt = this.lookAt;
         this.rotateAround(this.node, lookAt,  Vec3.UP, horizontal);
         this.rotateAround(this.node, lookAt, Vec3.RIGHT, vertical); 
-        //this.rotateAround(this.node, this.target.worldPosition,  Vec3.UP, horizontal);
-        //this.rotateAround(this.node, this.target.worldPosition, Vec3.RIGHT, vertical); 
         
-        //let targetPos = this.target.getWorldPosition();
         let cameraPos = this.node.getWorldPosition();        
         this._offset.y = Math.abs(cameraPos.y - lookAt.y);
     }
@@ -91,8 +87,7 @@ export class MainRoleCamera extends Component {
         Vec3.transformQuat(position, position, quat);
         Vec3.add(position, point, position);
 
-        let dir = v3();
-        //Vec3.subtract(dir, position, this.target.worldPosition);
+        let dir = v3();        
         Vec3.subtract(dir, position, this.lookAt);
         let rotation = new Quat();
         Quat.fromViewUp(rotation, dir.normalize(), Vec3.UP);
@@ -109,15 +104,14 @@ export class MainRoleCamera extends Component {
     
     private setFollowTrack(deltaTime: number = 0.1): void {
         let pos = this.toPosition();
-        this.node.position = VectorTool.SmoothDampV3(this.node.position, pos, this._velocity, this._moveSmooth, 100000, 0.02);
-        //this.node.lookAt(this.target.worldPosition);
+        this.node.position = VectorTool.SmoothDampV3(this.node.position, pos, this._velocity, this._moveSmooth, 100000, 0.02);        
         this.node.lookAt(this.lookAt);
     }
 
     private toPosition(): Vec3 {        
         let u = Vec3.multiplyScalar(new Vec3(), Vec3.UP, this.offset.y);
         let f = Vec3.multiplyScalar(new Vec3(), this.target.forward, this.offset.z);
-        let thePos = this.lookAt;//this.target.getPosition();
+        let thePos = this.lookAt;
         
         return Vec3.add(new Vec3(), thePos, u).add(f);
     }

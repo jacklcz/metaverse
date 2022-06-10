@@ -19,6 +19,10 @@ export class ChatFrame extends Node {
         this.onInitilize();
     }
 
+    public switchVisible(): void {
+        this._com.visible = !this._com.visible;
+    }
+
     protected onInitilize(): void {
         
         let handler: EventHandler = new EventHandler();
@@ -70,7 +74,7 @@ export class ChatFrame extends Node {
             text += this._messages[count];
         }
         
-        let msgList = this._com.getChild<fgui.GTextField>("msgList");
+        let msgList = this._com.getChild<fgui.GTextField>("msgList");        
         msgList.text = text;
     }
 }
