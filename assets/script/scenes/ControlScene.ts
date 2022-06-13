@@ -47,7 +47,7 @@ export default class ControlScene extends Component {
         view.getChild<fgui.GButton>("expressBtn").onClick(this.onExpFrame, this);
         view.getChild<fgui.GButton>("settingBtn").onClick(this.onSetFrame, this);
 
-        this.node.on(fgui.Event.TOUCH_BEGIN, this.mouseDown, this);        
+        this.node.on(fgui.Event.TOUCH_BEGIN, this.mouseDown, this);
         this.node.on(fgui.Event.TOUCH_END, this.mouseUp, this);
         this.node.on(fgui.Event.MOUSE_WHEEL, this.mouseWheel, this);
         fgui.GRoot.inst.on(fgui.Event.TOUCH_MOVE, this.mouseMove, this);
@@ -144,7 +144,6 @@ export default class ControlScene extends Component {
         frame.getChild<fgui.GTextField>("mapPosition").text = `${x.toString()},  ${y.toString()}`;
 
         x = x * 265 / 2280; y = y * 296 / 1620; y = 296 - y;
-
         if(x < 0) x = 0; if(x > 290) x = 290;
         if(y < 0) y = 0; if(y > 294) y = 294;
         

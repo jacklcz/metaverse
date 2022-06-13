@@ -298,7 +298,8 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
             Vec3.multiplyScalar(offset, forward, deltaTime);
             this.onMoving(false);
             var pos = this.node.getWorldPosition();
-            this.node.setWorldPosition(pos.add(offset)); //this.onUpdatePosition();
+            this.node.setWorldPosition(pos.add(offset));
+            this.onUpdatedPosition();
           }
         };
 
@@ -460,6 +461,8 @@ System.register("chunks:///_virtual/ChatFrame.ts", ['./rollupPluginModLoBabelHel
           _this = _Node.call(this) || this;
           _this._com = null;
           _this._messages = [];
+          _this._maxVisible = 8;
+          _this._offset = 0;
           _this._com = com;
 
           _this.onInitilize();
@@ -468,6 +471,10 @@ System.register("chunks:///_virtual/ChatFrame.ts", ['./rollupPluginModLoBabelHel
         }
 
         var _proto = ChatFrame.prototype;
+
+        _proto.switchVisible = function switchVisible() {
+          this._com.visible = !this._com.visible;
+        };
 
         _proto.onInitilize = function onInitilize() {
           var handler = new EventHandler();
@@ -481,9 +488,14 @@ System.register("chunks:///_virtual/ChatFrame.ts", ['./rollupPluginModLoBabelHel
 
           this._com.getChild("msgList").text = "";
 
-          var sendBtn = this._com.getChild("sendBtn");
+          this._com.getChild("sendBtn").onClick(this.onSendChat, this);
 
-          sendBtn.onClick(this.onSendChat, this);
+          this._com.getChild("upBtn").onClick(this.onUpMsg, this);
+
+          this._com.getChild("downBtn").onClick(this.onDownMsg, this);
+
+          this._com.getChild("lastBtn").onClick(this.onLastMsg, this);
+
           GameEvent.on(GameEvent.ON_SEND_CHAT_MSG, this.onSendChat, this);
           GameEvent.on(GameEvent.ON_CHAT_MESSAGE, this.onChatMessage, this);
         };
@@ -517,7 +529,7 @@ System.register("chunks:///_virtual/ChatFrame.ts", ['./rollupPluginModLoBabelHel
           var length = this._messages.length;
 
           if (length > 0) {
-            var count = length - 1;
+            var count = length - 1 - this._offset;
 
             for (var i = 0; i < count; i++) {
               text += this._messages[i] + "\n";
@@ -529,6 +541,25 @@ System.register("chunks:///_virtual/ChatFrame.ts", ['./rollupPluginModLoBabelHel
           var msgList = this._com.getChild("msgList");
 
           msgList.text = text;
+        };
+
+        _proto.onUpMsg = function onUpMsg() {
+          var length = this._messages.length;
+          if (length - this._offset <= this._maxVisible) return;
+          this._offset += 1;
+          this.updateMessage();
+        };
+
+        _proto.onDownMsg = function onDownMsg() {
+          if (this._offset <= 0) return;
+          this._offset -= 1;
+          this.updateMessage();
+        };
+
+        _proto.onLastMsg = function onLastMsg() {
+          if (this._offset <= 0) return;
+          this._offset = 0;
+          this.updateMessage();
         };
 
         return ChatFrame;
@@ -787,10 +818,10 @@ System.register("chunks:///_virtual/Connection.ts", ['./rollupPluginModLoBabelHe
   };
 });
 
-System.register("chunks:///_virtual/ControlScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './ChatFrame.ts', './fairygui.mjs'], function (exports) {
+System.register("chunks:///_virtual/ControlScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './UserInfo.ts', './ChatFrame.ts', './fairygui.mjs', './MyRole.ts', './GuideDlg.ts', './StartDlg.ts', './SettingDlg.ts'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, _createClass, cclegacy, _decorator, assetManager, v2, Component, ChatFrame, GRoot, UIPackage, Event;
+  var _inheritsLoose, _createClass, cclegacy, _decorator, assetManager, v2, v3, Quat, Component, GameEvent, UserInfo, ChatFrame, GRoot, UIPackage, Event, MyRole, GuideDlg, StartDlg, SettingDlg;
 
   return {
     setters: [function (module) {
@@ -801,13 +832,27 @@ System.register("chunks:///_virtual/ControlScene.ts", ['./rollupPluginModLoBabel
       _decorator = module._decorator;
       assetManager = module.assetManager;
       v2 = module.v2;
+      v3 = module.v3;
+      Quat = module.Quat;
       Component = module.Component;
+    }, function (module) {
+      GameEvent = module.default;
+    }, function (module) {
+      UserInfo = module.default;
     }, function (module) {
       ChatFrame = module.ChatFrame;
     }, function (module) {
       GRoot = module.GRoot;
       UIPackage = module.UIPackage;
       Event = module.Event;
+    }, function (module) {
+      MyRole = module.MyRole;
+    }, function (module) {
+      GuideDlg = module.GuideDlg;
+    }, function (module) {
+      StartDlg = module.StartDlg;
+    }, function (module) {
+      SettingDlg = module.SettingDlg;
     }],
     execute: function () {
       var _dec, _class;
@@ -854,12 +899,52 @@ System.register("chunks:///_virtual/ControlScene.ts", ['./rollupPluginModLoBabel
           GRoot.inst.addChild(view);
           view.makeFullScreen();
           this._mainView = view;
-          var frame = view.getChild("chat");
+          this.setRoleHeader();
+          view.getChild("expressFrame").visible = false;
+          var frame = view.getChild("chatFrame");
           this._chatFrame = new ChatFrame(frame);
+          view.getChild("messageBtn").onClick(this.onMsgFrame, this);
+          view.getChild("operaBtn").onClick(this.onOprFrame, this);
+          view.getChild("expressBtn").onClick(this.onExpFrame, this);
+          view.getChild("settingBtn").onClick(this.onSetFrame, this);
           this.node.on(Event.TOUCH_BEGIN, this.mouseDown, this);
           this.node.on(Event.TOUCH_END, this.mouseUp, this);
           this.node.on(Event.MOUSE_WHEEL, this.mouseWheel, this);
           GRoot.inst.on(Event.TOUCH_MOVE, this.mouseMove, this);
+          GameEvent.on(GameEvent.ON_OWNER_POSITION, this.onOwnerPosition, this);
+          this.onOwnerPosition();
+          this.showStartGuide();
+        };
+
+        _proto.setRoleHeader = function setRoleHeader() {
+          var header = this._mainView.getChild("roleHeader");
+
+          header.url = "ui://mainScene/role" + UserInfo.role;
+        };
+
+        _proto.onMsgFrame = function onMsgFrame() {
+          this._chatFrame.switchVisible();
+        };
+
+        _proto.onOprFrame = function onOprFrame() {
+          var dlg = new GuideDlg();
+          dlg.showDlg(this._mainView);
+        };
+
+        _proto.onExpFrame = function onExpFrame() {
+          var expFrame = this._mainView.getChild("expressFrame");
+
+          expFrame.visible = !expFrame.visible;
+        };
+
+        _proto.onSetFrame = function onSetFrame() {
+          var dlg = new SettingDlg();
+          dlg.showDlg(this._mainView);
+        };
+
+        _proto.showStartGuide = function showStartGuide() {
+          var dlg = new StartDlg();
+          dlg.showDlg(this._mainView);
         };
 
         _proto.isRootInput = function isRootInput() {
@@ -888,6 +973,32 @@ System.register("chunks:///_virtual/ControlScene.ts", ['./rollupPluginModLoBabel
         _proto.mouseWheel = function mouseWheel(e) {
           if (!this.isRootInput()) return;
           this.mainCamera.onMouseWheel(e.mouseWheelDelta);
+        };
+
+        _proto.onOwnerPosition = function onOwnerPosition() {
+          var myNode = MyRole.instance().node;
+          var euler = v3();
+          var rotation = new Quat();
+          myNode.getWorldRotation(rotation);
+          rotation.getEulerAngles(euler);
+          var pos = myNode.getWorldPosition();
+          var x = Math.floor(pos.x * 10 + 740);
+          var y = Math.abs(Math.floor(pos.z * 10 - 690));
+
+          var frame = this._mainView.getChild("mapFrame");
+
+          frame.getChild("mapPosition").text = x.toString() + ",  " + y.toString();
+          x = x * 265 / 2280;
+          y = y * 296 / 1620;
+          y = 296 - y;
+          if (x < 0) x = 0;
+          if (x > 290) x = 290;
+          if (y < 0) y = 0;
+          if (y > 294) y = 294;
+          var map = frame.getChild("roleMap");
+          var role = map.getChild("role");
+          role.setPosition(x, y);
+          role.rotation = -euler.y;
         };
 
         _createClass(ControlScene, [{
@@ -943,6 +1054,80 @@ System.register("chunks:///_virtual/Define.ts", ['cc'], function (exports) {
       }();
 
       var Define = exports('default', new _define());
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/Dialog.ts", ['cc', './fairygui.mjs'], function (exports) {
+  'use strict';
+
+  var cclegacy, _decorator, Window, UIPackage;
+
+  return {
+    setters: [function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+    }, function (module) {
+      Window = module.Window;
+      UIPackage = module.UIPackage;
+    }],
+    execute: function () {
+      var _dec, _class;
+
+      cclegacy._RF.push({}, "2912a0v13BAaJedP/KtylnF", "Dialog", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var Dialog = exports('default', (_dec = ccclass('Dialog'), _dec(_class = /*#__PURE__*/function () {
+        function Dialog() {
+          this._dlg = void 0;
+        }
+
+        var _proto = Dialog.prototype;
+
+        _proto.popupDlg = function popupDlg(mainView, dlgName, center) {
+          if (center === void 0) {
+            center = true;
+          }
+
+          this._dlg = new Window();
+          var dlg = UIPackage.createObject("mainScene", dlgName).asCom;
+          this._dlg.contentPane = dlg;
+          this.onInitDlg();
+          var thisSelf = this;
+          var btn = dlg.getChild("closeBtn");
+          btn.onClick(function () {
+            thisSelf._dlg.hide();
+
+            thisSelf._dlg.dispose();
+
+            dlg.dispose();
+          });
+          this._dlg.modal = true;
+
+          this._dlg.show();
+
+          this.onShowDlg(mainView, center);
+        };
+
+        _proto.onShowDlg = function onShowDlg(mainView, center) {
+          var view = this._dlg;
+          var pos = mainView.node.getPosition();
+          pos.x += (mainView.width - view.width) / 2;
+
+          if (center) {
+            pos.y += (mainView.height - view.height) / 2;
+          } else {
+            pos.y += mainView.height - view.height - 100;
+          }
+
+          view.setPosition(pos.x, pos.y);
+        };
+
+        return Dialog;
+      }()) || _class));
 
       cclegacy._RF.pop();
     }
@@ -1051,6 +1236,8 @@ System.register("chunks:///_virtual/GameRole.ts", ['./rollupPluginModLoBabelHelp
 
         _proto.onInitedRole = function onInitedRole() {};
 
+        _proto.onUpdatedPosition = function onUpdatedPosition() {};
+
         _createClass(GameRole, [{
           key: "moving",
           get: function get() {
@@ -1128,11 +1315,55 @@ System.register("chunks:///_virtual/GlobalNode.ts", ['./rollupPluginModLoBabelHe
   };
 });
 
-System.register("chunks:///_virtual/main", ['./GameEvent.ts', './AppMain.ts', './poliyfill.ts', './Utf8.ts', './main.ts', './Base64.ts', './Define.ts', './BaseRole.ts', './BuildScene.ts', './GlobalNode.ts', './proto.mjs_cjs=&original=.js', './UserInfo.ts', './Connection.ts', './PeerConnection.ts', './ChatFrame.ts', './ControlScene.ts', './GameRole.ts', './VectorTool.ts', './MyRole.ts', './MainRoleCamera.ts', './MainScene.ts', './MetaMask.ts', './Quaternion.ts', './RoleName.ts', './RoleScene.ts', './TheConfig.ts', './StartScene.ts', './ThirdPersonCamera.ts'], function () {
+System.register("chunks:///_virtual/GuideDlg.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Dialog.ts'], function (exports) {
+  'use strict';
+
+  var _inheritsLoose, cclegacy, _decorator, Dialog;
+
+  return {
+    setters: [function (module) {
+      _inheritsLoose = module.inheritsLoose;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+    }, function (module) {
+      Dialog = module.default;
+    }],
+    execute: function () {
+      var _dec, _class;
+
+      cclegacy._RF.push({}, "3cdaeq2a9ZENrfHJMrRpBZX", "GuideDlg", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var GuideDlg = exports('GuideDlg', (_dec = ccclass('GuideDlg'), _dec(_class = /*#__PURE__*/function (_Dialog) {
+        _inheritsLoose(GuideDlg, _Dialog);
+
+        function GuideDlg() {
+          return _Dialog.apply(this, arguments) || this;
+        }
+
+        var _proto = GuideDlg.prototype;
+
+        _proto.showDlg = function showDlg(mainView) {
+          _Dialog.prototype.popupDlg.call(this, mainView, "guideFrame");
+        };
+
+        _proto.onInitDlg = function onInitDlg() {};
+
+        return GuideDlg;
+      }(Dialog)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/main", ['./GameEvent.ts', './AppMain.ts', './poliyfill.ts', './Utf8.ts', './main.ts', './Base64.ts', './Define.ts', './BaseRole.ts', './BuildScene.ts', './GlobalNode.ts', './proto.mjs_cjs=&original=.js', './UserInfo.ts', './Connection.ts', './PeerConnection.ts', './ChatFrame.ts', './MyRole.ts', './Dialog.ts', './GuideDlg.ts', './StartDlg.ts', './SettingDlg.ts', './ControlScene.ts', './GameRole.ts', './VectorTool.ts', './MainRoleCamera.ts', './MainScene.ts', './MetaMask.ts', './Quaternion.ts', './RoleName.ts', './RoleScene.ts', './TheConfig.ts', './StartScene.ts', './ThirdPersonCamera.ts'], function () {
   'use strict';
 
   return {
-    setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+    setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
     execute: function () {}
   };
 });
@@ -1359,10 +1590,10 @@ System.register("chunks:///_virtual/main.ts", ['cc', './poliyfill.ts'], function
   };
 });
 
-System.register("chunks:///_virtual/MainRoleCamera.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './VectorTool.ts', './MyRole.ts'], function (exports) {
+System.register("chunks:///_virtual/MainRoleCamera.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './MyRole.ts', './VectorTool.ts'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, _createClass, cclegacy, _decorator, input, Input, KeyCode, Vec3, Quat, v3, Component, GameEvent, VectorTool, MyRole;
+  var _inheritsLoose, _createClass, cclegacy, _decorator, input, Input, KeyCode, Vec3, Quat, v3, Component, GameEvent, MyRole, VectorTool;
 
   return {
     setters: [function (module) {
@@ -1381,9 +1612,9 @@ System.register("chunks:///_virtual/MainRoleCamera.ts", ['./rollupPluginModLoBab
     }, function (module) {
       GameEvent = module.default;
     }, function (module) {
-      VectorTool = module.VectorTool;
-    }, function (module) {
       MyRole = module.MyRole;
+    }, function (module) {
+      VectorTool = module.VectorTool;
     }],
     execute: function () {
       var _dec, _class;
@@ -1432,8 +1663,7 @@ System.register("chunks:///_virtual/MainRoleCamera.ts", ['./rollupPluginModLoBab
 
         _proto.onInitMyRole = function onInitMyRole() {
           this.target = MyRole.instance().node;
-          this.node.position = this.toPosition(); //this.node.lookAt(this.target.worldPosition);
-
+          this.node.position = this.toPosition();
           this.node.lookAt(this.lookAt);
         };
 
@@ -1454,10 +1684,7 @@ System.register("chunks:///_virtual/MainRoleCamera.ts", ['./rollupPluginModLoBab
           var vertical = delta.y * speed;
           var lookAt = this.lookAt;
           this.rotateAround(this.node, lookAt, Vec3.UP, horizontal);
-          this.rotateAround(this.node, lookAt, Vec3.RIGHT, vertical); //this.rotateAround(this.node, this.target.worldPosition,  Vec3.UP, horizontal);
-          //this.rotateAround(this.node, this.target.worldPosition, Vec3.RIGHT, vertical); 
-          //let targetPos = this.target.getWorldPosition();
-
+          this.rotateAround(this.node, lookAt, Vec3.RIGHT, vertical);
           var cameraPos = this.node.getWorldPosition();
           this._offset.y = Math.abs(cameraPos.y - lookAt.y);
         };
@@ -1469,8 +1696,7 @@ System.register("chunks:///_virtual/MainRoleCamera.ts", ['./rollupPluginModLoBab
           Vec3.subtract(position, node.worldPosition, point);
           Vec3.transformQuat(position, position, quat);
           Vec3.add(position, point, position);
-          var dir = v3(); //Vec3.subtract(dir, position, this.target.worldPosition);
-
+          var dir = v3();
           Vec3.subtract(dir, position, this.lookAt);
           var rotation = new Quat();
           Quat.fromViewUp(rotation, dir.normalize(), Vec3.UP);
@@ -1487,16 +1713,14 @@ System.register("chunks:///_virtual/MainRoleCamera.ts", ['./rollupPluginModLoBab
 
         _proto.setFollowTrack = function setFollowTrack(deltaTime) {
           var pos = this.toPosition();
-          this.node.position = VectorTool.SmoothDampV3(this.node.position, pos, this._velocity, this._moveSmooth, 100000, 0.02); //this.node.lookAt(this.target.worldPosition);
-
+          this.node.position = VectorTool.SmoothDampV3(this.node.position, pos, this._velocity, this._moveSmooth, 100000, 0.02);
           this.node.lookAt(this.lookAt);
         };
 
         _proto.toPosition = function toPosition() {
           var u = Vec3.multiplyScalar(new Vec3(), Vec3.UP, this.offset.y);
           var f = Vec3.multiplyScalar(new Vec3(), this.target.forward, this.offset.z);
-          var thePos = this.lookAt; //this.target.getPosition();
-
+          var thePos = this.lookAt;
           return Vec3.add(new Vec3(), thePos, u).add(f);
         };
 
@@ -1750,6 +1974,10 @@ System.register("chunks:///_virtual/MyRole.ts", ['./rollupPluginModLoBabelHelper
           if (this.moveType != 0) action |= 0x10000;
           var startPos = this.node.getWorldPosition();
           PeerConnection.instance().sendMoving(action, startPos, euler);
+        };
+
+        _proto.onUpdatedPosition = function onUpdatedPosition() {
+          GameEvent.emit(GameEvent.ON_OWNER_POSITION);
         };
 
         _createClass(MyRole, [{
@@ -2407,6 +2635,94 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
   };
 });
 
+System.register("chunks:///_virtual/SettingDlg.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Dialog.ts'], function (exports) {
+  'use strict';
+
+  var _inheritsLoose, cclegacy, _decorator, Dialog;
+
+  return {
+    setters: [function (module) {
+      _inheritsLoose = module.inheritsLoose;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+    }, function (module) {
+      Dialog = module.default;
+    }],
+    execute: function () {
+      var _dec, _class;
+
+      cclegacy._RF.push({}, "14e6awaLj9Lv5u0NJV08hci", "SettingDlg", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var SettingDlg = exports('SettingDlg', (_dec = ccclass('SettingDlg'), _dec(_class = /*#__PURE__*/function (_Dialog) {
+        _inheritsLoose(SettingDlg, _Dialog);
+
+        function SettingDlg() {
+          return _Dialog.apply(this, arguments) || this;
+        }
+
+        var _proto = SettingDlg.prototype;
+
+        _proto.showDlg = function showDlg(mainView) {
+          _Dialog.prototype.popupDlg.call(this, mainView, "setFrame");
+        };
+
+        _proto.onInitDlg = function onInitDlg() {};
+
+        return SettingDlg;
+      }(Dialog)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/StartDlg.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Dialog.ts'], function (exports) {
+  'use strict';
+
+  var _inheritsLoose, cclegacy, _decorator, Dialog;
+
+  return {
+    setters: [function (module) {
+      _inheritsLoose = module.inheritsLoose;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+    }, function (module) {
+      Dialog = module.default;
+    }],
+    execute: function () {
+      var _dec, _class;
+
+      cclegacy._RF.push({}, "98e0afE3ABC3IQY+JGhrwFW", "StartDlg", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var StartDlg = exports('StartDlg', (_dec = ccclass('StartDlg'), _dec(_class = /*#__PURE__*/function (_Dialog) {
+        _inheritsLoose(StartDlg, _Dialog);
+
+        function StartDlg() {
+          return _Dialog.apply(this, arguments) || this;
+        }
+
+        var _proto = StartDlg.prototype;
+
+        _proto.showDlg = function showDlg(mainView) {
+          _Dialog.prototype.popupDlg.call(this, mainView, "guideStart", false);
+        };
+
+        _proto.onInitDlg = function onInitDlg() {};
+
+        return StartDlg;
+      }(Dialog)) || _class));
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
 System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './Define.ts', './UserInfo.ts', './PeerConnection.ts', './fairygui.mjs', './MetaMask.ts', './TheConfig.ts'], function (exports) {
   'use strict';
 
@@ -2474,6 +2790,7 @@ System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHe
           this._mainView = view;
           var panel = view.getChild("rolePanel");
           panel.getChild("enterBtn").onClick(this.onEnterGame, this);
+          panel.getChild("header").url = "ui://startScene/role0";
           var control = panel.getController("c1");
           control.on(Event.STATUS_CHANGED, this.onChanged, this);
           control.selectedIndex = Math.floor(Math.random() * 8);
@@ -2655,10 +2972,10 @@ System.register("chunks:///_virtual/TheConfig.ts", ['cc'], function (exports) {
   };
 });
 
-System.register("chunks:///_virtual/ThirdPersonCamera.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './VectorTool.ts', './MyRole.ts', './Quaternion.ts'], function (exports) {
+System.register("chunks:///_virtual/ThirdPersonCamera.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './MyRole.ts', './VectorTool.ts', './Quaternion.ts'], function (exports) {
   'use strict';
 
-  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _createClass, cclegacy, _decorator, Node, Enum, Vec3, Quat, Component, GameEvent, VectorTool, MyRole, Quaternion;
+  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _createClass, cclegacy, _decorator, Node, Enum, Vec3, Quat, Component, GameEvent, MyRole, VectorTool, Quaternion;
 
   return {
     setters: [function (module) {
@@ -2678,9 +2995,9 @@ System.register("chunks:///_virtual/ThirdPersonCamera.ts", ['./rollupPluginModLo
     }, function (module) {
       GameEvent = module.default;
     }, function (module) {
-      VectorTool = module.VectorTool;
-    }, function (module) {
       MyRole = module.MyRole;
+    }, function (module) {
+      VectorTool = module.VectorTool;
     }, function (module) {
       Quaternion = module.Quaternion;
     }],
