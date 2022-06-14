@@ -143,9 +143,9 @@ export default class ControlScene extends Component {
         let frame = this._mainView.getChild<fgui.GComponent>("mapFrame");
         frame.getChild<fgui.GTextField>("mapPosition").text = `${x.toString()},  ${y.toString()}`;
 
-        x = x * 265 / 2280; y = y * 296 / 1620; y = 296 - y;
-        if(x < 0) x = 0; if(x > 290) x = 290;
-        if(y < 0) y = 0; if(y > 294) y = 294;
+        x = x * 240 / 2280; y = y * 240 / 1620; y = 240 - y;
+        if(x < 0) x = 0; if(x > 240) x = 240;
+        if(y < 0) y = 0; if(y > 240) y = 240;
         
         let map = frame.getChild<fgui.GComponent>("roleMap");
         let role = map.getChild<fgui.GObject>("role");        

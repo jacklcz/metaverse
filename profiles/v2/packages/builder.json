@@ -12,11 +12,6 @@
         "inBundle": false
       },
       {
-        "url": "db://assets/scenes/SelectScene.scene",
-        "uuid": "9e91cb7a-e873-4609-9f6a-a7beb6e2a9d8",
-        "inBundle": false
-      },
-      {
         "url": "db://assets/scenes/StartScene.scene",
         "uuid": "ce0cdef9-0155-4399-a84b-b1afe09187d5",
         "inBundle": false
@@ -30,11 +25,11 @@
   },
   "BuildTaskManager": {
     "taskMap": {
-      "1654756105520": {
-        "id": "1654756105520",
+      "1655185645514": {
+        "id": "1655185645514",
         "progress": 1,
         "state": "success",
-        "message": "2022-6-13 09:44 Build success in 37347 ms!",
+        "message": "2022-6-14 13:52 Build success in 39091 ms!",
         "options": {
           "name": "meatverse",
           "platform": "web-desktop",
@@ -81,7 +76,7 @@
             }
           }
         },
-        "time": "2022-6-13 09:43",
+        "time": "2022-6-14 13:51",
         "dirty": false
       }
     }

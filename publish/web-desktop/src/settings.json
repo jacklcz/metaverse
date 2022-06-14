@@ -2,8 +2,8 @@
     "debug": true,
     "CocosEngine": "3.5.0",
     "designResolution": {
-        "width": 1950,
-        "height": 900,
+        "width": 1920,
+        "height": 1080,
         "policy": 3
     },
     "platform": "web-desktop",

@@ -12,7 +12,7 @@ export class ChatFrame extends Node {
         
     protected _com: fgui.GComponent = null;
     protected _messages: string[] = [];
-    protected _maxVisible: number = 8;
+    protected _maxVisible: number = 6;
     protected _offset: number = 0;
 
     constructor(com: fgui.GComponent) {
@@ -43,6 +43,8 @@ export class ChatFrame extends Node {
 
         GameEvent.on(GameEvent.ON_SEND_CHAT_MSG, this.onSendChat, this);
         GameEvent.on(GameEvent.ON_CHAT_MESSAGE, this.onChatMessage, this);
+
+        this._com.visible = false;
     }    
 
     protected onSendChat(): void {

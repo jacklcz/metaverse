@@ -23,7 +23,7 @@ export default abstract class Dialog {
             thisSelf._dlg.hide();
             thisSelf._dlg.dispose();
             dlg.dispose();
-        });
+        }, this);
         
         this._dlg.modal = true;
         this._dlg.show();        
@@ -38,7 +38,7 @@ export default abstract class Dialog {
             pos.y += (mainView.height - view.height) / 2;
         }
         else {
-            pos.y += mainView.height - view.height - 100;
+            pos.y += mainView.height - view.height;
         }
         view.setPosition(pos.x, pos.y);
     }

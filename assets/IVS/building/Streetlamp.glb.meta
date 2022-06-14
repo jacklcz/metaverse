@@ -1,0 +1,258 @@
+{
+  "ver": "2.1.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "92d99525-ccc4-4881-b06e-7096ee0a9b57",
+  "files": [],
+  "subMetas": {
+    "3a896": {
+      "importer": "gltf-mesh",
+      "uuid": "92d99525-ccc4-4881-b06e-7096ee0a9b57@3a896",
+      "displayName": "",
+      "id": "3a896",
+      "name": "SM_Prop_Streetlamp_02.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "4a910": {
+      "importer": "gltf-mesh",
+      "uuid": "92d99525-ccc4-4881-b06e-7096ee0a9b57@4a910",
+      "displayName": "",
+      "id": "4a910",
+      "name": "SM_Prop_StreetSign_Pole_01.mesh",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e64d9": {
+      "importer": "gltf-mesh",
+      "uuid": "92d99525-ccc4-4881-b06e-7096ee0a9b57@e64d9",
+      "displayName": "",
+      "id": "e64d9",
+      "name": "SM_Prop_Streetlamp_01.mesh",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "411a8": {
+      "importer": "gltf-mesh",
+      "uuid": "92d99525-ccc4-4881-b06e-7096ee0a9b57@411a8",
+      "displayName": "",
+      "id": "411a8",
+      "name": "SM_Prop_StreetSign_01.mesh",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "63fcb": {
+      "importer": "gltf-mesh",
+      "uuid": "92d99525-ccc4-4881-b06e-7096ee0a9b57@63fcb",
+      "displayName": "",
+      "id": "63fcb",
+      "name": "SM_Prop_StreetSign_04.mesh",
+      "userData": {
+        "gltfIndex": 4
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5135d": {
+      "importer": "gltf-mesh",
+      "uuid": "92d99525-ccc4-4881-b06e-7096ee0a9b57@5135d",
+      "displayName": "",
+      "id": "5135d",
+      "name": "SM_Prop_StreetSign_02.mesh",
+      "userData": {
+        "gltfIndex": 5
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6463d": {
+      "importer": "gltf-embeded-image",
+      "uuid": "92d99525-ccc4-4881-b06e-7096ee0a9b57@6463d",
+      "displayName": "",
+      "id": "6463d",
+      "name": "PolygonTown_Texture_01_A.jpg.image",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "95f05": {
+      "importer": "gltf-embeded-image",
+      "uuid": "92d99525-ccc4-4881-b06e-7096ee0a9b57@95f05",
+      "displayName": "",
+      "id": "95f05",
+      "name": "PolygonTown_Texture_Metallic.jpg.image",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "3effa": {
+      "importer": "texture",
+      "uuid": "92d99525-ccc4-4881-b06e-7096ee0a9b57@3effa",
+      "displayName": "",
+      "id": "3effa",
+      "name": "UnnamedTexture-0.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "92d99525-ccc4-4881-b06e-7096ee0a9b57@6463d"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "221a5": {
+      "importer": "texture",
+      "uuid": "92d99525-ccc4-4881-b06e-7096ee0a9b57@221a5",
+      "displayName": "",
+      "id": "221a5",
+      "name": "UnnamedTexture-1.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "92d99525-ccc4-4881-b06e-7096ee0a9b57@95f05"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f77f7": {
+      "importer": "gltf-material",
+      "uuid": "92d99525-ccc4-4881-b06e-7096ee0a9b57@f77f7",
+      "displayName": "",
+      "id": "f77f7",
+      "name": "PolygonTown_01_A.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "185bf": {
+      "importer": "gltf-scene",
+      "uuid": "92d99525-ccc4-4881-b06e-7096ee0a9b57@185bf",
+      "displayName": "",
+      "id": "185bf",
+      "name": "Streetlamp.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "PolygonTown_Texture_01_A.jpg",
+        "uri": "92d99525-ccc4-4881-b06e-7096ee0a9b57@6463d"
+      },
+      {
+        "name": "PolygonTown_Texture_Metallic.jpg",
+        "uri": "92d99525-ccc4-4881-b06e-7096ee0a9b57@95f05"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "redirect": "92d99525-ccc4-4881-b06e-7096ee0a9b57@185bf",
+    "assetFinder": {
+      "meshes": [
+        "92d99525-ccc4-4881-b06e-7096ee0a9b57@3a896",
+        "92d99525-ccc4-4881-b06e-7096ee0a9b57@4a910",
+        "92d99525-ccc4-4881-b06e-7096ee0a9b57@e64d9",
+        "92d99525-ccc4-4881-b06e-7096ee0a9b57@411a8",
+        "92d99525-ccc4-4881-b06e-7096ee0a9b57@63fcb",
+        "92d99525-ccc4-4881-b06e-7096ee0a9b57@5135d"
+      ],
+      "skeletons": [],
+      "textures": [
+        "92d99525-ccc4-4881-b06e-7096ee0a9b57@3effa",
+        "92d99525-ccc4-4881-b06e-7096ee0a9b57@221a5"
+      ],
+      "materials": [
+        "92d99525-ccc4-4881-b06e-7096ee0a9b57@f77f7"
+      ],
+      "scenes": [
+        "92d99525-ccc4-4881-b06e-7096ee0a9b57@185bf"
+      ]
+    }
+  }
+}

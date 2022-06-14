@@ -1,0 +1,868 @@
+{
+  "ver": "2.1.14",
+  "importer": "gltf",
+  "imported": true,
+  "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab",
+  "files": [],
+  "subMetas": {
+    "9666c": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@9666c",
+      "displayName": "",
+      "id": "9666c",
+      "name": "SM_Item_Drink_01.mesh",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "8e537": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@8e537",
+      "displayName": "",
+      "id": "8e537",
+      "name": "SM_Item_Drink_02.mesh",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "08c68": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@08c68",
+      "displayName": "",
+      "id": "08c68",
+      "name": "Plane.mesh",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c69f7": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@c69f7",
+      "displayName": "",
+      "id": "c69f7",
+      "name": "SM_Env_Road_Parking_01.mesh",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e6681": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@e6681",
+      "displayName": "",
+      "id": "e6681",
+      "name": "SM_Env_Sidewalk_Corner_01.mesh",
+      "userData": {
+        "gltfIndex": 4
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "01ad9": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@01ad9",
+      "displayName": "",
+      "id": "01ad9",
+      "name": "SM_Env_Sidewalk_Corner_End_01.mesh",
+      "userData": {
+        "gltfIndex": 5
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0eca6": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@0eca6",
+      "displayName": "",
+      "id": "0eca6",
+      "name": "SM_Env_Sidewalk_Straight_01.mesh",
+      "userData": {
+        "gltfIndex": 6
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d6750": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@d6750",
+      "displayName": "",
+      "id": "d6750",
+      "name": "SM_Env_Sidewalk_Straight_02.mesh",
+      "userData": {
+        "gltfIndex": 7
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "719f8": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@719f8",
+      "displayName": "",
+      "id": "719f8",
+      "name": "SM_Env_Road_Corner_End_02.mesh",
+      "userData": {
+        "gltfIndex": 8
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "4ed0f": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@4ed0f",
+      "displayName": "",
+      "id": "4ed0f",
+      "name": "SM_Env_Sidewalk_Corner_End_02.mesh",
+      "userData": {
+        "gltfIndex": 9
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "09209": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@09209",
+      "displayName": "",
+      "id": "09209",
+      "name": "SM_Env_Road_01.mesh",
+      "userData": {
+        "gltfIndex": 10
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6d810": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@6d810",
+      "displayName": "",
+      "id": "6d810",
+      "name": "SM_Env_Sidewalk_Straight_03.mesh",
+      "userData": {
+        "gltfIndex": 11
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "5127b": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@5127b",
+      "displayName": "",
+      "id": "5127b",
+      "name": "SM_Env_Sidewalk_Corner_End_03.mesh",
+      "userData": {
+        "gltfIndex": 12
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "b875f": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@b875f",
+      "displayName": "",
+      "id": "b875f",
+      "name": "SM_Env_Road_Crossing_02.mesh",
+      "userData": {
+        "gltfIndex": 13
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0a1d1": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@0a1d1",
+      "displayName": "",
+      "id": "0a1d1",
+      "name": "SM_Env_Sidewalk_Corner_04.mesh",
+      "userData": {
+        "gltfIndex": 14
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "40d43": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@40d43",
+      "displayName": "",
+      "id": "40d43",
+      "name": "SM_Env_Sidewalk_Straight_Path_01.mesh",
+      "userData": {
+        "gltfIndex": 15
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "60a1c": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@60a1c",
+      "displayName": "",
+      "id": "60a1c",
+      "name": "SM_Env_Path_01.mesh",
+      "userData": {
+        "gltfIndex": 16
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "cde4f": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@cde4f",
+      "displayName": "",
+      "id": "cde4f",
+      "name": "SM_Env_Sidewalk_Driveway_Wide_01.mesh",
+      "userData": {
+        "gltfIndex": 17
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "684b2": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@684b2",
+      "displayName": "",
+      "id": "684b2",
+      "name": "SM_Env_Grass_01.mesh",
+      "userData": {
+        "gltfIndex": 18
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0ccb1": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@0ccb1",
+      "displayName": "",
+      "id": "0ccb1",
+      "name": "SM_Env_Driveway_Wide_01.mesh",
+      "userData": {
+        "gltfIndex": 19
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "c03e4": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@c03e4",
+      "displayName": "",
+      "id": "c03e4",
+      "name": "SM_Env_Driveway_Wide_PathRight_01.mesh",
+      "userData": {
+        "gltfIndex": 20
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "885e8": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@885e8",
+      "displayName": "",
+      "id": "885e8",
+      "name": "SM_Bld_House_Interior_Floor_01.mesh",
+      "userData": {
+        "gltfIndex": 21
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "683d1": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@683d1",
+      "displayName": "",
+      "id": "683d1",
+      "name": "SM_Env_Sidewalk_Corner_02.mesh",
+      "userData": {
+        "gltfIndex": 22
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0a576": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@0a576",
+      "displayName": "",
+      "id": "0a576",
+      "name": "SM_Env_Sidewalk_Corner_03.mesh",
+      "userData": {
+        "gltfIndex": 23
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f8c5a": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@f8c5a",
+      "displayName": "",
+      "id": "f8c5a",
+      "name": "SM_Env_Sidewalk_Crossing_01.mesh",
+      "userData": {
+        "gltfIndex": 24
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "1b083": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@1b083",
+      "displayName": "",
+      "id": "1b083",
+      "name": "SM_Env_Concrete_Base_01.mesh",
+      "userData": {
+        "gltfIndex": 25
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "4ee56": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@4ee56",
+      "displayName": "",
+      "id": "4ee56",
+      "name": "SM_Generic_Mountains_Snow_01.mesh",
+      "userData": {
+        "gltfIndex": 26
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0927a": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@0927a",
+      "displayName": "",
+      "id": "0927a",
+      "name": "SM_Env_Sidewalk_Crossing_02.mesh",
+      "userData": {
+        "gltfIndex": 27
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d14d2": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@d14d2",
+      "displayName": "",
+      "id": "d14d2",
+      "name": "SM_Generic_Ground_03.mesh",
+      "userData": {
+        "gltfIndex": 28
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0510b": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@0510b",
+      "displayName": "",
+      "id": "0510b",
+      "name": "SM_Generic_Ground_04.mesh",
+      "userData": {
+        "gltfIndex": 29
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9ea44": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@9ea44",
+      "displayName": "",
+      "id": "9ea44",
+      "name": "SM_Generic_Mountains_Grass_01.mesh",
+      "userData": {
+        "gltfIndex": 30
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f9737": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@f9737",
+      "displayName": "",
+      "id": "f9737",
+      "name": "SM_Generic_Mountains_Grass_02.mesh",
+      "userData": {
+        "gltfIndex": 31
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "38d21": {
+      "importer": "gltf-mesh",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@38d21",
+      "displayName": "",
+      "id": "38d21",
+      "name": "SM_Env_Road_Crossing_01.mesh",
+      "userData": {
+        "gltfIndex": 32
+      },
+      "ver": "1.1.0",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "6463d": {
+      "importer": "gltf-embeded-image",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@6463d",
+      "displayName": "",
+      "id": "6463d",
+      "name": "PolygonTown_Texture_01_A.jpg.image",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "95f05": {
+      "importer": "gltf-embeded-image",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@95f05",
+      "displayName": "",
+      "id": "95f05",
+      "name": "PolygonTown_Texture_Metallic.jpg.image",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "d94e6": {
+      "importer": "gltf-embeded-image",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@d94e6",
+      "displayName": "",
+      "id": "d94e6",
+      "name": "PolygonTown_Road_Normal.png.image",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".png",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "fad87": {
+      "importer": "gltf-embeded-image",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@fad87",
+      "displayName": "",
+      "id": "fad87",
+      "name": "PolygonTown_Road_01.jpg.image",
+      "userData": {
+        "gltfIndex": 3
+      },
+      "ver": "1.0.3",
+      "imported": true,
+      "files": [
+        ".jpg",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "3effa": {
+      "importer": "texture",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@3effa",
+      "displayName": "",
+      "id": "3effa",
+      "name": "UnnamedTexture-0.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "71393c54-f616-4bc5-bcdf-7baddfb4acab@6463d"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "221a5": {
+      "importer": "texture",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@221a5",
+      "displayName": "",
+      "id": "221a5",
+      "name": "UnnamedTexture-1.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "71393c54-f616-4bc5-bcdf-7baddfb4acab@95f05"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "0089c": {
+      "importer": "texture",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@0089c",
+      "displayName": "",
+      "id": "0089c",
+      "name": "UnnamedTexture-2.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "71393c54-f616-4bc5-bcdf-7baddfb4acab@d94e6"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "9b633": {
+      "importer": "texture",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@9b633",
+      "displayName": "",
+      "id": "9b633",
+      "name": "UnnamedTexture-3.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": true,
+        "imageUuidOrDatabaseUri": "71393c54-f616-4bc5-bcdf-7baddfb4acab@fad87"
+      },
+      "ver": "1.0.21",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f77f7": {
+      "importer": "gltf-material",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@f77f7",
+      "displayName": "",
+      "id": "f77f7",
+      "name": "PolygonTown_01_A.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "e59fc": {
+      "importer": "gltf-material",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@e59fc",
+      "displayName": "",
+      "id": "e59fc",
+      "name": "Default-Material.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "42c4f": {
+      "importer": "gltf-material",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@42c4f",
+      "displayName": "",
+      "id": "42c4f",
+      "name": "PolygonTown_Road.material",
+      "userData": {
+        "gltfIndex": 2
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "fdd69": {
+      "importer": "gltf-scene",
+      "uuid": "71393c54-f616-4bc5-bcdf-7baddfb4acab@fdd69",
+      "displayName": "",
+      "id": "fdd69",
+      "name": "Land.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "PolygonTown_Texture_01_A.jpg",
+        "uri": "71393c54-f616-4bc5-bcdf-7baddfb4acab@6463d"
+      },
+      {
+        "name": "PolygonTown_Texture_Metallic.jpg",
+        "uri": "71393c54-f616-4bc5-bcdf-7baddfb4acab@95f05"
+      },
+      {
+        "name": "PolygonTown_Road_Normal.png",
+        "uri": "71393c54-f616-4bc5-bcdf-7baddfb4acab@d94e6"
+      },
+      {
+        "name": "PolygonTown_Road_01.jpg",
+        "uri": "71393c54-f616-4bc5-bcdf-7baddfb4acab@fad87"
+      }
+    ],
+    "legacyFbxImporter": false,
+    "redirect": "71393c54-f616-4bc5-bcdf-7baddfb4acab@fdd69",
+    "assetFinder": {
+      "meshes": [
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@9666c",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@8e537",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@08c68",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@c69f7",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@e6681",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@01ad9",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@0eca6",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@d6750",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@719f8",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@4ed0f",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@09209",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@6d810",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@5127b",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@b875f",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@0a1d1",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@40d43",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@60a1c",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@cde4f",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@684b2",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@0ccb1",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@c03e4",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@885e8",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@683d1",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@0a576",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@f8c5a",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@1b083",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@4ee56",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@0927a",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@d14d2",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@0510b",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@9ea44",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@f9737",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@38d21"
+      ],
+      "skeletons": [],
+      "textures": [
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@3effa",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@221a5",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@0089c",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@9b633"
+      ],
+      "materials": [
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@f77f7",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@e59fc",
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@42c4f"
+      ],
+      "scenes": [
+        "71393c54-f616-4bc5-bcdf-7baddfb4acab@fdd69"
+      ]
+    }
+  }
+}

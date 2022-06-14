@@ -461,7 +461,7 @@ System.register("chunks:///_virtual/ChatFrame.ts", ['./rollupPluginModLoBabelHel
           _this = _Node.call(this) || this;
           _this._com = null;
           _this._messages = [];
-          _this._maxVisible = 8;
+          _this._maxVisible = 6;
           _this._offset = 0;
           _this._com = com;
 
@@ -498,6 +498,7 @@ System.register("chunks:///_virtual/ChatFrame.ts", ['./rollupPluginModLoBabelHel
 
           GameEvent.on(GameEvent.ON_SEND_CHAT_MSG, this.onSendChat, this);
           GameEvent.on(GameEvent.ON_CHAT_MESSAGE, this.onChatMessage, this);
+          this._com.visible = false;
         };
 
         _proto.onSendChat = function onSendChat() {
@@ -988,13 +989,13 @@ System.register("chunks:///_virtual/ControlScene.ts", ['./rollupPluginModLoBabel
           var frame = this._mainView.getChild("mapFrame");
 
           frame.getChild("mapPosition").text = x.toString() + ",  " + y.toString();
-          x = x * 265 / 2280;
-          y = y * 296 / 1620;
-          y = 296 - y;
+          x = x * 240 / 2280;
+          y = y * 240 / 1620;
+          y = 240 - y;
           if (x < 0) x = 0;
-          if (x > 290) x = 290;
+          if (x > 240) x = 240;
           if (y < 0) y = 0;
-          if (y > 294) y = 294;
+          if (y > 240) y = 240;
           var map = frame.getChild("roleMap");
           var role = map.getChild("role");
           role.setPosition(x, y);
@@ -1104,7 +1105,7 @@ System.register("chunks:///_virtual/Dialog.ts", ['cc', './fairygui.mjs'], functi
             thisSelf._dlg.dispose();
 
             dlg.dispose();
-          });
+          }, this);
           this._dlg.modal = true;
 
           this._dlg.show();
@@ -1120,7 +1121,7 @@ System.register("chunks:///_virtual/Dialog.ts", ['cc', './fairygui.mjs'], functi
           if (center) {
             pos.y += (mainView.height - view.height) / 2;
           } else {
-            pos.y += mainView.height - view.height - 100;
+            pos.y += mainView.height - view.height;
           }
 
           view.setPosition(pos.x, pos.y);
