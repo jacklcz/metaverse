@@ -39,13 +39,12 @@ export default class PeerConnection extends Connection {
 	}
 	
 	private onConnectionClosed(): void {
-		GameEvent.emit(GameEvent.CONNECTION_CLOSED);
+		//GameEvent.emit(GameEvent.CONNECTION_CLOSED);
 	}
 
 	private onConnectionError(event: any): void {		
 		GameEvent.emit(GameEvent.CONNECTION_ERROR, event);
-		console.log("Connection error:");
-		console.log(event);
+		console.log("Connection error: %s", event);
 	}
 
 	public login(httpUrl: string, wsUrl: string): void {

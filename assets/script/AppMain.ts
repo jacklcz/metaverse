@@ -8,7 +8,7 @@ import TheConfig from "./base/TheConfig";
 export default class AppMain extends Component {
 
     protected _mainPacks: string[] = ["audio", "building", "characters", "mainRes", "texture"];
-    protected _selectPack: string[] = ["selectRes"];
+    protected _selectPack: string[] = [];
 
     onLoad() {
         game.addPersistRootNode(this.node);
@@ -40,7 +40,7 @@ export default class AppMain extends Component {
     }
 
     private openRoleScene(msg: any): void {
-        this.loadSubpack("RoleScene", 0, this._mainPacks);        
+        this.loadSubpack("StartScene", 0, this._mainPacks);        
     }
 
     private loadSubpack(sceneName: string, index: number, packs: string[]): void {

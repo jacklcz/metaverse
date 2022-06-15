@@ -36,7 +36,7 @@ System.register("chunks:///_virtual/AppMain.ts", ['./rollupPluginModLoBabelHelpe
 
           _this = _Component.call.apply(_Component, [this].concat(args)) || this;
           _this._mainPacks = ["audio", "building", "characters", "mainRes", "texture"];
-          _this._selectPack = ["selectRes"];
+          _this._selectPack = [];
           return _this;
         }
 
@@ -66,7 +66,7 @@ System.register("chunks:///_virtual/AppMain.ts", ['./rollupPluginModLoBabelHelpe
         };
 
         _proto.openRoleScene = function openRoleScene(msg) {
-          this.loadSubpack("RoleScene", 0, this._mainPacks);
+          this.loadSubpack("StartScene", 0, this._mainPacks);
         };
 
         _proto.loadSubpack = function loadSubpack(sceneName, index, packs) {
@@ -401,10 +401,14 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
         };
 
         _proto.isSpecialAction = function isSpecialAction() {
-          return this._actionName == ActionName.Jump || this._actionName == ActionName.Wave || this._actionName == ActionName.Dance1 || this._actionName == ActionName.Dance2;
+          return this._actionName == ActionName.Jump //|| (this._actionName == ActionName.Wave)
+          //|| (this._actionName == ActionName.Dance1)
+          //|| (this._actionName == ActionName.Dance2)
+          ;
         };
 
         _proto.stopAction = function stopAction() {
+          if (this._actionName == ActionName.Wave || this._actionName == ActionName.Dance1 || this._actionName == ActionName.Dance2) return false;
           return this.playAction(ActionName.Idle);
         };
 
@@ -420,18 +424,21 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
 
         _proto.waveAction = function waveAction() {
           if (this.isSpecialAction()) return false;
+          this.setAction(ActionType.None);
           this.specialAction(ActionName.Wave);
           return true;
         };
 
         _proto.dancing01 = function dancing01() {
           if (this.isSpecialAction()) return false;
+          this.setAction(ActionType.None);
           this.specialAction(ActionName.Dance1);
           return true;
         };
 
         _proto.dancing02 = function dancing02() {
           if (this.isSpecialAction()) return false;
+          this.setAction(ActionType.None);
           this.specialAction(ActionName.Dance2);
           return true;
         };
@@ -893,24 +900,13 @@ System.register("chunks:///_virtual/Connection.ts", ['./rollupPluginModLoBabelHe
 
         _proto.close = function close() {
           this.closeChannel();
-
-          if (this._socket != null) {
-            this._socket.onOpen(null);
-
-            this._socket.onClose(null);
-
-            this._socket.onError(null);
-
-            this._socket.onMessage(null);
-
-            this._socket.close();
-
-            this._socket = null;
-          }
+          this._socket = null;
         };
 
         _proto.closeChannel = function closeChannel() {
           if (this._channel) {
+            this._channel.off();
+
             this._channel.leave();
 
             this._channel = null;
@@ -2303,14 +2299,12 @@ System.register("chunks:///_virtual/PeerConnection.ts", ['./rollupPluginModLoBab
           this.connectToChannel();
         };
 
-        _proto.onConnectionClosed = function onConnectionClosed() {
-          GameEvent.emit(GameEvent.CONNECTION_CLOSED);
+        _proto.onConnectionClosed = function onConnectionClosed() {//GameEvent.emit(GameEvent.CONNECTION_CLOSED);
         };
 
         _proto.onConnectionError = function onConnectionError(event) {
           GameEvent.emit(GameEvent.CONNECTION_ERROR, event);
-          console.log("Connection error:");
-          console.log(event);
+          console.log("Connection error: %s", event);
         };
 
         _proto.login = function login(httpUrl, wsUrl) {
@@ -2865,10 +2859,10 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
   };
 });
 
-System.register("chunks:///_virtual/SettingDlg.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Dialog.ts'], function (exports) {
+System.register("chunks:///_virtual/SettingDlg.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './AudioManager.ts', './PeerConnection.ts', './fairygui.mjs', './Dialog.ts'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, cclegacy, _decorator, Dialog;
+  var _inheritsLoose, cclegacy, _decorator, GameEvent, AudioManager, PeerConnection, Event, Dialog;
 
   return {
     setters: [function (module) {
@@ -2876,6 +2870,14 @@ System.register("chunks:///_virtual/SettingDlg.ts", ['./rollupPluginModLoBabelHe
     }, function (module) {
       cclegacy = module.cclegacy;
       _decorator = module._decorator;
+    }, function (module) {
+      GameEvent = module.default;
+    }, function (module) {
+      AudioManager = module.default;
+    }, function (module) {
+      PeerConnection = module.default;
+    }, function (module) {
+      Event = module.Event;
     }, function (module) {
       Dialog = module.default;
     }],
@@ -2899,7 +2901,24 @@ System.register("chunks:///_virtual/SettingDlg.ts", ['./rollupPluginModLoBabelHe
           _Dialog.prototype.popupDlg.call(this, mainView, "setFrame");
         };
 
-        _proto.onInitDlg = function onInitDlg() {};
+        _proto.onInitDlg = function onInitDlg() {
+          var dlg = this._dlg.contentPane;
+          dlg.getChild("quitBtn").onClick(this.onQuit, this);
+          var volume = dlg.getChild("volume");
+          volume.on(Event.STATUS_CHANGED, this.onChanged, this);
+          volume.value = AudioManager.instance().audioSource.volume * 100;
+        };
+
+        _proto.onQuit = function onQuit() {
+          PeerConnection.instance().close();
+          GameEvent.emit(GameEvent.OPEN_ROLE_SCENE);
+        };
+
+        _proto.onChanged = function onChanged() {
+          var dlg = this._dlg.contentPane;
+          var volume = dlg.getChild("volume");
+          AudioManager.instance().audioSource.volume = volume.value / 100;
+        };
 
         return SettingDlg;
       }(Dialog)) || _class));

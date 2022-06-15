@@ -103,18 +103,12 @@ export default abstract class Connection {
 
 	public close(): void {
 		this.closeChannel();
-		if(this._socket != null){
-			this._socket.onOpen(null);
-           	this._socket.onClose(null);
-           	this._socket.onError(null);
-           	this._socket.onMessage(null);
-			this._socket.close();
-			this._socket = null;
-		}
+		this._socket = null;
 	}
 
 	protected closeChannel(): void {
 		if(this._channel){
+			this._channel.off();
 			this._channel.leave();
 			this._channel = null;
 		}

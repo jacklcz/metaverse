@@ -133,13 +133,18 @@ export abstract class BaseRole extends Component {
 
     protected isSpecialAction(): boolean {
         return ((this._actionName == ActionName.Jump)
-            || (this._actionName == ActionName.Wave)
-            || (this._actionName == ActionName.Dance1)
-            || (this._actionName == ActionName.Dance2)
+            //|| (this._actionName == ActionName.Wave)
+            //|| (this._actionName == ActionName.Dance1)
+            //|| (this._actionName == ActionName.Dance2)
         );
     }
 
-    protected stopAction(): boolean {        
+    protected stopAction(): boolean {  
+        if((this._actionName == ActionName.Wave)
+            || (this._actionName == ActionName.Dance1)
+            || (this._actionName == ActionName.Dance2)
+        ) return false;
+    
         return this.playAction(ActionName.Idle);
     }
 
@@ -154,8 +159,9 @@ export abstract class BaseRole extends Component {
         return true;
     }
 
-    public waveAction(): boolean {
+    public waveAction(): boolean {        
         if(this.isSpecialAction()) return false;
+        this.setAction(ActionType.None);
         
         this.specialAction(ActionName.Wave);
         return true;
@@ -163,6 +169,7 @@ export abstract class BaseRole extends Component {
 
     public dancing01(): boolean {
         if(this.isSpecialAction()) return false;
+        this.setAction(ActionType.None);
         
         this.specialAction(ActionName.Dance1);
         return true;
@@ -170,7 +177,8 @@ export abstract class BaseRole extends Component {
 
     public dancing02(): boolean {
         if(this.isSpecialAction()) return false;
-        
+        this.setAction(ActionType.None);
+
         this.specialAction(ActionName.Dance2);
         return true;
     }
