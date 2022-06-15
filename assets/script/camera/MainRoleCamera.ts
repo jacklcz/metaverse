@@ -12,7 +12,7 @@ export class MainRoleCamera extends Component {
     private _target: Node = null;    
     private _offset: Vec3 = new Vec3(0, 0.62, 4.6);
 
-    private _moveSmooth: number = 0.02;
+    private _moveSmooth: number = 0.002;
     private _rotateSmooth: number = 0.03;
 
     private _velocity = new Vec3();    
@@ -56,9 +56,9 @@ export class MainRoleCamera extends Component {
     }    
 
     public onMouseWheel(delta: number): void {
-        let offset = 0.1;
-        if(delta > 0) offset = -0.2;
-        this.offset.z += offset;
+        let offset = 0.2;
+        if(delta > 0) offset = -0.2;        
+        this.offset.z += (offset * MyRole.instance().roleWard);
 
         this.setFollowTrack();
     }
@@ -108,9 +108,10 @@ export class MainRoleCamera extends Component {
         this.node.lookAt(this.lookAt);
     }
 
-    private toPosition(): Vec3 {        
+    private toPosition(): Vec3 {            
+        let z = MyRole.instance().roleWard * this.offset.z;
         let u = Vec3.multiplyScalar(new Vec3(), Vec3.UP, this.offset.y);
-        let f = Vec3.multiplyScalar(new Vec3(), this.target.forward, this.offset.z);
+        let f = Vec3.multiplyScalar(new Vec3(), this.target.forward, z);
         let thePos = this.lookAt;
         
         return Vec3.add(new Vec3(), thePos, u).add(f);
@@ -118,7 +119,7 @@ export class MainRoleCamera extends Component {
 
     update(deltaTime: number) {
         if(!this.target) return;
-        if(MyRole.moving == 0 && MyRole.ratation == 0) return;
+        if(MyRole.action == 0 && MyRole.ratation == 0) return;
         
         this.setFollowTrack(deltaTime);
     }

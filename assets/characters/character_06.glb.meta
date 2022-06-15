@@ -2,12 +2,12 @@
   "ver": "2.1.14",
   "importer": "gltf",
   "imported": true,
-  "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4",
+  "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916",
   "files": [],
   "subMetas": {
     "10486": {
       "importer": "texture",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@10486",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@10486",
       "displayName": "",
       "id": "10486",
       "name": "UnnamedTexture-16.texture",
@@ -19,7 +19,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@dca09"
+        "imageUuidOrDatabaseUri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@dca09"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -30,7 +30,7 @@
     },
     "19986": {
       "importer": "gltf-embeded-image",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@19986",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@19986",
       "displayName": "",
       "id": "19986",
       "name": "outfit-cyberpunk-05-v2-f-bottom-N.image",
@@ -47,7 +47,7 @@
     },
     "50743": {
       "importer": "texture",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@50743",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@50743",
       "displayName": "",
       "id": "50743",
       "name": "UnnamedTexture-5.texture",
@@ -59,7 +59,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@3ff37"
+        "imageUuidOrDatabaseUri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@3ff37"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -70,7 +70,7 @@
     },
     "55257": {
       "importer": "texture",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@55257",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@55257",
       "displayName": "",
       "id": "55257",
       "name": "UnnamedTexture-12.texture",
@@ -82,7 +82,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@1f7c5"
+        "imageUuidOrDatabaseUri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@1f7c5"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -93,7 +93,7 @@
     },
     "88077": {
       "importer": "gltf-material",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@88077",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@88077",
       "displayName": "",
       "id": "88077",
       "name": "Wolf3D_Hair.material",
@@ -109,7 +109,7 @@
     },
     "37b83": {
       "importer": "gltf-mesh",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@37b83",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@37b83",
       "displayName": "",
       "id": "37b83",
       "name": "EyeLeft.mesh",
@@ -126,7 +126,7 @@
     },
     "9635c": {
       "importer": "gltf-mesh",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@9635c",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@9635c",
       "displayName": "",
       "id": "9635c",
       "name": "EyeRight.mesh",
@@ -143,7 +143,7 @@
     },
     "b6359": {
       "importer": "gltf-mesh",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@b6359",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@b6359",
       "displayName": "",
       "id": "b6359",
       "name": "Wolf3D_Body.mesh",
@@ -160,7 +160,7 @@
     },
     "59b69": {
       "importer": "gltf-mesh",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@59b69",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@59b69",
       "displayName": "",
       "id": "59b69",
       "name": "Wolf3D_Glasses.mesh",
@@ -177,7 +177,7 @@
     },
     "8f0a6": {
       "importer": "gltf-mesh",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@8f0a6",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@8f0a6",
       "displayName": "",
       "id": "8f0a6",
       "name": "Wolf3D_Hair.mesh",
@@ -194,7 +194,7 @@
     },
     "a4f4d": {
       "importer": "gltf-mesh",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@a4f4d",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@a4f4d",
       "displayName": "",
       "id": "a4f4d",
       "name": "Wolf3D_Head.mesh",
@@ -211,7 +211,7 @@
     },
     "fba9c": {
       "importer": "gltf-mesh",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@fba9c",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@fba9c",
       "displayName": "",
       "id": "fba9c",
       "name": "Wolf3D_Outfit_Bottom.mesh",
@@ -228,7 +228,7 @@
     },
     "0b9c0": {
       "importer": "gltf-mesh",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@0b9c0",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@0b9c0",
       "displayName": "",
       "id": "0b9c0",
       "name": "Wolf3D_Outfit_Footwear.mesh",
@@ -245,7 +245,7 @@
     },
     "e4a32": {
       "importer": "gltf-mesh",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@e4a32",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@e4a32",
       "displayName": "",
       "id": "e4a32",
       "name": "Wolf3D_Outfit_Top.mesh",
@@ -262,7 +262,7 @@
     },
     "910b4": {
       "importer": "gltf-mesh",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@910b4",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@910b4",
       "displayName": "",
       "id": "910b4",
       "name": "Wolf3D_Teeth.mesh",
@@ -279,7 +279,7 @@
     },
     "f9d1d": {
       "importer": "gltf-skeleton",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@f9d1d",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@f9d1d",
       "displayName": "",
       "id": "f9d1d",
       "name": "Armature.skeleton",
@@ -296,7 +296,7 @@
     },
     "7fee2": {
       "importer": "gltf-embeded-image",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@7fee2",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@7fee2",
       "displayName": "",
       "id": "7fee2",
       "name": "1622793666-eye-05-mask.image",
@@ -313,7 +313,7 @@
     },
     "00ebe": {
       "importer": "gltf-embeded-image",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@00ebe",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@00ebe",
       "displayName": "",
       "id": "00ebe",
       "name": "body-athletic-f-N.image",
@@ -330,7 +330,7 @@
     },
     "8e806": {
       "importer": "gltf-embeded-image",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@8e806",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@8e806",
       "displayName": "",
       "id": "8e806",
       "name": "body_texture.image",
@@ -347,7 +347,7 @@
     },
     "43ec8": {
       "importer": "gltf-embeded-image",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@43ec8",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@43ec8",
       "displayName": "",
       "id": "43ec8",
       "name": "glasses_id_12_D.image",
@@ -364,7 +364,7 @@
     },
     "531a9": {
       "importer": "gltf-embeded-image",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@531a9",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@531a9",
       "displayName": "",
       "id": "531a9",
       "name": "hair-88_N.image",
@@ -381,7 +381,7 @@
     },
     "3ff37": {
       "importer": "gltf-embeded-image",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@3ff37",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@3ff37",
       "displayName": "",
       "id": "3ff37",
       "name": "hair_color.image",
@@ -398,7 +398,7 @@
     },
     "ca8a9": {
       "importer": "gltf-embeded-image",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@ca8a9",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@ca8a9",
       "displayName": "",
       "id": "ca8a9",
       "name": "face_texture.image",
@@ -415,7 +415,7 @@
     },
     "feecc": {
       "importer": "gltf-embeded-image",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@feecc",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@feecc",
       "displayName": "",
       "id": "feecc",
       "name": "outfit-cyberpunk-05-v2-f-bottom-D.image",
@@ -432,7 +432,7 @@
     },
     "a4f63": {
       "importer": "gltf-embeded-image",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@a4f63",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@a4f63",
       "displayName": "",
       "id": "a4f63",
       "name": "outfit-cyberpunk-05-v2-f-bottom-R.image",
@@ -449,7 +449,7 @@
     },
     "1f917": {
       "importer": "gltf-embeded-image",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@1f917",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@1f917",
       "displayName": "",
       "id": "1f917",
       "name": "outfit-cyberpunk-05-v2-f-footwear-N.image",
@@ -466,7 +466,7 @@
     },
     "9832d": {
       "importer": "gltf-embeded-image",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@9832d",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@9832d",
       "displayName": "",
       "id": "9832d",
       "name": "outfit-cyberpunk-05-v2-f-footwear-D.image",
@@ -483,7 +483,7 @@
     },
     "1f7c5": {
       "importer": "gltf-embeded-image",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@1f7c5",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@1f7c5",
       "displayName": "",
       "id": "1f7c5",
       "name": "outfit-cyberpunk-05-v2-f-footwear-R.image",
@@ -500,7 +500,7 @@
     },
     "f7a4e": {
       "importer": "gltf-embeded-image",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@f7a4e",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@f7a4e",
       "displayName": "",
       "id": "f7a4e",
       "name": "outfit-cyberpunk-05-v2-f-top-N.image",
@@ -517,7 +517,7 @@
     },
     "78e00": {
       "importer": "gltf-embeded-image",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@78e00",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@78e00",
       "displayName": "",
       "id": "78e00",
       "name": "outfit-cyberpunk-05-v2-f-top-D.image",
@@ -534,7 +534,7 @@
     },
     "b36f0": {
       "importer": "gltf-embeded-image",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@b36f0",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@b36f0",
       "displayName": "",
       "id": "b36f0",
       "name": "outfit-cyberpunk-05-v2-f-top-M-outfit-cyberpunk-05-v2-f-top-R.image",
@@ -551,7 +551,7 @@
     },
     "dca09": {
       "importer": "gltf-embeded-image",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@dca09",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@dca09",
       "displayName": "",
       "id": "dca09",
       "name": "Wolf3D_Teeth.image",
@@ -568,7 +568,7 @@
     },
     "3effa": {
       "importer": "texture",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@3effa",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@3effa",
       "displayName": "",
       "id": "3effa",
       "name": "UnnamedTexture-0.texture",
@@ -580,7 +580,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@7fee2"
+        "imageUuidOrDatabaseUri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@7fee2"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -591,7 +591,7 @@
     },
     "221a5": {
       "importer": "texture",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@221a5",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@221a5",
       "displayName": "",
       "id": "221a5",
       "name": "UnnamedTexture-1.texture",
@@ -603,7 +603,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@00ebe"
+        "imageUuidOrDatabaseUri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@00ebe"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -614,7 +614,7 @@
     },
     "0089c": {
       "importer": "texture",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@0089c",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@0089c",
       "displayName": "",
       "id": "0089c",
       "name": "UnnamedTexture-2.texture",
@@ -626,7 +626,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@8e806"
+        "imageUuidOrDatabaseUri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@8e806"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -637,7 +637,7 @@
     },
     "9b633": {
       "importer": "texture",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@9b633",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@9b633",
       "displayName": "",
       "id": "9b633",
       "name": "UnnamedTexture-3.texture",
@@ -649,7 +649,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@43ec8"
+        "imageUuidOrDatabaseUri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@43ec8"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -660,7 +660,7 @@
     },
     "9b782": {
       "importer": "texture",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@9b782",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@9b782",
       "displayName": "",
       "id": "9b782",
       "name": "UnnamedTexture-4.texture",
@@ -672,7 +672,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@531a9"
+        "imageUuidOrDatabaseUri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@531a9"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -683,7 +683,7 @@
     },
     "99ea5": {
       "importer": "texture",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@99ea5",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@99ea5",
       "displayName": "",
       "id": "99ea5",
       "name": "UnnamedTexture-6.texture",
@@ -695,7 +695,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@ca8a9"
+        "imageUuidOrDatabaseUri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@ca8a9"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -706,7 +706,7 @@
     },
     "006bd": {
       "importer": "texture",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@006bd",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@006bd",
       "displayName": "",
       "id": "006bd",
       "name": "UnnamedTexture-7.texture",
@@ -718,7 +718,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@19986"
+        "imageUuidOrDatabaseUri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@19986"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -729,7 +729,7 @@
     },
     "531b0": {
       "importer": "texture",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@531b0",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@531b0",
       "displayName": "",
       "id": "531b0",
       "name": "UnnamedTexture-8.texture",
@@ -741,7 +741,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@feecc"
+        "imageUuidOrDatabaseUri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@feecc"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -752,7 +752,7 @@
     },
     "9c3d2": {
       "importer": "texture",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@9c3d2",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@9c3d2",
       "displayName": "",
       "id": "9c3d2",
       "name": "UnnamedTexture-9.texture",
@@ -764,7 +764,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@a4f63"
+        "imageUuidOrDatabaseUri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@a4f63"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -775,7 +775,7 @@
     },
     "f7e17": {
       "importer": "texture",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@f7e17",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@f7e17",
       "displayName": "",
       "id": "f7e17",
       "name": "UnnamedTexture-10.texture",
@@ -787,7 +787,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@1f917"
+        "imageUuidOrDatabaseUri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@1f917"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -798,7 +798,7 @@
     },
     "a2905": {
       "importer": "texture",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@a2905",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@a2905",
       "displayName": "",
       "id": "a2905",
       "name": "UnnamedTexture-11.texture",
@@ -810,7 +810,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@9832d"
+        "imageUuidOrDatabaseUri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@9832d"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -821,7 +821,7 @@
     },
     "809d9": {
       "importer": "texture",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@809d9",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@809d9",
       "displayName": "",
       "id": "809d9",
       "name": "UnnamedTexture-13.texture",
@@ -833,7 +833,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@f7a4e"
+        "imageUuidOrDatabaseUri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@f7a4e"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -844,7 +844,7 @@
     },
     "b4841": {
       "importer": "texture",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@b4841",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@b4841",
       "displayName": "",
       "id": "b4841",
       "name": "UnnamedTexture-14.texture",
@@ -856,7 +856,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@78e00"
+        "imageUuidOrDatabaseUri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@78e00"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -867,7 +867,7 @@
     },
     "3c999": {
       "importer": "texture",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@3c999",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@3c999",
       "displayName": "",
       "id": "3c999",
       "name": "UnnamedTexture-15.texture",
@@ -879,7 +879,7 @@
         "mipfilter": "linear",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@b36f0"
+        "imageUuidOrDatabaseUri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@b36f0"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -890,7 +890,7 @@
     },
     "bb84f": {
       "importer": "gltf-material",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@bb84f",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@bb84f",
       "displayName": "",
       "id": "bb84f",
       "name": "Wolf3D_Eye.material",
@@ -906,7 +906,7 @@
     },
     "e111b": {
       "importer": "gltf-material",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@e111b",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@e111b",
       "displayName": "",
       "id": "e111b",
       "name": "Wolf3D_Body.material",
@@ -922,7 +922,7 @@
     },
     "b329e": {
       "importer": "gltf-material",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@b329e",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@b329e",
       "displayName": "",
       "id": "b329e",
       "name": "Wolf3D_Glasses.material",
@@ -938,7 +938,7 @@
     },
     "476b9": {
       "importer": "gltf-material",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@476b9",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@476b9",
       "displayName": "",
       "id": "476b9",
       "name": "Wolf3D_Skin.material",
@@ -954,7 +954,7 @@
     },
     "cce2c": {
       "importer": "gltf-material",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@cce2c",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@cce2c",
       "displayName": "",
       "id": "cce2c",
       "name": "Wolf3D_Outfit_Bottom.material",
@@ -970,7 +970,7 @@
     },
     "b725a": {
       "importer": "gltf-material",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@b725a",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@b725a",
       "displayName": "",
       "id": "b725a",
       "name": "Wolf3D_Outfit_Footwear.material",
@@ -986,7 +986,7 @@
     },
     "d918b": {
       "importer": "gltf-material",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@d918b",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@d918b",
       "displayName": "",
       "id": "d918b",
       "name": "Wolf3D_Outfit_Top.material",
@@ -1002,7 +1002,7 @@
     },
     "aeb3f": {
       "importer": "gltf-material",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@aeb3f",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@aeb3f",
       "displayName": "",
       "id": "aeb3f",
       "name": "Wolf3D_Teeth.material",
@@ -1018,7 +1018,7 @@
     },
     "f02f9": {
       "importer": "gltf-scene",
-      "uuid": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@f02f9",
+      "uuid": "e3be2025-a3d0-4222-87e9-91eb6ae61916@f02f9",
       "displayName": "",
       "id": "f02f9",
       "name": "character_06.prefab",
@@ -1037,123 +1037,123 @@
     "imageMetas": [
       {
         "name": "1622793666-eye-05-mask",
-        "uri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@7fee2"
+        "uri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@7fee2"
       },
       {
         "name": "body-athletic-f-N",
-        "uri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@00ebe"
+        "uri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@00ebe"
       },
       {
         "name": "body_texture",
-        "uri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@8e806"
+        "uri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@8e806"
       },
       {
         "name": "glasses_id_12_D",
-        "uri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@43ec8"
+        "uri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@43ec8"
       },
       {
         "name": "hair-88_N",
-        "uri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@531a9"
+        "uri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@531a9"
       },
       {
         "name": "hair_color",
-        "uri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@3ff37"
+        "uri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@3ff37"
       },
       {
         "name": "face_texture",
-        "uri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@ca8a9"
+        "uri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@ca8a9"
       },
       {
         "name": "outfit-cyberpunk-05-v2-f-bottom-N",
-        "uri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@19986"
+        "uri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@19986"
       },
       {
         "name": "outfit-cyberpunk-05-v2-f-bottom-D",
-        "uri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@feecc"
+        "uri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@feecc"
       },
       {
         "name": "outfit-cyberpunk-05-v2-f-bottom-R",
-        "uri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@a4f63"
+        "uri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@a4f63"
       },
       {
         "name": "outfit-cyberpunk-05-v2-f-footwear-N",
-        "uri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@1f917"
+        "uri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@1f917"
       },
       {
         "name": "outfit-cyberpunk-05-v2-f-footwear-D",
-        "uri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@9832d"
+        "uri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@9832d"
       },
       {
         "name": "outfit-cyberpunk-05-v2-f-footwear-R",
-        "uri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@1f7c5"
+        "uri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@1f7c5"
       },
       {
         "name": "outfit-cyberpunk-05-v2-f-top-N",
-        "uri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@f7a4e"
+        "uri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@f7a4e"
       },
       {
         "name": "outfit-cyberpunk-05-v2-f-top-D",
-        "uri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@78e00"
+        "uri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@78e00"
       },
       {
         "name": "outfit-cyberpunk-05-v2-f-top-M-outfit-cyberpunk-05-v2-f-top-R",
-        "uri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@b36f0"
+        "uri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@b36f0"
       },
       {
         "name": "Wolf3D_Teeth",
-        "uri": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@dca09"
+        "uri": "e3be2025-a3d0-4222-87e9-91eb6ae61916@dca09"
       }
     ],
     "legacyFbxImporter": false,
-    "redirect": "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@f02f9",
+    "redirect": "e3be2025-a3d0-4222-87e9-91eb6ae61916@f02f9",
     "assetFinder": {
       "meshes": [
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@37b83",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@9635c",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@b6359",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@59b69",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@8f0a6",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@a4f4d",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@fba9c",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@0b9c0",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@e4a32",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@910b4"
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@37b83",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@9635c",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@b6359",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@59b69",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@8f0a6",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@a4f4d",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@fba9c",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@0b9c0",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@e4a32",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@910b4"
       ],
       "skeletons": [
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@f9d1d"
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@f9d1d"
       ],
       "textures": [
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@3effa",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@221a5",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@0089c",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@9b633",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@9b782",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@50743",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@99ea5",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@006bd",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@531b0",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@9c3d2",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@f7e17",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@a2905",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@55257",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@809d9",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@b4841",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@3c999",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@10486"
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@3effa",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@221a5",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@0089c",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@9b633",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@9b782",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@50743",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@99ea5",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@006bd",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@531b0",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@9c3d2",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@f7e17",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@a2905",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@55257",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@809d9",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@b4841",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@3c999",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@10486"
       ],
       "materials": [
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@bb84f",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@e111b",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@b329e",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@88077",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@476b9",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@cce2c",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@b725a",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@d918b",
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@aeb3f"
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@bb84f",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@e111b",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@b329e",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@88077",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@476b9",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@cce2c",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@b725a",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@d918b",
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@aeb3f"
       ],
       "scenes": [
-        "9d3445f3-b4c3-4e59-a14a-0e050461e3f4@f02f9"
+        "e3be2025-a3d0-4222-87e9-91eb6ae61916@f02f9"
       ]
     }
   }

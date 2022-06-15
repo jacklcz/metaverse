@@ -1,0 +1,79 @@
+{
+  "ver": "2.1.14",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "31cf1e65-fbe1-44f8-867c-84ae42f70203",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "d2840": {
+      "importer": "gltf-animation",
+      "uuid": "31cf1e65-fbe1-44f8-867c-84ae42f70203@d2840",
+      "displayName": "",
+      "id": "d2840",
+      "name": "Dancing03.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 13.766666412353516
+        },
+        "events": []
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    },
+    "00cb6": {
+      "importer": "gltf-scene",
+      "uuid": "31cf1e65-fbe1-44f8-867c-84ae42f70203@00cb6",
+      "displayName": "",
+      "id": "00cb6",
+      "name": "Dancing03.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 13.766666412353516,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Dancing03",
+            "from": 0,
+            "to": 13.766666412353516,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "31cf1e65-fbe1-44f8-867c-84ae42f70203@00cb6",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "31cf1e65-fbe1-44f8-867c-84ae42f70203@00cb6"
+      ]
+    }
+  }
+}

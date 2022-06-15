@@ -1,7 +1,7 @@
 import { _decorator, assetManager } from 'cc';
 const { ccclass, property } = _decorator;
 
-import GameEvent from '../base/GameEvent';
+import AudioManager from '../base/AudioManager';
 import ControlScene from './ControlScene';
  
 @ccclass('MainScene')
@@ -12,6 +12,8 @@ export class MainScene extends ControlScene {
     }
 
     protected onLoadFinish(error: any): void {
-        console.log("MainScene onLoadFinish %s", error ? error : "success");                
+        console.log("MainScene onLoadFinish %s", error ? error : "success"); 
+        
+        AudioManager.instance().playMusic("bkMusic");
     }
 }

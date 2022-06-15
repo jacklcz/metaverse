@@ -3,8 +3,9 @@ const { ccclass, property } = _decorator;
 
 import * as fgui from "fairygui-cc";
 import UserInfo from '../base/UserInfo';
-import { MyRole } from '../role/MyRole';
 import GameEvent from '../base/GameEvent';
+import { MyRole } from '../role/MyRole';
+import { ActionType } from '../role/BaseRole';
 import { ChatFrame } from '../ui/ChatFrame';
 import { GuideDlg } from '../ui/GuideDlg';
 import { StartDlg } from '../ui/StartDlg';
@@ -46,6 +47,11 @@ export default class ControlScene extends Component {
         view.getChild<fgui.GButton>("operaBtn").onClick(this.onOprFrame, this);        
         view.getChild<fgui.GButton>("expressBtn").onClick(this.onExpFrame, this);
         view.getChild<fgui.GButton>("settingBtn").onClick(this.onSetFrame, this);
+
+        let expFrame = this._mainView.getChild<fgui.GComponent>("expressFrame");
+        expFrame.getChild<fgui.GButton>("btn01").onClick(this.onDancing01, this);
+        expFrame.getChild<fgui.GButton>("btn02").onClick(this.onWaving, this);
+        expFrame.getChild<fgui.GButton>("btn03").onClick(this.onDancing02, this);
 
         this.node.on(fgui.Event.TOUCH_BEGIN, this.mouseDown, this);
         this.node.on(fgui.Event.TOUCH_END, this.mouseUp, this);
@@ -90,6 +96,24 @@ export default class ControlScene extends Component {
     protected showStartGuide(): void {
         let dlg = new StartDlg();
         dlg.showDlg(this._mainView);
+    }
+
+    private onWaving(): void {
+        if(MyRole.instance().waveAction()){
+            MyRole.instance().sendAction(ActionType.Wave);                    
+        }
+    }
+
+    private onDancing01(): void {
+        if(MyRole.instance().dancing01()){
+            MyRole.instance().sendAction(ActionType.Dance1);                    
+        }
+    }
+
+    private onDancing02(): void {
+        if(MyRole.instance().dancing02()){
+            MyRole.instance().sendAction(ActionType.Dance2);                    
+        }
     }
 
     private isRootInput(): boolean {

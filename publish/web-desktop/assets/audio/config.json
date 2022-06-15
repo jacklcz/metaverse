@@ -1,0 +1,24 @@
+{
+    "importBase": "import",
+    "nativeBase": "native",
+    "name": "audio",
+    "deps": [],
+    "uuids": [
+        "394024af-78ee-4e20-a934-9ae79280b1e3"
+    ],
+    "paths": {
+        "394024af-78ee-4e20-a934-9ae79280b1e3": [
+            "bkMusic",
+            "cc.AudioClip"
+        ]
+    },
+    "scenes": {},
+    "packs": {},
+    "versions": {
+        "import": [],
+        "native": []
+    },
+    "redirect": [],
+    "debug": true,
+    "extensionMap": {}
+}

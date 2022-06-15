@@ -1,19 +1,19 @@
 import { _decorator, Component, Vec3, v3 } from 'cc';
 const { ccclass, property } = _decorator;
 
-import { BaseRole, MoveType, RotateType } from './BaseRole';
+import { BaseRole, ActionType, RotateType } from './BaseRole';
 
 @ccclass('GameRole')
 export class GameRole extends BaseRole {
     
-    private _moving: MoveType = MoveType.None;    
+    private _action: ActionType = ActionType.None;    
 
-    public get moving(): MoveType {
-        return this._moving;
+    public get action(): ActionType {
+        return this._action;
     }
 
-    public set moving(value: MoveType) {
-        this._moving = value;
+    public set action(value: ActionType) {
+        this._action = value;
     }    
 
     public onMovingPrv(deltaTime: number): void {}

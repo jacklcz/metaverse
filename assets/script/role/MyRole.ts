@@ -1,25 +1,26 @@
-import { _decorator, v3  } from 'cc';
+import { _decorator, v3, Vec3  } from 'cc';
 const { ccclass, property } = _decorator;
 
 import GameEvent from '../base/GameEvent';
 import PeerConnection from '../network/PeerConnection';
-import { BaseRole, MoveType, RotateType } from './BaseRole';
+import { BaseRole, ActionType, RotateType } from './BaseRole';
 
 @ccclass('MyRole')
 export class MyRole extends BaseRole {
 
-    static moving: MoveType = MoveType.None;
+    static action: ActionType = ActionType.None;
     static ratation: RotateType = RotateType.None;
 
     static _instance: MyRole = null;
     static instance(): MyRole {
         return MyRole._instance;
     }
-
+    
+    private _wardType: number = ActionType.Forward;
     private _lastSyncTime: number = 0;
 
     constructor() {
-        super();
+        super();        
         MyRole._instance = this;
     }
 
@@ -27,12 +28,12 @@ export class MyRole extends BaseRole {
 
     }
 
-    public get moving(): MoveType {
-        return MyRole.moving;
+    public get action(): ActionType {
+        return MyRole.action;
     }
 
-    public set moving(value: MoveType) {
-        MyRole.moving = value;
+    public set action(value: ActionType) {
+        MyRole.action = value;
     }
 
     public get ratation(): number {
@@ -43,14 +44,22 @@ export class MyRole extends BaseRole {
         MyRole.ratation = value;
     }
 
-    public setBackward(): void {
+    public get roleWard(): number {
+        return this._wardType == ActionType.Forward ? 1 : -1;
+    }
+
+    public setWard(type: number): void {
+        if(this._wardType == type) return;
+
+        this._wardType = type;
+
         let euler = v3();
         let thisRota = this.node.getWorldRotation();
         thisRota.getEulerAngles(euler);
         euler.y += 180;
         this.node.setRotationFromEuler(euler);
     }
-
+    
     public onMovingPrv(deltaTime: number): void {
         let rotation = 0;
         switch(this.ratation){
@@ -98,7 +107,7 @@ export class MyRole extends BaseRole {
         let thisRota = this.node.getWorldRotation();
         thisRota.getEulerAngles(euler);
         
-        if(!action) action = this.moving;
+        if(!action) action = this.action;
         if(this.moveType != 0) action |= 0x10000;
 
         let startPos = this.node.getWorldPosition();            

@@ -2,12 +2,12 @@
   "ver": "2.1.14",
   "importer": "fbx",
   "imported": true,
-  "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d",
+  "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686",
   "files": [],
   "subMetas": {
     "23673": {
       "importer": "texture",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@23673",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@23673",
       "displayName": "",
       "id": "23673",
       "name": "base_color_texture-8.texture",
@@ -19,7 +19,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "2cca0618-6b9a-4659-9888-86829ee9639d@a2acb"
+        "imageUuidOrDatabaseUri": "af95cbca-ab67-47da-abb2-52786ddbf686@a2acb"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -30,7 +30,7 @@
     },
     "30732": {
       "importer": "gltf-skeleton",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@30732",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@30732",
       "displayName": "",
       "id": "30732",
       "name": "UnnamedSkeleton-0.skeleton",
@@ -47,7 +47,7 @@
     },
     "62756": {
       "importer": "gltf-skeleton",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@62756",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@62756",
       "displayName": "",
       "id": "62756",
       "name": "UnnamedSkeleton-5.skeleton",
@@ -64,7 +64,7 @@
     },
     "76792": {
       "importer": "gltf-scene",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@76792",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@76792",
       "displayName": "",
       "id": "76792",
       "name": "character_04.prefab",
@@ -80,7 +80,7 @@
     },
     "90896": {
       "importer": "texture",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@90896",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@90896",
       "displayName": "",
       "id": "90896",
       "name": "base_color_texture-4.texture",
@@ -92,7 +92,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "2cca0618-6b9a-4659-9888-86829ee9639d@a3593"
+        "imageUuidOrDatabaseUri": "af95cbca-ab67-47da-abb2-52786ddbf686@a3593"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -103,7 +103,7 @@
     },
     "37b83": {
       "importer": "gltf-mesh",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@37b83",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@37b83",
       "displayName": "",
       "id": "37b83",
       "name": "EyeLeft.mesh",
@@ -120,7 +120,7 @@
     },
     "9635c": {
       "importer": "gltf-mesh",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@9635c",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@9635c",
       "displayName": "",
       "id": "9635c",
       "name": "EyeRight.mesh",
@@ -137,7 +137,7 @@
     },
     "b6359": {
       "importer": "gltf-mesh",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@b6359",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@b6359",
       "displayName": "",
       "id": "b6359",
       "name": "Wolf3D_Body.mesh",
@@ -154,7 +154,7 @@
     },
     "a4f4d": {
       "importer": "gltf-mesh",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@a4f4d",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@a4f4d",
       "displayName": "",
       "id": "a4f4d",
       "name": "Wolf3D_Head.mesh",
@@ -171,7 +171,7 @@
     },
     "a21eb": {
       "importer": "gltf-mesh",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@a21eb",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@a21eb",
       "displayName": "",
       "id": "a21eb",
       "name": "Wolf3D_Headwear.mesh",
@@ -188,7 +188,7 @@
     },
     "fba9c": {
       "importer": "gltf-mesh",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@fba9c",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@fba9c",
       "displayName": "",
       "id": "fba9c",
       "name": "Wolf3D_Outfit_Bottom.mesh",
@@ -205,7 +205,7 @@
     },
     "0b9c0": {
       "importer": "gltf-mesh",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@0b9c0",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@0b9c0",
       "displayName": "",
       "id": "0b9c0",
       "name": "Wolf3D_Outfit_Footwear.mesh",
@@ -222,7 +222,7 @@
     },
     "e4a32": {
       "importer": "gltf-mesh",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@e4a32",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@e4a32",
       "displayName": "",
       "id": "e4a32",
       "name": "Wolf3D_Outfit_Top.mesh",
@@ -239,7 +239,7 @@
     },
     "910b4": {
       "importer": "gltf-mesh",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@910b4",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@910b4",
       "displayName": "",
       "id": "910b4",
       "name": "Wolf3D_Teeth.mesh",
@@ -256,7 +256,7 @@
     },
     "f1394": {
       "importer": "gltf-skeleton",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@f1394",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@f1394",
       "displayName": "",
       "id": "f1394",
       "name": "UnnamedSkeleton-1.skeleton",
@@ -273,7 +273,7 @@
     },
     "75ee4": {
       "importer": "gltf-skeleton",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@75ee4",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@75ee4",
       "displayName": "",
       "id": "75ee4",
       "name": "UnnamedSkeleton-2.skeleton",
@@ -290,7 +290,7 @@
     },
     "a72ab": {
       "importer": "gltf-skeleton",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@a72ab",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@a72ab",
       "displayName": "",
       "id": "a72ab",
       "name": "UnnamedSkeleton-3.skeleton",
@@ -307,7 +307,7 @@
     },
     "2224c": {
       "importer": "gltf-skeleton",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@2224c",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@2224c",
       "displayName": "",
       "id": "2224c",
       "name": "UnnamedSkeleton-4.skeleton",
@@ -324,7 +324,7 @@
     },
     "7d08b": {
       "importer": "gltf-skeleton",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@7d08b",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@7d08b",
       "displayName": "",
       "id": "7d08b",
       "name": "UnnamedSkeleton-6.skeleton",
@@ -341,7 +341,7 @@
     },
     "b5902": {
       "importer": "gltf-skeleton",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@b5902",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@b5902",
       "displayName": "",
       "id": "b5902",
       "name": "UnnamedSkeleton-7.skeleton",
@@ -358,7 +358,7 @@
     },
     "2d5df": {
       "importer": "gltf-skeleton",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@2d5df",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@2d5df",
       "displayName": "",
       "id": "2d5df",
       "name": "UnnamedSkeleton-8.skeleton",
@@ -375,7 +375,7 @@
     },
     "5e49e": {
       "importer": "gltf-embeded-image",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@5e49e",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@5e49e",
       "displayName": "",
       "id": "5e49e",
       "name": "base_color_texture-0.image",
@@ -392,7 +392,7 @@
     },
     "ef396": {
       "importer": "gltf-embeded-image",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@ef396",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@ef396",
       "displayName": "",
       "id": "ef396",
       "name": "base_color_texture-1.image",
@@ -409,7 +409,7 @@
     },
     "649a4": {
       "importer": "gltf-embeded-image",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@649a4",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@649a4",
       "displayName": "",
       "id": "649a4",
       "name": "normalmap_texture-2.image",
@@ -426,7 +426,7 @@
     },
     "84cbb": {
       "importer": "gltf-embeded-image",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@84cbb",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@84cbb",
       "displayName": "",
       "id": "84cbb",
       "name": "base_color_texture-3.image",
@@ -443,7 +443,7 @@
     },
     "a3593": {
       "importer": "gltf-embeded-image",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@a3593",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@a3593",
       "displayName": "",
       "id": "a3593",
       "name": "base_color_texture-4.image",
@@ -460,7 +460,7 @@
     },
     "bdd2f": {
       "importer": "gltf-embeded-image",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@bdd2f",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@bdd2f",
       "displayName": "",
       "id": "bdd2f",
       "name": "normalmap_texture-5.image",
@@ -477,7 +477,7 @@
     },
     "b8c74": {
       "importer": "gltf-embeded-image",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@b8c74",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@b8c74",
       "displayName": "",
       "id": "b8c74",
       "name": "base_color_texture-6.image",
@@ -494,7 +494,7 @@
     },
     "6b36a": {
       "importer": "gltf-embeded-image",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@6b36a",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@6b36a",
       "displayName": "",
       "id": "6b36a",
       "name": "normalmap_texture-7.image",
@@ -511,7 +511,7 @@
     },
     "a2acb": {
       "importer": "gltf-embeded-image",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@a2acb",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@a2acb",
       "displayName": "",
       "id": "a2acb",
       "name": "base_color_texture-8.image",
@@ -528,7 +528,7 @@
     },
     "e6a90": {
       "importer": "gltf-embeded-image",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@e6a90",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@e6a90",
       "displayName": "",
       "id": "e6a90",
       "name": "normalmap_texture-9.image",
@@ -545,7 +545,7 @@
     },
     "c0199": {
       "importer": "gltf-embeded-image",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@c0199",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@c0199",
       "displayName": "",
       "id": "c0199",
       "name": "base_color_texture-10.image",
@@ -562,7 +562,7 @@
     },
     "5457d": {
       "importer": "gltf-embeded-image",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@5457d",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@5457d",
       "displayName": "",
       "id": "5457d",
       "name": "normalmap_texture-11.image",
@@ -579,7 +579,7 @@
     },
     "c83b2": {
       "importer": "gltf-embeded-image",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@c83b2",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@c83b2",
       "displayName": "",
       "id": "c83b2",
       "name": "base_color_texture-12.image",
@@ -596,7 +596,7 @@
     },
     "0a1ef": {
       "importer": "texture",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@0a1ef",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@0a1ef",
       "displayName": "",
       "id": "0a1ef",
       "name": "base_color_texture-0.texture",
@@ -608,7 +608,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "2cca0618-6b9a-4659-9888-86829ee9639d@5e49e"
+        "imageUuidOrDatabaseUri": "af95cbca-ab67-47da-abb2-52786ddbf686@5e49e"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -619,7 +619,7 @@
     },
     "05da8": {
       "importer": "texture",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@05da8",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@05da8",
       "displayName": "",
       "id": "05da8",
       "name": "base_color_texture-1.texture",
@@ -631,7 +631,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "2cca0618-6b9a-4659-9888-86829ee9639d@ef396"
+        "imageUuidOrDatabaseUri": "af95cbca-ab67-47da-abb2-52786ddbf686@ef396"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -642,7 +642,7 @@
     },
     "7b4fa": {
       "importer": "texture",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@7b4fa",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@7b4fa",
       "displayName": "",
       "id": "7b4fa",
       "name": "normalmap_texture-2.texture",
@@ -654,7 +654,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "2cca0618-6b9a-4659-9888-86829ee9639d@649a4"
+        "imageUuidOrDatabaseUri": "af95cbca-ab67-47da-abb2-52786ddbf686@649a4"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -665,7 +665,7 @@
     },
     "97b5c": {
       "importer": "texture",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@97b5c",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@97b5c",
       "displayName": "",
       "id": "97b5c",
       "name": "base_color_texture-3.texture",
@@ -677,7 +677,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "2cca0618-6b9a-4659-9888-86829ee9639d@84cbb"
+        "imageUuidOrDatabaseUri": "af95cbca-ab67-47da-abb2-52786ddbf686@84cbb"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -688,7 +688,7 @@
     },
     "f3ffb": {
       "importer": "texture",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@f3ffb",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@f3ffb",
       "displayName": "",
       "id": "f3ffb",
       "name": "normalmap_texture-5.texture",
@@ -700,7 +700,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "2cca0618-6b9a-4659-9888-86829ee9639d@bdd2f"
+        "imageUuidOrDatabaseUri": "af95cbca-ab67-47da-abb2-52786ddbf686@bdd2f"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -711,7 +711,7 @@
     },
     "c47df": {
       "importer": "texture",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@c47df",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@c47df",
       "displayName": "",
       "id": "c47df",
       "name": "base_color_texture-6.texture",
@@ -723,7 +723,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "2cca0618-6b9a-4659-9888-86829ee9639d@b8c74"
+        "imageUuidOrDatabaseUri": "af95cbca-ab67-47da-abb2-52786ddbf686@b8c74"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -734,7 +734,7 @@
     },
     "b7107": {
       "importer": "texture",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@b7107",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@b7107",
       "displayName": "",
       "id": "b7107",
       "name": "normalmap_texture-7.texture",
@@ -746,7 +746,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "2cca0618-6b9a-4659-9888-86829ee9639d@6b36a"
+        "imageUuidOrDatabaseUri": "af95cbca-ab67-47da-abb2-52786ddbf686@6b36a"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -757,7 +757,7 @@
     },
     "b4801": {
       "importer": "texture",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@b4801",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@b4801",
       "displayName": "",
       "id": "b4801",
       "name": "normalmap_texture-9.texture",
@@ -769,7 +769,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "2cca0618-6b9a-4659-9888-86829ee9639d@e6a90"
+        "imageUuidOrDatabaseUri": "af95cbca-ab67-47da-abb2-52786ddbf686@e6a90"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -780,7 +780,7 @@
     },
     "afeef": {
       "importer": "texture",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@afeef",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@afeef",
       "displayName": "",
       "id": "afeef",
       "name": "base_color_texture-10.texture",
@@ -792,7 +792,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "2cca0618-6b9a-4659-9888-86829ee9639d@c0199"
+        "imageUuidOrDatabaseUri": "af95cbca-ab67-47da-abb2-52786ddbf686@c0199"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -803,7 +803,7 @@
     },
     "b5e6e": {
       "importer": "texture",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@b5e6e",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@b5e6e",
       "displayName": "",
       "id": "b5e6e",
       "name": "normalmap_texture-11.texture",
@@ -815,7 +815,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "2cca0618-6b9a-4659-9888-86829ee9639d@5457d"
+        "imageUuidOrDatabaseUri": "af95cbca-ab67-47da-abb2-52786ddbf686@5457d"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -826,7 +826,7 @@
     },
     "dcebe": {
       "importer": "texture",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@dcebe",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@dcebe",
       "displayName": "",
       "id": "dcebe",
       "name": "base_color_texture-12.texture",
@@ -838,7 +838,7 @@
         "mipfilter": "none",
         "anisotropy": 0,
         "isUuid": true,
-        "imageUuidOrDatabaseUri": "2cca0618-6b9a-4659-9888-86829ee9639d@c83b2"
+        "imageUuidOrDatabaseUri": "af95cbca-ab67-47da-abb2-52786ddbf686@c83b2"
       },
       "ver": "1.0.21",
       "imported": true,
@@ -849,7 +849,7 @@
     },
     "bb84f": {
       "importer": "gltf-material",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@bb84f",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@bb84f",
       "displayName": "",
       "id": "bb84f",
       "name": "Wolf3D_Eye.material",
@@ -865,7 +865,7 @@
     },
     "e111b": {
       "importer": "gltf-material",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@e111b",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@e111b",
       "displayName": "",
       "id": "e111b",
       "name": "Wolf3D_Body.material",
@@ -881,7 +881,7 @@
     },
     "476b9": {
       "importer": "gltf-material",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@476b9",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@476b9",
       "displayName": "",
       "id": "476b9",
       "name": "Wolf3D_Skin.material",
@@ -897,7 +897,7 @@
     },
     "9b5cd": {
       "importer": "gltf-material",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@9b5cd",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@9b5cd",
       "displayName": "",
       "id": "9b5cd",
       "name": "Wolf3D_Headwear.material",
@@ -913,7 +913,7 @@
     },
     "cce2c": {
       "importer": "gltf-material",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@cce2c",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@cce2c",
       "displayName": "",
       "id": "cce2c",
       "name": "Wolf3D_Outfit_Bottom.material",
@@ -929,7 +929,7 @@
     },
     "b725a": {
       "importer": "gltf-material",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@b725a",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@b725a",
       "displayName": "",
       "id": "b725a",
       "name": "Wolf3D_Outfit_Footwear.material",
@@ -945,7 +945,7 @@
     },
     "d918b": {
       "importer": "gltf-material",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@d918b",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@d918b",
       "displayName": "",
       "id": "d918b",
       "name": "Wolf3D_Outfit_Top.material",
@@ -961,7 +961,7 @@
     },
     "aeb3f": {
       "importer": "gltf-material",
-      "uuid": "2cca0618-6b9a-4659-9888-86829ee9639d@aeb3f",
+      "uuid": "af95cbca-ab67-47da-abb2-52786ddbf686@aeb3f",
       "displayName": "",
       "id": "aeb3f",
       "name": "Wolf3D_Teeth.material",
@@ -980,109 +980,109 @@
     "imageMetas": [
       {
         "name": "base_color_texture",
-        "uri": "2cca0618-6b9a-4659-9888-86829ee9639d@5e49e"
+        "uri": "af95cbca-ab67-47da-abb2-52786ddbf686@5e49e"
       },
       {
         "name": "base_color_texture",
-        "uri": "2cca0618-6b9a-4659-9888-86829ee9639d@ef396"
+        "uri": "af95cbca-ab67-47da-abb2-52786ddbf686@ef396"
       },
       {
         "name": "normalmap_texture",
-        "uri": "2cca0618-6b9a-4659-9888-86829ee9639d@649a4"
+        "uri": "af95cbca-ab67-47da-abb2-52786ddbf686@649a4"
       },
       {
         "name": "base_color_texture",
-        "uri": "2cca0618-6b9a-4659-9888-86829ee9639d@84cbb"
+        "uri": "af95cbca-ab67-47da-abb2-52786ddbf686@84cbb"
       },
       {
         "name": "base_color_texture",
-        "uri": "2cca0618-6b9a-4659-9888-86829ee9639d@a3593"
+        "uri": "af95cbca-ab67-47da-abb2-52786ddbf686@a3593"
       },
       {
         "name": "normalmap_texture",
-        "uri": "2cca0618-6b9a-4659-9888-86829ee9639d@bdd2f"
+        "uri": "af95cbca-ab67-47da-abb2-52786ddbf686@bdd2f"
       },
       {
         "name": "base_color_texture",
-        "uri": "2cca0618-6b9a-4659-9888-86829ee9639d@b8c74"
+        "uri": "af95cbca-ab67-47da-abb2-52786ddbf686@b8c74"
       },
       {
         "name": "normalmap_texture",
-        "uri": "2cca0618-6b9a-4659-9888-86829ee9639d@6b36a"
+        "uri": "af95cbca-ab67-47da-abb2-52786ddbf686@6b36a"
       },
       {
         "name": "base_color_texture",
-        "uri": "2cca0618-6b9a-4659-9888-86829ee9639d@a2acb"
+        "uri": "af95cbca-ab67-47da-abb2-52786ddbf686@a2acb"
       },
       {
         "name": "normalmap_texture",
-        "uri": "2cca0618-6b9a-4659-9888-86829ee9639d@e6a90"
+        "uri": "af95cbca-ab67-47da-abb2-52786ddbf686@e6a90"
       },
       {
         "name": "base_color_texture",
-        "uri": "2cca0618-6b9a-4659-9888-86829ee9639d@c0199"
+        "uri": "af95cbca-ab67-47da-abb2-52786ddbf686@c0199"
       },
       {
         "name": "normalmap_texture",
-        "uri": "2cca0618-6b9a-4659-9888-86829ee9639d@5457d"
+        "uri": "af95cbca-ab67-47da-abb2-52786ddbf686@5457d"
       },
       {
         "name": "base_color_texture",
-        "uri": "2cca0618-6b9a-4659-9888-86829ee9639d@c83b2"
+        "uri": "af95cbca-ab67-47da-abb2-52786ddbf686@c83b2"
       }
     ],
     "legacyFbxImporter": false,
-    "redirect": "2cca0618-6b9a-4659-9888-86829ee9639d@76792",
+    "redirect": "af95cbca-ab67-47da-abb2-52786ddbf686@76792",
     "assetFinder": {
       "meshes": [
-        "2cca0618-6b9a-4659-9888-86829ee9639d@37b83",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@9635c",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@b6359",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@a4f4d",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@a21eb",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@fba9c",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@0b9c0",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@e4a32",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@910b4"
+        "af95cbca-ab67-47da-abb2-52786ddbf686@37b83",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@9635c",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@b6359",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@a4f4d",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@a21eb",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@fba9c",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@0b9c0",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@e4a32",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@910b4"
       ],
       "skeletons": [
-        "2cca0618-6b9a-4659-9888-86829ee9639d@30732",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@f1394",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@75ee4",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@a72ab",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@2224c",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@62756",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@7d08b",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@b5902",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@2d5df"
+        "af95cbca-ab67-47da-abb2-52786ddbf686@30732",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@f1394",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@75ee4",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@a72ab",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@2224c",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@62756",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@7d08b",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@b5902",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@2d5df"
       ],
       "textures": [
-        "2cca0618-6b9a-4659-9888-86829ee9639d@0a1ef",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@05da8",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@7b4fa",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@97b5c",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@90896",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@f3ffb",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@c47df",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@b7107",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@23673",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@b4801",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@afeef",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@b5e6e",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@dcebe"
+        "af95cbca-ab67-47da-abb2-52786ddbf686@0a1ef",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@05da8",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@7b4fa",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@97b5c",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@90896",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@f3ffb",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@c47df",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@b7107",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@23673",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@b4801",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@afeef",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@b5e6e",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@dcebe"
       ],
       "materials": [
-        "2cca0618-6b9a-4659-9888-86829ee9639d@bb84f",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@e111b",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@476b9",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@9b5cd",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@cce2c",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@b725a",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@d918b",
-        "2cca0618-6b9a-4659-9888-86829ee9639d@aeb3f"
+        "af95cbca-ab67-47da-abb2-52786ddbf686@bb84f",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@e111b",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@476b9",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@9b5cd",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@cce2c",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@b725a",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@d918b",
+        "af95cbca-ab67-47da-abb2-52786ddbf686@aeb3f"
       ],
       "scenes": [
-        "2cca0618-6b9a-4659-9888-86829ee9639d@76792"
+        "af95cbca-ab67-47da-abb2-52786ddbf686@76792"
       ]
     }
   }

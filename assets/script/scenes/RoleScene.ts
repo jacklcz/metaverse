@@ -5,7 +5,7 @@ import GlobalNode from '../GlobalNode';
 import { MyRole } from '../role/MyRole';
 import UserInfo from '../base/UserInfo';
 import GameEvent from '../base/GameEvent';
-import { MoveType, RotateType } from '../role/BaseRole';
+import { ActionType, RotateType } from '../role/BaseRole';
 import PeerConnection from '../network/PeerConnection';
 
 @ccclass('RoleScene')
@@ -27,7 +27,7 @@ export class RoleScene extends Component {
 
     protected initMyRole(): void {
         
-        this.newRole(UserInfo.id, UserInfo.role, "", UserInfo.initPos, "MyRole");        
+        this.newRole(UserInfo.id, UserInfo.role, UserInfo.account, UserInfo.initPos, "MyRole");        
     }
 
     protected onRoleLocation(id: string, character: string, nickName: string, position: Vec3): void {
@@ -45,6 +45,7 @@ export class RoleScene extends Component {
 
         let gameRole: any = thisRole.addComponent(comName);
         gameRole.roleType = character;
+        gameRole.nickName = nickName;
         gameRole.roleID = id;
 
         this._roleList[id] = thisRole;
@@ -75,8 +76,6 @@ export class RoleScene extends Component {
 
     protected onRoleMoving(id: string, action: number, startPos: Vec3, rotation: Vec3): void {
         
-        //console.log("onRoleMoving = %s", id);
-        
         let node: Node = this._roleList[id];
         if(node){
 
@@ -85,7 +84,7 @@ export class RoleScene extends Component {
                         
             let gameRole: any = node.getComponent("GameRole");
             gameRole.moveType = action & 0x10000;
-            gameRole.setMoving(action & 0x0ffff);
+            gameRole.setAction(action & 0x0ffff);
         }
     }
 
@@ -94,13 +93,13 @@ export class RoleScene extends Component {
         switch(event.keyCode) {
             case KeyCode.KEY_W:
             case KeyCode.ARROW_UP:        
-                MyRole.instance().setMoving(MoveType.Forward);
+                MyRole.instance().setWard(ActionType.Forward);
+                MyRole.instance().setAction(ActionType.Forward);
                 break;
             case KeyCode.KEY_S:
-            case KeyCode.ARROW_DOWN:
-                MyRole.instance().setBackward();
-                MyRole.instance().setMoving(MoveType.Forward);
-                //MyRole.instance().setMoving(MoveType.Backward);
+            case KeyCode.ARROW_DOWN:                
+                MyRole.instance().setWard(ActionType.Backward);
+                MyRole.instance().setAction(ActionType.Backward);                
                 break;
             //case KeyCode.KEY_Q:
             //    MyRole.moving = MoveType.Left;
@@ -122,7 +121,7 @@ export class RoleScene extends Component {
                 break;
             case KeyCode.SPACE:
                 if(MyRole.instance().jupmAction()){
-                    MyRole.instance().sendAction(MoveType.Jump);                    
+                    MyRole.instance().sendAction(ActionType.Jump);                    
                 }
             default:
                 flag = false;
@@ -142,7 +141,7 @@ export class RoleScene extends Component {
             //case KeyCode.KEY_E:
             case KeyCode.ARROW_UP:
             case KeyCode.ARROW_DOWN:
-                MyRole.instance().setMoving(MoveType.None);
+                MyRole.instance().setAction(ActionType.None);
                 break;
             case KeyCode.KEY_A:               
             case KeyCode.KEY_D:

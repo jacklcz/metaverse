@@ -7,7 +7,7 @@ import TheConfig from "./base/TheConfig";
 @ccclass('AppMain')
 export default class AppMain extends Component {
 
-    protected _mainPacks: string[] = ["building", "characters", "mainRes", "texture"];
+    protected _mainPacks: string[] = ["audio", "building", "characters", "mainRes", "texture"];
     protected _selectPack: string[] = ["selectRes"];
 
     onLoad() {

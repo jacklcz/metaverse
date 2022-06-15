@@ -1,0 +1,79 @@
+{
+  "ver": "2.1.14",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "3303f264-d506-4de2-b199-366f448baed0",
+  "files": [
+    "__original-animation-0.cconb"
+  ],
+  "subMetas": {
+    "88455": {
+      "importer": "gltf-scene",
+      "uuid": "3303f264-d506-4de2-b199-366f448baed0@88455",
+      "displayName": "",
+      "id": "88455",
+      "name": "Dancing02.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.12",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "a3472": {
+      "importer": "gltf-animation",
+      "uuid": "3303f264-d506-4de2-b199-366f448baed0@a3472",
+      "displayName": "",
+      "id": "a3472",
+      "name": "Dancing02.animation",
+      "userData": {
+        "gltfIndex": 0,
+        "wrapMode": 2,
+        "sample": 30,
+        "span": {
+          "from": 0,
+          "to": 3.8333332538604736
+        },
+        "events": []
+      },
+      "ver": "1.0.16",
+      "imported": true,
+      "files": [
+        ".cconb"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [],
+    "legacyFbxImporter": false,
+    "animationImportSettings": [
+      {
+        "name": "mixamo.com",
+        "duration": 3.8333332538604736,
+        "fps": 30,
+        "splits": [
+          {
+            "name": "Dancing02",
+            "from": 0,
+            "to": 3.8333332538604736,
+            "wrapMode": 2
+          }
+        ]
+      }
+    ],
+    "redirect": "3303f264-d506-4de2-b199-366f448baed0@88455",
+    "assetFinder": {
+      "meshes": [],
+      "skeletons": [],
+      "textures": [],
+      "materials": [],
+      "scenes": [
+        "3303f264-d506-4de2-b199-366f448baed0@88455"
+      ]
+    }
+  }
+}
