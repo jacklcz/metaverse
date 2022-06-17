@@ -58,9 +58,8 @@ export default class ControlScene extends Component {
         this.node.on(fgui.Event.MOUSE_WHEEL, this.mouseWheel, this);
         fgui.GRoot.inst.on(fgui.Event.TOUCH_MOVE, this.mouseMove, this);
 
-        GameEvent.on(GameEvent.ON_OWNER_POSITION, this.onOwnerPosition, this);
+        GameEvent.on(GameEvent.ON_OWNER_POSITION, this.onOwnerPosition, this);       
         
-        this.onOwnerPosition();
         this.showStartGuide();
     }
 

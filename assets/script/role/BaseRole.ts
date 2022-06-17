@@ -120,11 +120,11 @@ export abstract class BaseRole extends Component {
         return flag;
     }
 
-    public updateName(): void {
+    public updateName(type: string): void {
         let title = Define.briefString(this.nickName);
-        let node = this.node.getChildByName("NameNode");       
+        let node = this.node.getChildByName("RoleName");
         let roleName: any = node.getComponent("RoleName");
-        roleName.setText(title);
+        roleName.setText(type, title);
     }
 
     protected get animation(): Animation {

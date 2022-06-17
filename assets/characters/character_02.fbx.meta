@@ -999,22 +999,6 @@
       ],
       "subMetas": {}
     },
-    "d8405": {
-      "importer": "gltf-scene",
-      "uuid": "9a5a9307-d6df-4383-a5ba-d9133b5e373a@d8405",
-      "displayName": "",
-      "id": "d8405",
-      "name": "character_02.prefab",
-      "userData": {
-        "gltfIndex": 0
-      },
-      "ver": "1.0.12",
-      "imported": true,
-      "files": [
-        ".json"
-      ],
-      "subMetas": {}
-    },
     "78a5e": {
       "importer": "gltf-scene",
       "uuid": "9a5a9307-d6df-4383-a5ba-d9133b5e373a@78a5e",

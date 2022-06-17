@@ -96,6 +96,7 @@ export class MyRole extends BaseRole {
 
         let position = this.node.getWorldPosition();
         PeerConnection.instance().sendPosition(position);
+        this.onUpdatedPosition();
     }
 
     public sendAction(action: number): void {

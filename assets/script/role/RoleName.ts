@@ -5,9 +5,16 @@ const { ccclass, property } = _decorator;
 export class RoleName extends Component {
     
     @property(Node)
-    alignCamera: Node = null;    
+    alignCamera: Node = null;
 
-    public setText(text: string): void {
+    static NameOffset: {} = {
+        "0": 2.21, "1": 2.05, "2": 2.22, "3": 2.00, "4": 1.90, "5": 1.88, "6": 1.95, "7": 1.98
+    };
+
+    public setText(type: string, text: string): void {
+        let y = RoleName.NameOffset[type];
+        this.node.setPosition(0, y, 0);
+
         let node = this.node.getChildByName("NickName");
         node.getComponent(Label).string = text;
     }

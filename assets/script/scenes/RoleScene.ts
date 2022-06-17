@@ -1,4 +1,5 @@
-import { _decorator, Component, Node, instantiate, input, Input, EventKeyboard, KeyCode, Vec3} from 'cc';
+import { _decorator, Component, Node, instantiate, assetManager, Prefab} from 'cc';
+import {input, Input, EventKeyboard, KeyCode, Vec3 } from 'cc';
 const { ccclass, property } = _decorator;
 
 import GlobalNode from '../GlobalNode';
@@ -6,7 +7,6 @@ import { MyRole } from '../role/MyRole';
 import UserInfo from '../base/UserInfo';
 import GameEvent from '../base/GameEvent';
 import { ActionType, RotateType } from '../role/BaseRole';
-import PeerConnection from '../network/PeerConnection';
 
 @ccclass('RoleScene')
 export class RoleScene extends Component {
@@ -39,22 +39,43 @@ export class RoleScene extends Component {
 
     protected newRole(id: string, character: string, nickName: string, position: Vec3, comName: string): void {
 
-        let type = "character" + character;
-        let role = GlobalNode.instance().node.getChildByName(type);        
-        let thisRole = instantiate(role);
+        let thisSelf = this;
+        let type = "./character" + character;
+        assetManager.loadBundle("characters", function(err, bundle): void {
+            bundle.load(type, Prefab, function(error: Error, data: Prefab): void {
+                if(!error) {
+                    data.createNode(function(error: Error, node: Node): void {
+                        if(!error){
+                            thisSelf.onLoadRole(node, id, character, nickName, position, comName);
+                        }
+                        else console.log(error.message);
+                    });                   
+                }
+                else console.log(error.message);
+            });
+        });
+    }
 
-        let gameRole: any = thisRole.addComponent(comName);
+    private onLoadRole(role: Node, id: string, character: string, nickName: string, position: Vec3, comName: string): void {
+        
+        let roleName = GlobalNode.instance().node.getChildByName("RoleName");
+        let thisName = instantiate(roleName);
+        role.addChild(thisName);
+        thisName.active = true;
+
+        let gameRole: any = role.addComponent(comName);
         gameRole.roleType = character;
         gameRole.nickName = nickName;
         gameRole.roleID = id;
 
-        this._roleList[id] = thisRole;
-        this.node.addChild(thisRole);
+        this._roleList[id] = role;
+        this.node.addChild(role);
 
-        thisRole.setWorldPosition(position);
-        thisRole.layer = this.node.layer;
-        thisRole.active = true;
-        gameRole.updateName();
+        role.setWorldPosition(position);
+        role.layer = this.node.layer;        
+
+        role.active = true;
+        gameRole.updateName(character);
         gameRole.onInitedRole();
     }
 
