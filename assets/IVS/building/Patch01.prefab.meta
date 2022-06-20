@@ -2,12 +2,12 @@
   "ver": "1.1.38",
   "importer": "prefab",
   "imported": true,
-  "uuid": "31b61257-4ef1-4835-96ca-f6a93fc2b3e5",
+  "uuid": "f6b583fe-7c52-4ef9-952e-77c1b019bd08",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "Land"
+    "syncNodeName": "Patch01"
   }
 }

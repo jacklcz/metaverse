@@ -2,12 +2,12 @@
   "ver": "1.1.38",
   "importer": "prefab",
   "imported": true,
-  "uuid": "31b61257-4ef1-4835-96ca-f6a93fc2b3e5",
+  "uuid": "90c7990e-a7da-4a2f-b9d1-e6295dd6b406",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "Land"
+    "syncNodeName": "Env_Tree"
   }
 }

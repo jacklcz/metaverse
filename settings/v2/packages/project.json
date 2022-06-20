@@ -7,5 +7,17 @@
       "fitWidth": false
     }
   },
-  "__version__": "1.0.2"
+  "__version__": "1.0.2",
+  "physics": {
+    "collisionMatrix": {
+      "0": 1,
+      "1": 2
+    },
+    "collisionGroups": [],
+    "autoSimulation": true,
+    "defaultMaterial": {
+      "spinningFriction": 0,
+      "rollingFriction": 0
+    }
+  }
 }

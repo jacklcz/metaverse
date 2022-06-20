@@ -11,16 +11,12 @@
       "intersection-2d",
       "marionette",
       "particle",
-      "particle-2d",
-      "physics-2d-box2d",
       "physics-ammo",
       "primitive",
-      "profiler",
       "skeletal-animation",
       "terrain",
       "tween",
       "ui",
-      "video",
       "webview"
     ],
     "cache": {
@@ -34,6 +30,12 @@
         "_value": true
       },
       "gfx-webgl2": {
+        "_value": true
+      },
+      "animation": {
+        "_value": true
+      },
+      "skeletal-animation": {
         "_value": true
       },
       "3d": {
@@ -65,7 +67,7 @@
         "_value": false
       },
       "physics-2d": {
-        "_value": true,
+        "_value": false,
         "_option": "physics-2d-box2d"
       },
       "physics-2d-box2d": {
@@ -81,16 +83,16 @@
         "_value": true
       },
       "profiler": {
-        "_value": true
+        "_value": false
       },
       "particle-2d": {
-        "_value": true
+        "_value": false
       },
       "audio": {
         "_value": true
       },
       "video": {
-        "_value": true
+        "_value": false
       },
       "webview": {
         "_value": true
@@ -111,12 +113,6 @@
         "_value": false
       },
       "marionette": {
-        "_value": true
-      },
-      "animation": {
-        "_value": true
-      },
-      "skeletal-animation": {
         "_value": true
       }
     },

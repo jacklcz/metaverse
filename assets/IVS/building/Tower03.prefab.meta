@@ -2,12 +2,12 @@
   "ver": "1.1.38",
   "importer": "prefab",
   "imported": true,
-  "uuid": "31b61257-4ef1-4835-96ca-f6a93fc2b3e5",
+  "uuid": "f12b5e31-d77d-47ab-98fc-e98d6ddd75fc",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "Land"
+    "syncNodeName": "Tower03"
   }
 }

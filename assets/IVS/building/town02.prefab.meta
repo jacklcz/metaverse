@@ -2,12 +2,12 @@
   "ver": "1.1.38",
   "importer": "prefab",
   "imported": true,
-  "uuid": "31b61257-4ef1-4835-96ca-f6a93fc2b3e5",
+  "uuid": "26149211-d14e-4904-8c6d-a2b2d6359b15",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "Land"
+    "syncNodeName": "town02"
   }
 }

@@ -77,7 +77,7 @@ export class MyRole extends BaseRole {
             let euler = v3();
             let thisRota = this.node.getWorldRotation();
             thisRota.getEulerAngles(euler);
-            euler.y += rotation * this.rotaSpeed * deltaTime;
+            euler.y += rotation * this.rotaSpeed * deltaTime;            
             this.node.setRotationFromEuler(euler);
         }
     }

@@ -1,4 +1,4 @@
-import { _decorator, Component, Vec3, v3, Animation } from 'cc';
+import { _decorator, Component, Vec3, v3, Animation, BoxCollider, RigidBody } from 'cc';
 const { ccclass, property } = _decorator;
 
 import Define from '../base/Define';
@@ -47,7 +47,15 @@ export abstract class BaseRole extends Component {
     abstract onMovingPrv(deltaTime: number): void;
     abstract onMoving(flag: boolean): void;
     abstract onUpdatedPosition(): void;
-    abstract onInitedRole(): void;
+    abstract onInitedRole(): void;    
+
+    onLoad(): void {
+        let collider = this.addComponent(BoxCollider);
+        collider.isTrigger = false;
+
+        let body = this.addComponent(RigidBody);
+        body.useGravity = false;
+    }
 
     public get roleID(): string{
         return this._roleID;
@@ -232,7 +240,7 @@ export abstract class BaseRole extends Component {
 
             this.onMoving(false);
 
-            let pos = this.node.getWorldPosition();            
+            let pos = this.node.getWorldPosition();             
             this.node.setWorldPosition(pos.add(offset));
             this.onUpdatedPosition();
         }
