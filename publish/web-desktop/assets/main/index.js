@@ -270,7 +270,7 @@ System.register("chunks:///_virtual/Base64.ts", ['cc', './Utf8.ts', './main.ts']
 System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Define.ts'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, _createClass, cclegacy, _decorator, Animation, Vec3, v3, Component, Define;
+  var _inheritsLoose, _createClass, cclegacy, _decorator, BoxCollider, RigidBody, Animation, Vec3, v3, Component, Define;
 
   return {
     setters: [function (module) {
@@ -279,6 +279,8 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
     }, function (module) {
       cclegacy = module.cclegacy;
       _decorator = module._decorator;
+      BoxCollider = module.BoxCollider;
+      RigidBody = module.RigidBody;
       Animation = module.Animation;
       Vec3 = module.Vec3;
       v3 = module.v3;
@@ -355,6 +357,13 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
 
         var _proto = BaseRole.prototype;
 
+        _proto.onLoad = function onLoad() {
+          var collider = this.addComponent(BoxCollider);
+          collider.isTrigger = false;
+          var body = this.addComponent(RigidBody);
+          body.useGravity = false;
+        };
+
         _proto.switchMove = function switchMove() {
           this.moveType = this.moveType == 0 ? 1 : 0;
           return this.setAction(this.action);
@@ -393,11 +402,11 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
           return flag;
         };
 
-        _proto.updateName = function updateName() {
+        _proto.updateName = function updateName(type) {
           var title = Define.briefString(this.nickName);
-          var node = this.node.getChildByName("NameNode");
+          var node = this.node.getChildByName("RoleName");
           var roleName = node.getComponent("RoleName");
-          roleName.setText(title);
+          roleName.setText(type, title);
         };
 
         _proto.isSpecialAction = function isSpecialAction() {
@@ -553,7 +562,7 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
 System.register("chunks:///_virtual/BuildScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, cclegacy, _decorator, assetManager, JsonAsset, Component, GameEvent;
+  var _inheritsLoose, cclegacy, _decorator, assetManager, JsonAsset, Prefab, Component, GameEvent;
 
   return {
     setters: [function (module) {
@@ -563,6 +572,7 @@ System.register("chunks:///_virtual/BuildScene.ts", ['./rollupPluginModLoBabelHe
       _decorator = module._decorator;
       assetManager = module.assetManager;
       JsonAsset = module.JsonAsset;
+      Prefab = module.Prefab;
       Component = module.Component;
     }, function (module) {
       GameEvent = module.default;
@@ -608,10 +618,37 @@ System.register("chunks:///_virtual/BuildScene.ts", ['./rollupPluginModLoBabelHe
 
         _proto.initMapData = function initMapData(data) {
           this._mapData = data;
-          this.onUpdateView();
+          var buildList = [];
+          this.onUpdateView(buildList);
         };
 
-        _proto.onUpdateView = function onUpdateView() {};
+        _proto.onUpdateView = function onUpdateView(updateList) {
+          if (updateList.length <= 0) return;
+          var thisSelf = this;
+          var loadList = updateList.splice(0, 3);
+          assetManager.loadBundle("building", function (err, bundle) {
+            bundle.load(loadList, Prefab, function (error, data) {
+              thisSelf.onUpdateView(updateList);
+
+              if (!error) {
+                thisSelf.initBuilding(loadList, data);
+              } else console.log(error.message);
+            });
+          });
+        };
+
+        _proto.initBuilding = function initBuilding(loadList, data) {
+          var thisSelf = this;
+
+          for (var i = 0; i < data.length; i++) {
+            data[i].createNode(function (error, node) {
+              //node.setWorldPosition();
+              //node.setWorldRotation();
+              //node.setScale();
+              thisSelf.node.addChild(node);
+            });
+          }
+        };
 
         return BuildScene;
       }(Component)) || _class));
@@ -1108,7 +1145,6 @@ System.register("chunks:///_virtual/ControlScene.ts", ['./rollupPluginModLoBabel
           this.node.on(Event.MOUSE_WHEEL, this.mouseWheel, this);
           GRoot.inst.on(Event.TOUCH_MOVE, this.mouseMove, this);
           GameEvent.on(GameEvent.ON_OWNER_POSITION, this.onOwnerPosition, this);
-          this.onOwnerPosition();
           this.showStartGuide();
         };
 
@@ -1507,14 +1543,14 @@ System.register("chunks:///_virtual/GlobalNode.ts", ['./rollupPluginModLoBabelHe
 
         _proto.onLoad = function onLoad() {
           GlobalNode._thisNode = this;
-          this.node.getChildByName("character0").active = false;
-          this.node.getChildByName("character1").active = false;
-          this.node.getChildByName("character2").active = false;
-          this.node.getChildByName("character3").active = false;
-          this.node.getChildByName("character4").active = false;
-          this.node.getChildByName("character5").active = false;
-          this.node.getChildByName("character6").active = false;
-          this.node.getChildByName("character7").active = false;
+          this.node.getChildByName("RoleName").active = false; //this.node.getChildByName("character0").active = false;
+          //this.node.getChildByName("character1").active = false;
+          //this.node.getChildByName("character2").active = false;
+          //this.node.getChildByName("character3").active = false;
+          //this.node.getChildByName("character4").active = false;
+          //this.node.getChildByName("character5").active = false;
+          //this.node.getChildByName("character6").active = false;
+          //this.node.getChildByName("character7").active = false;        
         };
 
         _proto.onChatEnded = function onChatEnded() {
@@ -1573,11 +1609,11 @@ System.register("chunks:///_virtual/GuideDlg.ts", ['./rollupPluginModLoBabelHelp
   };
 });
 
-System.register("chunks:///_virtual/main", ['./GameEvent.ts', './AppMain.ts', './AudioManager.ts', './AudioController.ts', './poliyfill.ts', './Utf8.ts', './main.ts', './Base64.ts', './Define.ts', './BaseRole.ts', './BuildScene.ts', './GlobalNode.ts', './proto.mjs_cjs=&original=.js', './UserInfo.ts', './Connection.ts', './PeerConnection.ts', './ChatFrame.ts', './MyRole.ts', './Dialog.ts', './GuideDlg.ts', './StartDlg.ts', './SettingDlg.ts', './ControlScene.ts', './GameRole.ts', './VectorTool.ts', './MainRoleCamera.ts', './MainScene.ts', './MetaMask.ts', './Quaternion.ts', './RoleName.ts', './RoleScene.ts', './TheConfig.ts', './StartScene.ts', './ThirdPersonCamera.ts'], function () {
+System.register("chunks:///_virtual/main", ['./GameEvent.ts', './AppMain.ts', './AudioManager.ts', './AudioController.ts', './poliyfill.ts', './Utf8.ts', './main.ts', './Base64.ts', './Define.ts', './BaseRole.ts', './BuildScene.ts', './GlobalNode.ts', './proto.mjs_cjs=&original=.js', './UserInfo.ts', './Connection.ts', './PeerConnection.ts', './ChatFrame.ts', './MyRole.ts', './Dialog.ts', './GuideDlg.ts', './StartDlg.ts', './SettingDlg.ts', './ControlScene.ts', './GameRole.ts', './VectorTool.ts', './MainRoleCamera.ts', './MainScene.ts', './MetaMask.ts', './RoleName.ts', './RoleScene.ts', './TheConfig.ts', './StartScene.ts'], function () {
   'use strict';
 
   return {
-    setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+    setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
     execute: function () {}
   };
 });
@@ -2181,6 +2217,7 @@ System.register("chunks:///_virtual/MyRole.ts", ['./rollupPluginModLoBabelHelper
           GameEvent.emit(GameEvent.ON_INITED_OWNER);
           var position = this.node.getWorldPosition();
           PeerConnection.instance().sendPosition(position);
+          this.onUpdatedPosition();
         };
 
         _proto.sendAction = function sendAction(action) {
@@ -2460,122 +2497,6 @@ System.register("chunks:///_virtual/poliyfill.ts", ['cc'], function (exports) {
   };
 });
 
-System.register("chunks:///_virtual/Quaternion.ts", ['cc'], function (exports) {
-  'use strict';
-
-  var cclegacy, _decorator, Quat, Vec3;
-
-  return {
-    setters: [function (module) {
-      cclegacy = module.cclegacy;
-      _decorator = module._decorator;
-      Quat = module.Quat;
-      Vec3 = module.Vec3;
-    }],
-    execute: function () {
-      cclegacy._RF.push({}, "238e61toWRI0L+o+lcDX3MY", "Quaternion", undefined);
-
-      var ccclass = _decorator.ccclass,
-          property = _decorator.property;
-      var Quaternion = exports('Quaternion', /*#__PURE__*/function () {
-        function Quaternion() {}
-
-        Quaternion.rotateY = function rotateY(_node, _angle) {
-          var _quat = new Quat();
-
-          _node.rotation = Quat.rotateY(_quat, _node.rotation, _angle * this.Deg2Rad);
-          return _quat;
-        };
-
-        Quaternion.RotateX = function RotateX(_node, _angle) {
-          var _quat = new Quat();
-
-          _node.rotation = Quat.rotateX(_quat, _node.rotation, _angle * this.Deg2Rad);
-          return _quat;
-        };
-
-        Quaternion.RotateZ = function RotateZ(_node, _angle) {
-          var _quat = new Quat();
-
-          _node.rotation = Quat.rotateZ(_quat, _node.rotation, _angle * this.Deg2Rad);
-          return _quat;
-        };
-
-        Quaternion.RotateAround = function RotateAround(_targetQuat, axis, _angle) {
-          var _quat = new Quat();
-
-          Quat.rotateAround(_quat, _targetQuat, axis, _angle * this.Deg2Rad);
-          return _quat;
-        };
-
-        Quaternion.RotateAroundLocal = function RotateAroundLocal(_targetQuat, axis, _angle) {
-          var _quat = new Quat();
-
-          Quat.rotateAroundLocal(_quat, _targetQuat, axis, _angle * this.Deg2Rad);
-          return _quat;
-        };
-
-        Quaternion.RotationAroundNode = function RotationAroundNode(self, pos, axis, angle) {
-          var _quat = new Quat();
-
-          var v1 = new Vec3();
-          var v2 = new Vec3();
-          var pos2 = self.position;
-          var rad = angle * this.Deg2Rad;
-          Quat.fromAxisAngle(_quat, axis, rad);
-          Vec3.subtract(v1, pos2, pos);
-          Vec3.transformQuat(v2, v1, _quat);
-          self.position = Vec3.add(v2, pos, v2);
-          Quat.rotateAround(_quat, self.rotation, axis, rad);
-          return _quat;
-        };
-
-        Quaternion.GetEulerFromQuat = function GetEulerFromQuat(_quat) {
-          var angle = Quat.toEuler(new Vec3(), _quat, true);
-          return angle;
-        };
-
-        Quaternion.GetQuatFromAngle = function GetQuatFromAngle(_angle) {
-          var _quat = Quat.fromEuler(new Quat(), _angle.x, _angle.y, _angle.z);
-
-          return _quat;
-        };
-
-        Quaternion.Lerp = function Lerp(_a, _b, _t) {
-          var _quat = new Quat();
-
-          Quat.lerp(_quat, _a, _b, _t);
-          return _quat;
-        };
-
-        Quaternion.Slerp = function Slerp(_a, _b, _t) {
-          var _quat = new Quat();
-
-          Quat.slerp(_quat, _a, _b, _t);
-          return _quat;
-        };
-
-        Quaternion.LookRotation = function LookRotation(_forward, _upwards) {
-          if (_upwards === void 0) {
-            _upwards = Vec3.UP;
-          }
-
-          var _quat = new Quat();
-
-          Vec3.normalize(_forward, _forward);
-          Quat.fromViewUp(_quat, _forward, _upwards);
-          return _quat;
-        };
-
-        return Quaternion;
-      }());
-      Quaternion.Deg2Rad = Math.PI / 180;
-
-      cclegacy._RF.pop();
-    }
-  };
-});
-
 System.register("chunks:///_virtual/RoleName.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
   'use strict';
 
@@ -2598,13 +2519,13 @@ System.register("chunks:///_virtual/RoleName.ts", ['./rollupPluginModLoBabelHelp
       Component = module.Component;
     }],
     execute: function () {
-      var _dec, _dec2, _class, _class2, _descriptor;
+      var _dec, _dec2, _class, _class2, _descriptor, _class3;
 
       cclegacy._RF.push({}, "ec4784trRhOLobnVASd52gA", "RoleName", undefined);
 
       var ccclass = _decorator.ccclass,
           property = _decorator.property;
-      var RoleName = exports('RoleName', (_dec = ccclass('RoleName'), _dec2 = property(Node), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
+      var RoleName = exports('RoleName', (_dec = ccclass('RoleName'), _dec2 = property(Node), _dec(_class = (_class2 = (_class3 = /*#__PURE__*/function (_Component) {
         _inheritsLoose(RoleName, _Component);
 
         function RoleName() {
@@ -2623,7 +2544,9 @@ System.register("chunks:///_virtual/RoleName.ts", ['./rollupPluginModLoBabelHelp
 
         var _proto = RoleName.prototype;
 
-        _proto.setText = function setText(text) {
+        _proto.setText = function setText(type, text) {
+          var y = RoleName.NameOffset[type];
+          this.node.setPosition(0, y, 0);
           var node = this.node.getChildByName("NickName");
           node.getComponent(Label).string = text;
         };
@@ -2639,7 +2562,16 @@ System.register("chunks:///_virtual/RoleName.ts", ['./rollupPluginModLoBabelHelp
         };
 
         return RoleName;
-      }(Component), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "alignCamera", [_dec2], {
+      }(Component), _class3.NameOffset = {
+        "0": 2.21,
+        "1": 2.05,
+        "2": 2.22,
+        "3": 2.00,
+        "4": 1.90,
+        "5": 1.88,
+        "6": 1.95,
+        "7": 1.98
+      }, _class3), _descriptor = _applyDecoratedDescriptor(_class2.prototype, "alignCamera", [_dec2], {
         configurable: true,
         enumerable: true,
         writable: true,
@@ -2656,7 +2588,7 @@ System.register("chunks:///_virtual/RoleName.ts", ['./rollupPluginModLoBabelHelp
 System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './BaseRole.ts', './GlobalNode.ts', './UserInfo.ts', './MyRole.ts'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, cclegacy, _decorator, input, Input, instantiate, KeyCode, Component, GameEvent, ActionType, RotateType, GlobalNode, UserInfo, MyRole;
+  var _inheritsLoose, cclegacy, _decorator, input, Input, assetManager, Prefab, instantiate, KeyCode, Component, GameEvent, ActionType, RotateType, GlobalNode, UserInfo, MyRole;
 
   return {
     setters: [function (module) {
@@ -2666,6 +2598,8 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
       _decorator = module._decorator;
       input = module.input;
       Input = module.Input;
+      assetManager = module.assetManager;
+      Prefab = module.Prefab;
       instantiate = module.instantiate;
       KeyCode = module.KeyCode;
       Component = module.Component;
@@ -2724,19 +2658,36 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
         };
 
         _proto.newRole = function newRole(id, character, nickName, position, comName) {
-          var type = "character" + character;
-          var role = GlobalNode.instance().node.getChildByName(type);
-          var thisRole = instantiate(role);
-          var gameRole = thisRole.addComponent(comName);
+          var thisSelf = this;
+          var type = "./character" + character;
+          assetManager.loadBundle("characters", function (err, bundle) {
+            bundle.load(type, Prefab, function (error, data) {
+              if (!error) {
+                data.createNode(function (error, node) {
+                  if (!error) {
+                    thisSelf.onLoadRole(node, id, character, nickName, position, comName);
+                  } else console.log(error.message);
+                });
+              } else console.log(error.message);
+            });
+          });
+        };
+
+        _proto.onLoadRole = function onLoadRole(role, id, character, nickName, position, comName) {
+          var roleName = GlobalNode.instance().node.getChildByName("RoleName");
+          var thisName = instantiate(roleName);
+          role.addChild(thisName);
+          thisName.active = true;
+          var gameRole = role.addComponent(comName);
           gameRole.roleType = character;
           gameRole.nickName = nickName;
           gameRole.roleID = id;
-          this._roleList[id] = thisRole;
-          this.node.addChild(thisRole);
-          thisRole.setWorldPosition(position);
-          thisRole.layer = this.node.layer;
-          thisRole.active = true;
-          gameRole.updateName();
+          this._roleList[id] = role;
+          this.node.addChild(role);
+          role.setWorldPosition(position);
+          role.layer = this.node.layer;
+          role.active = true;
+          gameRole.updateName(character);
           gameRole.onInitedRole();
         };
 
@@ -3215,249 +3166,6 @@ System.register("chunks:///_virtual/TheConfig.ts", ['cc'], function (exports) {
       TheConfig.wsUrl = "ws://13.231.210.240:4000/socket";
       TheConfig.selectCfg = new GameConfig();
       TheConfig.mainCfg = new GameConfig();
-
-      cclegacy._RF.pop();
-    }
-  };
-});
-
-System.register("chunks:///_virtual/ThirdPersonCamera.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './MyRole.ts', './VectorTool.ts', './Quaternion.ts'], function (exports) {
-  'use strict';
-
-  var _applyDecoratedDescriptor, _inheritsLoose, _initializerDefineProperty, _assertThisInitialized, _createClass, cclegacy, _decorator, Node, Enum, Vec3, Quat, Component, GameEvent, MyRole, VectorTool, Quaternion;
-
-  return {
-    setters: [function (module) {
-      _applyDecoratedDescriptor = module.applyDecoratedDescriptor;
-      _inheritsLoose = module.inheritsLoose;
-      _initializerDefineProperty = module.initializerDefineProperty;
-      _assertThisInitialized = module.assertThisInitialized;
-      _createClass = module.createClass;
-    }, function (module) {
-      cclegacy = module.cclegacy;
-      _decorator = module._decorator;
-      Node = module.Node;
-      Enum = module.Enum;
-      Vec3 = module.Vec3;
-      Quat = module.Quat;
-      Component = module.Component;
-    }, function (module) {
-      GameEvent = module.default;
-    }, function (module) {
-      MyRole = module.MyRole;
-    }, function (module) {
-      VectorTool = module.VectorTool;
-    }, function (module) {
-      Quaternion = module.Quaternion;
-    }],
-    execute: function () {
-      exports('ThirdPersonCameraType', void 0);
-
-      var _dec, _dec2, _dec3, _dec4, _class, _class2, _descriptor, _descriptor2, _descriptor3, _descriptor4, _descriptor5, _descriptor6;
-
-      cclegacy._RF.push({}, "fd93cDT/QFFLrDn2kEEukQA", "ThirdPersonCamera", undefined);
-
-      var ccclass = _decorator.ccclass,
-          property = _decorator.property;
-      var ThirdPersonCameraType;
-
-      (function (ThirdPersonCameraType) {
-        ThirdPersonCameraType[ThirdPersonCameraType["Follow"] = 0] = "Follow";
-        ThirdPersonCameraType[ThirdPersonCameraType["FollowTrackRotation"] = 1] = "FollowTrackRotation";
-        ThirdPersonCameraType[ThirdPersonCameraType["FollowIndependentRotation"] = 2] = "FollowIndependentRotation";
-      })(ThirdPersonCameraType || (ThirdPersonCameraType = exports('ThirdPersonCameraType', {})));
-
-      var ThirdPersonCamera = exports('ThirdPersonCamera', (_dec = ccclass('ThirdPersonCamera'), _dec2 = property(Node), _dec3 = property(Node), _dec4 = property({
-        type: Enum(ThirdPersonCameraType)
-      }), _dec(_class = (_class2 = /*#__PURE__*/function (_Component) {
-        _inheritsLoose(ThirdPersonCamera, _Component);
-
-        function ThirdPersonCamera() {
-          var _this;
-
-          for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
-            args[_key] = arguments[_key];
-          }
-
-          _this = _Component.call.apply(_Component, [this].concat(args)) || this;
-
-          _initializerDefineProperty(_this, "target", _descriptor, _assertThisInitialized(_this));
-
-          _initializerDefineProperty(_this, "lookAt", _descriptor2, _assertThisInitialized(_this));
-
-          _initializerDefineProperty(_this, "cameraType", _descriptor3, _assertThisInitialized(_this));
-
-          _initializerDefineProperty(_this, "positionOffset", _descriptor4, _assertThisInitialized(_this));
-
-          _initializerDefineProperty(_this, "moveSmooth", _descriptor5, _assertThisInitialized(_this));
-
-          _initializerDefineProperty(_this, "rotateSmooth", _descriptor6, _assertThisInitialized(_this));
-
-          _this.MouseX = 0;
-          _this.MouseY = 0;
-          _this._forward = new Vec3();
-          _this._right = new Vec3();
-          _this._up = new Vec3();
-          _this.angle = null;
-          _this.isDown = false;
-          _this.velocity = new Vec3();
-          _this.forwardView = new Vec3();
-          return _this;
-        }
-
-        var _proto = ThirdPersonCamera.prototype;
-
-        _proto.start = function start() {
-          GameEvent.on(GameEvent.ON_INIT_OWNER, this.onInitMyRole, this);
-        };
-
-        _proto.onInitMyRole = function onInitMyRole() {
-          this.target = this.lookAt = MyRole.instance().node;
-          this.cameraType == ThirdPersonCameraType.Follow && this.node.lookAt(this.target.worldPosition);
-        };
-
-        _proto.mouseDown = function mouseDown(e) {
-          this.isDown = true;
-        };
-
-        _proto.mouseMove = function mouseMove(delta) {
-          if (this.cameraType == ThirdPersonCameraType.FollowIndependentRotation) {
-            this.setIndependentRotation(delta);
-          }
-        };
-
-        _proto.mouseUp = function mouseUp(e) {
-          this.isDown = false;
-        };
-
-        _proto.mouseWheel = function mouseWheel(delta) {
-          console.log("mouseWheel %d", delta);
-        };
-
-        _proto.update = function update(dt) {
-          if (this.target) {
-            switch (this.cameraType) {
-              case ThirdPersonCameraType.Follow:
-                this.setFollow();
-                break;
-
-              case ThirdPersonCameraType.FollowTrackRotation:
-                this.setFollowTrackRotation();
-                break;
-
-              case ThirdPersonCameraType.FollowIndependentRotation:
-                this.setMove();
-                break;
-            }
-          }
-        };
-
-        _proto.setFollow = function setFollow() {
-          var temp = new Vec3();
-          var tem0 = new Vec3(0, this.positionOffset.y, this.positionOffset.z);
-          Vec3.add(temp, this.lookAt.worldPosition, tem0);
-          this.node.position = this.node.position.lerp(temp, this.moveSmooth);
-        };
-
-        _proto.setFollowTrackRotation = function setFollowTrackRotation() {
-          var u = Vec3.multiplyScalar(new Vec3(), Vec3.UP, this.positionOffset.y);
-          var f = Vec3.multiplyScalar(new Vec3(), this.target.forward, this.positionOffset.z);
-          var pos = Vec3.add(new Vec3(), this.target.position, u);
-          Vec3.add(pos, pos, f);
-          this.node.position = VectorTool.SmoothDampV3(this.node.position, pos, this.velocity, this.moveSmooth, 100000, 0.02);
-          this.forwardView = Vec3.subtract(this.forwardView, this.node.position, this.target.getWorldPosition());
-          this.node.lookAt(this.target.worldPosition);
-        };
-
-        _proto.setMove = function setMove() {
-          this._forward = new Vec3();
-          this._right = new Vec3();
-          this._up = new Vec3();
-          Vec3.transformQuat(this._forward, Vec3.FORWARD, this.node.rotation);
-
-          this._forward.multiplyScalar(this.positionOffset.z);
-
-          var desiredPos = new Vec3();
-          desiredPos = desiredPos.add(this.lookAt.worldPosition).subtract(this._forward).add(this._right).add(this._up);
-          this.node.position = this.node.position.lerp(desiredPos, this.moveSmooth);
-        };
-
-        _proto.setIndependentRotation = function setIndependentRotation(delta) {
-          var radX = -delta.x;
-          var radY = -delta.y;
-
-          var _quat = new Quat();
-
-          var _right = Vec3.transformQuat(this._right, Vec3.RIGHT, this.node.rotation);
-
-          _quat = Quaternion.RotationAroundNode(this.node, this.target.position, _right, radY);
-          this.angle = Quaternion.GetEulerFromQuat(_quat);
-          this.angle.x = this.angle.x > 0 ? this.clamp(this.angle.x, 120, 180) : this.clamp(this.angle.x, -180, -170);
-          Quat.fromEuler(_quat, this.angle.x, this.angle.y, this.angle.z);
-          this.node.setWorldRotation(_quat);
-          _quat = Quaternion.RotationAroundNode(this.node, this.target.position, Vec3.UP, radX);
-          this.node.setWorldRotation(_quat);
-          this.angle = Quaternion.GetEulerFromQuat(_quat);
-          this.MouseX = this.angle.y;
-          this.MouseY = this.angle.x;
-        };
-
-        _proto.clamp = function clamp(val, min, max) {
-          if (val <= min) val = min;else if (val >= max) val = max;
-          return val;
-        };
-
-        _createClass(ThirdPersonCamera, [{
-          key: "type",
-          get: function get() {
-            return this.cameraType;
-          }
-        }]);
-
-        return ThirdPersonCamera;
-      }(Component), (_descriptor = _applyDecoratedDescriptor(_class2.prototype, "target", [_dec2], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: function initializer() {
-          return null;
-        }
-      }), _descriptor2 = _applyDecoratedDescriptor(_class2.prototype, "lookAt", [_dec3], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: function initializer() {
-          return null;
-        }
-      }), _descriptor3 = _applyDecoratedDescriptor(_class2.prototype, "cameraType", [_dec4], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: function initializer() {
-          return ThirdPersonCameraType.FollowIndependentRotation;
-        }
-      }), _descriptor4 = _applyDecoratedDescriptor(_class2.prototype, "positionOffset", [property], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: function initializer() {
-          return new Vec3(0, 4.8, 10);
-        }
-      }), _descriptor5 = _applyDecoratedDescriptor(_class2.prototype, "moveSmooth", [property], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: function initializer() {
-          return 0.02;
-        }
-      }), _descriptor6 = _applyDecoratedDescriptor(_class2.prototype, "rotateSmooth", [property], {
-        configurable: true,
-        enumerable: true,
-        writable: true,
-        initializer: function initializer() {
-          return 0.03;
-        }
-      })), _class2)) || _class));
 
       cclegacy._RF.pop();
     }

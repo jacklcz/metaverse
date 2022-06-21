@@ -1,8 +1,8 @@
-System.register(['./instantiated-cf013a92.js'], function (exports) {
+System.register(['./instantiated-6750de3d.js'], function (exports) {
 	'use strict';
 	return {
 		setters: [function (module) {
-			exports('default', module.h3);
+			exports('default', module.gY);
 		}],
 		execute: function () {
 
