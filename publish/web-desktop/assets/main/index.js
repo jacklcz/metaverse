@@ -270,7 +270,7 @@ System.register("chunks:///_virtual/Base64.ts", ['cc', './Utf8.ts', './main.ts']
 System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Define.ts'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, _createClass, cclegacy, _decorator, BoxCollider, RigidBody, Animation, Vec3, v3, Component, Define;
+  var _inheritsLoose, _createClass, cclegacy, _decorator, BoxCollider, v3, RigidBody, Animation, Vec3, Component, Define;
 
   return {
     setters: [function (module) {
@@ -280,10 +280,10 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
       cclegacy = module.cclegacy;
       _decorator = module._decorator;
       BoxCollider = module.BoxCollider;
+      v3 = module.v3;
       RigidBody = module.RigidBody;
       Animation = module.Animation;
       Vec3 = module.Vec3;
-      v3 = module.v3;
       Component = module.Component;
     }, function (module) {
       Define = module.default;
@@ -359,9 +359,11 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
 
         _proto.onLoad = function onLoad() {
           var collider = this.addComponent(BoxCollider);
-          collider.isTrigger = false;
+          collider.isTrigger = false; //collider.center = v3(0, 0, 0);
+
+          collider.size = v3(0.8, 2, 0.8);
           var body = this.addComponent(RigidBody);
-          body.useGravity = false;
+          body.useGravity = true;
         };
 
         _proto.switchMove = function switchMove() {
@@ -559,7 +561,7 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
   };
 });
 
-System.register("chunks:///_virtual/BuildScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts'], function (exports) {
+System.register("chunks:///_virtual/BuildScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './MyRole.ts'], function (exports) {
   'use strict';
 
   var _inheritsLoose, cclegacy, _decorator, assetManager, JsonAsset, Prefab, Component, GameEvent;
@@ -576,7 +578,7 @@ System.register("chunks:///_virtual/BuildScene.ts", ['./rollupPluginModLoBabelHe
       Component = module.Component;
     }, function (module) {
       GameEvent = module.default;
-    }],
+    }, null],
     execute: function () {
       var _dec, _class;
 
@@ -618,33 +620,36 @@ System.register("chunks:///_virtual/BuildScene.ts", ['./rollupPluginModLoBabelHe
 
         _proto.initMapData = function initMapData(data) {
           this._mapData = data;
-          var buildList = [];
-          this.onUpdateView(buildList);
+          return;
         };
 
-        _proto.onUpdateView = function onUpdateView(updateList) {
-          if (updateList.length <= 0) return;
+        _proto.onUpdateView = function onUpdateView(perfabList, infoList) {
+          if (perfabList.length <= 0) return;
           var thisSelf = this;
-          var loadList = updateList.splice(0, 3);
+          var loadList = perfabList.splice(0, 3);
+          var thisInfo = infoList.splice(0, 3);
           assetManager.loadBundle("building", function (err, bundle) {
             bundle.load(loadList, Prefab, function (error, data) {
-              thisSelf.onUpdateView(updateList);
+              thisSelf.onUpdateView(perfabList, infoList);
 
               if (!error) {
-                thisSelf.initBuilding(loadList, data);
+                thisSelf.initBuilding(loadList, thisInfo, data);
               } else console.log(error.message);
             });
           });
         };
 
-        _proto.initBuilding = function initBuilding(loadList, data) {
+        _proto.initBuilding = function initBuilding(perfabList, infoList, data) {
           var thisSelf = this;
 
           for (var i = 0; i < data.length; i++) {
             data[i].createNode(function (error, node) {
-              //node.setWorldPosition();
-              //node.setWorldRotation();
-              //node.setScale();
+              var pos = infoList[i][1];
+              var rota = infoList[i][2];
+              var scale = infoList[i][3];
+              node.setWorldPosition(pos[0], pos[1], pos[2]);
+              node.setWorldRotationFromEuler(rota[0], rota[1], rota[2]);
+              node.setScale(scale[0], scale[1], scale[2]);
               thisSelf.node.addChild(node);
             });
           }
@@ -658,10 +663,10 @@ System.register("chunks:///_virtual/BuildScene.ts", ['./rollupPluginModLoBabelHe
   };
 });
 
-System.register("chunks:///_virtual/ChatFrame.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './Define.ts', './GlobalNode.ts', './PeerConnection.ts'], function (exports) {
+System.register("chunks:///_virtual/ChatFrame.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './Define.ts', './PeerConnection.ts', './GlobalNode.ts'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, cclegacy, _decorator, EventHandler, Node, GameEvent, Define, GlobalNode, PeerConnection;
+  var _inheritsLoose, cclegacy, _decorator, EventHandler, Node, GameEvent, Define, PeerConnection, GlobalNode;
 
   return {
     setters: [function (module) {
@@ -676,9 +681,9 @@ System.register("chunks:///_virtual/ChatFrame.ts", ['./rollupPluginModLoBabelHel
     }, function (module) {
       Define = module.default;
     }, function (module) {
-      GlobalNode = module.default;
-    }, function (module) {
       PeerConnection = module.default;
+    }, function (module) {
+      GlobalNode = module.default;
     }],
     execute: function () {
       var _dec, _class;
@@ -1043,10 +1048,10 @@ System.register("chunks:///_virtual/Connection.ts", ['./rollupPluginModLoBabelHe
   };
 });
 
-System.register("chunks:///_virtual/ControlScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './BaseRole.ts', './UserInfo.ts', './ChatFrame.ts', './fairygui.mjs', './MyRole.ts', './GuideDlg.ts', './StartDlg.ts', './SettingDlg.ts'], function (exports) {
+System.register("chunks:///_virtual/ControlScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './BaseRole.ts', './UserInfo.ts', './MyRole.ts', './ChatFrame.ts', './fairygui.mjs', './GuideDlg.ts', './StartDlg.ts', './SettingDlg.ts'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, _createClass, cclegacy, _decorator, assetManager, v2, v3, Quat, Component, GameEvent, ActionType, UserInfo, ChatFrame, GRoot, UIPackage, Event, MyRole, GuideDlg, StartDlg, SettingDlg;
+  var _inheritsLoose, _createClass, cclegacy, _decorator, assetManager, v2, v3, Quat, Component, GameEvent, ActionType, UserInfo, MyRole, ChatFrame, GRoot, UIPackage, Event, GuideDlg, StartDlg, SettingDlg;
 
   return {
     setters: [function (module) {
@@ -1067,13 +1072,13 @@ System.register("chunks:///_virtual/ControlScene.ts", ['./rollupPluginModLoBabel
     }, function (module) {
       UserInfo = module.default;
     }, function (module) {
+      MyRole = module.MyRole;
+    }, function (module) {
       ChatFrame = module.ChatFrame;
     }, function (module) {
       GRoot = module.GRoot;
       UIPackage = module.UIPackage;
       Event = module.Event;
-    }, function (module) {
-      MyRole = module.MyRole;
     }, function (module) {
       GuideDlg = module.GuideDlg;
     }, function (module) {
@@ -1609,7 +1614,7 @@ System.register("chunks:///_virtual/GuideDlg.ts", ['./rollupPluginModLoBabelHelp
   };
 });
 
-System.register("chunks:///_virtual/main", ['./GameEvent.ts', './AppMain.ts', './AudioManager.ts', './AudioController.ts', './poliyfill.ts', './Utf8.ts', './main.ts', './Base64.ts', './Define.ts', './BaseRole.ts', './BuildScene.ts', './GlobalNode.ts', './proto.mjs_cjs=&original=.js', './UserInfo.ts', './Connection.ts', './PeerConnection.ts', './ChatFrame.ts', './MyRole.ts', './Dialog.ts', './GuideDlg.ts', './StartDlg.ts', './SettingDlg.ts', './ControlScene.ts', './GameRole.ts', './VectorTool.ts', './MainRoleCamera.ts', './MainScene.ts', './MetaMask.ts', './RoleName.ts', './RoleScene.ts', './TheConfig.ts', './StartScene.ts'], function () {
+System.register("chunks:///_virtual/main", ['./GameEvent.ts', './AppMain.ts', './AudioManager.ts', './AudioController.ts', './poliyfill.ts', './Utf8.ts', './main.ts', './Base64.ts', './Define.ts', './BaseRole.ts', './proto.mjs_cjs=&original=.js', './UserInfo.ts', './Connection.ts', './PeerConnection.ts', './MyRole.ts', './BuildScene.ts', './GlobalNode.ts', './ChatFrame.ts', './Dialog.ts', './GuideDlg.ts', './StartDlg.ts', './SettingDlg.ts', './ControlScene.ts', './GameRole.ts', './VectorTool.ts', './MainRoleCamera.ts', './MainScene.ts', './MetaMask.ts', './RoleName.ts', './RoleScene.ts', './TheConfig.ts', './StartScene.ts'], function () {
   'use strict';
 
   return {
@@ -2585,10 +2590,10 @@ System.register("chunks:///_virtual/RoleName.ts", ['./rollupPluginModLoBabelHelp
   };
 });
 
-System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './BaseRole.ts', './GlobalNode.ts', './UserInfo.ts', './MyRole.ts'], function (exports) {
+System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './BaseRole.ts', './UserInfo.ts', './MyRole.ts', './GlobalNode.ts'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, cclegacy, _decorator, input, Input, assetManager, Prefab, instantiate, KeyCode, Component, GameEvent, ActionType, RotateType, GlobalNode, UserInfo, MyRole;
+  var _inheritsLoose, cclegacy, _decorator, input, Input, assetManager, Prefab, instantiate, KeyCode, Component, GameEvent, ActionType, RotateType, UserInfo, MyRole, GlobalNode;
 
   return {
     setters: [function (module) {
@@ -2609,11 +2614,11 @@ System.register("chunks:///_virtual/RoleScene.ts", ['./rollupPluginModLoBabelHel
       ActionType = module.ActionType;
       RotateType = module.RotateType;
     }, function (module) {
-      GlobalNode = module.default;
-    }, function (module) {
       UserInfo = module.default;
     }, function (module) {
       MyRole = module.MyRole;
+    }, function (module) {
+      GlobalNode = module.default;
     }],
     execute: function () {
       var _dec, _class;

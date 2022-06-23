@@ -1433,7 +1433,11 @@
               "z": 0.5882353186607361
             },
             "roughness": 0.7071067690849304,
-            "metallic": 0.4000000059604645
+            "metallic": 0.4000000059604645,
+            "mainTexture": {
+              "__uuid__": "5600ebc5-e6ba-4112-915c-715553eca42c@6c48a",
+              "__expectedType__": "cc.Texture2D"
+            }
           },
           {},
           {}

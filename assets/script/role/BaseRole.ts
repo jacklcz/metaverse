@@ -52,9 +52,11 @@ export abstract class BaseRole extends Component {
     onLoad(): void {
         let collider = this.addComponent(BoxCollider);
         collider.isTrigger = false;
+        //collider.center = v3(0, 0, 0);
+        collider.size = v3(0.8, 2, 0.8);
 
         let body = this.addComponent(RigidBody);
-        body.useGravity = false;
+        body.useGravity = true;
     }
 
     public get roleID(): string{

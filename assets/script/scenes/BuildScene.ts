@@ -27,7 +27,7 @@ export class BuildScene extends Component {
 
     protected initMapData(data: any): void {        
         this._mapData = data;
-        
+        return;
         let ids = data.id;
         let theList = data.list;
         let length = data.list.length;        
