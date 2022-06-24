@@ -364,6 +364,7 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
           collider.size = v3(0.8, 2, 0.8);
           var body = this.addComponent(RigidBody);
           body.useGravity = true;
+          body.angularFactor = v3(0, 0, 0);
         };
 
         _proto.switchMove = function switchMove() {

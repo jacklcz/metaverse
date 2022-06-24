@@ -56,7 +56,8 @@ export abstract class BaseRole extends Component {
         collider.size = v3(0.8, 2, 0.8);
 
         let body = this.addComponent(RigidBody);
-        body.useGravity = true;
+        body.useGravity = true;        
+        body.angularFactor = v3(0, 0, 0);
     }
 
     public get roleID(): string{

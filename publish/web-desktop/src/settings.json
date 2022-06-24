@@ -46,12 +46,12 @@
         "sleepThreshold": 0.1,
         "autoSimulation": true,
         "fixedTimeStep": 0.0166667,
-        "maxSubSteps": 1,
+        "maxSubSteps": 10,
         "defaultMaterial": {
             "friction": 0.5,
             "rollingFriction": 0,
             "spinningFriction": 0,
-            "restitution": 0.1
+            "restitution": 0
         },
         "collisionMatrix": {
             "0": 1,
