@@ -1,4 +1,4 @@
-import { _decorator, Component, Node } from 'cc';
+import { _decorator, Component, Node, game } from 'cc';
 const { ccclass, property } = _decorator;
  
 import * as fgui from "fairygui-cc";
@@ -22,8 +22,8 @@ export default abstract class Dialog {
         btn.onClick(function(): void {
             thisSelf._dlg.hide();
             thisSelf._dlg.dispose();
-            dlg.dispose();
-        }, this);
+            dlg.dispose();            
+        }, this);        
         
         this._dlg.modal = true;
         this._dlg.show();        

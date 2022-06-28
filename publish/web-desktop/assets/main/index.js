@@ -359,12 +359,13 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
 
         _proto.onLoad = function onLoad() {
           var collider = this.addComponent(BoxCollider);
-          collider.isTrigger = false; //collider.center = v3(0, 0, 0);
-
+          collider.isTrigger = false;
           collider.size = v3(0.8, 2, 0.8);
+          collider.material.restitution = 0;
           var body = this.addComponent(RigidBody);
-          body.useGravity = true;
           body.angularFactor = v3(0, 0, 0);
+          body.useGravity = true;
+          body.mass = 0.3;
         };
 
         _proto.switchMove = function switchMove() {
@@ -2092,16 +2093,37 @@ System.register("chunks:///_virtual/MetaMask.ts", ['cc'], function (exports) {
           return Boolean(ethereum && ethereum.isMetaMask);
         };
 
-        var _proto = MetaMask.prototype;
-
-        _proto.connectMetaMask = function connectMetaMask(caller, listener) {
+        MetaMask.metaStatus = function metaStatus(listener, caller) {
           if (MetaMask.isInstalled()) {
             var ethereum = window.ethereum;
 
             if (ethereum._state.initialized != true) {
-              var erro = new Error("MetaMask is not initialized!\n请刷新页面再试!");
-              listener.call(caller, 0, erro);
+              listener.call(caller, 3);
             } else {
+              ethereum.request({
+                method: 'eth_chainId'
+              }).then(function (chainId) {
+                var id = parseInt(chainId, 16);
+                var status = 0;
+
+                if (id != 0x1 && id != 0x38 && id != 0x89) {
+                  status = 2;
+                }
+
+                listener.call(caller, status);
+              })["catch"](function (error) {
+                listener.call(caller, 3);
+              });
+            }
+          } else listener.call(caller, 1);
+        };
+
+        var _proto = MetaMask.prototype;
+
+        _proto.connectMetaMask = function connectMetaMask(caller, listener) {
+          MetaMask.metaStatus(function (status) {
+            if (status == 0) {
+              var ethereum = window.ethereum;
               ethereum.request({
                 method: 'eth_requestAccounts'
               }).then(function (accounts) {
@@ -2110,8 +2132,8 @@ System.register("chunks:///_virtual/MetaMask.ts", ['cc'], function (exports) {
               })["catch"](function (error) {
                 listener.call(caller, 0, error);
               });
-            }
-          } else listener.call(caller, 0, "MetaMask is not installed!");
+            } else listener.call(caller, 0, "MetaMask status error!");
+          }, this);
         };
 
         return MetaMask;
@@ -2932,7 +2954,7 @@ System.register("chunks:///_virtual/StartDlg.ts", ['./rollupPluginModLoBabelHelp
 System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './GameEvent.ts', './Define.ts', './UserInfo.ts', './PeerConnection.ts', './fairygui.mjs', './MetaMask.ts', './TheConfig.ts'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, cclegacy, _decorator, color, Component, GameEvent, Define, UserInfo, PeerConnection, GRoot, UIPackage, Event, MetaMask, TheConfig;
+  var _inheritsLoose, cclegacy, _decorator, Component, GameEvent, Define, UserInfo, PeerConnection, GRoot, UIPackage, Event, MetaMask, TheConfig;
 
   return {
     setters: [function (module) {
@@ -2940,7 +2962,6 @@ System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHe
     }, function (module) {
       cclegacy = module.cclegacy;
       _decorator = module._decorator;
-      color = module.color;
       Component = module.Component;
     }, function (module) {
       GameEvent = module.default;
@@ -2997,10 +3018,12 @@ System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHe
           var panel = view.getChild("rolePanel");
           panel.getChild("enterBtn").onClick(this.onEnterGame, this);
           panel.getChild("header").url = "ui://startScene/role0";
+          panel.enabled = false;
           var control = panel.getController("c1");
           control.on(Event.STATUS_CHANGED, this.onChanged, this);
           control.selectedIndex = Math.floor(Math.random() * 8);
           GameEvent.on(GameEvent.LOGIN_RESULT, this.onLoginResult, this);
+          this.checkMetaStatus();
         };
 
         _proto.onChanged = function onChanged() {
@@ -3028,7 +3051,10 @@ System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHe
               UserInfo.account = response; //save the account;
 
               thisSelf.onGetAccount();
-            } else console.error("connect MetaMask failed for: %s", response.message);
+            } else {
+              console.error("connect MetaMask failed for: %s", response.message);
+              thisSelf.checkMetaStatus();
+            }
           });
         };
 
@@ -3062,24 +3088,36 @@ System.register("chunks:///_virtual/StartScene.ts", ['./rollupPluginModLoBabelHe
           if (loading) loading.value = value;
         };
 
-        _proto.onCheckMetaMask = function onCheckMetaMask() {
-          if (this.onMetaMaskStatus()) {
-            this.unschedule(this.onCheckMetaMask);
-            this._mainView.getChild("startBtn").visible = true;
-          }
+        _proto.checkMetaStatus = function checkMetaStatus() {
+          MetaMask.metaStatus(this.onMetaMaskStatus, this);
         };
 
-        _proto.onMetaMaskStatus = function onMetaMaskStatus() {
-          var tips = this._mainView.getChild("tips");
+        _proto.onMetaMaskStatus = function onMetaMaskStatus(status) {
+          var tips = this._mainView.getChild("notify");
 
-          if (MetaMask.isInstalled()) {
-            tips.color = color(0xff, 0xff, 0xff);
-            tips.text = "点击“开始游戏”登录";
-            return true;
+          if (status == 0) {
+            var panel = this._mainView.getChild("rolePanel");
+
+            panel.enabled = true;
+            tips.visible = false;
           } else {
-            tips.color = color(0xff, 0x00, 0x00);
-            tips.text = "请安装MetaMask!";
-            return false;
+            var url = "";
+
+            switch (status) {
+              case 1:
+                url = "ui://startScene/installMetamask";
+                break;
+
+              case 2:
+                url = "ui://startScene/supportNetwork";
+                break;
+
+              case 3:
+                url = "ui://startScene/refreshPage";
+                break;
+            }
+
+            tips.url = url;
           }
         };
 

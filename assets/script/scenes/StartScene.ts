@@ -30,12 +30,15 @@ export class StartScene extends Component {
         let panel = view.getChild<fgui.GComponent>("rolePanel");
         panel.getChild("enterBtn").onClick(this.onEnterGame, this);
         panel.getChild<fgui.GLoader>("header").url = "ui://startScene/role0";
+        panel.enabled = false;
 
         let control = panel.getController("c1");
         control.on(fgui.Event.STATUS_CHANGED, this.onChanged, this);
         control.selectedIndex = Math.floor(Math.random() * 8);
 
         GameEvent.on(GameEvent.LOGIN_RESULT, this.onLoginResult, this);
+
+        this.checkMetaStatus();
     }
 
     private onChanged(): void {
@@ -66,7 +69,10 @@ export class StartScene extends Component {
                 UserInfo.account = response; //save the account;
                 thisSelf.onGetAccount();
             }
-            else console.error("connect MetaMask failed for: %s", response.message);
+            else{
+                console.error("connect MetaMask failed for: %s", response.message);
+                thisSelf.checkMetaStatus();
+            }
         });
     }
     
@@ -103,25 +109,33 @@ export class StartScene extends Component {
         if(loading) loading.value = value;        
     }
 
-    private onCheckMetaMask(): void {
-        if(this.onMetaMaskStatus()){
-            this.unschedule(this.onCheckMetaMask);
-            this._mainView.getChild<fgui.GButton>("startBtn").visible = true;
-        }
+    private checkMetaStatus(): void {
+        MetaMask.metaStatus(this.onMetaMaskStatus, this);
     }
 
-    private onMetaMaskStatus(): boolean {
+    private onMetaMaskStatus(status: number): void {
 
-        let tips = this._mainView.getChild<fgui.GTextField>("tips");
-        if(MetaMask.isInstalled()){
-            tips.color = color(0xff, 0xff, 0xff);
-            tips.text = "点击“开始游戏”登录"
-            return true;
+        let tips = this._mainView.getChild<fgui.GLoader>("notify");
+        if( status == 0){
+            let panel = this._mainView.getChild<fgui.GComponent>("rolePanel");        
+            panel.enabled = true;
+            tips.visible = false;            
         }
         else {
-            tips.color = color(0xff, 0x00, 0x00);
-            tips.text = "请安装MetaMask!"
-            return false;
+            let url = "";
+            switch(status){
+                case 1:
+                    url = "ui://startScene/installMetamask";
+                    break;
+                case 2:
+                    url = "ui://startScene/supportNetwork";
+                    break;
+                case 3:
+                    url = "ui://startScene/refreshPage";
+                    break;
+                default: break;
+            }
+            tips.url = url;            
         }
     }
 }

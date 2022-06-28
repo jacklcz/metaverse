@@ -10,9 +10,9 @@ export default class AppMain extends Component {
     protected _mainPacks: string[] = ["audio", "building", "characters", "mainRes", "texture"];
     protected _selectPack: string[] = [];
 
-    onLoad() {
+    onLoad() {        
         game.addPersistRootNode(this.node);
-        setDisplayStats(false);
+        setDisplayStats(false);        
 
         GameEvent.on(GameEvent.OPEN_MAIN_SCENE, this.openMainScene, this);
         GameEvent.on(GameEvent.OPEN_ROLE_SCENE, this.openRoleScene, this);
