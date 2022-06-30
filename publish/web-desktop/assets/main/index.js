@@ -270,7 +270,7 @@ System.register("chunks:///_virtual/Base64.ts", ['cc', './Utf8.ts', './main.ts']
 System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc', './Define.ts'], function (exports) {
   'use strict';
 
-  var _inheritsLoose, _createClass, cclegacy, _decorator, BoxCollider, v3, RigidBody, Animation, Vec3, Component, Define;
+  var _inheritsLoose, _createClass, cclegacy, _decorator, BoxCollider, v3, RigidBody, MeshRenderer, Animation, Vec3, Component, Define;
 
   return {
     setters: [function (module) {
@@ -282,6 +282,7 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
       BoxCollider = module.BoxCollider;
       v3 = module.v3;
       RigidBody = module.RigidBody;
+      MeshRenderer = module.MeshRenderer;
       Animation = module.Animation;
       Vec3 = module.Vec3;
       Component = module.Component;
@@ -366,6 +367,17 @@ System.register("chunks:///_virtual/BaseRole.ts", ['./rollupPluginModLoBabelHelp
           body.angularFactor = v3(0, 0, 0);
           body.useGravity = true;
           body.mass = 0.3;
+          var node = null;
+          var length = this.node.children.length;
+          if (length > 2) node = this.node;else node = this.node.getChildByName("Armature");
+          var childs = node.children;
+          length = childs.length;
+
+          for (var i = 0; i < length; i++) {
+            var meshRender = childs[i].getComponent(MeshRenderer);
+            if (meshRender == null) continue;
+            meshRender.shadowCastingMode = 1;
+          }
         };
 
         _proto.switchMove = function switchMove() {
@@ -1616,11 +1628,11 @@ System.register("chunks:///_virtual/GuideDlg.ts", ['./rollupPluginModLoBabelHelp
   };
 });
 
-System.register("chunks:///_virtual/main", ['./GameEvent.ts', './AppMain.ts', './AudioManager.ts', './AudioController.ts', './poliyfill.ts', './Utf8.ts', './main.ts', './Base64.ts', './Define.ts', './BaseRole.ts', './proto.mjs_cjs=&original=.js', './UserInfo.ts', './Connection.ts', './PeerConnection.ts', './MyRole.ts', './BuildScene.ts', './GlobalNode.ts', './ChatFrame.ts', './Dialog.ts', './GuideDlg.ts', './StartDlg.ts', './SettingDlg.ts', './ControlScene.ts', './GameRole.ts', './VectorTool.ts', './MainRoleCamera.ts', './MainScene.ts', './MetaMask.ts', './RoleName.ts', './RoleScene.ts', './TheConfig.ts', './StartScene.ts'], function () {
+System.register("chunks:///_virtual/main", ['./GameEvent.ts', './AppMain.ts', './AudioManager.ts', './AudioController.ts', './poliyfill.ts', './Utf8.ts', './main.ts', './Base64.ts', './Define.ts', './BaseRole.ts', './proto.mjs_cjs=&original=.js', './UserInfo.ts', './Connection.ts', './PeerConnection.ts', './MyRole.ts', './BuildScene.ts', './GlobalNode.ts', './ChatFrame.ts', './Dialog.ts', './GuideDlg.ts', './StartDlg.ts', './SettingDlg.ts', './ControlScene.ts', './GameRole.ts', './MainLight.ts', './VectorTool.ts', './MainRoleCamera.ts', './MainScene.ts', './MetaMask.ts', './RoleName.ts', './RoleScene.ts', './TheConfig.ts', './StartScene.ts'], function () {
   'use strict';
 
   return {
-    setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+    setters: [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
     execute: function () {}
   };
 });
@@ -1841,6 +1853,71 @@ System.register("chunks:///_virtual/main.ts", ['cc', './poliyfill.ts'], function
         };
       } // const __esModule = true;
 
+
+      cclegacy._RF.pop();
+    }
+  };
+});
+
+System.register("chunks:///_virtual/MainLight.ts", ['./rollupPluginModLoBabelHelpers.js', 'cc'], function (exports) {
+  'use strict';
+
+  var _inheritsLoose, cclegacy, _decorator, DirectionalLight, Component;
+
+  return {
+    setters: [function (module) {
+      _inheritsLoose = module.inheritsLoose;
+    }, function (module) {
+      cclegacy = module.cclegacy;
+      _decorator = module._decorator;
+      DirectionalLight = module.DirectionalLight;
+      Component = module.Component;
+    }],
+    execute: function () {
+      var _dec, _class;
+
+      cclegacy._RF.push({}, "7365aSz9qFHBoqBR1ifTx8c", "MainLight", undefined);
+
+      var ccclass = _decorator.ccclass,
+          property = _decorator.property;
+      var MainLight = exports('MainLight', (_dec = ccclass('MainLight'), _dec(_class = /*#__PURE__*/function (_Component) {
+        _inheritsLoose(MainLight, _Component);
+
+        function MainLight() {
+          return _Component.apply(this, arguments) || this;
+        }
+
+        var _proto = MainLight.prototype;
+
+        _proto.start = function start() {
+          this.onUpdateTime();
+          var thisSelf = this;
+          this.schedule(function () {
+            thisSelf.onUpdateTime();
+          }, 3);
+        };
+
+        _proto.onUpdateTime = function onUpdateTime() {
+          var date = new Date();
+          var passTime = date.getHours() * 60 + date.getMinutes();
+          var noon = 720;
+          var min = 4000;
+          var max = 65000;
+          var space = max - min;
+          var illumination = min;
+
+          if (passTime <= noon) {
+            illumination += Math.floor(passTime * space / noon);
+          } else {
+            passTime -= noon;
+            illumination = max - Math.floor(passTime * space / noon);
+          }
+
+          this.node.getComponent(DirectionalLight).illuminance = illumination;
+        };
+
+        return MainLight;
+      }(Component)) || _class));
 
       cclegacy._RF.pop();
     }

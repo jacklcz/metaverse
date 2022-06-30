@@ -1,4 +1,4 @@
-import { _decorator, Component, Vec3, v3, Animation, BoxCollider, RigidBody } from 'cc';
+import { _decorator, Component, Node, Vec3, v3, Animation, BoxCollider, RigidBody, MeshRenderer } from 'cc';
 const { ccclass, property } = _decorator;
 
 import Define from '../base/Define';
@@ -59,6 +59,20 @@ export abstract class BaseRole extends Component {
         body.angularFactor = v3(0, 0, 0);        
         body.useGravity = true;
         body.mass = 0.3;
+
+        let node: Node = null;
+        let length = this.node.children.length;
+        if(length > 2) node = this.node;
+        else node = this.node.getChildByName("Armature");
+
+        let childs = node.children;
+        length = childs.length;
+        for(var i = 0; i < length; i ++){
+            let meshRender = childs[i].getComponent(MeshRenderer);
+            if(meshRender == null) continue;
+
+            meshRender.shadowCastingMode = 1;
+        }
     }
 
     public get roleID(): string{
